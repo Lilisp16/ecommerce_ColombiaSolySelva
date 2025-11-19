@@ -11,7 +11,9 @@ h2, .footer-title {
 
 
 
-
+.btn-primary {
+    background-color: red !important;
+}
 
 
 .footer-artesanal {

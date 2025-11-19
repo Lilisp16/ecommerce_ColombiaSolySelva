@@ -1,4 +1,138 @@
+/* Colores, fuentes, header, footer*  genera que se vayan a usar en toda las seccione*/
+
+body {
+  font-family: 'Lora', serif;
+}
+
+h2, .footer-title {
+  font-family: 'Caveat', cursive;
+}
+
+
+
+
 .btn-primary {
     background-color: red !important;
+}
+
+
+.footer-artesanal {
+  font-family: 'Lora', serif;
+  color: #333;
+  background-color: #ffffff;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30px;
+}
+
+/* Logo */
+.footer-left .footer-title a {
+  font-family: 'Caveat', cursive;
+  font-weight: bold;
+  color: #60a86d;
+  font-size: 24px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.footer-left .footer-title i {
+  margin-right: 10px;
+  color: #c9a446;
+}
+
+/* Redes sociales */
+.footer-socials a {
+  margin-right: 10px;
+  color: #c9a446;
+  font-size: 20px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #60a86d;
+  transform: scale(1.2);
+}
+
+/* Links con iconos debajo */
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-link-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-link-item a {
+  text-decoration: none;
+  color: #a67c52;
+  font-weight: 500;
+  margin-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.footer-link-item a:hover {
+  color: #60a86d;
+}
+
+.footer-link-item i {
+  font-size: 20px;
+  color: #60a86d;
+}
+
+/* Línea delgada */
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #a67c52;
+  opacity: 0.3;
+  margin-top: 20px;
+}
+
+/* Footer bottom */
+.footer-bottom {
+  text-align: center;
+  padding: 15px 0;
+  font-size: 14px;
+  background-color: #ffffff;
+}
+
+/* Franja tipo tejido */
+.artisan-wave-clean {
+  width: 100%;
+  height: 100px;
+  background: 
+    linear-gradient(135deg, rgba(139, 94, 60, 0.2) 2px, transparent 2px),
+    linear-gradient(225deg, rgba(139, 94, 60, 0.2) 2px, transparent 2px),
+    #f4efe5;
+  background-size: 20px 20px;
+  clip-path: polygon(0 50%, 10% 45%, 20% 55%, 30% 45%, 40% 50%, 50% 45%, 60% 55%, 70% 45%, 80% 50%, 90% 45%, 100% 50%, 100% 100%, 0 100%);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-links {
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .artisan-wave-clean {
+    height: 70px;
+  }
 }
 

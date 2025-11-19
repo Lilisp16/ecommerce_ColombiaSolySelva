@@ -136,3 +136,26 @@ h2, .footer-title {
   }
 }
 
+.btn-primary,
+.bg-primary {
+  background-color: #d4af37 !important;
+  border-color: #d4af37 !important;
+}
+
+.card-hover {
+  transition: transform 0.6s, box-shadow 0.6s;
+}
+
+.card-hover:hover {
+  transform: translateY(-20px);
+  border-radius: 30px;
+}
+
+.col-five{
+    width: 20%;
+    
+}
+
+.card-body{
+    background-color: #F5EBDC;
+}

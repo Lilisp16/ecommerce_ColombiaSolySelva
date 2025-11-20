@@ -8,13 +8,9 @@ h2, .footer-title {
   font-family: 'Caveat', cursive;
 }
 
-
-
-
 .btn-primary {
     background-color: red !important;
 }
-
 
 .footer-artesanal {
   font-family: 'Lora', serif;
@@ -30,6 +26,12 @@ h2, .footer-title {
 }
 
 /* Logo */
+#logo{
+  width: 100px;
+  height: 120px;
+  border-radius: 30px;
+  box-shadow:  #a67c52;
+}
 .footer-left .footer-title a {
   font-family: 'Caveat', cursive;
   font-weight: bold;

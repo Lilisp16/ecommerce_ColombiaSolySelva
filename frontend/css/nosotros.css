@@ -2,8 +2,8 @@
 
 /* logo */
 #logo {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
 }
 
 /* NAV LINKS */
@@ -129,8 +129,8 @@ ul.navbar-nav {
 /*VALORES*/
 
 .tituloNV{
-  padding-top: 80px;
-  color: #3E2723;
+  padding-top: 100px;
+  color: #1B5E20;
 }
 .artesano-icon {
     font-size: 2rem;          

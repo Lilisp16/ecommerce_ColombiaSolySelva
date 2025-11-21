@@ -1,15 +1,278 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quienes Somos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/nosotros.css">
 </head>
 <body>
-    <button class="btn btn-primary">Prueba</button>
 
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 shadow-sm navbar-fixed">
+    <div class="container-xxl d-flex justify-content-between align-items-center">
+
+      <!-- Logo -->
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img id="logo" src="../src/Logo.png" alt="Logo">
+      </a>
+
+      <!-- Botón hamburguesa -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" 
+        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links y buscador -->
+      <div class="collapse navbar-collapse" id="mainNav">
+        <!-- Links centrados -->
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
+          <li class="nav-item"><a class="nav-link link-custom" href="#">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link link-custom" href="#">Productos</a></li>
+          <li class="nav-item"><a class="nav-link link-custom" href="#">Historias</a></li>
+          <li class="nav-item"><a class="nav-link link-custom" href="#">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link link-custom" href="#">Contacto</a></li>
+        </ul>
+
+        <!-- Buscador -->
+        <form class="d-flex ms-lg-3 me-3" role="search">
+          <input class="form-control inputBuscar" type="search" placeholder="Buscar..." aria-label="Buscar">
+          <button class="btn search-btn" type="button">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+
+        <!-- Mi cuenta y carrito -->
+        <div class="d-flex gap-3 align-items-center">
+          <div class="text-center">
+            <i class="fas fa-user icon-circle icon-user"></i>
+            <div class="icon-text">Mi cuenta</div>
+          </div>
+          <div class="text-center">
+            <i class="fas fa-shopping-cart icon-circle icon-cart"></i>
+            <div class="icon-text">Carrito</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+</header>
+
+
+ 
+
+
+<!-- NUESTROS VALORES -->
+<section id="nosotros" class="container py-5">
+  <h2 class="text-center mb-4 tituloNV">Nuestros Valores</h2>
+  <div class="d-flex flex-wrap justify-content-center">
+
+    <!-- Valor 1: Respeto cultural y artesanal -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <i class="fas fa-globe-americas" style="color:#8B4513;"></i>
+          <h4>Respeto cultural y artesanal</h4>
+        </div>
+        <div class="flip-card-back">
+          <p>Valoramos y preservamos la tradición artesanal y apoyamos a los artesanos.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Valor 2: Autenticidad y Calidad -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <i class="fas fa-certificate" style="color:#DAA520;"></i>
+          <h4>Autenticidad y Calidad</h4>
+        </div>
+        <div class="flip-card-back">
+          <p>Cada producto es auténtico, hecho a mano y de alta calidad.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Valor 3: Transparencia y honestidad -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <i class="fas fa-balance-scale" style="color:#CD853F;"></i>
+          <h4>Transparencia y honestidad</h4>
+        </div>
+        <div class="flip-card-back">
+          <p>Operamos de manera ética e informamos claramente precios y condiciones.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Valor 4: Compromiso con el cliente -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <i class="fas fa-handshake" style="color:#A0522D;"></i>
+          <h4>Compromiso con el cliente</h4>
+        </div>
+        <div class="flip-card-back">
+          <p>Buscamos satisfacción total ofreciendo un servicio confiable y seguro.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Valor 5: Sostenibilidad -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <i class="fas fa-seedling" style="color:#6b8e23;"></i>
+          <h4>Sostenibilidad</h4>
+        </div>
+        <div class="flip-card-back">
+          <p>Promovemos prácticas respetuosas con el medio ambiente y la comunidad.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Valor 6: Responsabilidad social -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <i class="fas fa-hands-helping" style="color:#D2691E;"></i>
+          <h4>Responsabilidad social</h4>
+        </div>
+        <div class="flip-card-back">
+          <p>Actuamos de manera ética y responsable con las comunidades artesanales.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<!-- CONTENEDOR NUESTRO EQUIPO -->
+<section id="equipo" class="container-fluid py-5">
+  <h1 class="text-center mb-5 tituloEquipo">Conoce Nuestro Equipo de Trabajo</h1>
+  
+  <div class="equipo-row d-flex flex-wrap justify-content-center">
+    
+    <!-- Colaborador 1 -->
+    <div class="card shadow-sm card-hover mx-2" style="width: 20rem;">
+      <img src="../src/1e.png" class="img-fluid rounded-4 w-75 d-block mx-auto mt-4" alt="Colaborador 1">
+      <div class="card-body text-center">
+        <h3 class="card-title">Colaborador 1</h3>
+        <p class="card-text">Desarrollador Full Stack y diseñador de interfaces, enfocado en crear experiencias web sobresalientes.</p>
+      </div>
+    </div>
+
+    <!-- Colaborador 2 -->
+    <div class="card shadow-sm card-hover mx-2" style="width: 20rem;">
+      <img src="../src/2e.png" class="img-fluid rounded-4 w-75 d-block mx-auto mt-4" alt="Colaborador 2">
+      <div class="card-body text-center">
+        <h3 class="card-title">Colaborador 2</h3>
+        <p class="card-text">Desarrollador Full Stack con habilidades en Java, HTML, CSS y JavaScript, creando soluciones web completas.</p>
+      </div>
+    </div>
+
+    <!-- Colaborador 3 -->
+    <div class="card shadow-sm card-hover mx-2" style="width: 20rem;">
+      <img src="../src/3e.png" class="img-fluid rounded-4 w-75 d-block mx-auto mt-4" alt="Colaborador 3">
+      <div class="card-body text-center">
+        <h3 class="card-title">Colaborador 3</h3>
+        <p class="card-text">Desarrolladora Full-Stack apasionada por el backend y la mejora continua, guiada por su fe y propósito.</p>
+      </div>
+    </div>
+
+    <!-- Colaborador 4 -->
+    <div class="card shadow-sm card-hover mx-2" style="width: 20rem;">
+      <img src="../src/4e.png" class="img-fluid rounded-4 w-75 d-block mx-auto mt-4" alt="Colaborador 4">
+      <div class="card-body text-center">
+        <h3 class="card-title">Colaborador 4</h3>
+        <p class="card-text">Desarrollador Full Stack con experiencia en soluciones web, móviles y de escritorio.</p>
+      </div>
+    </div>
+
+    <!-- Colaborador 5 -->
+    <div class="card shadow-sm card-hover mx-2" style="width: 20rem;">
+      <img src="../src/5e.png" class="img-fluid rounded-4 w-75 d-block mx-auto mt-4" alt="Colaborador 5">
+      <div class="card-body text-center">
+        <h3 class="card-title">Colaborador 5</h3>
+        <p class="card-text">Ingeniera de Software Full-Stack, enfocada en FrontEnd y en crear soluciones eficientes.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+  <footer class="footer-artesanal">
+  <!-- Franja artesanal arriba -->
+  <div class="artisan-wave-clean"></div>
+
+  <!-- Contenido del footer -->
+  <div class="footer-content">
+
+    <div class="footer-left">
+      <h2 class="footer-title">
+        <a href="index.html"> <img id="logo" src="../src/Logo.png" class="navbar-brand" alt="Logo">Colombia Sol y Selva</a>
+      </h2>
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+
+
+    <nav class="footer-links">
+      <div class="footer-link-item">
+        <a href="#">Productos</a>
+        <i class="fas fa-box"></i>
+      </div>
+      <div class="footer-link-item">
+        <a href="#">Historias</a>
+        <i class="fas fa-book-open"></i>
+      </div>
+      <div class="footer-link-item">
+        <a href="#">Nosotros</a>
+        <i class="fas fa-users"></i>
+      </div>
+      <div class="footer-link-item">
+        <a href="#">Contacto</a>
+        <i class="fas fa-envelope"></i>
+      </div>
+    </footer>
+
+
+
+
+    <!-- js para buscador expandible -->
+<script>
+  const searchBtn = document.querySelector('.search-btn');
+  const searchInput = document.querySelector('.inputBuscar');
+
+  searchBtn.addEventListener('click', function(e) {
+    e.preventDefault(); // evita enviar el form al hacer clic en la lupa
+    searchInput.classList.toggle('show');
+    if (searchInput.classList.contains('show')) {
+      searchInput.focus();
+    }
+  });
+</script>
 </body>
 </html>
+

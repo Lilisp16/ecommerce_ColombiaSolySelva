@@ -1,11 +1,17 @@
 /* Colores, fuentes, header, footer*  genera que se vayan a usar en toda las seccione*/
+.nav-item{
+  font-size: 30px;
+}
+
 
 body {
   font-family: 'Lora', serif;
+  background-color: #F5EBDC;
 }
 
 h2, .footer-title {
   font-family: 'Caveat', cursive;
+
 }
 
 .btn-primary {
@@ -36,7 +42,7 @@ h2, .footer-title {
   font-family: 'Caveat', cursive;
   font-weight: bold;
   color: #60a86d;
-  font-size: 24px;
+  font-size: 30px;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -67,6 +73,7 @@ h2, .footer-title {
 }
 
 .footer-link-item {
+  font-size: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;

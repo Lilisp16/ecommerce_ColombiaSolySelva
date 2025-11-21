@@ -84,7 +84,7 @@
 }
 
 .icon-text { 
-  font-size: 0.8em; 
+  font-size: 1.5em; 
   margin-top: 3px; 
   text-align: center; 
 }
@@ -215,4 +215,9 @@ ul.navbar-nav {
 
 .tituloEquipo{
   font-family: 'Caveat', cursive;
+}
+
+.artesanosqs{
+  width: 100px;
+  height: 100px;
 }

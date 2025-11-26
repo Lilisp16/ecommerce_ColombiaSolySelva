@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../CSS/global.css">
+    <link rel="stylesheet" href="../../css/contacto.css">
+
+
+<style>
+    
+    .tratamientoDatos {
+        padding-left: 20px;
+        width: 30%;
+    
+            p{
+                color:  #4CAF50
+            }
+
+             .accordion-button {
+            
+                      background-color: #F5EBDC !important
+            }
+            .email{
+                color: #1B5E20;
+            }
+
+            /*  reemplazar el anillo azul class bootstrap por uno verde suave del borde */
+            .accordion-button:focus,
+            .accordion-button:focus-visible,
+            .accordion-button:active {
+            box-shadow: 0 0 0 0.22rem rgba(221, 234, 38, 0.18) !important; 
+            outline: none !important;
+            border-color:  #D4AF37 !important;
+            }
+
+    }
+
+        .bordeMixto {
+        border: 6px solid; 
+        border-image: linear-gradient(to right, #3E2723 20%, #4CAF50 60%,  #D4AF37 20% ) 1;
+        border-radius: 10px;
+        padding: 15px;
+        }
+
+        #collapseTratamientoDatos {
+        min-height: 10px; /* evita recalculo brusco */
+        }
+
+        h5{
+        color:  #3E2723;
+        padding-left: 20px;
+        }
+
+        .ley {
+        padding-left: 25px;
+
+}
+
+</style>
+
+
+<section class="politica">
+
+    <div class="tituloPoliticas mb-2">
+     <button class="accordion-button collapsed " 
+            type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#collapseTratamientoDatos"
+            aria-expanded="false" 
+            aria-controls="collapseTratamientoDatos">
+        <div class="text-start">
+        <h5 class="m-2 ">Políticas de Tratamiento de Datos Personales</h5>
+        <small class="text-muted d-block ley">De acuerdo con la Ley 1581 de 2012 de Protección de Datos Personales (Habeas Data) en Colombia</small>
+        </div>
+    </button>
+    </div>
+
+
+<div class="card-body tratamientoDatos">
+<div id="collapseTratamientoDatos" class="accordion-collapse collapse mt-3 bordeMixto">
+    <div class="container-sm ">
+
+        <div class="accordion" id="accordionPanelsStayOpenExample ">
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+               <p class="fs-5">Datos que recopilamos</p> 
+            </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+            <div class="accordion-body fs-6" >
+            Recopilamos información como nombre, correo electrónico, dirección, teléfono y datos de navegación, con el fin de brindarte un servicio personalizado y seguro.
+                
+            </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+               <p class="fs-5">Finalidad del tratamiento</p> 
+            </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+            <div class="accordion-body" style="font-size: 1rem">
+               Usamos tus datos para procesar pedidos, enviar información sobre productos, mejorar nuestros servicios y cumplir con obligaciones legales.
+            </div>
+            </div>
+        </div>
+
+        
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                <p class="fs-5">Protección de datos</p> 
+            </button>
+            </h2>
+            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+            <div class="accordion-body" style="font-size: 1rem">
+              Implementamos medidas de seguridad técnicas y administrativas para garantizar la confidencialidad, integridad y disponibilidad de tus datos personales
+            </div>
+            </div>
+        </div>
+
+
+         <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+               <p class="fs-5">Derechos del usuario</p> 
+            </button>
+            </h2>
+            <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
+            <div class="accordion-body" style="font-size: 1rem">
+                Puedes acceder, rectificar, actualizar o solicitar la eliminación de tus datos, así como oponerte al tratamiento de los mismos según la ley vigente.
+            </div>
+            </div>
+        </div>
+
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
+            <p class="fs-5">Contacto</p>   
+            </button>
+            </h2>
+            <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
+            <div class="accordion-body" style="font-size: 1rem">
+              Para cualquier consulta o ejercicio de tus derechos sobre tus datos personales, puedes comunicarte con nosotros al correo: <a href="mailto:colombiasolyselva@gmail.com" class="email">
+                <strong>colombiasolyselva@gmail.com</strong></a>
+            </div>
+            </div>
+        </div>
+
+        </div>
+
+    </div>
+</div>
+
+</div>
+
+</section>

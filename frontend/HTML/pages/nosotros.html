@@ -12,284 +12,273 @@
     <link rel="stylesheet" href="../../css/nosotros.css">
 </head>
 <body>
+  <header>
+          <nav class="navbar navbar-expand-lg navbar-light bg-light pt-4 shadow-sm navbar-fixed">
+              <div class="container-xxl d-flex justify-content-between align-items-center">
 
+                  <!-- Mostrar solo movil -->
+                  <div class="navMovil d-flex justify-content-between flex-shrink-1-">
+                      <!-- Logo -->
+                      <a class="navbar-brand d-flex align-items-center " href="#">
+                          <img id="logo" src="../../IMG/Logo.png" alt="Logo">
+                      </a>
 
-<header>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 shadow-sm navbar-fixed">
-    <div class="container-xxl d-flex justify-content-between align-items-center">
+                  <!-- Botón hamburguesa -->
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" 
+                      aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+            </div>
 
-      <!-- Logo -->
-      <a class="navbar-brand d-flex align-items-center" href="#">
-        <img id="logo" src="../../IMG/Logo.png" alt="Logo">
-      </a>
+              <!-- Links y buscador -->
+              <div class="collapse navbar-collapse" id="mainNav">
+                  <!-- Links centrados -->
+                  <ul class="navbar-nav mx-auto gap-3 mb-2 mb-lg-0 text-center">
+                      <li class="nav-item"><a class="nav-link link-custom" href="./inicio.html">Inicio</a></li>
+                      <li class="nav-item"><a class="nav-link link-custom" href="./productos.html">Productos</a></li>
+                      <li class="nav-item"><a class="nav-link link-custom" href="./historias.html">Historias</a></li>
+                      <li class="nav-item"><a class="nav-link link-custom" href="./nosotros.html">Nosotros</a></li>
+                      <li class="nav-item"><a class="nav-link link-custom" href="./contacto.html">Contacto</a></li>
+                  </ul>
 
-      <!-- Botón hamburguesa -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" 
-        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+                  <!-- Mi cuenta y carrito -->
+                  <div class="searchAccountSection d-flex gap-3 align-items-top">
+                      <!-- Buscador -->
+                      <form class="d-flex m-0 h-75 align-content-center" role="search">
+                          <input class="form-control inputBuscar" type="search" placeholder="Buscar..." aria-label="Buscar">
+                          <button class="btn search-btn" type="button">
+                              <i class="fas fa-search"></i>
+                          </button>
+                      </form>
+                      <div class="icon text-center">
+                          <i class="fas fa-user icon-circle icon-user"></i>
+                          <div class="icon-text">Mi cuenta</div>
+                      </div>
+                      <div class="icon text-center">
+                          <i class="fas fa-shopping-cart icon-circle icon-cart"></i>
+                          <div class="icon-text">Carrito</div>
+                      </div>
+                  </div>
+              </div>
 
-      <!-- Links y buscador -->
-      <div class="collapse navbar-collapse" id="mainNav">
-        <!-- Links centrados -->
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
-          <li class="nav-item"><a class="nav-link link-custom" href="./inicio.html">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link link-custom" href="./productos.html">Productos</a></li>
-          <li class="nav-item"><a class="nav-link link-custom" href="./historias.html">Historias</a></li>
-          <li class="nav-item"><a class="nav-link link-custom" href="./nosotros.html">Nosotros</a></li>
-          <li class="nav-item"><a class="nav-link link-custom" href="./contacto.html">Contacto</a></li>
-        </ul>
-
-        <!-- Buscador -->
-        <form class="d-flex ms-lg-3 me-3" role="search">
-          <input class="form-control inputBuscar" type="search" placeholder="Buscar..." aria-label="Buscar">
-          <button class="btn search-btn" type="button">
-            <i class="fas fa-search"></i>
-          </button>
-        </form>
-
-        <!-- Mi cuenta y carrito -->
-        <div class="d-flex gap-3 align-items-center">
-          <div class="text-center">
-            <i class="fas fa-user icon-circle icon-user"></i>
-            <div class="icon-text">Mi cuenta</div>
-          </div>
-          <div class="text-center">
-            <i class="fas fa-shopping-cart icon-circle icon-cart"></i>
-            <div class="icon-text">Carrito</div>
-          </div>
-        </div>
+              </div>
+          </nav>
+  </header>
+  </br></br>
+  <!-- QUIENES SOMOS -->
+  <section>
+  <div class="container">
+    <h2 class="text-center mb-5 tituloNV">Quiénes Somos</h2>
+    <div class="row">
+      <div class="col-4 d-flex justify-content-center align-items-center">
+        <h3>Somos un e-commerce que extiende y visibiliza las culturas colombianas, a través de la comercialización de productos artesanales, apoyando el emprendimiento nacional.</h3>
       </div>
-
-    </div>
-  </nav>
-</header>
-</br></br>
-<!-- QUIENES SOMOS -->
-<section>
-<div class="container">
-  <h2 class="text-center mb-5 tituloNV">Quiénes Somos</h2>
-  <div class="row">
-    <div class="col-4 d-flex justify-content-center align-items-center">
-      <h3>Somos un e-commerce que extiende y visibiliza las culturas colombianas, a través de la comercialización de productos artesanales, apoyando el emprendimiento nacional.</h3>
-    </div>
-    <div class="col-4">
-      <img id="artesanosqs" class="img-fluid" style="width: 350px;" src="../../IMG/artesanosqs.jpg">
-    </div>
-    <div class="col-4 d-flex justify-content-center align-items-center">
-      <h3>Más que un comercio en línea, somos la ventana para que el arte, la cultura y la historia Colombia se proyecte al mundo, dando relevancia a las manos que las hacen.</h3>
-    </div>
-</div>
-</section>
-
-
-<!-- NUESTROS VALORES -->
-<section id="nosotros" class="container py-3 mb-3">
-  <h2 class="d-flex justify-content-center align-items-center py-3">Nuestros Valores</h2>
-  <div class="d-flex flex-wrap justify-content-center">
-
-    <!-- Valor 1: Respeto cultural y artesanal -->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <i class="fas fa-globe-americas" style="color:#8B4513;"></i>
-          <h4>Respeto cultural y artesanal</h4>
-        </div>
-        <div class="flip-card-back">
-          <h3>Valoramos y preservamos la tradición artesanal y apoyamos a los artesanos.</h3>
-        </div>
+      <div class="col-4">
+        <img id="artesanosqs" class="img-fluid" style="width: 350px;" src="../../IMG/artesanosqs.jpg">
       </div>
-    </div>
-
-    <!-- Valor 2: Autenticidad y Calidad -->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <i class="fas fa-certificate" style="color:#DAA520;"></i>
-          <h4>Autenticidad y Calidad</h4>
-        </div>
-        <div class="flip-card-back">
-          <h3>Cada producto es auténtico, hecho a mano y de alta calidad.</h3>
-        </div>
+      <div class="col-4 d-flex justify-content-center align-items-center">
+        <h3>Más que un comercio en línea, somos la ventana para que el arte, la cultura y la historia Colombia se proyecte al mundo, dando relevancia a las manos que las hacen.</h3>
       </div>
-    </div>
-
-    <!-- Valor 3: Transparencia y honestidad -->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <i class="fas fa-balance-scale" style="color:#CD853F;"></i>
-          <h4>Transparencia y honestidad</h4>
-        </div>
-        <div class="flip-card-back">
-          <h3>Operamos de manera ética e informamos claramente precios y condiciones.</h3>
-        </div>
-      </div>
-    </div>
-
-    <!-- Valor 4: Compromiso con el cliente -->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <i class="fas fa-handshake" style="color:#A0522D;"></i>
-          <h4>Compromiso con el cliente</h4>
-        </div>
-        <div class="flip-card-back">
-          <h3>Buscamos satisfacción total ofreciendo un servicio confiable y seguro.</h3>
-        </div>
-      </div>
-    </div>
-
-    <!-- Valor 5: Sostenibilidad -->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <i class="fas fa-seedling" style="color:#6b8e23;"></i>
-          <h4>Sostenibilidad</h4>
-        </div>
-        <div class="flip-card-back">
-          <h3>Promovemos prácticas respetuosas con el medio ambiente y la comunidad.</h3>
-        </div>
-      </div>
-    </div>
-
-    <!-- Valor 6: Responsabilidad social -->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <i class="fas fa-hands-helping" style="color:#D2691E;"></i>
-          <h4>Responsabilidad social</h4>
-        </div>
-        <div class="flip-card-back">
-          <h3>Actuamos de manera ética y responsable con las comunidades artesanales.</h3>
-        </div>
-      </div>
-    </div>
-
   </div>
-</section>
+  </section>
 
-<!-- MISION VISION -->
-<section>
-<div class="container py-5">
-  <div class="row">
-    <div class="col-6">
-      <h2 class="d-flex justify-content-center align-items-center">Misión</h2>  
-      <h3>Ser una plataforma funcional en la venta online de artesanías colombianas, reconocida por nuestra selección de productos, eficiencia en la distribución y experiencia de compra confiable, impulsando al mismo tiempo la economía de los artesanos y la difusión de la riqueza cultural colombiana</h3>
-    </div>
-    <div class="col-6">
-      <h2 class="d-flex justify-content-center align-items-center">Visión</h2>  
-      <h3>Conectamos los productos artesanos colombianos con los consumidores a través de nuestro e-commerce, ofreciendo una selección de artesanías auténticas, de calidad y accesibles.Facilitamos la comercialización de artesanos, garantizando un servicio confiable promoviento la riqueza cultural.</h3>
-    </div>
-</div> 
-</section>
 
-<!-- CONTENEDOR NUESTRO EQUIPO -->
-<section id="equipo" class="container-fluid py-5">
-  <h2 class="text-center mb-5 tituloEquipo">Conoce Nuestro Equipo de Trabajo</h2>
-  
-  <div class="equipo-row d-flex flex-wrap justify-content-center">
+  <!-- NUESTROS VALORES -->
+  <section id="nosotros" class="container py-3 mb-3">
+    <h2 class="d-flex justify-content-center align-items-center py-3">Nuestros Valores</h2>
+    <div class="d-flex flex-wrap justify-content-center">
+
+      <!-- Valor 1: Respeto cultural y artesanal -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <i class="fas fa-globe-americas" style="color:#8B4513;"></i>
+            <h4>Respeto cultural y artesanal</h4>
+          </div>
+          <div class="flip-card-back">
+            <h3>Valoramos y preservamos la tradición artesanal y apoyamos a los artesanos.</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Valor 2: Autenticidad y Calidad -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <i class="fas fa-certificate" style="color:#DAA520;"></i>
+            <h4>Autenticidad y Calidad</h4>
+          </div>
+          <div class="flip-card-back">
+            <h3>Cada producto es auténtico, hecho a mano y de alta calidad.</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Valor 3: Transparencia y honestidad -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <i class="fas fa-balance-scale" style="color:#CD853F;"></i>
+            <h4>Transparencia y honestidad</h4>
+          </div>
+          <div class="flip-card-back">
+            <h3>Operamos de manera ética e informamos claramente precios y condiciones.</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Valor 4: Compromiso con el cliente -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <i class="fas fa-handshake" style="color:#A0522D;"></i>
+            <h4>Compromiso con el cliente</h4>
+          </div>
+          <div class="flip-card-back">
+            <h3>Buscamos satisfacción total ofreciendo un servicio confiable y seguro.</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Valor 5: Sostenibilidad -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <i class="fas fa-seedling" style="color:#6b8e23;"></i>
+            <h4>Sostenibilidad</h4>
+          </div>
+          <div class="flip-card-back">
+            <h3>Promovemos prácticas respetuosas con el medio ambiente y la comunidad.</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Valor 6: Responsabilidad social -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <i class="fas fa-hands-helping" style="color:#D2691E;"></i>
+            <h4>Responsabilidad social</h4>
+          </div>
+          <div class="flip-card-back">
+            <h3>Actuamos de manera ética y responsable con las comunidades artesanales.</h3>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MISION VISION -->
+  <section>
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-6">
+        <h2 class="d-flex justify-content-center align-items-center">Misión</h2>  
+        <h3>Ser una plataforma funcional en la venta online de artesanías colombianas, reconocida por nuestra selección de productos, eficiencia en la distribución y experiencia de compra confiable, impulsando al mismo tiempo la economía de los artesanos y la difusión de la riqueza cultural colombiana</h3>
+      </div>
+      <div class="col-6">
+        <h2 class="d-flex justify-content-center align-items-center">Visión</h2>  
+        <h3>Conectamos los productos artesanos colombianos con los consumidores a través de nuestro e-commerce, ofreciendo una selección de artesanías auténticas, de calidad y accesibles.Facilitamos la comercialización de artesanos, garantizando un servicio confiable promoviento la riqueza cultural.</h3>
+      </div>
+  </div> 
+  </section>
+
+  <!-- CONTENEDOR NUESTRO EQUIPO -->
+  <section id="equipo" class="container-fluid py-5">
+    <h2 class="text-center mb-5 tituloEquipo">Conoce Nuestro Equipo de Trabajo</h2>
     
-    <!-- Colaborador 1 -->
-    <div class="card shadow-sm card-hover mx-2" style="width: 20rem;">
-      <img src="../../IMG/JairEscobar.jpg" class="img-fluid rounded-4 w-75 d-block mx-auto mt-4" alt="Colaborador 1">
-      <div class="card-body text-center">
-        <h2 class="card-title">Jair Escobar</h2>
-        <h4 class="card-text">Soy un desarrollador Full Stack y diseñador de interfaces que le gusta crear paginas Web con excelente experiencia de usuario.</h4>
+    <div class="equipo-row d-flex flex-wrap justify-content-center">
+      
+      <!-- Colaborador 1 -->
+      <div class="card shadow-sm card-hover mx-2" style="width: 20rem;">
+        <img src="../../IMG/JairEscobar.jpg" class="img-fluid rounded-4 w-75 d-block mx-auto mt-4" alt="Colaborador 1">
+        <div class="card-body text-center">
+          <h2 class="card-title">Jair Escobar</h2>
+          <h4 class="card-text">Soy un desarrollador Full Stack y diseñador de interfaces que le gusta crear paginas Web con excelente experiencia de usuario.</h4>
+        </div>
       </div>
+
+      <!-- Colaborador 2 -->
+      <div class="card shadow-sm card-hover mx-2" style="width: 20rem;">
+        <img src="../../IMG/ElkerHerrera.jpg" class="img-fluid rounded-4 w-75 d-block mx-auto mt-4" alt="Colaborador 2">
+        <div class="card-body text-center">
+          <h2 class="card-title">Elker Herrera</h2>
+          <h4 class="card-text">Desarrollador Full Stack Java, con conocimientos en Java, HTML, CSS y JavaScript. Ayudo a crear soluciones web completas que combinan lógica, diseño y funcionalidad.</h4>
+        </div>
+      </div>
+
+      <!-- Colaborador 3 -->
+      <div class="card shadow-sm card-hover mx-2" style="width: 20rem;">
+        <img src="../../IMG/LiliSanchez.jpg" class="img-fluid rounded-4 w-75 d-block mx-auto mt-4" alt="Colaborador 3">
+        <div class="card-body text-center">
+          <h2 class="card-title">Lili Sánchez</h2>
+          <h4 class="card-text">Desarrolladora Full-Stack. Apasionada por el backend y el aprendizaje continuo. Mi fe en Dios guía mi propósito y dedicación.</h4>
+        </div>
+      </div>
+
+      <!-- Colaborador 4 -->
+      <div class="card shadow-sm card-hover mx-2" style="width: 20rem;">
+        <img src="../../IMG/SebastianCriollo.jpg" class="img-fluid rounded-4 w-75 d-block mx-auto mt-4" alt="Colaborador 4">
+        <div class="card-body text-center">
+          <h2 class="card-title">Sebastián Criollo</h2>
+          <h4 class="card-text">Desarrollador Full Stack Java con experiencia en crear soluciones prácticas para aplicaciones web, móviles y de escritorio.</h4>
+        </div>
+      </div>
+
+      <!-- Colaborador 5 -->
+      <div class="card shadow-sm card-hover mx-2" style="width: 20rem;">
+        <img src="../../IMG/DianaMoya.jpg" class="img-fluid rounded-4 w-75 d-block mx-auto mt-4" alt="Colaborador 5">
+        <div class="card-body text-center">
+          <h2 class="card-title">Diana Moya</h2>
+          <h4 class="card-text">Ingeniera de Software. Desarrolladora Web Full-Stack, con enfoque en FrontEnd. Apasionada por crear soluciones que minimicen la operatividad.</h4>
+        </div>
+      </div>
+
     </div>
+  </section class="container-xxl d-flex justify-content-between align-items-center">
+  <footer class="footer-artesanal">
+    <!-- Franja artesanal arriba -->
+    <div class="artisan-wave-clean"></div>
 
-    <!-- Colaborador 2 -->
-    <div class="card shadow-sm card-hover mx-2" style="width: 20rem;">
-      <img src="../../IMG/ElkerHerrera.jpg" class="img-fluid rounded-4 w-75 d-block mx-auto mt-4" alt="Colaborador 2">
-      <div class="card-body text-center">
-        <h2 class="card-title">Elker Herrera</h2>
-        <h4 class="card-text">Desarrollador Full Stack Java, con conocimientos en Java, HTML, CSS y JavaScript. Ayudo a crear soluciones web completas que combinan lógica, diseño y funcionalidad.</h4>
+    <!-- Contenido del footer -->
+    <div class="footer-content container">
+
+      <div class="footer-left">
+        <h2 class="footer-title">
+          <a href="index.html"> <img id="logo" src="../../IMG/Logo.png" class="navbar-brand" alt="Logo">Colombia Sol y Selva</a>
+        </h2>
+        <div class="footer-socials">
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+        </div>
       </div>
-    </div>
-
-    <!-- Colaborador 3 -->
-    <div class="card shadow-sm card-hover mx-2" style="width: 20rem;">
-      <img src="../../IMG/LiliSanchez.jpg" class="img-fluid rounded-4 w-75 d-block mx-auto mt-4" alt="Colaborador 3">
-      <div class="card-body text-center">
-        <h2 class="card-title">Lili Sánchez</h2>
-        <h4 class="card-text">Desarrolladora Full-Stack. Apasionada por el backend y el aprendizaje continuo. Mi fe en Dios guía mi propósito y dedicación.</h4>
-      </div>
-    </div>
-
-    <!-- Colaborador 4 -->
-    <div class="card shadow-sm card-hover mx-2" style="width: 20rem;">
-      <img src="../../IMG/SebastianCriollo.jpg" class="img-fluid rounded-4 w-75 d-block mx-auto mt-4" alt="Colaborador 4">
-      <div class="card-body text-center">
-        <h2 class="card-title">Sebastián Criollo</h2>
-        <h4 class="card-text">Desarrollador Full Stack Java con experiencia en crear soluciones prácticas para aplicaciones web, móviles y de escritorio.</h4>
-      </div>
-    </div>
-
-    <!-- Colaborador 5 -->
-    <div class="card shadow-sm card-hover mx-2" style="width: 20rem;">
-      <img src="../../IMG/DianaMoya.jpg" class="img-fluid rounded-4 w-75 d-block mx-auto mt-4" alt="Colaborador 5">
-      <div class="card-body text-center">
-        <h2 class="card-title">Diana Moya</h2>
-        <h4 class="card-text">Ingeniera de Software. Desarrolladora Web Full-Stack, con enfoque en FrontEnd. Apasionada por crear soluciones que minimicen la operatividad.</h4>
-      </div>
-    </div>
-
-  </div>
-</section class="container-xxl d-flex justify-content-between align-items-center">
- <footer class="footer-artesanal">
-  <!-- Franja artesanal arriba -->
-  <div class="artisan-wave-clean"></div>
-
-  <!-- Contenido del footer -->
-  <div class="footer-content container">
-
-    <div class="footer-left">
-      <h2 class="footer-title">
-        <a href="index.html"> <img id="logo" src="../../IMG/Logo.png" class="navbar-brand" alt="Logo">Colombia Sol y Selva</a>
-      </h2>
-      <div class="footer-socials">
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-github"></i></a>
-      </div>
-    </div>
 
 
-    <nav class="footer-links">
-      <div class="footer-link-item">
-        <a href="#">Productos</a>
-        <i class="fas fa-box"></i>
-      </div>
-      <div class="footer-link-item">
-        <a href="#">Historias</a>
-        <i class="fas fa-book-open"></i>
-      </div>
-      <div class="footer-link-item">
-        <a href="#">Nosotros</a>
-        <i class="fas fa-users"></i>
-      </div>
-      <div class="footer-link-item">
-        <a href="#">Contacto</a>
-        <i class="fas fa-envelope"></i>
-      </div>
-    </footer>
+      <nav class="footer-links">
+        <div class="footer-link-item">
+          <a href="#">Productos</a>
+          <i class="fas fa-box"></i>
+        </div>
+        <div class="footer-link-item">
+          <a href="#">Historias</a>
+          <i class="fas fa-book-open"></i>
+        </div>
+        <div class="footer-link-item">
+          <a href="#">Nosotros</a>
+          <i class="fas fa-users"></i>
+        </div>
+        <div class="footer-link-item">
+          <a href="#">Contacto</a>
+          <i class="fas fa-envelope"></i>
+        </div>
+      </footer>
 
 
 
 
     <!-- js para buscador expandible -->
-<script>
-  const searchBtn = document.querySelector('.search-btn');
-  const searchInput = document.querySelector('.inputBuscar');
-
-  searchBtn.addEventListener('click', function(e) {
-    e.preventDefault(); // evita enviar el form al hacer clic en la lupa
-    searchInput.classList.toggle('show');
-    if (searchInput.classList.contains('show')) {
-      searchInput.focus();
-    }
-  });
-</script>
+  <script type="module" src="../../JS/main.js"></script>
 </body>
 </html>
 

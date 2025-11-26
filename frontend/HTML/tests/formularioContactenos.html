@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/contacto.css">
+    <title>Document</title>
+    
+    <style>
+        .btnEnviar{
+            background-color: #A33B20!important;
+        }
+        .btnEnviar:hover{
+            background-color: #1B5E20;
+        }
+        .errorValid{
+            color: red;
+        }
+        button:disabled{
+            background-color: gray!important;
+        }
+        .form-label{
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+<form class="container" id="formContacto"
+  action="https://formspree.io/f/mgvbdywe"
+  method="POST"
+  enctype="multipart/form-data"
+>    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Nombre</label>
+        <input class="form-control" id="formContNombre" rows="1" placeholder="Ingresa tu nombre" name="Nombre"></input>
+        <p class="errorValid" id="formContErrorNombre"></p>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Correo Electrónico</label>
+        <input type="email" class="form-control" id="formContEmail" placeholder="name@example.com" name="email">
+        <p class="errorValid" id="formContErrorCorreo"></p>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Teléfono</label>
+        <input class="form-control" id="formContTelefono" rows="1" placeholder="Ingresa tu número telefónico" name="telefono"></input>
+        <p class="errorValid" id="formContErrorTelefono"></p>
+    </div>
+        <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
+        <input class="form-control" id="formContMensaje" rows="3" placeholder="Déjanos tu mensaje" name="mensaje"></input>
+        <p class="errorValid" id="formContErrorMensaje"></p>
+    </div>
+    <div>
+        <button class="btnEnviar btn btn-primary w-20" id="btnEnviarForm" type="submit" disabled>Enviar</button>
+    </div>
+</form>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>  
+<script src="../../JS/modulos/form.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

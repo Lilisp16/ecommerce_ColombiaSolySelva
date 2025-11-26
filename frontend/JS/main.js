@@ -1,3 +1,3 @@
-import { buscadorHeader } from "./modulos/buscadorHeader.js"
+import { buscadorHeader } from "../modulos/buscadorHeader.js"
 
 buscadorHeader();

@@ -1,36 +1,10 @@
-/* EL NAV */
 
-/* logo */
-#logo {
-  width: 80px;
-  height: 80px;
-}
 
 /* NAV LINKS */
-.nav-link.link-custom {
-  position: relative;
-  transition: color 0.3s;
-  font-weight: 500;
-  color: #3E2723;
-}
 
-.nav-link.link-custom::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 3px;
-  left: 0;
-  bottom: -5px;
-  background: linear-gradient(90deg, #F5EBDC, #3E2723, #4CAF50, #1B5E20);
-  transition: width 0.3s;
-}
-
-.nav-link.link-custom:hover::after {
-  width: 100%;
-}
 
 /* buscador expandible */
-.inputBuscar {
+/* .inputBuscar {
   width: 0;
   padding: 0;
   opacity: 0;
@@ -39,33 +13,11 @@
   border: 1px solid #3E2723;
 }
 
-.inputBuscar.show {
-  width: 180px; /* en desktop */
-  padding: 0 10px;
-  opacity: 1;
-  margin-right: 10px;
-}
+ */
+/* 
 
-.search-btn {
-  background-color: #F5EBDC;
-  border: 1px solid #3E2723;
-  color: #3E2723;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: background 0.3s;
-}
 
-.search-btn:hover {
-  background-color: #4CAF50;
-  color: #fff;
-}
-
-/* iconos mi cuenta carrito */
+/* 
 .icon-circle {
   border: 2px solid;
   border-radius: 50%;
@@ -88,13 +40,9 @@
   margin-top: 3px; 
   text-align: center; 
 }
-
-/* espacios link */
 ul.navbar-nav { 
   gap: 3rem; 
 }
-
-/* nav fija */
 .navbar-fixed {
   position: fixed;
   top: 0;
@@ -102,27 +50,21 @@ ul.navbar-nav {
   width: 100%;
   z-index: 999;
 }
-
-/* RESPONSIVE */
 @media (max-width: 992px) {
   .navbar-nav {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
   }
-
-  /* Agrupa buscador y iconos en columna */
   .d-flex.align-items-center {
     flex-direction: column;
     gap: 0.5rem;
     margin-top: 10px;
   }
-
-  /* Input buscador  */
   .inputBuscar.show {
     width: 140px;
   }
-}
+} */
 
 
 

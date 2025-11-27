@@ -8,26 +8,29 @@
     <title>Document</title>
     
     <style>
-        .btnEnviar{
-            background-color: #A33B20!important;
-        }
-        .btnEnviar:hover{
-            background-color: #1B5E20;
-        }
-        .errorValid{
-            color: red;
-        }
-        button:disabled{
-            background-color: gray!important;
-        }
-        .form-label{
-            font-weight: 600;
+        #formContacto {
+            .btn.btn-primary{
+                background-color: #A33B20 !important;
+            }
+            #btnEnviarForm.btnEnviar:hover{
+                background-color: #1B5E20 !important;
+
+            }
+            .errorValid{
+                color: red;
+            }
+            button:disabled{
+                background-color: gray!important;
+            }
+            .form-label{
+                font-weight: 600;
+            }
         }
     </style>
 </head>
 <body>
 
-<form class="container" id="formContacto"
+<form class="container p-4 bg-light" id="formContacto"
   action="https://formspree.io/f/mgvbdywe"
   method="POST"
   enctype="multipart/form-data"
@@ -52,7 +55,7 @@
         <p class="errorValid" id="formContErrorMensaje"></p>
     </div>
     <div>
-        <button class="btnEnviar btn btn-primary w-20" id="btnEnviarForm" type="submit" disabled>Enviar</button>
+        <button class="btn btn-primary btnEnviar w-20" id="btnEnviarForm" type="submit" disabled>Enviar</button>
     </div>
 </form>
 

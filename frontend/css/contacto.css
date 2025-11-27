@@ -1,1 +1,71 @@
 /*Estilos de contacto y acerca de nosotros*/
+ #formContacto {
+    .btn.btn-primary{
+        background-color: #A33B20 !important;
+    }
+    #btnEnviarForm.btnEnviar:hover{
+        background-color: #1B5E20 !important;
+
+    }
+    .errorValid{
+        color: red;
+    }
+    button:disabled{
+        background-color: gray!important;
+    }
+    .form-label{
+        font-weight: 600;
+    }
+}
+
+.tituloPoliticas {
+     .tratamientoDatos {
+        padding-left: 20px;
+        width: 30%;
+    
+            p{
+                color:  #4CAF50
+            }
+
+             .accordion-button {
+            
+                      background-color: #F5EBDC !important
+            }
+            .email{
+                color: #1B5E20;
+            }
+
+            /*  reemplazar el anillo azul class bootstrap por uno verde suave del borde */
+            .accordion-button:focus,
+            .accordion-button:focus-visible,
+            .accordion-button:active {
+            box-shadow: 0 0 0 0.22rem rgba(221, 234, 38, 0.18) !important; 
+            outline: none !important;
+            border-color:  #D4AF37 !important;
+            }
+
+    }
+
+        .bordeMixto {
+        border: 6px solid; 
+        border-image: linear-gradient(to right, #3E2723 20%, #4CAF50 60%,  #D4AF37 20% ) 1;
+        border-radius: 10px;
+        padding: 15px;
+        }
+
+        #collapseTratamientoDatos {
+        min-height: 10px; /* evita recalculo brusco */
+        }
+
+        h5{
+        color:  #3E2723;
+        padding-left: 20px;
+        }
+
+        .ley {
+        padding-left: 25px;
+}
+}
+.terminosCondiciones {
+    background-color: #e58f7a ;
+}

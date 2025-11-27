@@ -1,5 +1,8 @@
 /* Colores, fuentes, header, footer*  genera que se vayan a usar en toda las seccione*/
 header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
   nav {
     ul {
         font-size: 25px;
@@ -274,11 +277,11 @@ h2, .footer-title {
   }
 }
 
-.btn-primary,
+/* .btn-primary,
 .bg-primary {
   background-color: #d4af37 !important;
   border-color: #d4af37 !important;
-}
+} */
 
 .card-hover {
   transition: transform 0.6s, box-shadow 0.6s;

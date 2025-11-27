@@ -39,9 +39,9 @@
             .accordion-button:focus,
             .accordion-button:focus-visible,
             .accordion-button:active {
-            box-shadow: 0 0 0 0.22rem rgba(221, 234, 38, 0.18) !important; 
-            outline: none !important;
-            border-color:  #D4AF37 !important;
+                box-shadow: 0 0 0 0.22rem rgba(221, 234, 38, 0.18) !important; 
+                outline: none !important;
+                border-color:  #D4AF37 !important;
             }
 
     }
@@ -69,3 +69,45 @@
 .terminosCondiciones {
     background-color: #e58f7a ;
 }
+
+h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    .contenedorPreguntas {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .tarjeta {
+      background: white;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #ddd;
+    }
+
+    .pregunta {
+      background: #e58f7a;
+      color: black;
+      padding: 15px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .pregunta:hover {
+      background: #4CAF50;
+    }
+
+    .respuesta {
+      display: none;
+      padding: 15px;
+      background: #fafafa;
+      font-size: 15px;
+      color: #444;
+      border-top: 1px solid #ddd;
+    }
+    

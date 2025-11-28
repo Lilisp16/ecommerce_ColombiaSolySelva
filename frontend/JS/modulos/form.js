@@ -114,3 +114,16 @@ document.getElementById("formContacto").addEventListener("submit", async functio
 
       formulario.reset();
     }})
+
+        // Lógica del acordeón FAQ
+    const preguntas = document.querySelectorAll(".pregunta");
+
+    preguntas.forEach(pregunta => {
+      pregunta.addEventListener("click", () => {
+        const respuesta = pregunta.nextElementSibling;
+        
+        // Abrir/cerrar
+        respuesta.style.display = 
+          respuesta.style.display === "block" ? "none" : "block";
+      });
+    });

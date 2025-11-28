@@ -1,3 +1,7 @@
-import { buscadorHeader } from "../modulos/buscadorHeader.js"
+/* import { buscadorHeader } from "../modulos/buscadorHeader.js" */
+import { Carrito } from "./modulos/cart.js";
 
-buscadorHeader();
+const carrito = new Carrito("abrirCarrito");
+
+carrito.inicializar();
+/* buscadorHeader(); */

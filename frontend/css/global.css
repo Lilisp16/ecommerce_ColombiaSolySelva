@@ -115,7 +115,6 @@ header {
         }
     }
 
-
     @media (max-width: 990px) {
         .navbar-collapse  {
             display: flex;
@@ -131,6 +130,19 @@ header {
             }
         }
     }
+  }
+  .sidebar {
+    position: fixed;
+    right: -500px;
+    top: 0;
+    width: 500px;
+    height: 100%;
+    transition: 0.3s;
+    overflow-y: auto;
+  }
+
+  .sidebar.open {
+      right: 0;
   }
 }
 

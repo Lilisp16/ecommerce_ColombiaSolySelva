@@ -1,6 +1,6 @@
 /*Estilos de contacto y acerca de nosotros*/
  #formContacto {
-    .btn.btn-primary{
+    .btnEnviar{
         background-color: #A33B20 !important;
     }
     #btnEnviarForm.btnEnviar:hover{
@@ -70,11 +70,6 @@
     background-color: #e58f7a ;
 }
 
-h2 {
-      text-align: center;
-      color: #333;
-    }
-
     .contenedorPreguntas {
       max-width: 700px;
       margin: 0 auto;
@@ -110,4 +105,15 @@ h2 {
       color: #444;
       border-top: 1px solid #ddd;
     }
-    
+.imagenpoliticas{
+  display: flex;
+  justify-content: center;
+}
+
+.btnAceptar{
+  background-color: #D4AF37;
+}
+
+.btnAceptar:hover{
+  background-color:#4CAF50;
+}

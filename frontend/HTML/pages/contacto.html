@@ -64,213 +64,72 @@
               </div>
           </nav>
     </header>
-    <main>
-        
-        <form class="container p-4 bg-light my-4" id="formContacto"
-            action="https://formspree.io/f/mgvbdywe"
-            method="POST"
-            enctype="multipart/form-data">
-            <h2 class="text-center mb-3">Contactenos</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <form class="container p-4 bg-light my-4" id="formContacto"
+                action="https://formspree.io/f/mgvbdywe"
+                method="POST"
+                enctype="multipart/form-data">
+                <h2 class="text-center mb-3">Contáctenos</h2>
                 <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Nombre</label>
-                <input class="form-control" id="formContNombre" rows="1" placeholder="Ingresa tu nombre" name="Nombre"></input>
-                <p class="errorValid" id="formContErrorNombre"></p>
-            </div>
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Correo Electrónico</label>
-                <input type="email" class="form-control" id="formContEmail" placeholder="name@example.com" name="email">
-                <p class="errorValid" id="formContErrorCorreo"></p>
-            </div>
-            <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Teléfono</label>
-                <input class="form-control" id="formContTelefono" rows="1" placeholder="Ingresa tu número telefónico" name="telefono"></input>
-                <p class="errorValid" id="formContErrorTelefono"></p>
-            </div>
+                    <label for="exampleFormControlTextarea1" class="form-label">Nombre</label>
+                    <input class="form-control" id="formContNombre" rows="1" placeholder="Ingrese su nombre" name="Nombre"></input>
+                    <p class="errorValid" id="formContErrorNombre"></p>
+                </div>
                 <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
-                <input class="form-control" id="formContMensaje" rows="3" placeholder="Déjanos tu mensaje" name="mensaje"></input>
-                <p class="errorValid" id="formContErrorMensaje"></p>
-            </div>
-            <div>
-                <button class="btnEnviar btn btn-primary w-20" id="btnEnviarForm" type="submit" disabled>Enviar</button>
-            </div>
-        </form>
-
-<!-- Preguntas Frecuentes -->
-<div class="container p-4 bg-light my-4">
-    <div class="col">
-        <h2>Preguntas Frecuentes</h2>
-        <div class="contenedorPreguntas">
-            <div class="tarjeta">
-                <div class="pregunta">¿Cómo puedo registrarme?</div>
-                <div class="respuesta">Puedes registrarte haciendo clic en el botón "Crear cuenta" en la parte superior derecha de la página.</div>
-            </div>
-        <div class="tarjeta">
-            <div class="pregunta">¿Cómo recupero mi contraseña?</div>
-            <div class="respuesta">Haz clic en "¿Olvidaste tu contraseña?" y sigue las instrucciones enviadas a tu correo.</div>
-        </div>
-        <div class="tarjeta">
-            <div class="pregunta">¿Cuáles métodos de pago aceptan?</div>
-            <div class="respuesta">Aceptamos tarjetas de crédito, débito y paypal</div>
-        </div>
-        </div>
-    </div>
-       
-<!-- Tratamiento Datos -->
-    <div class="col">
-    <section class="politica container p-0">
-        <div class="tituloPoliticas mb-2 card bg-light p-3 boder-black border-3">
-            <button class="accordion-button collapsed " 
-                type="button" 
-                data-bs-toggle="collapse" 
-                data-bs-target="#collapseTratamientoDatos"
-                aria-expanded="false" 
-                aria-controls="collapseTratamientoDatos">
-            <div class="text-start">
-            <h3 class="m-2 text-center">Políticas de Tratamiento de Datos Personales</h3>
-            <small class="text-muted d-block ley">De acuerdo con la Ley 1581 de 2012 de Protección de Datos Personales (Habeas Data) en Colombia</small>
-            </div>
-        </button>
+                    <label for="exampleFormControlInput1" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="formContEmail" placeholder="name@example.com" name="email">
+                    <p class="errorValid" id="formContErrorCorreo"></p>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Teléfono</label>
+                    <input class="form-control" id="formContTelefono" rows="1" placeholder="Ingrese su número telefónico" name="telefono"></input>
+                    <p class="errorValid" id="formContErrorTelefono"></p>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
+                    <input class="form-control" id="formContMensaje" rows="3" placeholder="Déjenos tu mensaje" name="mensaje"></input>
+                    <p class="errorValid" id="formContErrorMensaje"></p>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="checkDatosPersonales" onchange="validarForm()">
+                    <label class="form-check-label" for="checkDefault">Acepto la Política de Tratamiento de Datos</label>
+                    <a href="./ttoDatosPersonales.html">Consúltela Aquí</a>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="checkGarantias" onchange="validarForm()">
+                    <label class="form-check-label" for="checkDefault">Conozco los términos y condiciones de garantías</label>
+                    <a href="./terminosGarantias.html">Consúltelas Aquí</a>
+                </div>
+                <div class="text-end">
+                    <button class="btnEnviar btn btn-primary w-20" id="btnEnviarForm" type="submit" disabled>Enviar</button>
+                </div>
+            </form>
         </div>
 
-
-    <div class="card-body tratamientoDatos">
-    <div id="collapseTratamientoDatos" class="accordion-collapse collapse mt-3 bordeMixto">
-        <div class="container-sm ">
-
-            <div class="accordion" id="accordionPanelsStayOpenExample ">
-
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                <p class="fs-5">Datos que recopilamos</p> 
-                </button>
-                </h2>
-                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
-                <div class="accordion-body fs-6" >
-                Recopilamos información como nombre, correo electrónico, dirección, teléfono y datos de navegación, con el fin de brindarte un servicio personalizado y seguro.
+        <!-- Preguntas Frecuentes -->
+        <div class="col-6 container p-4 bg-light my-4">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="contenedorPreguntas">
+                <div class="tarjeta">
+                    <div class="pregunta">¿Cómo puedo registrarme?</div>
+                    <div class="respuesta">Puedes registrarte haciendo clic en el botón "Crear cuenta" en la parte superior derecha de la página.</div>
                 </div>
+                <div class="tarjeta">
+                    <div class="pregunta">¿Cómo recupero mi contraseña?</div>
+                    <div class="respuesta">Haz clic en "¿Olvidaste tu contraseña?" y sigue las instrucciones enviadas a tu correo.</div>
                 </div>
-            </div>
-
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                <p class="fs-5">Finalidad del tratamiento</p> 
-                </button>
-                </h2>
-                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
-                <div class="accordion-body" style="font-size: 1rem">
-                Usamos tus datos para procesar pedidos, enviar información sobre productos, mejorar nuestros servicios y cumplir con obligaciones legales.
+                <div class="tarjeta">
+                    <div class="pregunta">¿Cuáles métodos de pago aceptan?</div>
+                    <div class="respuesta">Aceptamos tarjetas de crédito, débito y paypal</div>
                 </div>
-                </div>
-            </div>
-
-            
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                    <p class="fs-5">Protección de datos</p> 
-                </button>
-                </h2>
-                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
-                <div class="accordion-body" style="font-size: 1rem">
-                Implementamos medidas de seguridad técnicas y administrativas para garantizar la confidencialidad, integridad y disponibilidad de tus datos personales
-                </div>
-                </div>
-            </div>
-
-
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
-                <p class="fs-5">Derechos del usuario</p> 
-                </button>
-                </h2>
-                <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
-                <div class="accordion-body" style="font-size: 1rem">
-                    Puedes acceder, rectificar, actualizar o solicitar la eliminación de tus datos, así como oponerte al tratamiento de los mismos según la ley vigente.
-                </div>
-                </div>
-            </div>
             </div>
         </div>
-    </div>
-
     </div>
 </div>
-        </section>
 
-        <!-- Terminos y Condiciones -->
-        <section class="terminosCondiciones container card py-4 my-4">
-            <div class="container">
-            <h2 class="text-center mb-5 tituloNV">Terminos y Condiciones</h2>
-            <div class="row">
-                <main class="container mb-5">
-                    <div class="card shadow-sm p-4 mb-4">
-                    <h2 class="mb-3">1. Objeto del Documento</h2>
-                    <p>El presente documento establece los términos y condiciones aplicables a las garantías ofrecidas por <strong>Artesanías Colombianas</strong>, en adelante "la Empresa", para todos los productos artesanales adquiridos a través de nuestra plataforma digital. Estas disposiciones se rigen por la normatividad colombiana vigente en materia de protección al consumidor (Ley 1480 de 2011 - Estatuto del Consumidor).</p>
-                    </div>
-                    
-                    
-                    <div class="card shadow-sm p-4 mb-4">
-                    <h2 class="mb-3">2. Naturaleza de los Productos</h2>
-                    <p>Nuestros productos son elaborados de manera artesanal por comunidades y artistas colombianos. Debido a su naturaleza manual, pueden existir variaciones en color, textura, medidas y acabados. Estas variaciones no se consideran defectos de fabricación, sino características propias del trabajo artesanal.</p>
-                    </div>
-                    
-                    
-                    <div class="card shadow-sm p-4 mb-4">
-                    <h2 class="mb-3">3. Cobertura de la Garantía</h2>
-                    <p>La garantía se otorga exclusivamente por defectos de fabricación o materiales que afecten la funcionalidad del producto. La duración de la garantía es de <strong>30 días calendario</strong> contados desde la entrega.</p>
-                    <p>La garantía <strong>no cubre</strong> daños ocasionados por:</p>
-                    <ul>
-                    <li>Uso inadecuado o distinto al previsto.</li>
-                    <li>Golpes, caídas o exposición a humedad excesiva.</li>
-                    <li>Manipulación incorrecta del usuario.</li>
-                    <li>Modificaciones o intervenciones no autorizadas.</li>
-                    </ul>
-                    </div>
-                    
-                    
-                    <div class="card shadow-sm p-4 mb-4">
-                    <h2 class="mb-3">4. Procedimiento para Hacer Efectiva la Garantía</h2>
-                    <p>Para solicitar la garantía, el usuario deberá:</p>
-                    <ol>
-                    <li>Comunicar la solicitud al servicio al cliente dentro del plazo establecido.</li>
-                    <li>Presentar evidencia del defecto (fotografía o revisión física).</li>
-                    <li>Entregar el producto en condiciones adecuadas junto con el comprobante de compra.</li>
-                    </ol>
-                    <p>La Empresa realizará una revisión técnica en un plazo máximo de <strong>10 días hábiles</strong> para determinar la viabilidad de la garantía.</p>
-                    </div>
-                    
-                    
-                    <div class="card shadow-sm p-4 mb-4">
-                    <h2 class="mb-3">5. Derecho de Retracto</h2>
-                    <p>El consumidor cuenta con un plazo de <strong>5 días hábiles</strong> para ejercer el derecho de retracto. El producto debe devolverse en perfecto estado y sin señales de uso. Los costos de transporte corren por cuenta del comprador.</p>
-                    </div>
-                    
-                    
-                    <div class="card shadow-sm p-4 mb-4">
-                    <h2 class="mb-3">6. Limitación de Responsabilidad</h2>
-                    <p>La Empresa no será responsable por pérdidas indirectas, lucro cesante o daños derivados del uso inadecuado del producto. La responsabilidad se limita al valor pagado.</p>
-                    </div>
-                    
-                    
-                    <div class="card shadow-sm p-4 mb-4">
-                    <h2 class="mb-3">7. Protección de Datos</h2>
-                    <p>La información personal será tratada conforme a nuestra Política de Privacidad y la Ley 1581 de 2012.</p>
-                    </div>
-                    
-                    
-                    <div class="card shadow-sm p-4 mb-4">
-                    <h2 class="mb-3">8. Aceptación de los Términos</h2>
-                    <p>Al realizar una compra en la plataforma, el usuario declara haber leído y aceptado estos Términos y Condiciones de Garantías.</p>
-                    </div>
-                </main>
-            </div>
-        </section>
-    </main>
-    <footer class="footer-artesanal">
+<footer class="footer-artesanal">
     <!-- Franja artesanal arriba -->
     <div class="artisan-wave-clean"></div>
 

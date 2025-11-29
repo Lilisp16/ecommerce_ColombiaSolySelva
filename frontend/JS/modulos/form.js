@@ -2,6 +2,8 @@ const nombreUsu=document.getElementById("formContNombre");
 const correoUsu=document.getElementById("formContEmail");
 const telefonoUsu=document.getElementById("formContTelefono");
 const mensajeUsu=document.getElementById("formContMensaje");
+const aceptacionTtoDatos = document.getElementById("checkDatosPersonales");
+const aceptacionGarantias = document.getElementById("checkGarantias");
 
 const errorNombreUsu=document.getElementById("formContErrorNombre");
 const errorMensajeUsu=document.getElementById("formContErrorMensaje");
@@ -11,18 +13,23 @@ const errorCorreoUsu=document.getElementById("formContErrorCorreo");
 const btnEnviar=document.getElementById("btnEnviarForm")
 
 function validarForm(){
-    if (validarNombre() && validarCorreo() && validarMensaje() && validarTelefono()){
+    if (validarNombre() && validarCorreo() && validarMensaje() && validarTelefono() && validarchecks()){
         btnEnviar.disabled=false
     }else {
         btnEnviar.disabled=true
     }
 }
 
+function validarchecks(){
+    return(aceptacionTtoDatos.checked && aceptacionGarantias.checked)
+
+}
+
 function validarNombre(){
     const nombreU = nombreUsu.value.trim();
 
     if (nombreU === ""){
-        errorNombreUsu.innerText="Por favor haznos saber tu nombre"
+        errorNombreUsu.innerText="Por favor ingrese su nombre"
         return false;
     } else {
         errorNombreUsu.innerText=""
@@ -38,10 +45,10 @@ nombreUsu.addEventListener("blur",()=>{
 function validarCorreo(){
     const correoU = correoUsu.value.trim();
     if (correoU === ""){
-        errorCorreoUsu.innerText="Por favor registra tu correo electrónico"
+        errorCorreoUsu.innerText="Por favor registra su correo electrónico"
         return false;
     } else if (!correoU.includes("@") || !correoU.includes(".")){
-        errorCorreoUsu.innerText="Por favor registra un correo válido"
+        errorCorreoUsu.innerText="Por favor registre un correo válido"
         return false;
     } else {
         errorCorreoUsu.innerText=""
@@ -57,7 +64,7 @@ const validarTelefono = () =>{
     telefonoUsu.value = telefonoUsu.value.replace(/[^0-9]/g,"");
     const telefonoU = telefonoUsu.value.trim();
     if (telefonoU===""){
-        errorTelefonoUsu.innerText = "Por favor registra un número telefónico válido. Este campo solo acepta números"
+        errorTelefonoUsu.innerText = "Por favor registre un número telefónico válido. Este campo solo acepta números"
         return false;
     } else if (telefonoU.length!==10){
         errorTelefonoUsu.innerText = "El teléfono debe contener 10 caracteres numéricos"
@@ -82,7 +89,7 @@ function validarMensaje(){
     const mensajeU = mensajeUsu.value.trim();
 
     if (mensajeU === ""){
-        errorMensajeUsu.innerText="Por favor déjanos un mensaje"
+        errorMensajeUsu.innerText="Por favor déjenos su mensaje"
         return false;
     } else {
         errorMensajeUsu.innerText=""
@@ -107,7 +114,7 @@ document.getElementById("formContacto").addEventListener("submit", async functio
     if (response.ok) {
       Swal.fire({
         icon: "success",
-        title: "¡Hemos recibido tu mensaje!",
+        title: "¡Hemos recibido su mensaje!",
         text: "Nos pondremos en contacto muy pronto",
         confirmButtonColor: "#A33B20"
       });

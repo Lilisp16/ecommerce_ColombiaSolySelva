@@ -135,8 +135,9 @@ header {
 }
 
 h2{
-  font-family: 'Caveat', cursive;
+  font-family: 'Times New Roman' !important;
   color: #1B5E20;
+  text-align: center;
 }
 
 body {
@@ -149,6 +150,10 @@ h2, .footer-title {
 
 }
 
+h4{
+  font-weight: 800;
+  background-color:#a67c52;
+}
 
 .footer-artesanal {
   font-family: 'Lora', serif;

@@ -76,7 +76,7 @@
 }
 
 .flip-card-back {
-  background-color: #F5EBDC; 
+  background-color:#f3dfc1; 
   color: #333;
   transform: rotateY(180deg);
 }
@@ -84,6 +84,7 @@
 .flip-card-back p {
   font-size: 1.2em; 
   margin-top: 10px;
+  background-color: #D4AF37;
 }
 
 .flip-card-front i {
@@ -113,4 +114,9 @@
 .artesanosqs{
   width: 100px;
   height: 100px;
+}
+
+#imgequipo{
+  height: 240px;
+  width: 60px;
 }

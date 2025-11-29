@@ -1,10 +1,11 @@
 /*Estilos de contacto y acerca de nosotros*/
  #formContacto {
     .btnEnviar{
-        background-color: #A33B20 !important;
+        background-color: #e58f7a !important;
+        color: black;
     }
     #btnEnviarForm.btnEnviar:hover{
-        background-color: #1B5E20 !important;
+        background-color: #4CAF50 !important;
 
     }
     .errorValid{
@@ -18,93 +19,17 @@
     }
 }
 
-.tituloPoliticas {
-     .tratamientoDatos {
-        padding-left: 20px;
-        width: 30%;
-    
-            p{
-                color:  #4CAF50
-            }
-
-             .accordion-button {
-            
-                      background-color: #F5EBDC !important
-            }
-            .email{
-                color: #1B5E20;
-            }
-
-            /*  reemplazar el anillo azul class bootstrap por uno verde suave del borde */
-            .accordion-button:focus,
-            .accordion-button:focus-visible,
-            .accordion-button:active {
-                box-shadow: 0 0 0 0.22rem rgba(221, 234, 38, 0.18) !important; 
-                outline: none !important;
-                border-color:  #D4AF37 !important;
-            }
-
-    }
-
-        .bordeMixto {
-        border: 6px solid; 
-        border-image: linear-gradient(to right, #3E2723 20%, #4CAF50 60%,  #D4AF37 20% ) 1;
-        border-radius: 10px;
-        padding: 15px;
-        }
-
-        #collapseTratamientoDatos {
-        min-height: 10px; /* evita recalculo brusco */
-        }
-
-        h5{
-        color:  #3E2723;
-        padding-left: 20px;
-        }
-
-        .ley {
-        padding-left: 25px;
-}
-}
-.terminosCondiciones {
-    background-color: #e58f7a ;
+.accordion-button:not(.collapsed) {
+    background-color: #F5EBDC !important;
+    color: black !important;
+    box-shadow: none !important;
+    border-color: transparent !important;
 }
 
-    .contenedorPreguntas {
-      max-width: 700px;
-      margin: 0 auto;
-    }
+.accordion-button{
+  font-weight: 600;
+}
 
-    .tarjeta {
-      background: white;
-      margin-bottom: 10px;
-      border-radius: 8px;
-      overflow: hidden;
-      border: 1px solid #ddd;
-    }
-
-    .pregunta {
-      background: #e58f7a;
-      color: black;
-      padding: 15px;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-
-    .pregunta:hover {
-      background: #4CAF50;
-    }
-
-    .respuesta {
-      display: none;
-      padding: 15px;
-      background: #fafafa;
-      font-size: 15px;
-      color: #444;
-      border-top: 1px solid #ddd;
-    }
 .imagenpoliticas{
   display: flex;
   justify-content: center;
@@ -116,4 +41,9 @@
 
 .btnAceptar:hover{
   background-color:#4CAF50;
+}
+
+h4{
+  font-weight: 800;
+  background-color:#f1ddbf;
 }

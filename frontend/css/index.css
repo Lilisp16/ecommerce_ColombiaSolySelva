@@ -1,0 +1,74 @@
+/* ESTILOS HERO */
+    .estilosHero{
+        position: relative;
+
+      .hero {
+        background: 
+            linear-gradient(#f8f9fa, rgba(0, 0, 0, 0.37)),
+            url('/frontend/IMG/ar-1.png') no-repeat center center;
+        background-size: cover;
+        height: 70vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative; 
+        z-index: 2;        
+    }
+
+    .estilosHero .hero h1,
+.estilosHero .hero p,
+.estilosHero .hero button {
+    position: relative;
+    z-index: 2; 
+}
+
+
+    .tituloHero{
+        color: #4CAF50; 
+        font-weight: bold; 
+        font-family: 'Caveat', cursive;
+    }
+    
+
+    .btnHero {
+    background-color: #a33a2084;
+    color: white;
+    border: 1px solid #4e342ea5;
+    padding: 12px 26px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: box-shadow 0.4s ease, background-color 0.3s ease;
+    box-shadow: 0px 0px 0px rgba(76, 175, 80, 0); 
+}
+
+
+.btnHero:hover {
+    background-color:  #4caf4fd2; 
+    box-shadow:
+        0 0 12px 4px rgba(76, 175, 80, 0.55),   
+        0 0 20px 8px rgba(78, 52, 46, 0.35);    
+}
+
+
+.btnHero:active {
+    transform: scale(0.98);
+}
+
+ }
+
+/* HASTA AQUI ESTILOS HERO */
+
+
+/* ESTILOS  CAROUSEL */
+
+/* HASTA AQUI ESTILO CAROUSEL */
+
+
+
+/* ESTILOS  PRODUCTOS DESTACADOS */
+
+
+/* HASTA AQUI ESTILOS PRODUCTOS DESTACADOS */
+

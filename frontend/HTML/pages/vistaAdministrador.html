@@ -1,26 +1,175 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vista administrador</title>
-    <!-- Enlances bootstraps 
-        bootstrap normal e iconos
-        global.css
-        vistaAdminsitrador.css 
-    -->
-</head>
-<body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Base</title>
+
+    <!-- BOOTSTRAP -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../../CSS/global.css" />
+    <link rel="stylesheet" href="../../css/vistaadministrador.css" />
+
+    <!-- ICONOS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
     <header>
-        <!-- Barra navegacion con un unico enlace de productos 25% -->
+      <nav
+        class="navbar navbar-expand-lg navbar-light bg-light pt-4 shadow-sm navbar-fixed"
+      >
+        <div
+          class="container-xxl d-flex justify-content-between align-items-center"
+        >
+          <!-- Móvil -->
+          <div class="navMovil d-flex justify-content-between">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+              <img id="logo" src="../../IMG/Logo.png" alt="Logo" />
+            </a>
+
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#mainNav"
+              aria-controls="mainNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+
+          <!-- Links -->
+          <div class="collapse navbar-collapse" id="mainNav">
+            <!-- Menú centrado -->
+            <ul class="navbar-nav mx-auto gap-3 mb-2 mb-lg-0 text-center">
+              <li class="nav-item">
+                <a class="nav-link link-custom" href="./inicio.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link link-custom" href="./productos.html"
+                  >Productos</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link link-custom" href="./historias.html"
+                  >Historias</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link link-custom" href="./nosotros.html"
+                  >Nosotros</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link link-custom" href="./contacto.html"
+                  >Contacto</a
+                >
+              </li>
+            </ul>
+
+            <!-- Buscador, usuario y carrito -->
+            <div class="searchAccountSection d-flex gap-3 align-items-top">
+              <!-- Buscador -->
+              <form class="d-flex m-0 h-75" role="search">
+                <input
+                  class="form-control inputBuscar"
+                  type="search"
+                  placeholder="Buscar..."
+                  aria-label="Buscar"
+                />
+                <button class="btn search-btn" type="button">
+                  <i class="fas fa-search"></i>
+                </button>
+              </form>
+
+              <!-- Cuenta -->
+              <div class="icon text-center">
+                <i class="fas fa-user icon-circle icon-user"></i>
+                <div class="icon-text">Mi cuenta</div>
+              </div>
+
+              <!-- Carrito -->
+              <div class="icon text-center" id="abrirCarrito">
+                <i
+                  class="fas fa-shopping-cart position-relative icon-circle icon-cart"
+                >
+                  <span
+                    id="cartCount"
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                  ></span>
+                </i>
+                <div class="icon-text">Carrito</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
     </header>
-    <main>
-        <section style="width: 40%;">
-            <h1>Diana Espacios</h1>
-        </section>
-        <section style="width: 35%;">
-            <h1>Diana Espacios</h1>
-        </section>
-    </main>
-</body>
+
+    <!-- SIDEBAR ADMIN -->
+    <div id="sidebar-admin" class="sidebar p-3">
+      <br><br>
+      <a href="#"><i class="fa fa-home"></i> Inicio</a>
+      <a href="#"><i class="fa fa-chart-line"></i> Dashboard</a>
+      <a href="#"><i class="fa fa-cog"></i> Configuración</a>
+    </div>
+
+    <!-- BOTÓN PARA COLAPSAR -->
+    <button
+      class="btn position-fixed m-3"
+      onclick="toggleSidebar()"
+    >
+      <i class="bi bi-list"></i>
+    </button>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="page-content">
+      <div id="main" class="main container-fluid p-4">
+        <div class="row g-3 mt-2">
+          <div class="col-12 col-md-6">
+            <div class="chart-box">
+              <h4>Área de trabajo 1</h4>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <div class="chart-box">
+              <h4>Área de trabajo 2</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOTSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- SCRIPTS -->
+    <script>
+      function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar-admin");
+        const pageContent = document.querySelector(".page-content");
+    
+        sidebar.classList.toggle("collapsed");
+        pageContent.classList.toggle("collapsed");
+      }
+    </script>
+    
+  </body>
 </html>

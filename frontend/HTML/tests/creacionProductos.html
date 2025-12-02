@@ -70,7 +70,13 @@ const preview=document.getElementById("preview");
 
 inputFile.addEventListener("change", function() {
     if(this.files && this.files[0]){
-        inputNombre.value = this.files[0].name;
+        const file = this.files[0];
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            preview.src = e.target.result;
+            preview.style.display = "block";
+        }
+        reader.readAsDataURL(file);
     }
 });
 
@@ -88,7 +94,7 @@ inputFile.addEventListener("change", function() {
     }
 });
 </script>
-
+<script src="../../JS/modulos/creacionProducto.js"></script>
 
 </body>
 </html>

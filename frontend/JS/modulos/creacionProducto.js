@@ -1,9 +1,10 @@
+const form = document.querySelector("form");
 // Evento submit
 form.addEventListener("submit", (e) => {
     e.preventDefault(); // evita que recargue la página
 
     // Selección de elementos
-    const form = document.querySelector("form");
+    
     const inputId = document.getElementById("id");
     const inputNombre = document.getElementById("nombre");
     const inputDescripcion = document.getElementById("descripcion");

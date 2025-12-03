@@ -140,19 +140,144 @@
 
     <!-- CONTENIDO PRINCIPAL -->
     <div class="page-content">
-      <div id="main" class="main container-fluid p-4">
-        <div class="row g-3 mt-2">
-          <div class="col-12 col-md-6">
-            <div class="chart-box">
-              <h4>Área de trabajo 1</h4>
-            </div>
-          </div>
+      <div id="main" class="main container-fluid">
+        <div class="row g-2 mt-2">
+          <div class="w-50">
+            <div class="card h-100 p-4" >
+                <div>
+                    <h2 class="mb-3">Catalogo de Productos</h2>
+                    <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-4">
+                        <label for="validationCustom01" class="form-label">Id</label>
+                        <input type="number" class="form-control" id="id" placeholder="Id" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationCustom02" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+                    </div>
+                    <div class="col-md-10">
+                        <label for="validationCustom02" class="form-label">Descripción</label>
+                        <input type="text" class="form-control" id="descripcion" placeholder="Descripción" required>
+                    </div>
+                    <div class="col-md-5">
+                        <label for="validationCustom02" class="form-label">Categoría</label>
+                        <input type="text" class="form-control" id="categoria" placeholder="Categoría"required>
+                    </div>
+                    <div class="col-md-5">
+                        <label for="imagen" class="form-label">Imágen</label>
+                        <div class="input-group has-validation">
+                            <input type="file" class="form-control" id="imagen" accept="image/*"aria-describedby="inputGroupPrepend" placeholder="Seleccione una imágen" required>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <label for="validationCustom03" class="form-label">Saldo Inventario</label>
+                        <input type="number" class="form-control" id="stock" placeholder=0 required>
+                    </div>
+                    <div class="col-md-5">
+                        <label for="validationCustom05" class="form-label">Precio Venta</label>
+                        <input type="number" class="form-control" id="precio" placeholder=0 required>
+                    </div>
+                    <div class="col-md-10">
+                        <label for="validationCustom05" class="form-label">Información Adicional</label>
+                        <input type="text" class="form-control" id="infoAdicional" placeholder="Agregue información detallada del producto">
+                    
+                        <img id="preview" src="" alt="Vista previa" class="img-fluid rounded mt-2" style="max-width:500px;">
 
-          <div class="col-12 col-md-6">
-            <div class="chart-box">
-              <h4>Área de trabajo 2</h4>
+                    <div class="col-12">
+                        <button class="btn btn-primary btnCrear d-flex mx-auto" type="submit">Crear Producto</button>
+                    </div>
+                    </form>
+                </div>
             </div>
           </div>
+        </div>
+        <div class="w-50 gap-3 d-flex flex-column">
+            <div class=" card h-50 p-3">
+              <h3 class="text-center mb-3">Añadidos Recientemente</h3>
+              <div class="d-flex justify-content-center">
+                <div class="cartItem card rounded-4 mb-3" style="max-width: 500px;">
+                    <div class="card-body  rounded-4 border border-dark p-3 text-dark">
+                        <div class="d-flex align-items-center">
+                        <div class="me-2 d-flex flex-column gap-4">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <i class="bi bi-trash3"></i>
+                        </div>
+                        <div class="me-3">
+                            <div class="border border-black bg-dark rounded-4" style="width: 80px; height: 80px;">
+                                <img src="${item.img}">
+                            </div>
+                        </div>
+
+                        <div class="flex-grow-1">
+                            <h5 class="card-title mb-0 fw-normal text-truncate text-nowrap d-block" style="max-width: 150px;">
+                                ${item}asdfasdfasdfasdfasdfasdf
+                            </h5>
+                            <p class="card-text mb-0">
+                            <small class="text-secondary fw-bold">En stock</small>
+                            </p>
+                            <p class="card-text fw-bold fs-5">$ ${item.price} </p>
+                        </div>
+
+                        <div class="d-flex flex-column align-items-end justify-content-between" style="height: 80px;">
+                            <i class="bi bi-heart-fill"></i>
+                            <div class="d-flex align-items-center gap-2">
+                            <button class="text-white btn btn-outline-dark btn-sm p-0 rounded-2 d-flex justify-content-center align-items-center" style="width: 25px; height: 25px;">-</button>
+                            <span class="fw-bold">${item.quantity}</span>
+                            <button class="text-white btn btn-outline-dark btn-sm p-0 rounded-2 d-flex justify-content-center align-items-center" style="width: 25px; height: 25px;">+</button>
+                            </div>  
+                        </div>
+
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="card h-50 p-3">
+              <h3 class="text-center mb-3">Eliminados Recientemente</h3>
+              <div class="d-flex justify-content-center">
+                <div class="cartItem card rounded-4 mb-3" style="max-width: 500px;">
+                    <div class="card-body  rounded-4 border border-dark p-3 text-dark">
+                        <div class="d-flex align-items-center">
+                        <div class="me-2 d-flex flex-column gap-4">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <i class="bi bi-trash3"></i>
+                        </div>
+                        <div class="me-3">
+                            <div class="border border-black bg-dark rounded-4" style="width: 80px; height: 80px;">
+                                <img src="${item.img}">
+                            </div>
+                        </div>
+
+                        <div class="flex-grow-1">
+                            <h5 class="card-title mb-0 fw-normal text-truncate text-nowrap d-block" style="max-width: 150px;">
+                                ${item}asdfasdfasdfasdfasdfasdf
+                            </h5>
+                            <p class="card-text mb-0">
+                            <small class="text-secondary fw-bold">En stock</small>
+                            </p>
+                            <p class="card-text fw-bold fs-5">$ ${item.price} </p>
+                        </div>
+
+                        <div class="d-flex flex-column align-items-end justify-content-between" style="height: 80px;">
+                            <i class="bi bi-heart-fill"></i>
+                            <div class="d-flex align-items-center gap-2">
+                            <button class="text-white btn btn-outline-dark btn-sm p-0 rounded-2 d-flex justify-content-center align-items-center" style="width: 25px; height: 25px;">-</button>
+                            <span class="fw-bold">${item.quantity}</span>
+                            <button class="text-white btn btn-outline-dark btn-sm p-0 rounded-2 d-flex justify-content-center align-items-center" style="width: 25px; height: 25px;">+</button>
+                            </div>  
+                        </div>
+
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
         </div>
       </div>
     </div>
@@ -170,6 +295,7 @@
         pageContent.classList.toggle("collapsed");
       }
     </script>
+    <script type="module" src="../../JS/modulos/creacionProducto.js"></script>
     
   </body>
 </html>

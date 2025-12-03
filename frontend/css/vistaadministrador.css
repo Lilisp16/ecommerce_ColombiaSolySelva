@@ -38,7 +38,7 @@
 /* Ajustar contenido para que no quede debajo del sidebar */
 .page-content {
     margin-left: 280px; /* deja espacio para el sidebar */
-    padding: 20px;
+    padding: 10px;
     background-color: #F5EBDC; /* Beige natural */
     transition: margin 0.3s ease;
 }

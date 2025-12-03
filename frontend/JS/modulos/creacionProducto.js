@@ -1,20 +1,20 @@
-// Selección de elementos
-const form = document.querySelector("form");
-const inputId = document.getElementById("id");
-const inputNombre = document.getElementById("nombre");
-const inputDescripcion = document.getElementById("descripcion");
-const inputCategoria = document.getElementById("categoria");
-const inputImagen = document.getElementById("imagen");
-const inputStock = document.getElementById("stock");
-const inputPrecio = document.getElementById("precio");
-const inputInfo = document.getElementById("infoAdicional");
-
-// Array para almacenar productos
-let productos = [];
-
 // Evento submit
 form.addEventListener("submit", (e) => {
     e.preventDefault(); // evita que recargue la página
+
+    // Selección de elementos
+    const form = document.querySelector("form");
+    const inputId = document.getElementById("id");
+    const inputNombre = document.getElementById("nombre");
+    const inputDescripcion = document.getElementById("descripcion");
+    const inputCategoria = document.getElementById("categoria");
+    const inputImagen = document.getElementById("imagen");
+    const inputStock = document.getElementById("stock");
+    const inputPrecio = document.getElementById("precio");
+    const inputInfo = document.getElementById("infoAdicional");
+
+    // Array para almacenar productos
+    let productos = [];
 
     const file = inputImagen.files[0];
 

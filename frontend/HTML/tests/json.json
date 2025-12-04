@@ -1,5 +1,5 @@
 [
-  /* MODA Y ACCESORIOS */
+   
   {
     "id": 1,
     "nombre": "Mochila Wayuu",
@@ -37,7 +37,7 @@
     "imagen": "https://pin.it/2WF450YiU"
   },
 
-  /* DECORACIÓN PARA EL HOGAR */
+  
   {
     "id": 5,
     "nombre": "Figura de Madera Tallada",
@@ -75,7 +75,7 @@
     "imagen": "https://pin.it/6eVnNYqdn"
   },
 
-  /* ARTE Y RECUERDOS */
+  
   {
     "id": 9,
     "nombre": "Sombrero Vueltiao",
@@ -113,7 +113,7 @@
     "imagen": "https://pin.it/TI0JAuxJI"
   },
 
-  /* UTENCILIOS Y PRODUCTOS FUNCIONALES */
+  
   {
     "id": 13,
     "nombre": "Tazón de Cerámica Negra",

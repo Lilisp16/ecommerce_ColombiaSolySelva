@@ -19,47 +19,47 @@
 <section class="container">
     <div>
         <h2>Catalogo de Productos</h2>
-        <form class="row g-3 needs-validation" novalidate>
-        <div class="col-md-4">
-            <label for="validationCustom01" class="form-label">Id</label>
-            <input type="number" class="form-control" id="id" placeholder="Id" required>
-        </div>
-        <div class="col-md-6">
-            <label for="validationCustom02" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
-        </div>
-        <div class="col-md-10">
-            <label for="validationCustom02" class="form-label">Descripción</label>
-            <input type="text" class="form-control" id="descripcion" placeholder="Descripción" required>
-        </div>
-        <div class="col-md-5">
-            <label for="validationCustom02" class="form-label">Categoría</label>
-            <input type="text" class="form-control" id="categoria" placeholder="Categoría"required>
-        </div>
-        <div class="col-md-5">
-            <label for="imagen" class="form-label">Imágen</label>
-            <div class="input-group has-validation">
-                <input type="file" class="form-control" id="imagen" accept="image/*"aria-describedby="inputGroupPrepend" placeholder="Seleccione una imágen" required>
-            </div>
-        </div>
-        <div class="col-md-5">
-            <label for="validationCustom03" class="form-label">Saldo Inventario</label>
-            <input type="number" class="form-control" id="stock" placeholder=0 required>
-        </div>
-        <div class="col-md-5">
-            <label for="validationCustom05" class="form-label">Precio Venta</label>
-            <input type="number" class="form-control" id="precio" placeholder=0 required>
-        </div>
-        <div class="col-md-10">
-            <label for="validationCustom05" class="form-label">Información Adicional</label>
-            <input type="text" class="form-control" id="infoAdicional" placeholder="Agregue información detallada del producto">
-        
-            <img id="preview" src="" alt="Vista previa" class="img-fluid rounded mt-2" style="max-width:500px;">
+        <form class="row g-3 needs-validation" novalidate id="creacionProducto">
+                    <div class="col-md-4">
+                        <label for="validationCustom01" class="form-label">Id</label>
+                        <input type="number" class="form-control" id="id" placeholder="Id" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationCustom02" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+                    </div>
+                    <div class="col-md-10">
+                        <label for="validationCustom02" class="form-label">Descripción</label>
+                        <input type="text" class="form-control" id="descripcion" placeholder="Descripción" required>
+                    </div>
+                    <div class="col-md-5">
+                        <label for="validationCustom02" class="form-label">Categoría</label>
+                        <input type="text" class="form-control" id="categoria" placeholder="Categoría"required>
+                    </div>
+                    <div class="col-md-5">
+                        <label for="imagen" class="form-label">Imágen</label>
+                        <div class="input-group has-validation">
+                            <input type="file" class="form-control" id="imagen" accept="image/*"aria-describedby="inputGroupPrepend" placeholder="Seleccione una imágen" required>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <label for="validationCustom03" class="form-label">Saldo Inventario</label>
+                        <input type="number" class="form-control" id="stock" placeholder=0 required>
+                    </div>
+                    <div class="col-md-5">
+                        <label for="validationCustom05" class="form-label">Precio Venta</label>
+                        <input type="number" class="form-control" id="precio" placeholder=0 required>
+                    </div>
+                    <div class="col-md-10">
+                        <label for="validationCustom05" class="form-label">Información Adicional</label>
+                        <input type="text" class="form-control" id="infoAdicional" placeholder="Agregue información detallada del producto">
+                    
+                        <img id="preview" src="" alt="Vista previa" class="img-fluid rounded mt-2" style="max-width:500px;">
 
-        <div class="col-12">
-            <button class="btn btn-primary btnCrear" type="submit">Crear Producto</button>
-        </div>
-        </form>
+                    <div class="col-12">
+                        <button class="btn btn-primary btnCrear d-flex mx-auto" type="submit">Crear Producto</button>
+                    </div>
+                    </form>
     </div>
 </section>
 

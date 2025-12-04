@@ -1,53 +1,63 @@
-const form = document.querySelector("form");
-// Evento submit
+import { LocalStorage } from "./localStorage.js";
+
+const productStorage = new LocalStorage('productos', []);
+
+const form = document.getElementById("creacionProducto");
+const inputId = form.querySelector("#id");
+const inputNombre = form.querySelector("#nombre");
+const inputDescripcion = form.querySelector("#descripcion");
+const inputCategoria = form.querySelector("#categoria");
+const inputImagen = form.querySelector("#imagen");
+const inputStock = form.querySelector("#stock");
+const inputPrecio = form.querySelector("#precio");
+const inputInfo = form.querySelector("#infoAdicional");
+
+
 form.addEventListener("submit", (e) => {
-    e.preventDefault(); // evita que recargue la página
-
-    // Selección de elementos
+    e.preventDefault();
     
-    const inputId = document.getElementById("id");
-    const inputNombre = document.getElementById("nombre");
-    const inputDescripcion = document.getElementById("descripcion");
-    const inputCategoria = document.getElementById("categoria");
-    const inputImagen = document.getElementById("imagen");
-    const inputStock = document.getElementById("stock");
-    const inputPrecio = document.getElementById("precio");
-    const inputInfo = document.getElementById("infoAdicional");
-
-    // Array para almacenar productos
-    let productos = [];
-
+     productStorage.validar();
+    let productos = productStorage.obtener(); 
+    
+    if (!Array.isArray(productos)) {
+        productos = [];
+    }
+    
     const file = inputImagen.files[0];
 
-    // FileReader para la imagen
     const reader = new FileReader();
+    
+    // Esta función se ejecuta ASÍNCRONAMENTE cuando la imagen se carga.
     reader.onload = function (event) {
-
-        // Crear objeto producto
+        
+    
         const producto = {
             id: inputId.value,
             nombre: inputNombre.value,
             descripcion: inputDescripcion.value,
             categoria: inputCategoria.value,
-            imagen: event.target.result, // Imagen en Base64
+            imagen: event.target.result,
             stock: inputStock.value,
             precio: inputPrecio.value,
             infoAdicional: inputInfo.value
         };
 
-        // Guardar en el array
         productos.push(producto);
-
-        // Mostrar en consola
-        console.log("Producto creado:");
-        console.log(producto);
+        productStorage.actualizar(productos);
+        
+        console.log("Productos guardados:", productos);
 
         // Limpiar formulario
         form.reset();
         document.getElementById("preview").src = "";
+        alert("🎉 Producto Creado Exitosamente");
     };
 
     if (file) {
+        // Inicia la lectura asíncrona del archivo
         reader.readAsDataURL(file);
+    } else {
+        // Manejar el caso donde no hay imagen seleccionada
+        alert("Por favor, selecciona una imagen para el producto.");
     }
 });

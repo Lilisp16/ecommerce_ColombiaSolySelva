@@ -17,7 +17,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="../../CSS/global.css" />
-    <link rel="stylesheet" href="../../css/vistaadministrador.css" />
+    <link rel="stylesheet" href="../../CSS/vistaadministrador.css" />
 
     <!-- ICONOS -->
     <link
@@ -144,9 +144,10 @@
         <div class="row g-2 mt-2">
           <div class="w-50">
             <div class="card h-100 p-4" >
-                <div>
-                    <h2 class="mb-3">Catalogo de Productos</h2>
-                    <form class="row g-3 needs-validation" novalidate>
+                <div >
+                    <h2 class="mb-3">Creacion de Productos</h2>
+                    <div id="contenedorCreacionProducto">
+                        <form class="row g-3 needs-validation" novalidate id="creacionProducto">
                     <div class="col-md-4">
                         <label for="validationCustom01" class="form-label">Id</label>
                         <input type="number" class="form-control" id="id" placeholder="Id" required>
@@ -187,6 +188,7 @@
                         <button class="btn btn-primary btnCrear d-flex mx-auto" type="submit">Crear Producto</button>
                     </div>
                     </form>
+                    </div>
                 </div>
             </div>
           </div>

@@ -5,6 +5,6 @@ import { headLinks } from "./modulos/headLinks.js"
 
 headLinks();
 mostrarHeader();
-const carrito = new Carrito("abrirCarrito");
 
+const carrito = new Carrito("abrirCarrito");
 carrito.inicializar();

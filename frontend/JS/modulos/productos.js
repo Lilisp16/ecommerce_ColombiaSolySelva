@@ -1,4 +1,3 @@
-
 const URL_JSON = "../../JS/modulos/json.json";
 
 // Contenedores del catálogo
@@ -6,7 +5,7 @@ const recomendadosBox = document.getElementById("recomendados");
 const nuevosBox = document.getElementById("nuevos");
 const ultimosBox = document.getElementById("ultimos");
 
-// tarjeta visual
+
 function crearTarjeta(producto) {
     return `
         <div class="col-md-3">
@@ -24,21 +23,39 @@ function crearTarjeta(producto) {
     `;
 }
 
-// Cargar JSON
-fetch(URL_JSON)
-    .then(res => res.json())
-    .then(productos => {
+function renderizarPagina(productos) {
+    // Tarjetas → Recomendados
+    recomendadosBox.innerHTML = productos.slice(0, 3)
+        .map(crearTarjeta).join("");
 
-        // tarjetas → Recomendados
-        recomendadosBox.innerHTML = productos.slice(0, 3)
-            .map(crearTarjeta).join("");
+    // Tarjetas → Nuevos
+    nuevosBox.innerHTML = productos.slice(3, 7)
+        .map(crearTarjeta).join("");
 
-        // tarjetas → Nuevos
-        nuevosBox.innerHTML = productos.slice(3, 7)
-            .map(crearTarjeta).join("");
+    // Tarjetas → Últimas unidades
+    ultimosBox.innerHTML = productos.slice(7, 11)
+        .map(crearTarjeta).join("");
+}
 
-        //  tarjetas → Últimas unidades
-        ultimosBox.innerHTML = productos.slice(7, 11)
-            .map(crearTarjeta).join("");
-    })
-    .catch(err => console.error("Error al cargar JSON:", err));
+const productosGuardados = localStorage.getItem("productos");
+
+if (productosGuardados) {
+    console.log("Cargando productos desde LocalStorage...");
+    console.log(productosGuardados);
+    
+    const productos = JSON.parse(productosGuardados);
+    renderizarPagina(productos);
+
+} else {
+    console.log("Cargando productos desde API/JSON...");
+    
+    fetch(URL_JSON)
+        .then(res => res.json())
+        .then(productos => {
+            localStorage.setItem("productos", JSON.stringify(productos));
+            console.log("Exito");
+            
+            renderizarPagina(productos);
+        })
+        .catch(err => console.error("Error al cargar JSON:", err));
+}

@@ -1,6 +1,9 @@
 import { LocalStorage } from "./localStorage.js";
+import { nuevoProducto } from "./cartItem.js";
 
 const productStorage = new LocalStorage('productos', []);
+
+// --- Elementos del Formulario (Mantener) ---
 
 const form = document.getElementById("creacionProducto");
 const inputId = form.querySelector("#id");
@@ -8,56 +11,119 @@ const inputNombre = form.querySelector("#nombre");
 const inputDescripcion = form.querySelector("#descripcion");
 const inputCategoria = form.querySelector("#categoria");
 const inputImagen = form.querySelector("#imagen");
+const imagenPreview = form.querySelector("#preview");
+
 const inputStock = form.querySelector("#stock");
 const inputPrecio = form.querySelector("#precio");
 const inputInfo = form.querySelector("#infoAdicional");
 
+const btnSubmit = form.querySelector("button[type='submit']") || form.querySelector("button");
 
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    
-     productStorage.validar();
-    let productos = productStorage.obtener(); 
-    
-    if (!Array.isArray(productos)) {
-        productos = [];
+
+const contenedorRecientes = document.getElementById("contenedorAgregadosRecientemente");
+
+
+
+function mostrarUltimosProductos(productos) {
+    if (!productos || productos.length === 0) {
+        if (contenedorRecientes) {
+             contenedorRecientes.innerHTML = '<p>No hay productos guardados aún.</p>';
+        }
+        return;
+    }
+    const ultimosCinco = productos.slice(-5).reverse();
+
+    const ultimoProductoCreado = productos[productos.length - 1];
+   
+    nuevoProducto(ultimoProductoCreado); 
+
+    if (contenedorRecientes) {
+    
+    contenedorRecientes.innerHTML = ''; 
+    
+    ultimosCinco.forEach(producto => {
+        const htmlProducto = nuevoProducto(producto);
+        contenedorRecientes.insertAdjacentHTML('beforeend', htmlProducto);
+    });
     }
-    
-    const file = inputImagen.files[0];
+}
 
-    const reader = new FileReader();
-    
-    // Esta función se ejecuta ASÍNCRONAMENTE cuando la imagen se carga.
-    reader.onload = function (event) {
-        
-    
-        const producto = {
-            id: inputId.value,
-            nombre: inputNombre.value,
-            descripcion: inputDescripcion.value,
-            categoria: inputCategoria.value,
-            imagen: event.target.result,
-            stock: inputStock.value,
-            precio: inputPrecio.value,
-            infoAdicional: inputInfo.value
-        };
 
-        productos.push(producto);
-        productStorage.actualizar(productos);
-        
-        console.log("Productos guardados:", productos);
+form.addEventListener("submit", (formEvent) => {
+    formEvent.preventDefault();
 
-        // Limpiar formulario
-        form.reset();
-        document.getElementById("preview").src = "";
-        alert("🎉 Producto Creado Exitosamente");
-    };
+    const isModoGuardar = btnSubmit.textContent.trim() === "Guardar Producto";
+    
+    const file = inputImagen.files[0];
+    const reader = new FileReader();
+    
+    reader.onload = function (event) {
+        
+        // Base64 de la imagen, generado para la previsualización temporal
+        const imagenBase64 = event.target.result;
+        imagenPreview.src = imagenBase64;
+        
+        // Objeto completo (usado SOLO para la previsualización)
+        const productoCompleto = {
+            id: inputId.value,
+            nombre: inputNombre.value,
+            descripcion: inputDescripcion.value,
+            categoria: inputCategoria.value,
+            imagen: imagenBase64, // Incluimos la data pesada aquí
+            stock: inputStock.value,
+            precio: inputPrecio.value,
+            infoAdicional: inputInfo.value
+        };
 
-    if (file) {
-        // Inicia la lectura asíncrona del archivo
-        reader.readAsDataURL(file);
-    } else {
-        // Manejar el caso donde no hay imagen seleccionada
-        alert("Por favor, selecciona una imagen para el producto.");
-    }
+        if (isModoGuardar) {
+            
+            productStorage.validar();
+            let productos = productStorage.obtener() || []; 
+            
+            // 🛑 SOLUCIÓN AL QUOTA EXCEEDED ERROR:
+            // 1. Creamos un nuevo objeto sin las propiedades pesadas.
+            const productoParaGuardar = { ...productoCompleto };
+            delete productoParaGuardar.imagen; 
+            // Opcional: añade aquí una ruta placeholder si las necesitas al cargar:
+            // productoParaGuardar.imagenPlaceholder = "ruta/al/placeholder.png"; 
+
+            productos.push(productoParaGuardar); // Guardamos el objeto ligero
+            productStorage.actualizar(productos);
+            // ----------------------------------------------------
+            
+            console.log("Productos guardados:", productos);
+
+            mostrarUltimosProductos(productos); 
+
+            form.reset();
+            imagenPreview.src = "";
+            btnSubmit.textContent = "Previsualizar";
+            alert("🎉 Producto Creado Exitosamente");
+
+        } else {
+            // Caso Previsualizar (usa el objeto completo con Base64)
+            const contenedorNuevoProducto = document.getElementById("containerNuevoProducto");
+            // Usamos productoCompleto, que sí tiene la imagen, para la previsualización
+            contenedorNuevoProducto.innerHTML = nuevoProducto(productoCompleto); 
+            btnSubmit.textContent = "Guardar Producto";
+            console.log("Modo previsualización activado.");
+        }
+    };
+
+    if (file) {
+        reader.readAsDataURL(file);
+    } else {
+        alert("Por favor, selecciona una imagen para el producto.");
+    }
 });
+
+// --- EJECUCIÓN INICIAL ---
+(function inicializarProductos() {
+    const productosExistentes = productStorage.obtener();
+    if (productosExistentes && productosExistentes.length > 0) {
+        const ultimoProductoGuardado = productosExistentes[productosExistentes.length - 1];
+        
+        nuevoProducto(ultimoProductoGuardado); 
+        mostrarUltimosProductos(productosExistentes);
+    }
+})();

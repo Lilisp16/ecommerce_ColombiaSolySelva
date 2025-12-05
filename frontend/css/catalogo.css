@@ -1,0 +1,32 @@
+.catalogo {
+    h2.tituloSeccion {
+            font-weight: 700;
+            margin-top: 30px;
+        }
+
+        .producto-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .producto-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+        }
+
+        .producto-card img {
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .green-btn {
+            background-color: #398b3b;
+            color: white;
+        }
+
+        .green-btn:hover {
+            background-color: #2f7131;
+        }
+}

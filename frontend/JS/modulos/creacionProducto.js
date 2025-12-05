@@ -80,13 +80,8 @@ form.addEventListener("submit", (formEvent) => {
             productStorage.validar();
             let productos = productStorage.obtener() || []; 
             
-            // 🛑 SOLUCIÓN AL QUOTA EXCEEDED ERROR:
-            // 1. Creamos un nuevo objeto sin las propiedades pesadas.
             const productoParaGuardar = { ...productoCompleto };
             delete productoParaGuardar.imagen; 
-            // Opcional: añade aquí una ruta placeholder si las necesitas al cargar:
-            // productoParaGuardar.imagenPlaceholder = "ruta/al/placeholder.png"; 
-
             productos.push(productoParaGuardar); // Guardamos el objeto ligero
             productStorage.actualizar(productos);
             // ----------------------------------------------------

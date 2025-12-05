@@ -7,7 +7,7 @@ const headerHTML = `
                 <div class="navMovil d-flex justify-content-between flex-shrink-1-">
                     <!-- Logo -->
                     <a class="navbar-brand d-flex align-items-center " href="#">
-                        <img id="logo" src="../../IMG/Logo.png" alt="Logo">
+                        <img id="logo" src="../../IMG/logo.png" alt="Logo">
                     </a>
 
                 <!-- Botón hamburguesa -->

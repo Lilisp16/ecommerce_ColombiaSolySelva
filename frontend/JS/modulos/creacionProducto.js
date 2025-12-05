@@ -1,5 +1,7 @@
 import { LocalStorage } from "./localStorage.js";
 import { nuevoProducto } from "./cartItem.js";
+import { crearTarjeta } from "./crearTarjeta.js";
+
 
 const productStorage = new LocalStorage('productos', []);
 
@@ -35,7 +37,7 @@ function mostrarUltimosProductos(productos) {
 
     const ultimoProductoCreado = productos[productos.length - 1];
    
-    nuevoProducto(ultimoProductoCreado); 
+    crearTarjeta(ultimoProductoCreado); 
 
     if (contenedorRecientes) {
     
@@ -99,7 +101,7 @@ form.addEventListener("submit", (formEvent) => {
     // Caso Previsualizar (usa el objeto completo con Base64)
     const contenedorNuevoProducto = document.getElementById("containerNuevoProducto");
     // Usamos productoCompleto, que sí tiene la imagen, para la previsualización
-    contenedorNuevoProducto.innerHTML = nuevoProducto(productoCompleto); 
+    contenedorNuevoProducto.innerHTML = crearTarjeta(productoCompleto); 
     btnSubmit.textContent = "Guardar Producto";
     console.log("Modo previsualización activado.");
     }
@@ -118,7 +120,7 @@ form.addEventListener("submit", (formEvent) => {
     if (productosExistentes && productosExistentes.length > 0) {
     const ultimoProductoGuardado = productosExistentes[productosExistentes.length - 1];
     
-    nuevoProducto(ultimoProductoGuardado); 
+    crearTarjeta(ultimoProductoGuardado); 
     mostrarUltimosProductos(productosExistentes);
     }
 })();

@@ -50,6 +50,40 @@ body {
     padding: 5px 15px;
 }
 
+.card {
+    border: 2px solid var(--color-texto);
+    background-color: transparent; /* O var(--color-blanco) si prefieres tarjeta blanca */
+    border-radius: var(--radio-borde);
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.03);
+  
+  img {
+    border-bottom: 1px solid var(--color-texto);
+  }
+}
+.card:hover {
+  border: 2px solid var(--color-primario) ;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+/* Si la tarjeta tiene imagen de producto */
+.card-img-top {
+    border-radius: var(--radio-borde);
+    object-fit: cover;
+    /* Opcional: si las imágenes son PNG transparentes, dales fondo blanco suave */
+    background-color: rgba(255,255,255,0.5); 
+}
+
+.card-title {
+    color: var(--color-texto);
+    font-weight: 600;
+}
+
+.card-text {
+    font-size: 0.9rem;
+}
+
 /* Colores, fuentes, header, footer*  genera que se vayan a usar en toda las seccione*/
 header {
     position: sticky;

@@ -1,4 +1,4 @@
-import { crearTarjeta } from "./crearTarjeta.js";
+import { crearTarjetaCatalogo } from "./crearTarjeta.js";
 const URL_JSON = "../../JS/modulos/json.json";
 
 // Contenedores del catálogo
@@ -12,15 +12,15 @@ function renderizarPagina(productos) {
     
     // Tarjetas → Recomendados
     recomendadosBox.innerHTML = productos.slice(-4)
-        .map(crearTarjeta).join("");
+        .map(crearTarjetaCatalogo).join("");
 
     // Tarjetas → Nuevos
     nuevosBox.innerHTML = productos.slice(-8, -4)
-        .map(crearTarjeta).join("");
+        .map(crearTarjetaCatalogo).join("");
 
     // Tarjetas → Últimas unidades
     ultimosBox.innerHTML = productos.slice(-12, -8)
-        .map(crearTarjeta).join("");
+        .map(crearTarjetaCatalogo).join("");
 }
 
 const productosGuardados = localStorage.getItem("productos");

@@ -30,11 +30,4 @@ export class Carrito {
 
         this.mostrarCantidadItems(10)
     }
-    añadirProductos {
-        //localstoras
-        /* 
-        Recibir un eventdo desde catalogo
-        */
-    }
-
 }

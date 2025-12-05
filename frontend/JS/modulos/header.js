@@ -1,16 +1,5 @@
+const headerHTML = `
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Catalogo</title>
-    <link rel="stylesheet" href="../../css/catalogo.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../../CSS/global.css">
-</head>
-<body>
-    <header class="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-light pt-4 shadow-sm navbar-fixed">
             <div class="container-xxl d-flex justify-content-between align-items-center">
 
@@ -96,93 +85,11 @@
               </button>
             </div>
         </div>
-    </header>
-    <main class="container catalogo">
-        <div class="main-container">
-            <h1 class="titulo">Nuestros Productos</h1>
-            <p class="descripcionTitulo">Descubre artesanías colombianas únicas hechas a mano por artesanos locales.</p>
+`
 
-            <section class="productos-header" style="margin-bottom: 20px;">
-            
+export const mostrarHeader = () => {
+    const header = document.querySelector(".header");
+    header.innerHTML = headerHTML;
 
-                <!-- Barra de búsqueda -->
-                <div class="buscador" style="margin: 20px 0; display: flex; gap: 10px;">
-                    <input type="text" placeholder="Buscar productos..."
-                        style="flex:1; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
-                    <button style="padding: 10px 15px; border-radius: 8px; border: none; background:#6b705c; color:white;">
-                        Buscar
-                    </button>
-                </div>
+}
 
-                <!-- Botones categoria -->
-                <div class="opciones" style="display: flex; gap: 10px;">
-                    <button style="padding: 10px 15px; border-radius: 8px; border:none; background:#b7b7a4; color:#333;">
-                        Nuevos
-                    </button>
-                    <button style="padding: 10px 15px; border-radius: 8px; border:none; background:#b7b7a4; color:#333;">
-                        Calificacion
-                    </button>
-                    <button style="padding: 10px 15px; border-radius: 8px; border:none; background:#b7b7a4; color:#333;">
-                        precio
-                    </button>
-                </div>
-            </section>
-
-            <!-- Sección Recomendados -->
-            <h2 class="tituloSeccion">Recomendados</h2>
-            <div id="recomendados" class="row g-4"></div>
-
-
-            <!-- Sección Nuevos -->
-            <h2 class="tituloSeccion">Nuevos</h2>
-            <div id="nuevos" class="row g-4"></div>
-
-
-            <!-- Últimos -->
-            <h2 class="stituloSeccion">Últimas unidades</h2>
-            <div id="ultimos" class="row g-4"></div>
-
-        </div>
-    </main>
-    <footer class="footer-artesanal">
-        <!-- Franja artesanal arriba -->
-        <div class="artisan-wave-clean"></div>
-
-        <!-- Contenido del footer -->
-        <div class="footer-content">
-
-            <div class="footer-left">
-            <h2 class="footer-title">
-                <a href="index.html"><i class="fas fa-leaf"></i> Colombia Sol y Selva</a>
-            </h2>
-            <div class="footer-socials">
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-            </div>
-            </div>
-
-
-            <nav class="footer-links">
-            <div class="footer-link-item">
-                <a href="#">Productos</a>
-                <i class="fas fa-box"></i>
-            </div>
-            <div class="footer-link-item">
-                <a href="#">Historias</a>
-                <i class="fas fa-book-open"></i>
-            </div>
-            <div class="footer-link-item">
-                <a href="#">Nosotros</a>
-                <i class="fas fa-users"></i>
-            </div>
-            <div class="footer-link-item">
-                <a href="#">Contacto</a>
-                <i class="fas fa-envelope"></i>
-            </div>
-    </footer>
-    <script src="../../JS/main.js" type="module"></script>
-    <script src="../../JS/modulos/productos.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
- -->
-</body>
-</html>

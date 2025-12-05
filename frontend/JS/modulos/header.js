@@ -90,6 +90,5 @@ const headerHTML = `
 export const mostrarHeader = () => {
     const header = document.querySelector(".header");
     header.innerHTML = headerHTML;
-
 }
 

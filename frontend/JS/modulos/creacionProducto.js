@@ -83,7 +83,7 @@ form.addEventListener("submit", (formEvent) => {
     let productos = productStorage.obtener() || []; 
     
     const productoParaGuardar = { ...productoCompleto };
-    delete productoParaGuardar.imagen; 
+    //delete productoParaGuardar.imagen; 
     productos.push(productoParaGuardar); // Guardamos el objeto ligero
     productStorage.actualizar(productos);
     // ----------------------------------------------------

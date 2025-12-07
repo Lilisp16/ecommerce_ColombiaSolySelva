@@ -1,6 +1,6 @@
 import { LocalStorage } from "./localStorage.js";
-import { nuevoProducto } from "./cartItem.js";
-import { crearTarjeta } from "./crearTarjeta.js";
+import { productosRecientes } from "./cartItem.js";
+import { crearTarjeta, crearTarjetaCatalogo } from "./crearTarjeta.js";
 
 
 const productStorage = new LocalStorage('productos', []);
@@ -44,7 +44,7 @@ function mostrarUltimosProductos(productos) {
     contenedorRecientes.innerHTML = ''; 
     
     ultimosCinco.forEach(producto => {
-    const htmlProducto = nuevoProducto(producto);
+    const htmlProducto = productosRecientes(producto);
     contenedorRecientes.insertAdjacentHTML('beforeend', htmlProducto);
     });
     }
@@ -95,13 +95,20 @@ form.addEventListener("submit", (formEvent) => {
     form.reset();
     imagenPreview.src = "";
     btnSubmit.textContent = "Previsualizar";
-    alert("🎉 Producto Creado Exitosamente");
-
+    Swal.fire({
+    title: '¡Producto Cargado!',   
+    text: 'Tu producto ha sido cargado exitosamente',
+    succes: 'success',
+    customClass: {
+        popup: 'swal2-container-over'
+    }
+    
+    })
     } else {
     // Caso Previsualizar (usa el objeto completo con Base64)
     const contenedorNuevoProducto = document.getElementById("containerNuevoProducto");
     // Usamos productoCompleto, que sí tiene la imagen, para la previsualización
-    contenedorNuevoProducto.innerHTML = crearTarjeta(productoCompleto); 
+    contenedorNuevoProducto.innerHTML = crearTarjetaCatalogo(productoCompleto); 
     btnSubmit.textContent = "Guardar Producto";
     console.log("Modo previsualización activado.");
     }
@@ -110,7 +117,11 @@ form.addEventListener("submit", (formEvent) => {
     if (file) {
     reader.readAsDataURL(file);
     } else {
-    alert("Por favor, selecciona una imagen para el producto.");
+    Swal.fire(
+    '¡Imágen Requerida!',   
+    'Por favor carga una imágen',
+    'success'
+    )
     }
 });
 
@@ -124,3 +135,4 @@ form.addEventListener("submit", (formEvent) => {
     mostrarUltimosProductos(productosExistentes);
     }
 })();
+

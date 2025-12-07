@@ -161,8 +161,16 @@
                         <input type="text" class="form-control" id="descripcion" placeholder="Descripción" required>
                     </div>
                     <div class="col-md-5">
-                        <label for="validationCustom02" class="form-label">Categoría</label>
-                        <input type="text" class="form-control" id="categoria" placeholder="Categoría"required>
+                        <label for="validationCustom02" class="form-label">Categoría</label>                      
+                        <select id="categoria" class="form-select" aria-label="Default select example">
+                          <option selected>Seleccione una categoría</option>
+                          <option value="Moda y Accesorios">Moda y Accesorios</option>
+                          <option value="Decoración para el Hogar">Decoración para el Hogar</option>
+                          <option value="Arte y Recuerdos">Arte y Recuerdos</option>
+                          <option value="Utensilios Funcionales">Utensilios Funcionales</option>
+                          <option value="Prendas">Prendas</option>
+                        </select>
+
                     </div>
                     <div class="col-md-5">
                         <label for="imagen" class="form-label">Imágen</label>
@@ -193,15 +201,14 @@
         </div>
         <div class="w-50 gap-3 d-flex flex-column">
             <div class=" card p-3">
-              <h3 class="text-center mb-3">Previsualización Nuevo producto</h3>
+              <h2 class="text-center mb-3">Previsualización Nuevo producto</h2>
               <div id="containerNuevoProducto" class="h-100">
 
               </div>
             </div>
-            <div class="card h-50 p-3">
-              <h3 class="text-center mb-3">Agregados Recientemente</h3>
-              <div id="contenedorAgregadosRecientemente" class="h-100 w-100 border border-4 overflow-y-scroll">
-
+            <div class="card p-3">
+              <h2 class="text-center mb-3">Agregados Recientemente</h2>
+              <div id="contenedorAgregadosRecientemente" class="border-4 overflow-y-scroll">
               </div>
             </div>
         </div>
@@ -221,7 +228,11 @@
         pageContent.classList.toggle("collapsed");
       }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../../JS/modulos/localStorage.js" type="module"></script>
+    <script src="../../JS/modulos/productos.js" type="module"></script>
     <script type="module" src="../../JS/modulos/creacionProducto.js"></script>
+    <script src="../../JS/modulos/crearTarjeta.js" type="module"></script>
     
   </body>
 </html>

@@ -414,4 +414,6 @@ h2, .footer-title {
   color: #555; 
 }
 
-
+.swal2-container {
+  z-index: 999999  !important; 
+}

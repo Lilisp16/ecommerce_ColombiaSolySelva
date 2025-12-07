@@ -1,4 +1,5 @@
 import { crearTarjetaCatalogo } from "./crearTarjeta.js";
+import { crearFiltroCategoria } from "./filtroCategorias.js";
 const URL_JSON = "../../JS/modulos/json.json";
 
 // Contenedores del catálogo
@@ -31,7 +32,7 @@ if (productosGuardados) {
     
     const productos = JSON.parse(productosGuardados);
     renderizarPagina(productos);
-
+    crearFiltroCategoria(productos, renderizarPagina);
 } else {
     console.log("Cargando productos desde API/JSON...");
     
@@ -45,3 +46,4 @@ if (productosGuardados) {
         })
         .catch(err => console.error("Error al cargar JSON:", err));
 }
+

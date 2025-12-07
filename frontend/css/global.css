@@ -417,3 +417,10 @@ h2, .footer-title {
 .swal2-container {
   z-index: 999999  !important; 
 }
+
+.mi-boton-swal {
+  background-color: #3E2723 !important;
+  color: white !important;
+  border-radius: 6px !important;
+  padding: 10px 20px !important;
+}

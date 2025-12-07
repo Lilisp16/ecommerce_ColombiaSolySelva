@@ -100,7 +100,8 @@ form.addEventListener("submit", (formEvent) => {
     text: 'Tu producto ha sido cargado exitosamente',
     succes: 'success',
     customClass: {
-        popup: 'swal2-container-over'
+        popup: 'swal2-container-over',
+        confirmButton: 'mi-boton-swal'
     }
     
     })
@@ -117,11 +118,15 @@ form.addEventListener("submit", (formEvent) => {
     if (file) {
     reader.readAsDataURL(file);
     } else {
-    Swal.fire(
-    '¡Imágen Requerida!',   
-    'Por favor carga una imágen',
-    'success'
-    )
+    Swal.fire({
+    title: '¡Imágen Requerida!',   
+    text: 'Por favor carga una imágen',
+    succes: 'success',
+    confirmButtonText: 'Aceptar',
+    customClass: { 
+        confirmButton: 'mi-boton-swal'
+    }
+    })
     }
 });
 

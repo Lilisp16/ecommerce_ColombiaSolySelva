@@ -1,6 +1,6 @@
 /* Importar fuente sugerida (opcional pero recomendada) */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap');
 :root {
     /* Paleta de Colores definida */
     --color-fondo: #F5EBDC;       /* Beige claro */
@@ -232,10 +232,41 @@ header {
   }
 }
 
-h2{
-  font-family: 'Times New Roman' !important;
-  color: #1B5E20;
-  text-align: center;
+.form-control, .form-select {
+    background-color: var(--color-blanco);
+    border: 1px solid rgba(62, 39, 35, 0.15); /* Marrón muy suave */
+    border-radius: var(--radio-borde);
+    padding: 12px 15px; /* Más espacioso que el default */
+    color: var(--color-texto);
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 3px rgba(27, 94, 32, 0.2); /* Halo verde suave */
+    border-color: var(--color-primario);
+    background-color: var(--color-blanco);
+}
+
+/* Etiquetas de los inputs */
+.form-label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Merriweather', serif;
+  color: var(--color-primario);
+  font-weight: 700;
+  letter-spacing: -0.5px; /* Un toque moderno */
+}
+
+/* El subtítulo verde o pequeño texto encima de los títulos */
+.text-subtitle {
+    color: var(--color-primario);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
 }
 
 body {
@@ -246,7 +277,7 @@ body {
 
 
 /* ESTILOS FOOTER */
-h2, .footer-title {
+.footer-title {
   font-family: 'Caveat', cursive;
 
 }

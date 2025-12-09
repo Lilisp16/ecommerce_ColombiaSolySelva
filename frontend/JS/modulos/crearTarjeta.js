@@ -24,7 +24,7 @@ export const crearTarjetaCatalogo = (producto) => {
             <p class="text-secondary small"><strong>Categoría:</strong> ${producto.categoria}</p>
             <p class="text-secondary small"><strong>Stock:</strong> ${producto.stock} unds</p>
             <p class="fw-bold">$${producto.precio.toLocaleString()}</p>
-            <button class="btn btn-primary w-75">Agregar</button>
+            <button class="btn btn-primary w-75" id="agregarCarrito">Agregar</button>
         </div>
     </div>
     `;

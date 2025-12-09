@@ -2,112 +2,272 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header</title>
+    <title>Colombia Sol y Selva</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/global.css">
-      <link rel="stylesheet" href="../css/index.css">
-  
-    <script 
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous">
-    </script>
+    <link rel="stylesheet" href="../css/index.css">
+     <link rel="stylesheet" href="../../css/catalogo.css">
+    
+    
+   
 
   
+<style>
+    /* PRODUCTOS DESTACADOS */
+         /* TITULOS */
+        .titulo-seccion {
+            font-size: 22px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .subtitulo-seccion {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* PRODUCTOS NORMALES */
+        .fila-productos {
+            display: flex;
+            gap: 100px;
+            margin-bottom: 40px;
+        }
+
+        .tarjeta-producto {
+            width: 30%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background: #fff;
+        }
+
+        .imagen-producto {
+            width: 100%;
+            height: 130px;
+            background: #e5e5e5;
+            border-radius: 10px;
+        }
+
+        .descripcion-producto {
+            margin: 60px 0;
+        }
+
+        .precio-producto {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .boton-agregar {
+            width: 100%;
+            padding: 10px;
+            background: #ddd;
+            border: none;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .icono-carrito {
+            margin-left: 5px;
+        }
+
+        /* PROMOCIONES */
+        .fila-promos {
+            display: flex;
+            gap: 20px;
+        }
+
+        .tarjeta-promo {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            width: 48%;
+            position: relative;
+            background: #fff;
+        }
+
+        .info-promo {
+            width: 60%;
+        }
+
+        .imagen-promo {
+            width: 35%;
+            height: 120px;
+            background: #e5e5e5;
+            border-radius: 10px;
+        }
+
+        .texto-pequeno {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .texto-descuento {
+            margin: 0;
+            font-size: 28px;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .texto-descuento span {
+            display: block;
+            font-size: 16px;
+            font-weight: normal;
+        }
+
+        .titulo-promo {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .texto-validez {
+            margin: 10px 0;
+            font-size: 12px;
+            color: #333;
+        }
+
+        .boton-promo {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 8px;
+            background: #d0d0d0;
+            cursor: pointer;
+        }
+
+        .estrella-favorito {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        .tarjeta-producto {
+            width: 300px;
+            /* Tamaño de la tarjeta */
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* Contenedor de la imagen */
+        .imagen-producto img {
+            width: 100%;
+            /* Se ajusta al ancho de la tarjeta */
+            height: 180px;
+            /* Alto fijo */
+            object-fit: cover;
+            /* Recorta y ajusta bonito */
+            border-radius: 10px;
+        }
+
+
+</style>
+
+
 </head>
 <body>
 
-<header>
-    <nav class="navbar navbar-expand-lg navbar-light pt-4 navbar-fixed" style="background-color: #f8f9fa;">
-        <div class="container-xxl d-flex justify-content-between align-items-center">
 
-            <!-- Mostrar solo movil -->
-            <div class="navMovil d-flex justify-content-between flex-shrink-1-">
-                <!-- Logo -->
-                <a class="navbar-brand d-flex align-items-center " href="#">
-                    <img id="logo" src="../IMG/Logo.png" alt="Logo">
-                </a>
+ <header>
+        <nav class="navbar navbar-expand-lg navbar-light shadow-sm navbar-fixed navbar-index">
+            <div class="container-xxl d-flex justify-content-between align-items-center">
 
-            <!-- Botón hamburguesa -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" 
-                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
+                <!-- Mostrar solo movil -->
+                <div class="navMovil d-flex justify-content-between flex-shrink-1-">
+                    <!-- Logo -->
+                    <a class="navbar-brand d-flex align-items-center " href="#">
+                        <img id="logo" src="../IMG/logo.png" alt="Logo">
+                    </a>
 
-        <!-- Links y buscador -->
-        <div class="collapse navbar-collapse" id="mainNav">
-            <!-- Links centrados -->
-            <ul class="navbar-nav mx-auto gap-3 mb-2 mb-lg-0 text-center">
-                <li class="nav-item"><a class="nav-link link-custom" href="./index.html">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link link-custom" href="./pages/catalogo.html">Catalogo</a></li>
-                <li class="nav-item"><a class="nav-link link-custom" href="./pages/historias.html">Historias</a></li>
-                <li class="nav-item"><a class="nav-link link-custom" href="./pages/nosotros.html">Nosotros</a></li>
-                <li class="nav-item"><a class="nav-link link-custom" href="./pages/contacto.html">Contacto</a></li>
-            </ul>
+                <!-- Botón hamburguesa -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" 
+                    aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+           </div>
 
-            <!-- Mi cuenta y carrito -->
-            <div class="searchAccountSection d-flex gap-3 align-items-top">
-                    <!-- Buscador -->
-                <form class="d-flex m-0 h-75 align-content-center" role="search">
-                    <input class="form-control inputBuscar" type="search" placeholder="Buscar..." aria-label="Buscar">
-                    <button class="btn search-btn" type="button">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </form>
-                <div class="icon text-center">
-                    <i class="fas fa-user icon-circle icon-user"></i>
-                    <div class="icon-text">Mi cuenta</div>
-                </div>
-                <div class="icon text-center" id="abrirCarrito">
-                    <i class="fas fa-shopping-cart position-relative icon-circle icon-cart">    
-                        <span 
-                            id="cartCount"
-                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                        </span>
-                    </i>                
-                        
-                    <div class="icon-text">Carrito</div>
+            <!-- Links y buscador -->
+            <div class="collapse navbar-collapse" id="mainNav">
+                <!-- Links centrados -->
+                <ul class="navbar-nav mx-auto gap-3 mb-2 mb-lg-0 text-center">
+                    <li class="nav-item"><a class="nav-link link-custom" href="../index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link link-custom" href="./catalogo.html">Catalogo</a></li>
+                    <li class="nav-item"><a class="nav-link link-custom" href="./historias.html">Historias</a></li>
+                    <li class="nav-item"><a class="nav-link link-custom" href="./nosotros.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link link-custom" href="./contacto.html">Contacto</a></li>
+                </ul>
+
+                <!-- Mi cuenta y carrito -->
+                <div class="searchAccountSection d-flex gap-3 align-items-top">
+                     <!-- Buscador -->
+                    <form class="d-flex m-0 h-75 align-content-center" role="search">
+                        <input class="form-control inputBuscar" type="search" placeholder="Buscar..." aria-label="Buscar">
+                        <button class="btn search-btn" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                    <div class="icon text-center">
+                        <i class="fas fa-user icon-circle icon-user"></i>
+                        <div class="icon-text"></div>
+                    </div>
+                    <div class="icon text-center" id="abrirCarrito">
+                        <i class="fas fa-shopping-cart position-relative icon-circle icon-cart">    
+                            <span 
+                                id="cartCount"
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            </span>
+                        </i>                
+                            
+                        <div class="icon-text"></div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        </div>
-    </nav>
-    <!-- Carrito -->
-    <header>
+            </div>
+        </nav>
+        <!-- Carrito -->
         <div id="sidebar" class="sidebar card  bg-dark text-light vh-100">
-        <div class="card-header d-flex gap-3 justify-content-between align-items-center" style="min-height: 120px;">
-            <h3>Carrito</h3>
-            <button id="closeCarrito" class="btn btn-outline-light border-0 fs-4">✖</button>
+            <div class="card-header d-flex gap-3 justify-content-between align-items-center" style="min-height: 120px;">
+                <h3>Carrito</h3>
+                <button id="closeCarrito" class="btn btn-outline-light border-0 fs-4">✖</button>
+            </div>
+            
+            <div class="card-body overflow-y-auto">
+                <div id="cart-items"></div>
+            </div>
+            
+            <div class="card-footer d-flex flex-column gap-3 pt-4 rounded-top">
+                <h4 class="d-flex justify-content-between fs-5">
+                    <div>Total Items:  </div>
+                    <div id="totalItemCount">0</div>
+                </h4>
+                <h4 class="d-flex justify-content-between fs-4 fw-bold">
+                    <div>Total: </div>
+                    <div>$ <span id="cart-total-check">0</span></div>
+                </h4>
+                <button type="button" class="btn btn-lg btn-outline-light mx-auto gap-3 d-flex align-items-center" style="max-width: 150px;">
+                    Comprar
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-credit-card-2-back" viewBox="0 0 16 16">
+                        <path d="M11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5z"></path>
+                        <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm13 2v5H1V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1m-1 9H2a1 1 0 0 1-1-1v-1h14v1a1 1 0 0 1-1 1"></path>
+                    </svg>
+              </button>
+            </div>
         </div>
-        
-        <div class="card-body overflow-y-auto">
-            <div id="cart-items"></div>
-        </div>
-        
-        <div class="card-footer d-flex flex-column gap-3 pt-4 rounded-top">
-            <h4 class="d-flex justify-content-between fs-5">
-                <div>Total Items:  </div>
-                <div id="totalItemCount">0</div>
-            </h4>
-            <h4 class="d-flex justify-content-between fs-4 fw-bold">
-                <div>Total: </div>
-                <div>$ <span id="cart-total-check">0</span></div>
-            </h4>
-            <button type="button" class="btn btn-lg btn-outline-light mx-auto gap-3 d-flex align-items-center" style="max-width: 150px;">
-                Comprar
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-credit-card-2-back" viewBox="0 0 16 16">
-                    <path d="M11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5z"></path>
-                    <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm13 2v5H1V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1m-1 9H2a1 1 0 0 1-1-1v-1h14v1a1 1 0 0 1-1 1"></path>
-                </svg>
-            </button>
-        </div>
-    </div>
-    </header>
 </header>
-
 
 
 
@@ -125,14 +285,290 @@
 
 
 
+<!--CAROUSEL1 CATEGORIAS -USO -->
 
-<!--CAROUSEL AQUI -->
+<!--CAROUSEL2 CATEGORIAS -->
+
+<section id="carousel-categorias" class="py-5" style="background-color: var(--color-blanco);">
+  <div class="container">
+    <h2 class="titulo-seccion pb-4" style="color: var(--color-texto);">Nuestras Categoría</h2>
+    <div id="carouselCategorias" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <!-- Producto 1 -->
+            <div class="card" style="width: 18rem;">
+              <img src="../IMG/imgProductos/pulceraWayu.jpg" class="card-img-top" alt="Pulsera Wayuu">
+              <div class="card-body">
+                <h5 class="card-title">Pulsera Wayuu</h5>
+                <p class="card-text text-muted">Moda y Accesorios</p>
+                <p class="card-text text-success f-bold">$35.000</p>
+                <button class="btn" style="background-color: var(--hover-dorado); color: var(--color-blanco); width: 100%;">Agregar 🛒</button>
+              </div>
+            </div>
+            <!-- Producto 2 -->
+            <div class="card" style="width: 18rem;">
+              <img src="../IMG/imgProductos/tapiz.jpg" class="card-img-top" alt="Tapiz Tejido">
+              <div class="card-body">
+                <h5 class="card-title">Tapiz Tejido</h5>
+                <p class="card-text text-muted">Decoración para el Hogar</p>
+                <p class="card-text">$98.000</p>
+                <button class="btn" style="background-color: var(--hover-dorado); color: var(--color-blanco); width: 100%;">Agregar 🛒</button>
+              </div>
+            </div>
+            <!-- Producto 3 -->
+            <div class="card" style="width: 18rem;">
+              <img src="../IMG/imgProductos/mascara.jpg" class="card-img-top" alt="Máscara Indígena Embera">
+              <div class="card-body">
+                <h5 class="card-title">Máscara Indígena Embera</h5>
+                <p class="card-text text-muted">Arte y Recuerdos</p>
+                <p class="card-text">$130.000</p>
+                <button class="btn" style="background-color: var(--hover-dorado); color: var(--color-blanco); width: 100%;">Agregar 🛒</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <!-- Producto 1 -->
+            <div class="card" style="width: 18rem;">
+              <img src="../IMG/../IMG/imgProductos/cuenco.jpg" class="card-img-top" alt="Cuenco Decorativo Zenú">
+              <div class="card-body">
+                <h5 class="card-title">Cuenco Decorativo Zenú</h5>
+                <p class="card-text text-muted">Arte y Recuerdos</p>
+                <p class="card-text">$40.000</p>
+                <button class="btn" style="background-color: var(--hover-dorado); color: var(--color-blanco); width: 100%;">Agregar 🛒</button>
+              </div>
+            </div>
+            <!-- Producto 2 -->
+            <div class="card" style="width: 18rem;">
+              <img src="../IMG/imgProductos/plato.jpg" class="card-img-top" alt="Plato de Madera de Nogal">
+              <div class="card-body">
+                <h5 class="card-title">Plato de Madera de Nogal</h5>
+                <p class="card-text text-muted">Utensilios Funcionales</p>
+                <p class="card-text">$55.000</p>
+                <button class="btn" style="background-color: var(--hover-dorado); color: var(--color-blanco); width: 100%;">Agregar 🛒</button>
+              </div>
+            </div>
+            <!-- Producto 3 -->
+            <div class="card" style="width: 18rem;">
+              <img src="../IMG/imgProductos/jarron.jpg" class="card-img-top" alt="Jarra de Cerámica de Ráquira">
+              <div class="card-body">
+                <h5 class="card-title">Jarra de Cerámica de Ráquira</h5>
+                <p class="card-text text-muted">Utensilios Funcionales</p>
+                <p class="card-text">$48.000</p>
+                <button class="btn" style="background-color: var(--hover-dorado); color: var(--color-blanco); width: 100%;">Agregar 🛒</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controles < > -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselCategorias" data-bs-slide="prev">
+        <span aria-hidden="true">
+          <i class="bi bi-chevron-left fs-2" style="color: var(--color-texto)"></i>
+        </span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselCategorias" data-bs-slide="next">
+        <span aria-hidden="true">
+          <i class="bi bi-chevron-right fs-2" style="color: var(--color-texto)"></i>
+        </span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+  </div>
+</section>
 
 
 
-<!--PRODUCTOS DESTACADOS AQUI -->
 
 
+
+
+
+
+<!--PRODUCTOS DESTACADOS AQUI PARA IMPLEMENTAR CON JS 
+<section id="destacados-section">
+  <h2 class="tituloSeccion">Destacados</h2>
+  <div id="destacados" class="row g-4"></div>
+</section>
+-->
+
+
+
+
+
+
+<!-- SECCIÓN DE DESTACADOS -->
+<section id="destacados-prueba" class="my-5">
+<div class="container"> 
+  <h2 class="titulo-seccion fw-bold mb-4" style="text-align: left;">Destacados</h2>
+  <div class="row g-5 justify-content-start">
+
+    <!-- Mochila Wayuu -->
+    <div class="col-md-3 my-4">
+      <div class="card text-center d-flex align-items-center tarjeta-hover" style="height: 435px;">
+        <h5 class="fw-semibold">Mochila Wayuu</h5>
+        <img src="../IMG/imgProductos/mochila.jpg" class="w-75" style="height: 150px;" alt="Mochila Wayuu">
+        <p class="text-muted small">Mochila tejida a mano por artesanas de La Guajira.</p>
+        <p class="text-secondary small"><strong>Categoría:</strong> Moda y Accesorios</p>
+        <p class="text-secondary small"><strong>Stock:</strong> 10 unds</p>
+        <p class="fw-bold">$120.000</p>
+        <button class="btn w-75 boton-dorado">Agregar</button>
+      </div>
+    </div>
+
+    <!-- Figura de Madera Tallada -->
+    <div class="col-md-3 my-4">
+      <div class="card text-center d-flex align-items-center tarjeta-hover" style="height: 435px;">
+        <h5 class="fw-semibold">Figura de Madera Tallada</h5>
+        <img src="../IMG/imgProductos/figuraMadera.jpg" class="w-75" style="height: 150px;" alt="Figura de Madera Tallada">
+        <p class="text-muted small">Escultura artesanal elaborada en madera de guayacán.</p>
+        <p class="text-secondary small"><strong>Categoría:</strong> Decoración para el Hogar</p>
+        <p class="text-secondary small"><strong>Stock:</strong> 5 unds</p>
+        <p class="fw-bold">$85.000</p>
+        <button class="btn w-75 boton-dorado">Agregar</button>
+      </div>
+    </div>
+
+    <!-- Sombrero Vueltiao -->
+    <div class="col-md-3 my-4">
+      <div class="card text-center d-flex align-items-center tarjeta-hover" style="height: 435px;">
+        <h5 class="fw-semibold">Sombrero Vueltiao</h5>
+        <img src="../IMG/imgProductos/sombrero.jpg" class="w-75" style="height: 150px;" alt="Sombrero Vueltiao">
+        <p class="text-muted small">Sombrero tradicional hecho con caña flecha por artesanos Zenú.</p>
+        <p class="text-secondary small"><strong>Categoría:</strong> Arte y Recuerdos</p>
+        <p class="text-secondary small"><strong>Stock:</strong> 8 unds</p>
+        <p class="fw-bold">$150.000</p>
+        <button class="btn w-75 boton-dorado">Agregar</button>
+      </div>
+    </div>
+
+    <!-- Tazón de Cerámica Negra -->
+    <div class="col-md-3 my-4">
+      <div class="card text-center d-flex align-items-center tarjeta-hover" style="height: 435px;">
+        <h5 class="fw-semibold">Tazón de Cerámica Negra</h5>
+        <img src="../IMG/imgProductos/tazon.jpg" class="w-75" style="height: 150px;" alt="Tazón de Cerámica Negra">
+        <p class="text-muted small">Tazón artesanal elaborado en cerámica negra de La Chamba.</p>
+        <p class="text-secondary small"><strong>Categoría:</strong> Utensilios Funcionales</p>
+        <p class="text-secondary small"><strong>Stock:</strong> 20 unds</p>
+        <p class="fw-bold">$45.000</p>
+        <button class="btn w-75 boton-dorado">Agregar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+
+
+
+<!---SECCION OFERTAS-->
+<section class="mb-4">
+    <div class="container">
+
+     <h2 class="titulo-seccion">Ofertas Especiales</h2>
+    <p class="subtitulo-seccion">Diciembre</p>
+ 
+  <!-- Promociones -->
+<div class="fila-promos">
+
+    <style>
+      
+        .boton-promo {
+            background-color: #1B5E20; 
+            color: var(--color-blancoHueso);      
+            padding: 8px 18px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 12px;
+            transition: background-color 0.25s ease-in-out;
+        }
+
+        .boton-promo:hover {
+            background-color: #4CAF50; 
+        }
+    </style>
+
+    <!-- TARJETA 1 -->
+    <div class="tarjeta-promo">
+        <span class="estrella-favorito">☆</span>
+
+        <div class="info-promo">
+            <p class="texto-pequeno">Hasta</p>
+            <h3 class="texto-descuento" style="color: var(--hover-dorado);">30% <span>de dcto</span></h3>
+            <p class="titulo-promo">en moda y accesorios</p>
+
+            <p class="texto-validez">
+                Válido desde el 13/11/2025<br>
+                hasta 13/12/2025
+            </p>
+
+            <button class="boton-promo">¡Compra Ahora!</button>
+        </div>
+
+   
+        <div class="imagen-promo" 
+            style="
+                width: 35%;
+                height: 130px;
+                border-radius: 10px;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            ">
+            <img src="../IMG/imgProductos/aretes.jpg" alt=""style="width: 100%;height: 100%;object-fit: cover; object-position: center; display: block;">
+        </div>
+    </div>
+
+
+    <!-- TARJETA 2 -->
+    <div class="tarjeta-promo">
+        <span class="estrella-favorito">☆</span>
+
+        <div class="info-promo">
+            <p class="texto-pequeno">Hasta</p>
+            <h3 class="texto-descuento" style="color: var(--hover-dorado);">30% <span>de dcto</span></h3>
+            <p class="titulo-promo">en moda y accesorios</p>
+
+            <p class="texto-validez">
+                Válido desde el 13/11/2025<br>
+                hasta 13/12/2025
+            </p>
+
+            <button class="boton-promo">¡Compra Ahora!</button>
+        </div>
+
+        <div class="imagen-promo"
+            style="
+                width: 35%;
+                height: 130px;
+                border-radius: 10px;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center; ">
+            <img src="../IMG/imgProductos/pulceraWayu.jpg" alt=""
+                style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;">
+        </div>
+    </div>
+
+</div>
+
+
+</div>
+</section>
 
 
 
@@ -147,44 +583,112 @@
 
  
 <!--FOOTER AQUI -->
- <footer class="footer-artesanal">
-    <!-- Franja artesanal arriba -->
-    <div class="artisan-wave-clean"></div>
+<footer class="text-white" style="background-color: #4E342E;">
+  <div class="container-fluid py-4 colorLetra">
 
-    <!-- Contenido del footer -->
-    <div class="footer-content container">
-
-      <div class="footer-left">
-        <h2 class="footer-title">
-          <a href="index.html"> <img id="logo" src="../IMG/Logo.png" class="navbar-brand" alt="Logo">Colombia Sol y Selva</a>
-        </h2>
-        <div class="footer-socials">
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="#"><i class="fab fa-github"></i></a>
+    <div class="row mb-3">
+      <!-- Logo, título y lema -->
+      <div class="col-md-3 d-flex flex-column align-items-start mb-3 mb-md-0">
+        <div class="d-flex align-items-center mb-2">
+          <img src="../IMG/logo.png" alt="Logo" class="me-2" style="height:50px;">
+          <span class="fs-2 fw-bold text-success" style="font-family: 'Caveat', cursive;">Colombia Sol y Selva</span>
         </div>
+        <p class="mb-0 small">Conectamos Colombia con el mundo, a través de artesanías que cuentan historias</p>
       </div>
 
+      <!-- Productos -->
+      <div class="col-md-3 mb-3 mb-md-0">
+        <h6 class="fw-bold">Productos</h6>
+        <ul class="list-unstyled small ">
+          <li><a href="categoria-moda.html" class="colorLetra text-decoration-none link-hover">Moda y Accesorios</a></li>
+          <li><a href="categoria-decoracion.html" class="colorLetra text-decoration-none link-hover">Decoración para el hogar</a></li>
+          <li><a href="categoria-arte.html" class="colorLetra text-decoration-none link-hover">Arte y Recuerdos</a></li>
+          <li><a href="categoria-utensilios.html" class="colorLetra text-decoration-none link-hover">Utensilios y Productos Funcionales</a></li>
+        </ul>
+      </div>
 
-      <nav class="footer-links">
-        <div class="footer-link-item">
-          <a href="#">Productos</a>
-          <i class="fas fa-box"></i>
-        </div>
-        <div class="footer-link-item">
-          <a href="#">Historias</a>
-          <i class="fas fa-book-open"></i>
-        </div>
-        <div class="footer-link-item">
-          <a href="#">Nosotros</a>
-          <i class="fas fa-users"></i>
-        </div>
-        <div class="footer-link-item">
-          <a href="#">Contacto</a>
-          <i class="fas fa-envelope"></i>
-        </div>
-    </footer>
+      <!-- Acerca de -->
+      <div class="col-md-3 mb-3 mb-md-0">
+        <h6 class="fw-bold">Acerca de</h6>
+        <ul class="list-unstyled small">
+          <li><a href="pagina-equipo.html#equipo" class="colorLetra text-decoration-none link-hover">Equipo de Desarrollo</a></li>
+          <li><a href="historias-artesanos.html" class="colorLetra text-decoration-none link-hover">Historias de los Artesanos</a></li>
+          <li><a href="pagina-equipo.html#mision" class="colorLetra text-decoration-none link-hover">Misión, Visión y Valores</a></li>
+        </ul>
+      </div>
+
+      <!-- Soporte -->
+      <div class="col-md-3 mb-3 mb-md-0">
+        <h6 class="fw-bold">Soporte</h6>
+        <ul class="list-unstyled small">
+          <li><a href="Terminos_Condiciones.html" class="colorLetra text-decoration-none link-hover">Términos y Condiciones de Garantías</a></li>
+          <li><a href="formularioContactenos.html" class="colorLetra text-decoration-none link-hover">Contacto</a></li>
+          <li><a href="preguntasFrecuentes.html" class="colorLetra text-decoration-none link-hover">Preguntas Frecuentes</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="border-light">
+
+    <!-- copy -->
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <p class="mb-0 small">&copy; 2025 Colombia Sol y Selva. Todos los derechos reservados.</p>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <a href="https://www.linkedin.com" target="_blank" class="text-white me-3 link-hover fs-5">
+          <i class="bi bi-linkedin"></i>
+        </a>
+        <a href="https://github.com" target="_blank" class="text-white link-hover fs-5">
+          <i class="bi bi-github"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
 
 
-    <script type="module" src="../JS/main.js"></script>
+  <style>
+    .colorLetra{
+         color: #FAF8F3 !important;
+    }
+   
+
+
+    .link-hover:hover {
+      color: #D4AF37 !important;
+    }
+  </style>
+
+
+ 
+</footer>
+
+
+
+
+
+
+
+
+<script>
+
+    const navbar = document.querySelector(".navbar.navbar-index");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+});
+</script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
+<script type="module" src="../JS/modulos/destacados.js"></script>
+<script type="module" src="../JS/main.js"></script>
+<script src="../../JS/modulos/productos.js" type="module" defer></script>
 </body>
 </html>

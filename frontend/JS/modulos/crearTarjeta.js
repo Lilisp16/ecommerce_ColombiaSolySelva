@@ -1,7 +1,7 @@
 export const crearTarjeta = (producto) => {
     return `
         <div class="card shadow-sm mx-auto" style="max-width: 350px">
-            <img src="${producto.imagen}" class="w-100" style="height: 150px; max-height: 150px;" alt="${producto.nombre}">
+            <img src="${producto.imagen}" class="w-100 object-fit-cover" style="height: 200px; max-height: 200px;" alt="${producto.nombre}">
             <div class="p-3">
                 <h5 class="fw-semibold">${producto.nombre}</h5>
                 <p class="text-muted small">${producto.descripcion}</p>

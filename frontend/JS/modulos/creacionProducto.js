@@ -67,14 +67,14 @@ form.addEventListener("submit", (formEvent) => {
     
     // Objeto completo (usado SOLO para la previsualización)
     const productoCompleto = {
-    id: inputId.value,
-    nombre: inputNombre.value,
-    descripcion: inputDescripcion.value,
-    categoria: inputCategoria.value,
-    imagen: imagenBase64, // Incluimos la data pesada aquí
-    stock: inputStock.value,
-    precio: inputPrecio.value,
-    infoAdicional: inputInfo.value
+        id: inputId.value,
+        nombre: inputNombre.value,
+        descripcion: inputDescripcion.value,
+        categoria: inputCategoria.value,
+        imagen: imagenBase64, // Incluimos la data pesada aquí
+        stock: inputStock.value,
+        precio: inputPrecio.value,
+        infoAdicional: inputInfo.value
     };
 
     if (isModoGuardar) {
@@ -109,7 +109,7 @@ form.addEventListener("submit", (formEvent) => {
     // Caso Previsualizar (usa el objeto completo con Base64)
     const contenedorNuevoProducto = document.getElementById("containerNuevoProducto");
     // Usamos productoCompleto, que sí tiene la imagen, para la previsualización
-    contenedorNuevoProducto.innerHTML = crearTarjetaCatalogo(productoCompleto); 
+    contenedorNuevoProducto.innerHTML = crearTarjeta(productoCompleto); 
     btnSubmit.textContent = "Guardar Producto";
     console.log("Modo previsualización activado.");
     }

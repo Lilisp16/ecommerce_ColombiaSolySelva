@@ -8,7 +8,7 @@ const footerHTML = `
       <div class="col-md-3 d-flex flex-column align-items-start mb-3 mb-md-0">
         <div class="d-flex align-items-center mb-2">
           <img src="../../IMG/logo.png" alt="Logo" class="me-2" style="height:50px;">
-          <span class="fs-2 fw-bold text-success" style="font-family: 'Caveat', cursive;">Colombia Sol y Selva</span>
+          <span class="fs-4 fw-bold text-success" style="font-family: 'Caveat', cursive;">Colombia Sol y Selva</span>
         </div>
         <p class="mb-0 small">Conectamos Colombia con el mundo, a través de artesanías que cuentan historias</p>
       </div>

@@ -84,10 +84,10 @@
     border-radius: 6px;
     cursor: pointer;
 }
-.btn{
+/* .btn{
     background: #3E2723;
     z-index: 2000;
-}
+} */
 .btn:hover{
     background-color: #1b1614;
 }

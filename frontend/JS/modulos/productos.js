@@ -1,3 +1,7 @@
+import { crearTarjetaCatalogo } from "./crearTarjeta.js";
+import { crearFiltroCategoria } from "./filtroCategorias.js";
+import { agregarAlCarrito } from "./agregarCarrito.js";
+
 const URL_JSON = "../../JS/modulos/json.json";
 
 // Contenedores del catálogo
@@ -6,35 +10,20 @@ const nuevosBox = document.getElementById("nuevos");
 const ultimosBox = document.getElementById("ultimos");
 
 
-function crearTarjeta(producto) {
-    return `
-        <div class="col-md-3">
-            <div class="producto-card shadow-sm">
-                <img src="${producto.imagen}" class="w-100" alt="${producto.nombre}">
-                <div class="p-3">
-                    <h5 class="fw-semibold">${producto.nombre}</h5>
-                    <p class="text-muted small">${producto.descripcion}</p>
-                    <p class="text-secondary small"><strong>Categoría:</strong> ${producto.categoria}</p>
-                    <p class="fw-bold">$${producto.precio.toLocaleString()}</p>
-                    <button class="btn green-btn w-100">Agregar</button>
-                </div>
-            </div>
-        </div>
-    `;
-}
-
 function renderizarPagina(productos) {
+    console.log(productos.length);
+    
     // Tarjetas → Recomendados
-    recomendadosBox.innerHTML = productos.slice(0, 3)
-        .map(crearTarjeta).join("");
+    recomendadosBox.innerHTML = productos.slice(-4)
+        .map(crearTarjetaCatalogo).join("");
 
     // Tarjetas → Nuevos
-    nuevosBox.innerHTML = productos.slice(3, 7)
-        .map(crearTarjeta).join("");
+    nuevosBox.innerHTML = productos.slice(-8, -4)
+        .map(crearTarjetaCatalogo).join("");
 
     // Tarjetas → Últimas unidades
-    ultimosBox.innerHTML = productos.slice(7, 11)
-        .map(crearTarjeta).join("");
+    ultimosBox.innerHTML = productos.slice(-12, -8)
+        .map(crearTarjetaCatalogo).join("");
 }
 
 const productosGuardados = localStorage.getItem("productos");
@@ -45,7 +34,7 @@ if (productosGuardados) {
     
     const productos = JSON.parse(productosGuardados);
     renderizarPagina(productos);
-
+    crearFiltroCategoria(productos, renderizarPagina);
 } else {
     console.log("Cargando productos desde API/JSON...");
     
@@ -59,3 +48,21 @@ if (productosGuardados) {
         })
         .catch(err => console.error("Error al cargar JSON:", err));
 }
+
+document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("btnAgregarCarrito")) {
+
+        const id = Number(e.target.dataset.id);
+
+        const productosLocalStorage = JSON.parse(localStorage.getItem("productos")) || [];
+
+        const producto = productosLocalStorage.find(p => p.id === id);
+
+        if (producto) {
+            agregarAlCarrito(producto);
+        } else {
+            console.error("Producto no encontrado en localStorage:", id);
+        }
+    }
+});
+

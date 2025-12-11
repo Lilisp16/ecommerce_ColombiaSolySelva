@@ -1,18 +1,111 @@
+/* Importar fuente sugerida (opcional pero recomendada) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap');
+:root {
+    /* Paleta de Colores definida */
+    --color-fondo: #F5EBDC;       /* Beige claro */
+    --color-texto: #3E2723;    
+    --color-cafe: #4E342E;  /* Marrón oscuro (Café) */
+    --color-primario: #1B5E20;    /* Verde Bosque (Botones principales, Footer oscuro) */
+    --color-secundario: #4CAF50;  /* Verde Hoja (Detalles, hover) */
+    --color-blanco: #ffffff;
+    --hover-dorado: #D4AF37; 
+    --color-blancoHueso: #FAF8F3;      /*hover cuando el fondo es verde */
+    
+    /* Variables de Bootstrap redefinidas */
+    --bs-body-bg: var(--color-fondo);
+    --bs-body-color: var(--color-texto);
+    --bs-font-sans-serif: 'Poppins', sans-serif;
+    --bs-primary: var(--color-primario);
+    --bs-success: var(--color-secundario);
+    --bs-hover: var(--hover-dorado);
+    --bs-blancoHueso: var(--color-blancoHueso);
+    --bs-cafe: var(--color-cafe);
+   
+    
+    /* Configuración de bordes */
+    --radio-borde: 8px; /* Redondeado suave de las imágenes */
+}
+body {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+    font-family: var(--bs-font-sans-serif);
+}
+
+/* Sobrescribir el botón primario */
+.btn-primary {
+    background-color: var(--color-primario);
+    border-color: var(--color-primario);
+    color: var(--color-blanco);
+    border-radius: 6px; /* No totalmente redondo, ni cuadrado */
+    padding: 10px 24px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover, 
+.btn-primary:focus, 
+.btn-primary:active {
+    background-color: var(--color-texto) !important; /* Efecto hover elegante a marrón */
+    border-color: var(--color-texto) !important;
+    transform: translateY(-1px);
+}
+
+/* Botones pequeños (ej. "Agregar" en catálogo) */
+.btn-sm {
+    font-size: 0.85rem;
+    padding: 5px 15px;
+}
+
+.card {
+    border: 2px solid var(--color-texto);
+    background-color: transparent; /* O var(--color-blanco) si prefieres tarjeta blanca */
+    border-radius: var(--radio-borde);
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.03);
+  
+  img {
+    border-bottom: 1px solid var(--color-texto);
+  }
+}
+.card:hover {
+  border: 2px solid var(--color-primario) ;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+/* Si la tarjeta tiene imagen de producto */
+.card-img-top {
+    border-radius: var(--radio-borde);
+    object-fit: cover;
+    /* Opcional: si las imágenes son PNG transparentes, dales fondo blanco suave */
+    background-color: rgba(255,255,255,0.5); 
+}
+
+.card-title {
+    color: var(--color-texto);
+    font-weight: 600;
+}
+
+.card-text {
+    font-size: 0.9rem;
+}
+
 /* Colores, fuentes, header, footer*  genera que se vayan a usar en toda las seccione*/
 header {
     position: sticky;
     top: 0;
     z-index: 1000;
   nav {
+      padding-bottom: 0.5rem;
     ul {
-        font-size: 25px;
-        height: 90px;
+        font-size: 18px;
     }
     .navMovil {
         width: auto;
         #logo {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
         }
     }
     .navbar-collapse {
@@ -43,18 +136,18 @@ header {
             align-self: baseline;
             .inputBuscar {
                 width: 180px;
-                height: 50px; 
+               /* height: 50px; */
                 padding: 0 10px;
                 opacity: 1;
                 margin-right: 10px;
             } 
             .search-btn {
-                background-color: #F5EBDC;
+             /*   background-color: #F5EBDC;*/
                 border: 1px solid #3E2723;
                 color: #3E2723;
                 border-radius: 50%;
-                width: 50px;
-                height: 50px;
+                width: 40px;
+                height: 40px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -63,28 +156,28 @@ header {
             }
 
             .search-btn:hover {
-                background-color: #4CAF50;
-                color: #fff;
+                background-color: var(--hover-dorado);
+                /*color:  var(--hover-dorado);*/
             }
             .icon:hover {
-                color: #4CAF50; 
+                color: var(--hover-dorado); 
                 
                 .icon-user { 
-                    color: #4CAF50; 
-                    border-color: #4CAF50; 
+                    color: var(--hover-dorado);; 
+                    border-color: var(--hover-dorado);; 
                 }
                 .icon-cart { 
-                    color: #4CAF50; 
-                    border-color: #4CAF50;  
+                    color: var(--hover-dorado);; 
+                    border-color:var(--hover-dorado);;  
                 }
             }
 
             .icon-circle {
-                height: 50px;
-                width: 50px;
+                height: 40px;
+                width: 40px;
                 border: 2px solid;
                 border-radius: 50%;
-                font-size: 1.5em; 
+                font-size: 1.2em; 
                 display: flex;
                 justify-content: center;
                 justify-self: center;
@@ -146,10 +239,41 @@ header {
   }
 }
 
-h2{
-  font-family: 'Times New Roman' !important;
-  color: #1B5E20;
-  text-align: center;
+.form-control, .form-select {
+    background-color: var(--color-blanco);
+    border: 1px solid rgba(62, 39, 35, 0.15); /* Marrón muy suave */
+    border-radius: var(--radio-borde);
+    padding: 12px 15px; /* Más espacioso que el default */
+    color: var(--color-texto);
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 3px rgba(27, 94, 32, 0.2); /* Halo verde suave */
+    border-color: var(--color-primario);
+    background-color: var(--color-blanco);
+}
+
+/* Etiquetas de los inputs */
+.form-label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Merriweather', serif;
+  color: var(--color-primario);
+  font-weight: 700;
+  letter-spacing: -0.5px; /* Un toque moderno */
+}
+
+/* El subtítulo verde o pequeño texto encima de los títulos */
+.text-subtitle {
+    color: var(--color-primario);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
 }
 
 body {
@@ -160,7 +284,7 @@ body {
 
 
 /* ESTILOS FOOTER */
-h2, .footer-title {
+.footer-title {
   font-family: 'Caveat', cursive;
 
 }
@@ -328,4 +452,13 @@ h2, .footer-title {
   color: #555; 
 }
 
+.swal2-container {
+  z-index: 999999  !important; 
+}
 
+.mi-boton-swal {
+  background-color: #3E2723 !important;
+  color: white !important;
+  border-radius: 6px !important;
+  padding: 10px 20px !important;
+}

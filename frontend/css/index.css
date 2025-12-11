@@ -88,15 +88,28 @@ body{
 
 /* ESTILOS  CAROUSEL */
 
-.card {
+.card-body {
   width: 18rem;
-  border: none;
+  
   box-shadow: none;
 }
 
 .card-img-top {
   height: 250px;
   object-fit: cover;
+}
+
+.card-slider{
+  background-color: #ffffff;
+  
+}
+
+
+.carousel-item img {
+  display: block;
+  margin: 0 auto;       
+  object-fit: contain;  
+  max-height: 450px;    
 }
 /* HASTA AQUI ESTILO CAROUSEL */
 
@@ -113,12 +126,13 @@ body{
 }
 
 
-.boton-dorado {
-  background-color: #D4AF37 !important;
+.boton-verde {
+  background-color: var(--color-primario) !important;
   color: white !important;
   transition: background-color 0.3s !important;
+
 }
-.boton-dorado:hover {
+.boton-verde:hover {
   background-color: #3E2723 !important; 
   color: white;
 }

@@ -4,32 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contactenos</title>
+    <title>Contacto - Colombia Sol y Selva</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../../CSS/global.css">
     <link rel="stylesheet" href="../../css/contacto.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
+  
 </head>
+
 <body>
-    <header class="header">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light pt-4 shadow-sm navbar-fixed">
-            <div class="container-xxl d-flex justify-content-between align-items-center">
 
-                <!-- Mostrar solo movil -->
-                <div class="navMovil d-flex justify-content-between flex-shrink-1-">
-                    <!-- Logo -->
-                    <a class="navbar-brand d-flex align-items-center " href="#">
-                        <img id="logo" src="../../IMG/Logo.png" alt="Logo">
-                    </a>
+<!-- ========================================================= -->
+<!-- ======================== HEADER ========================= -->
+<!-- ========================================================= -->
 
-                <!-- Botón hamburguesa -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" 
-                    aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light pt-4 shadow-sm navbar-fixed">
+        <div class="container-xxl d-flex justify-content-between align-items-center">
+
+            <!-- Móvil -->
+            <div class="navMovil d-flex justify-content-between">
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img id="logo" src="../../IMG/Logo.png" alt="Logo">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false"
+                        aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-           </div>
+            </div>
 
-            <!-- Links y buscador -->
+            <!-- Menú -->
             <div class="collapse navbar-collapse" id="mainNav">
-                <!-- Links centrados -->
                 <ul class="navbar-nav mx-auto gap-3 mb-2 mb-lg-0 text-center">
                     <li class="nav-item"><a class="nav-link link-custom" href="../index.html">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link link-custom" href="./productos.html">Productos</a></li>
@@ -38,201 +46,265 @@
                     <li class="nav-item"><a class="nav-link link-custom" href="./contacto.html">Contacto</a></li>
                 </ul>
 
-                <!-- Mi cuenta y carrito -->
-                <div class="searchAccountSection d-flex gap-3 align-items-top">
-                     <!-- Buscador -->
-                    <form class="d-flex m-0 h-75 align-content-center" role="search">
-                        <input class="form-control inputBuscar" type="search" placeholder="Buscar..." aria-label="Buscar">
-                        <button class="btn search-btn" type="button">
-                            <i class="fas fa-search"></i>
-                        </button>
+                <!-- Buscador / Cuenta / Carrito -->
+                <div class="searchAccountSection d-flex gap-3 align-items-start">
+
+                    <form class="d-flex m-0 h-75" role="search">
+                        <input class="form-control inputBuscar" type="search" placeholder="Buscar...">
+                        <button class="btn search-btn" type="button"><i class="fas fa-search"></i></button>
                     </form>
+
                     <div class="icon text-center">
                         <i class="fas fa-user icon-circle icon-user"></i>
                         <div class="icon-text">Mi cuenta</div>
                     </div>
+
                     <div class="icon text-center" id="abrirCarrito">
-                        <i class="fas fa-shopping-cart position-relative icon-circle icon-cart">    
-                            <span 
-                                id="cartCount"
-                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                            </span>
-                        </i>                
-                            
+                        <i class="fas fa-shopping-cart position-relative icon-circle icon-cart">
+                            <span id="cartCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"></span>
+                        </i>
                         <div class="icon-text">Carrito</div>
                     </div>
-                </div>
-            </div>
 
-            </div>
-        </nav>
-        <!-- Carrito -->
-        <div id="sidebar" class="sidebar card  bg-dark text-light vh-100">
-            <div class="card-header d-flex gap-3 justify-content-between align-items-center" style="min-height: 120px;">
-                <h3>Carrito</h3>
-                <button id="closeCarrito" class="btn btn-outline-light border-0 fs-4">✖</button>
-            </div>
-            
-            <div class="card-body overflow-y-auto">
-                <div id="cart-items"></div>
-            </div>
-            
-            <div class="card-footer d-flex flex-column gap-3 pt-4 rounded-top">
-                <h4 class="d-flex justify-content-between fs-5">
-                    <div>Total Items:  </div>
-                    <div id="totalItemCount">0</div>
-                </h4>
-                <h4 class="d-flex justify-content-between fs-4 fw-bold">
-                    <div>Total: </div>
-                    <div>$ <span id="cart-total-check">0</span></div>
-                </h4>
-                <button type="button" class="btn btn-lg btn-outline-light mx-auto gap-3 d-flex align-items-center" style="max-width: 150px;">
-                    Comprar
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-credit-card-2-back" viewBox="0 0 16 16">
-                        <path d="M11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5z"></path>
-                        <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm13 2v5H1V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1m-1 9H2a1 1 0 0 1-1-1v-1h14v1a1 1 0 0 1-1 1"></path>
-                    </svg>
-              </button>
+                </div>
             </div>
         </div>
-    </header>
-<div class="container">
-    <div class="row">
-        <div class="col-6">
-            <form class="container p-4 bg-light my-4" id="formContacto"
-                action="https://formspree.io/f/mgvbdywe"
-                method="POST"
-                enctype="multipart/form-data">
-                <h2 class="text-center mb-3">Contáctenos</h2>
+    </nav>
+</header>
+
+<!-- ========================================================= -->
+<!-- ======================== CARRITO ======================== -->
+<!-- ========================================================= -->
+
+<div id="sidebar" class="sidebar card bg-dark text-light vh-100 position-fixed" style="right:-350px; top:0; width:350px; transition:0.3s;">
+    <div class="card-header d-flex justify-content-between align-items-center" style="min-height: 120px;">
+        <h3>Carrito</h3>
+        <button id="closeCarrito" class="btn btn-outline-light border-0 fs-4">✖</button>
+    </div>
+
+    <div class="card-body overflow-y-auto">
+        <div id="cart-items"></div>
+    </div>
+
+    <div class="card-footer d-flex flex-column gap-3 pt-4 rounded-top">
+        <h4 class="d-flex justify-content-between fs-5">
+            <div>Total Items: </div>
+            <div id="totalItemCount">0</div>
+        </h4>
+
+        <h4 class="d-flex justify-content-between fs-4 fw-bold">
+            <div>Total: </div>
+            <div>$ <span id="cart-total-check">0</span></div>
+        </h4>
+
+        <button type="button" class="btn btn-lg btn-outline-light mx-auto gap-3 d-flex align-items-center"
+                style="max-width: 150px;">
+            Comprar
+            <i class="bi bi-credit-card-2-back"></i>
+        </button>
+    </div>
+</div>
+
+<!-- ========================================================= -->
+<!-- ========================= MAIN ========================== -->
+<!-- ========================================================= -->
+
+<main class="container my-5">
+
+    <div class="row g-4">
+
+        <!-- Imagen / Banner -->
+        <div class="col-md-6">
+            <img src="../../IMG/imagenContacto.jpg"
+                 class="img-fluid rounded shadow-sm w-100"
+                 alt="Banner Contacto"
+                 style="object-fit: contain; height: 650px; width: 300px; border-radius: 50px;">
+        </div>
+
+        <!-- Formulario -->
+        <div class="col-md-6">
+            <form class="p-4 bg-light shadow-sm rounded" id="formContacto"
+                  action="https://formspree.io/f/mgvbdywe" method="POST">
+
+                <h2 class="text-center mb-4">Contáctenos</h2>
+
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Nombre</label>
-                    <input class="form-control" id="formContNombre" rows="1" placeholder="Ingrese su nombre" name="Nombre"></input>
+                    <label class="form-label">Nombre</label>
+                    <input class="form-control" id="formContNombre" placeholder="Ingrese su nombre" name="Nombre">
                     <p class="errorValid" id="formContErrorNombre"></p>
                 </div>
+
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Correo Electrónico</label>
+                    <label class="form-label">Correo Electrónico</label>
                     <input type="email" class="form-control" id="formContEmail" placeholder="name@example.com" name="email">
                     <p class="errorValid" id="formContErrorCorreo"></p>
                 </div>
+
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Teléfono</label>
-                    <input class="form-control" id="formContTelefono" rows="1" placeholder="Ingrese su número telefónico" name="telefono"></input>
+                    <label class="form-label">Teléfono</label>
+                    <input class="form-control" id="formContTelefono" placeholder="Ingrese su número telefónico" name="telefono">
                     <p class="errorValid" id="formContErrorTelefono"></p>
                 </div>
+
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
-                    <input class="form-control" id="formContMensaje" rows="3" placeholder="Déjenos tu mensaje" name="mensaje"></input>
+                    <label class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="formContMensaje" rows="3" placeholder="Déjenos tu mensaje" name="mensaje"></textarea>
                     <p class="errorValid" id="formContErrorMensaje"></p>
                 </div>
+
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="checkDatosPersonales" onchange="validarForm()">
-                    <label class="form-check-label" for="checkDefault">Acepto la Política de Tratamiento de Datos</label>
-                    <a href="./ttoDatosPersonales.html">Consúltela Aquí</a>
+                    <input class="form-check-input" type="checkbox" id="checkDatosPersonales">
+                    <label class="form-check-label">Acepto la Política de Tratamiento de Datos</label>
+                    <a href="./ttoDatosPersonales.html">Consultar</a>
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="checkGarantias" onchange="validarForm()">
-                    <label class="form-check-label" for="checkDefault">Conozco los términos y condiciones de garantías</label>
-                    <a href="./terminosGarantias.html">Consúltelas Aquí</a>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="checkGarantias">
+                    <label class="form-check-label">Conozco los términos de garantías</label>
+                    <a href="./terminosGarantias.html">Consultar</a>
                 </div>
-                <div class="text-end">
-                    <button class="btnEnviar btn btn-primary w-20" id="btnEnviarForm" type="submit" disabled>Enviar</button>
-                </div>
+
+                <button class="btn btn-primary w-100 btnEnviar" id="btnEnviarForm" type="submit" disabled>Enviar</button>
             </form>
         </div>
 
-        <!-- Preguntas Frecuentes -->
-<div class="col-6 container p-4 bg-light my-4">
-    <h2>Preguntas Frecuentes</h2>
-    <div class="accordion" id="accordionExample">
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">¿Cómo puedo registrarme?</button></h2>
-            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    <p>Puedes registrarte haciendo clic en el botón "Mi Cuenta" en la parte superior derecha de la página.</p>
-                </div>
-            </div>
-        </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">¿Cómo recupero mi contraseña?</button></h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    <p>Haciendo clic en "¿Olvidé mi contraseña?" y seguir las instrucciones enviadas al correo registrado al momento de crear la cuenta.</p>
-                </div>
-            </div>
-        </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThird" aria-expanded="false" aria-controls="collapseThird">¿Cuáles métodos de pago aceptan?</button></h2>
-            <div id="collapseThird" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    <p>Aceptamos tarjetas de crédito, débito y paypal</p>
-                </div>
-            </div>
-        </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFourth" aria-expanded="false" aria-controls="collapseFourth">¿Cuánto cuesta el envío?</button></h2>
-            <div id="collapseFourth" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    <p>El envío lo cubre 100% Colombia Sol y Selva para cualquier destino.</p>
-                </div>
-            </div>
-        </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFifth" aria-expanded="false" aria-controls="collapseFifth">¿Cómo puedo hacer la devolución de un pedido?</button></h2>
-            <div id="collapseFifth" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    <p>Recuerde validar las políticas de garantías establecias para realizar la devolución de un envío, en caso de cumplirse con las condiciones estipuladas, por favor diligenciar el formulario de contacto para realizar las respectivas indicaciones del proceso de devolución.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>  
+        <!-- FAQ -->
+        <div class="col-12">
+            <div class="p-4 bg-light shadow-sm rounded">
 
-  
-<footer class="footer-artesanal">
-    <!-- Franja artesanal arriba -->
+                <h2 class="mb-4">Preguntas Frecuentes</h2>
+
+                <div class="accordion" id="accordionExample">
+
+                    <!-- Item 1 -->
+                    <div class="accordion-item mb-2">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne">
+                                ¿Cómo puedo registrarme?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Puedes registrarte haciendo clic en "Mi Cuenta".
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="accordion-item mb-2">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo">
+                                ¿Cómo recupero mi contraseña?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Usa la opción “¿Olvidé mi contraseña?”.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="accordion-item mb-2">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree">
+                                ¿Qué métodos de pago aceptan?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Tarjeta crédito, débito y PayPal.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="accordion-item mb-2">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour">
+                                ¿Cuánto cuesta el envío?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                El envío lo cubre 100% Colombia Sol y Selva.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFive">
+                                ¿Cómo hacer devolución de un pedido?
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Validar políticas de garantía y enviar el formulario de contacto.
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- /accordion -->
+
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<!-- ========================================================= -->
+<!-- ======================== FOOTER ========================= -->
+<!-- ========================================================= -->
+
+<footer class="footer-artesanal mt-5">
     <div class="artisan-wave-clean"></div>
 
-    <!-- Contenido del footer -->
     <div class="footer-content container">
 
-      <div class="footer-left">
-        <h2 class="footer-title">
-          <a href="index.html"> <img id="logo" src="../../IMG/Logo.png" class="navbar-brand" alt="Logo">Colombia Sol y Selva</a>
-        </h2>
-        <div class="footer-socials">
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="#"><i class="fab fa-github"></i></a>
+        <div class="footer-left">
+            <h2 class="footer-title">
+                <a href="index.html">
+                    <img id="logo" src="../../IMG/Logo.png" class="navbar-brand" alt="Logo">
+                    Colombia Sol y Selva
+                </a>
+            </h2>
+            <div class="footer-socials">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
         </div>
-      </div>
 
+        <nav class="footer-links">
+            <div class="footer-link-item"><a href="#">Productos</a><i class="fas fa-box"></i></div>
+            <div class="footer-link-item"><a href="#">Historias</a><i class="fas fa-book-open"></i></div>
+            <div class="footer-link-item"><a href="#">Nosotros</a><i class="fas fa-users"></i></div>
+            <div class="footer-link-item"><a href="#">Contacto</a><i class="fas fa-envelope"></i></div>
+        </nav>
 
-      <nav class="footer-links">
-        <div class="footer-link-item">
-          <a href="#">Productos</a>
-          <i class="fas fa-box"></i>
-        </div>
-        <div class="footer-link-item">
-          <a href="#">Historias</a>
-          <i class="fas fa-book-open"></i>
-        </div>
-        <div class="footer-link-item">
-          <a href="#">Nosotros</a>
-          <i class="fas fa-users"></i>
-        </div>
-        <div class="footer-link-item">
-          <a href="#">Contacto</a>
-          <i class="fas fa-envelope"></i>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>  
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>  
     <script src="../../JS/modulos/form.js"></script>
+    
     <script type="module" src="../../JS/main.js"></script>
+
+
 </body>
 </html>

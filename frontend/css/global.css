@@ -260,7 +260,13 @@ header {
     font-size: 0.95rem;
 }
 
-h1, h2, h3, h4, h5 {
+.card-carrito,
+.card-carrito * {
+  color: #FAF8F3 !important; 
+  background-color: #4E342E;
+}
+
+h1, h2, h3, h5 {
   font-family: 'Merriweather', serif;
   color: var(--color-primario);
   font-weight: 700;
@@ -462,3 +468,4 @@ body {
   border-radius: 6px !important;
   padding: 10px 20px !important;
 }
+

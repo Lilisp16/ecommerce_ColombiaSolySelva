@@ -1,3 +1,4 @@
+import { formatearMiles } from "../../JS/main.js";
 export function cartItemCarrito (producto) {
     const nuevoProducto = `
     <div class="d-flex justify-content-center">
@@ -9,7 +10,7 @@ export function cartItemCarrito (producto) {
                                 <input type="checkbox">
                                 <span class="checkmark"></span>
                             </label>
-                            <i class="bi bi-trash3"></i>
+                            <i class="btn-eliminarItem bi bi-trash3" style="cursor: pointer" data-id="${producto.id}"></i>
                         </div>
                         <div class="me-3">
                             <div class="border border-black bg-dark rounded-4" style="width: 80px; height: 80px;">
@@ -17,11 +18,13 @@ export function cartItemCarrito (producto) {
                             </div>
                         </div>
 
-                        <div class="flex-grow-1">
-                            <h5 class="card-title mb-0 fw-normal text-truncate text-nowrap d-block" style="max-width: 150px;">
-                                ${producto.nombre}asdfasdfasdfasdfasdfasdf
-                            </h5>
-                            <h6>Vr. Unit. $ ${producto.precio} </h6>
+                        <div class="flex-grow-1" style="min-width: 0;">
+                            <h6 class="card-title" 
+                                style="display: block; max-width: 150px; overflow: hidden; text-overflow: ellipsis;">
+                                <strong>${producto.nombre}</strong>
+                            </h6>
+                            <h6>Vr. Unit. $ ${formatearMiles(producto.precio)} </h6>
+                            <h6>Subtotal: $ ${formatearMiles(Number(producto.precio) * Number(producto.cantidad))}</h6>
                         </div>
 
                         <div class="d-flex flex-column align-items-end justify-content-between" style="height: 80px;">
@@ -57,10 +60,10 @@ export const productosRecientes = (producto) => {
                         </div>
 
                         <div class="flex-grow-1">
-                            <h5 class="card-title mb-0 fw-bold text-truncate text-nowrap d-block" style="max-width: 150px;">
+                            <h6 class="card-title mb-0 fw-bold text-truncate text-nowrap d-block" style="max-width: 150px;">
                                 ${producto.nombre}
-                            </h5>
-                            <h6 class="text-secondary fw-bold">Valor Unitario: $ ${producto.precio} </h6>
+                            </h6>
+                            <h6 class="text-secondary fw-bold">Valor Unitario: $ ${formatearMiles(producto.precio)} </h6>
                             <h6 class="text-secondary fw-bold">En stock: ${producto.stock} unds</h6>
                             
                         </div>

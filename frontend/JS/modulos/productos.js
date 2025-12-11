@@ -54,7 +54,14 @@ document.addEventListener("click", (e) => {
 
         const id = Number(e.target.dataset.id);
 
-        const productosLocalStorage = JSON.parse(localStorage.getItem("productos")) || [];
+        let productosLocalStorage = JSON.parse(localStorage.getItem("productos")) || [];
+        productosLocalStorage = productosLocalStorage.map(p => ({
+        ...p,
+        id: Number(p.id),
+        precio: Number(p.precio),
+        stock: Number(p.stock)
+        }));
+        console.log("PRODUCTOS NORMALIZADOS:", productosLocalStorage);
 
         const producto = productosLocalStorage.find(p => p.id === id);
 

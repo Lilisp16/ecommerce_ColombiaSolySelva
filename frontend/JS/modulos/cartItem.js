@@ -1,4 +1,4 @@
-export const nuevoProducto = (producto) => {
+export function cartItemCarrito (producto) {
     const nuevoProducto = `
     <div class="d-flex justify-content-center">
                 <div class="cartItem card rounded-4 mb-3" style="max-width: 500px;">

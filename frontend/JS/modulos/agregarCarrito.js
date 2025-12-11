@@ -1,51 +1,52 @@
-import { nuevoProducto } from "./cartItem.js";
-import { crearTarjeta } from "./crearTarjeta.js";
-
-
 const URL_JSON = "../../JS/modulos/json.json";
+export let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+console.log("Info del carrito: "+carrito);
 
-// Arrays de datos
-let productosJSON = [];
-let productosLocalStorage = JSON.parse(localStorage.getItem("catalogoLS")) || [];
-let catalogoGeneral = [];
-
-
-// 1️⃣ Cargar productos del JSON
-fetch(URL_JSON)
-    .then(res => res.json())
-    .then(data => {
-        productosJSON = data;
-        unirProductos();
-        console.log("CATÁLOGO UNIFICADO", catalogoGeneral);
-    });
-
-
-// 2️⃣ Unir JSON + LocalStorage en un solo array (sin validaciones)
-function unirProductos() {
-    catalogoGeneral = [...productosJSON, ...productosLocalStorage];
-    console.log("Catalogo general"+catalogoGeneral        7)
+function guardarCarrito(){
+   localStorage.setItem("carrito",JSON.stringify(carrito));
 }
 
-
-// 3️⃣ Buscar producto por ID
-function buscarProducto(id) {
-    return catalogoGeneral.find(p => p.id == id);
+export function actualizarBadgeCarrito() {
+    const cantidad = carrito.reduce((total, item) => total + item.cantidad, 0);;
+    const cartCount = document.getElementById("cartCount");
+    if (cartCount) cartCount.textContent = cantidad
 }
 
+export const mostrarCarrito = () => {
+  const contenedor = document.getElementById("cart-items");
+  contenedor.innerHTML = ""; // Limpiar antes de renderizar
 
-// 4️⃣ Agregar producto al carrito
-function agregarAlCarrito(id) {
-    const producto = buscarProducto(id);
+  carrito.forEach((item) => {
+    contenedor.innerHTML += `
+      <div class="d-flex justify-content-between align-items-center border-bottom py-2">
+        <div class="d-flex align-items-center gap-2">
+          <img 
+            src="${item.imagen}" 
+            style="width: 50px; height: 50px; object-fit: cover; border-radius: 5px;"
+          >
+          <div>
+            <h6 style="color:black"><strong>${item.nombre}</strong></h6>
+            <h6 style="color:black"><strong>$${item.precio}</strong></h6>
+            <h6 style="color:black"><strong>${item.cantidad}</strong></h6>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+};
 
-    if (!producto) {
-        console.error("Producto no encontrado:", id);
-        return;
-    }
 
-    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-    console.log("Producto cargado");
+    
 
-    const existe = carrito.find(p => p.id == id);
+    let productosLocalStorage = JSON.parse(localStorage.getItem("productos")) || [];
+    console.log("PRODUCTOS DEL LOCALSTORAGE:", productosLocalStorage);
+
+
+    export const agregarAlCarrito = (producto) => {
+    console.log("Producto recibido:", producto);
+    console.log("Carrito antes:", carrito);
+
+    const existe = carrito.find(item => item.id === producto.id);
 
     if (existe) {
         existe.cantidad++;
@@ -53,16 +54,40 @@ function agregarAlCarrito(id) {
         carrito.push({ ...producto, cantidad: 1 });
     }
 
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-    console.log("Producto agregado al carrito:", producto.nombre);
-}
+    guardarCarrito();
+    actualizarBadgeCarrito();
+    mostrarCarrito()
+ 
+
+    Swal.fire({
+        title: "Producto agregado",
+        text: `${producto.nombre} fue agregado al carrito`,
+        icon: "success",
+        timer: 2500,
+        showConfirmButton: true,
+    });
+    console.log("Carrito después:", carrito);
+    };
+
+    export function eliminarDelCarrito(id){
+        carrito = carrito.filter((item) => item.id !== id);
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        guardarCarrito();
+        actualizarBadgeCarrito();
+        mostrarCarrito();
+  
+    };
 
 
+    export const obtenerCantidadTotal = () => {
+        const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+        return carrito.reduce((total, item) => total + item.cantidad, 0);
+    };
 
-// 5️⃣ Delegación de eventos
-document.addEventListener("click", (e) => {
-    if (e.target.classList.contains("agregarCarrito")) {
-        const idProducto = e.target.dataset.id;
-        agregarAlCarrito(idProducto);
-    }
-});
+    window.addEventListener("load", () => {
+    mostrarCarrito();
+    actualizarBadgeCarrito();
+    });
+    
+
+

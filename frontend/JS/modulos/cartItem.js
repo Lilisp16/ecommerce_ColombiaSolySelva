@@ -30,9 +30,9 @@ export function cartItemCarrito (producto) {
                         <div class="d-flex flex-column align-items-end justify-content-between" style="height: 80px;">
                             <i class="bi bi-heart-fill"></i>
                             <div class="d-flex align-items-center gap-2">
-                            <button class="text-white btn btn-outline-dark btn-sm p-0 rounded-2 d-flex justify-content-center align-items-center" style="width: 25px; height: 25px;">-</button>
+                            <button class="text-black btn btn-outline-dark btn-sm p-0 rounded-2 d-flex justify-content-center align-items-center" style="width: 25px; height: 25px;">-</button>
                             <span class="fw-bold">${producto.stock}</span>
-                            <button class="text-white btn btn-outline-dark btn-sm p-0 rounded-2 d-flex justify-content-center align-items-center" style="width: 25px; height: 25px;">+</button>
+                            <button class="text-black btn btn-outline-dark btn-sm p-0 rounded-2 d-flex justify-content-center align-items-center" style="width: 25px; height: 25px;">+</button>
                             </div>  
                         </div>
 

@@ -1,4 +1,8 @@
+
 const URL_JSON = "../../JS/modulos/json.json";
+import { cartItemCarrito } from "../../JS/modulos/cartItem.js";
+
+
 export let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 console.log("Info del carrito: "+carrito);
 
@@ -16,8 +20,9 @@ export const mostrarCarrito = () => {
   const contenedor = document.getElementById("cart-items");
   contenedor.innerHTML = ""; // Limpiar antes de renderizar
 
+  /* nombree,precio,cantidad,imagen */
   carrito.forEach((item) => {
-    contenedor.innerHTML += `
+    /* contenedor.innerHTML += `
       <div class="d-flex justify-content-between align-items-center border-bottom py-2">
         <div class="d-flex align-items-center gap-2">
           <img 
@@ -31,7 +36,8 @@ export const mostrarCarrito = () => {
           </div>
         </div>
       </div>
-    `;
+    `; */
+    contenedor.innerHTML += cartItemCarrito(item);
   });
 };
 

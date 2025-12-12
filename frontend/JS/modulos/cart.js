@@ -1,15 +1,19 @@
+import { cartItemCarrito } from "./cartItem.js";
+import { obtenerCantidadTotal } from "./agregarCarrito.js";
+import { carrito } from "./agregarCarrito.js";
+
 export class Carrito {
     constructor(abrirCarrito) {
         this.abrirCarrito = abrirCarrito,
-        this.cartCount = 1
+        this.cartCount = 0
     }
-    mostrarCantidadItems(cantidad) {
-        const badge = document.getElementById("cartCount");
-        const totalItemCount = document.getElementById("totalItemCount");
-        badge.textContent = cantidad;
-        totalItemCount.textContent = cantidad;
-        this.cartCount = cantidad;
+
+    mostrarCantidadItems() {
+        const cantidad = obtenerCantidadTotal();
+        document.getElementById("cartCount").textContent = cantidad;
+        document.getElementById("totalItemCount").textContent = cantidad;
     }
+
     inicializar() {
         const botonCarrito = document.getElementById(this.abrirCarrito);
         botonCarrito.addEventListener("click" , () => {
@@ -28,6 +32,7 @@ export class Carrito {
             });                                 
         })
 
-        this.mostrarCantidadItems(10)
+        this.mostrarCantidadItems();
     }
 }
+ 

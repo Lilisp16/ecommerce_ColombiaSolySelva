@@ -1,5 +1,7 @@
 import { crearTarjetaCatalogo } from "./crearTarjeta.js";
 import { crearFiltroCategoria } from "./filtroCategorias.js";
+import { agregarAlCarrito } from "./agregarCarrito.js";
+
 const URL_JSON = "../../JS/modulos/json.json";
 
 // Contenedores del catálogo
@@ -46,4 +48,28 @@ if (productosGuardados) {
         })
         .catch(err => console.error("Error al cargar JSON:", err));
 }
+
+document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("btnAgregarCarrito")) {
+
+        const id = Number(e.target.dataset.id);
+
+        let productosLocalStorage = JSON.parse(localStorage.getItem("productos")) || [];
+        productosLocalStorage = productosLocalStorage.map(p => ({
+        ...p,
+        id: Number(p.id),
+        precio: Number(p.precio),
+        stock: Number(p.stock)
+        }));
+        console.log("PRODUCTOS NORMALIZADOS:", productosLocalStorage);
+
+        const producto = productosLocalStorage.find(p => p.id === id);
+
+        if (producto) {
+            agregarAlCarrito(producto);
+        } else {
+            console.error("Producto no encontrado en localStorage:", id);
+        }
+    }
+});
 

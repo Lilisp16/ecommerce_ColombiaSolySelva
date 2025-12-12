@@ -1,5 +1,4 @@
-const headerHTML = `
-
+const headerHTML =`
         <nav class="navbar navbar-expand-lg navbar-light bg-light pt-4 shadow-sm navbar-fixed">
             <div class="container-xxl d-flex justify-content-between align-items-center">
 
@@ -7,7 +6,7 @@ const headerHTML = `
                 <div class="navMovil d-flex justify-content-between flex-shrink-1-">
                     <!-- Logo -->
                     <a class="navbar-brand d-flex align-items-center " href="#">
-                        <img id="logo" src="../../IMG/logo.png" alt="Logo">
+                        <img id="logo" src="../../IMG/Logo.png" alt="Logo">
                     </a>
 
                 <!-- Botón hamburguesa -->
@@ -39,7 +38,6 @@ const headerHTML = `
                     </form>
                     <div class="icon text-center">
                         <i class="fas fa-user icon-circle icon-user"></i>
-                        <div class="icon-text">Mi cuenta</div>
                     </div>
                     <div class="icon text-center" id="abrirCarrito">
                         <i class="fas fa-shopping-cart position-relative icon-circle icon-cart">    
@@ -48,8 +46,6 @@ const headerHTML = `
                                 class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                             </span>
                         </i>                
-                            
-                        <div class="icon-text">Carrito</div>
                     </div>
                 </div>
             </div>

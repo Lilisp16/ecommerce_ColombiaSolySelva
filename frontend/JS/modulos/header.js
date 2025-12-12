@@ -54,8 +54,8 @@ const headerHTML =`
         </nav>
         <!-- Carrito -->
         <div id="sidebar" class="sidebar card  bg-dark text-light vh-100">
-            <div class="card-header d-flex gap-3 justify-content-between align-items-center" style="min-height: 120px;">
-                <h3>Carrito</h3>
+            <div class="card-header d-flex gap-3 justify-content-between align-items-center" style="min-height: 120px; background-color:#4E342E; color: #FAF8F3" >
+                <p style= font-size:40px>Carrito</p>
                 <button id="closeCarrito" class="btn btn-outline-light border-0 fs-4">✖</button>
             </div>
             
@@ -63,13 +63,13 @@ const headerHTML =`
                 <div id="cart-items"></div>
             </div>
             
-            <div class="card-footer d-flex flex-column gap-3 pt-4 rounded-top">
+            <div class="card-footer d-flex flex-column gap-3 pt-4 rounded-top" style="background-color:#4E342E; color: #FAF8F3">
                 <h4 class="d-flex justify-content-between fs-5">
                     <div>Total Items:  </div>
                     <div id="totalItemCount">0</div>
                 </h4>
                 <h4 class="d-flex justify-content-between fs-4 fw-bold">
-                    <div>Total: </div>
+                    <div>Total Compra: </div>
                     <div>$ <span id="cart-total-check">0</span></div>
                 </h4>
                 <button type="button" class="btn btn-lg btn-outline-light mx-auto gap-3 d-flex align-items-center" style="max-width: 150px;">

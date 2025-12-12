@@ -11,3 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const carrito = new Carrito("abrirCarrito");
     carrito.inicializar();
 });
+
+export function formatearMiles(numero) {
+  return numero.toLocaleString('es-CO'); 
+}

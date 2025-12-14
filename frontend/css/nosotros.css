@@ -28,7 +28,15 @@
     border-radius: 1em;
     z-index: -1; 
   }
-  .somos {
+  .somos, .mision {
+    .d-flex.w-100 {
+      border-radius: 1em;
+      transition: .3s all ease;
+    }
+    .d-flex.w-100:hover{
+      background-color: #f3dfc1;
+      font-weight: bold;
+    }
     h4 {
       line-height: 1.5em;
     }
@@ -42,6 +50,33 @@
     }
     .background:last-child {
       background-image: url(../IMG/assets/artesanosqs.jpg);
+    }
+  }
+  .mision {
+    .background {
+      background-image: url(../IMG/assets/mision.png);
+    }
+    .background:last-child {
+      background-image: url(../IMG/assets//vision.png);
+    }
+  } 
+
+  .colaboradoresContainer {
+    .card {
+      background-color: var(--color-blanco);
+      padding: 1em;
+      transition: .3s all ease;
+      
+    .card-body {
+      min-height: 200px;
+      border-top: 2px solid var(--color-texto);
+    }
+    }
+    .card:hover {
+      background-color: var(--color-texto);
+      img {
+        transform: scale(1.15);
+      }
     }
   }
 
@@ -128,9 +163,6 @@
     padding-bottom: 1rem;
   }
 
-  #equipo .card {
-    flex: 0 0 auto; 
-  }
 
   .tituloEquipo{
     font-family: 'Caveat', cursive;
@@ -141,8 +173,4 @@
     height: 100px;
   }
 
-  #imgequipo{
-    height: 240px;
-    width: 60px;
-  }
 }

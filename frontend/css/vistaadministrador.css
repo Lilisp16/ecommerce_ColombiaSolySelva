@@ -1,12 +1,11 @@
 /* === Sidebar colocado sin mover el header === */
 .sidebar {
     position: fixed;
-    top: 130px; /* Ajusta según el alto de tu header */
     left: 0;
     
     width: 260px;
     background-color: #F8F9FA; /* Verde selva */
-    height: calc(100vh - 100px); 
+    height: 100vh; 
     padding: 15px;
     transition: margin 0.3s ease;
 

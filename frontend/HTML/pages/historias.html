@@ -14,75 +14,9 @@
 </head>
 
 <body>
+    <header class="header"></header>
     <!-- HERO -->
-    <header>
-        <header class="header">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light pt-4 shadow-sm navbar-fixed">
-                <div class="container-xxl d-flex justify-content-between align-items-center">
-                    <!-- Móvil -->
-                    <div class="navMovil d-flex justify-content-between">
-                        <a class="navbar-brand d-flex align-items-center" href="#">
-                            <img id="logo" src="../../IMG/Logo.png" alt="Logo" />
-                        </a>
-
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-                            aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </div>
-
-                    <!-- Links -->
-                    <div class="collapse navbar-collapse" id="mainNav">
-                        <!-- Menú centrado -->
-                        <ul class="navbar-nav mx-auto gap-3 mb-2 mb-lg-0 text-center">
-                            <li class="nav-item">
-                                <a class="nav-link link-custom" href="../index.html">Inicio</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link link-custom" href="./catalogo.html">Catalogo</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link link-custom" href="./historias.html">Historias</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link link-custom" href="./nosotros.html">Nosotros</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link link-custom" href="./contacto.html">Contacto</a>
-                            </li>
-                        </ul>
-
-                        <!-- Buscador, usuario y carrito -->
-                        <div class="searchAccountSection d-flex gap-3 align-items-top">
-                            <!-- Buscador -->
-                            <form class="d-flex m-0 h-75" role="search">
-                                <input class="form-control inputBuscar" type="search" placeholder="Buscar..."
-                                    aria-label="Buscar" />
-                                <button class="btn search-btn" type="button">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </form>
-
-                            <!-- Cuenta -->
-                            <div class="icon text-center">
-                                <i class="fas fa-user icon-circle icon-user"></i>
-                                <div class="icon-text">Mi cuenta</div>
-                            </div>
-
-                            <!-- Carrito -->
-                            <div class="icon text-center" id="abrirCarrito">
-                                <i class="fas fa-shopping-cart position-relative icon-circle icon-cart">
-                                    <span id="cartCount"
-                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"></span>
-                                </i>
-                                <div class="icon-text">Carrito</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-
-        </header>
+    <main>
         <div class="overlay">
             <h1 style="color: rgb(255, 255, 255);">Artesanos de Colombia</h1>
             <p>Tejiendo historias con el corazón</p>
@@ -233,6 +167,7 @@
                 document.getElementById("cardDesc").textContent = artisans[index].desc;
             });
         </script>
+        <script type="module" src="../../JS/main.js"></script>
 </body>
 
 </html>

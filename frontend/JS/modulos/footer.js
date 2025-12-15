@@ -41,7 +41,8 @@ const footerHTML = `
           <li><a href="Terminos_Condiciones.html" class="colorLetra text-decoration-none link-hover">Términos y Condiciones de Garantías</a></li>
           <li><a href="formularioContactenos.html" class="colorLetra text-decoration-none link-hover">Contacto</a></li>
           <li><a href="preguntasFrecuentes.html" class="colorLetra text-decoration-none link-hover">Preguntas Frecuentes</a></li>
-        </ul>
+          <li><a href="vistaAdministrador.html" class="colorLetra text-decoration-none link-hover">Administrador</a></li>
+          </ul>
       </div>
     </div>
 

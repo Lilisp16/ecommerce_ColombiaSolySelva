@@ -9,8 +9,8 @@ export function cartItemCarrito (producto) {
                             <i class="btn-eliminarItem bi bi-trash3" style="cursor: pointer" data-id="${producto.id}"></i>
                         </div>
                         <div class="me-3">
-                            <div class="border border-black bg-dark rounded-4" style="width: 80px; height: 80px;">
-                                <img src="${producto.imagen}" class="rounded-4 img-fluid h-100 object-fit-cover">
+                            <div class="rounded-4" style="width: 80px; height: 80px; display: flex">
+                                <img src="${producto.imagen}" style="border: none; display:block; max-width: 100%; max-height:100%; object-fit-contain; border-radius: 16px">
                             </div>
                         </div>
 
@@ -54,7 +54,7 @@ export const productosRecientes = (producto) => {
                         </div>
                         <div class="me-4">
                             <div class="border border-black bg-dark rounded-4" style="width: 80px; height: 80px;">
-                                <img src="${producto.imagen}" class="img-fluid h-100 object-fit-cover rounded-4">
+                                <img src="${producto.imagen}" class="w-100 h-100 object-fit-cover rounded-4">
                             </div>
                         </div>
 

@@ -56,8 +56,8 @@ const headerHTML =`
         </nav>
         <!-- Carrito -->
         <div id="sidebar" class="sidebar card  bg-dark text-light vh-100">
-            <div class="card-header d-flex gap-3 justify-content-between align-items-center" style="min-height: 120px; background-color:#4E342E; color: #FAF8F3" >
-                <p style= font-size:40px>Carrito</p>
+            <div class="card-header d-flex gap-3 justify-content-between align-items-center" style="background-color:#4E342E; color: #FAF8F3" >
+                <p class="fs-3 mb-0">Tu Carrito</p>
                 <button id="closeCarrito" class="btn btn-outline-light border-0 fs-4">✖</button>
             </div>
             
@@ -65,22 +65,33 @@ const headerHTML =`
                 <div id="cart-items"></div>
             </div>
             
-            <div class="card-footer d-flex flex-column gap-3 pt-4 rounded-top" style="background-color:#4E342E; color: #FAF8F3">
-                <h4 class="d-flex justify-content-between fs-5">
-                    <div>Total Items:  </div>
-                    <div id="totalItemCount">0</div>
-                </h4>
-                <h4 class="d-flex justify-content-between fs-4 fw-bold">
-                    <div>Total Compra: </div>
-                    <div>$ <span id="cart-total-check">0</span></div>
-                </h4>
-                <button type="button" class="btn btn-lg btn-outline-light mx-auto gap-3 d-flex align-items-center" style="max-width: 150px;">
-                    Comprar
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-credit-card-2-back" viewBox="0 0 16 16">
-                        <path d="M11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5z"></path>
-                        <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm13 2v5H1V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1m-1 9H2a1 1 0 0 1-1-1v-1h14v1a1 1 0 0 1-1 1"></path>
-                    </svg>
-              </button>
+            <div class="card-footer d-flex justify-content-between align-items-center pt-2 rounded-top"
+                style="background-color:#4E342E; color:#FAF8F3;">
+
+                 <div class="flex-grow-1">
+                    <h4 class="d-flex justify-content-between mb-1">
+                        <span>Total Items:</span>
+                        <span id="totalItemCount">0</span>
+                    </h4>
+
+                    <h4 class="d-flex justify-content-between fw-bold mb-0">
+                        <span>Total Compra:</span>
+                        <span>$ <span id="cart-total-check">0</span></span>
+                    </h4>
+                </div>
+
+                <div class="flex-shrink-0 ms-3">
+                    <button type="button"
+                        class="btn btn-outline-light d-flex align-items-center gap-2"
+                        style="max-width: 150px;">
+                        Comprar
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-credit-card-2-back" viewBox="0 0 16 16">
+                            <path d="M11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5z"></path>
+                            <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm13 2v5H1V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1m-1 9H2a1 1 0 0 1-1-1v-1h14v1a1 1 0 0 1-1 1"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
 `

@@ -6,34 +6,33 @@ export function cartItemCarrito (producto) {
                     <div class="card-body  rounded-4 border border-dark p-3 text-dark">
                         <div class="d-flex align-items-center">
                         <div class="me-2 d-flex flex-column gap-4">
-                            <label class="checkbox-wrapper">
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
                             <i class="btn-eliminarItem bi bi-trash3" style="cursor: pointer" data-id="${producto.id}"></i>
                         </div>
                         <div class="me-3">
                             <div class="border border-black bg-dark rounded-4" style="width: 80px; height: 80px;">
-                                <img src="${producto.imagen}" class="img-fluid h-100 object-fit-cover">
+                                <img src="${producto.imagen}" class="rounded-4 img-fluid h-100 object-fit-cover">
                             </div>
                         </div>
 
                         <div class="flex-grow-1" style="min-width: 0;">
                             <h6 class="card-title" 
-                                style="display: block; max-width: 150px; overflow: hidden; text-overflow: ellipsis;">
+                                style="display: block; overflow: hidden; text-overflow: ellipsis;">
                                 <strong>${producto.nombre}</strong>
                             </h6>
                             <h6>Vr. Unit. $ ${formatearMiles(producto.precio)} </h6>
-                            <h6>Subtotal: $ ${formatearMiles(Number(producto.precio) * Number(producto.cantidad))}</h6>
+                            <h6><strong>Subtotal: $ ${formatearMiles(Number(producto.precio) * Number(producto.cantidad))}</strong></h6>
                         </div>
 
-                        <div class="d-flex flex-column align-items-end justify-content-between" style="height: 80px;">
-                            <i class="bi bi-heart-fill"></i>
+                        <div class="d-flex flex-column align-items-end mt-3">
                             <div class="d-flex align-items-center gap-2">
-                            <button class="text-black btn btn-outline-dark btn-sm p-0 rounded-2 d-flex justify-content-center align-items-center btn-decrementar" data-id="${producto.id}" style="width: 25px; height: 25px;">-</button>
-                            <span class="fw-bold">${producto.cantidad}</span>
-                            <button class="text-black btn btn-outline-dark btn-sm p-0 rounded-2 d-flex justify-content-center align-items-center btn-incrementar" data-id="${producto.id}" style="width: 25px; height: 25px;">+</button>
-                            </div>  
+                                <button class="text-black btn btn-outline-dark btn-sm p-0 rounded-2 d-flex justify-content-center align-items-center btn-decrementar"
+                                        data-id="${producto.id}" style="width: 25px; height: 25px;">-</button>
+
+                                <span class="fw-bold">${producto.cantidad}</span>
+
+                                <button class="text-black btn btn-outline-dark btn-sm p-0 rounded-2 d-flex justify-content-center align-items-center btn-incrementar"
+                                        data-id="${producto.id}" style="width: 25px; height: 25px;">+</button>
+                            </div>
                         </div>
 
                         </div>

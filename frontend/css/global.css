@@ -53,8 +53,20 @@ body {
 
 /* Botones pequeños (ej. "Agregar" en catálogo) */
 .btn-sm {
-    font-size: 0.85rem;
+    font-size: 1.5rem;
     padding: 5px 15px;
+}
+
+.btn-decrementar:hover {
+    background-color: #4E342E;
+    color: #FAF8F3 !important;
+    font-weight: bolder;
+}
+
+.btn-incrementar:hover {
+    background-color: #4E342E;
+    color: #FAF8F3 !important;
+    font-weight: bolder;
 }
 
 .card {
@@ -468,4 +480,3 @@ body {
   border-radius: 6px !important;
   padding: 10px 20px !important;
 }
-

@@ -1,0 +1,130 @@
+
+body {
+    background: #f5f1e8;
+    height: 100vh;
+}
+
+.page-login {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Georgia', serif;
+}
+
+
+.container {
+    width: 50%;
+    max-width: 700px;
+    height: 400px;
+    display: flex;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(245, 241, 241, 0.2);
+}
+
+/* LADO IZQUIERDO */
+.left {
+    flex: 1;
+    background: url('../IMG/assets/imgLogin.jpg') center/cover no-repeat;
+    position: relative;
+}
+
+.overlay {
+    background: rgba(44, 44, 44, 0.45);
+    color: white;
+    height: 100%;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.overlay h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.overlay p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* LADO DERECHO */
+.right {
+    flex: 1;
+    background: #b8a99e;
+    padding: 60px 50px;
+}
+
+.right h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2f4f2f;
+}
+
+.page-login form {
+    display: flex;
+    flex-direction: column;
+}
+
+.page-login input {
+    margin-bottom: 15px;
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+}
+
+.page-login button {
+    background: #4b2e2e;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.page-login button:hover {
+    background: #3a2323;
+}
+
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.options a {
+    color: #4b2e2e;
+    text-decoration: none;
+}
+
+
+.register {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.register a {
+    color: #2f4f2f;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left {
+        height: 300px;
+    }
+}

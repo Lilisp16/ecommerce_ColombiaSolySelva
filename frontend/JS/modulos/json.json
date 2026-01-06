@@ -6,7 +6,7 @@
     "descripcion": "Mochila tejida a mano por artesanas de La Guajira.",
     "categoria": "Moda y Accesorios",
     "stock": 10,
-    "imagen": "../../IMG/imgProductos/mochila.jpg"
+    "imagen": "/IMG/imgProductos/mochila.jpg"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "descripcion": "Pulsera hecha a mano con diseños tradicionales Wayuu.",
     "categoria": "Moda y Accesorios",
     "stock": 15,
-    "imagen": "../../IMG/imgProductos/pulceraWayu.jpg"
+    "imagen": "/IMG/imgProductos/pulceraWayu.jpg"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "descripcion": "Aretes elaborados con técnica ancestral de filigrana en Mompox.",
     "categoria": "Moda y Accesorios",
     "stock": 7,
-    "imagen": "../../IMG/imgProductos/aretes.jpg"
+    "imagen": "/IMG/imgProductos/aretes.jpg"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "descripcion": "Bolso artesanal hecho en fique por artesanos de Santander.",
     "categoria": "Moda y Accesorios",
     "stock": 12,
-    "imagen": "../../IMG/imgProductos/bolso.jpg"
+    "imagen": "/IMG/imgProductos/bolso.jpg"
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "descripcion": "Escultura artesanal elaborada en madera de guayacán.",
     "categoria": "Decoración para el Hogar",
     "stock": 5,
-    "imagen": "../../IMG/imgProductos/figuraMadera.jpg"
+    "imagen": "/IMG/imgProductos/figuraMadera.jpg"
   },
   {
     "id": 6,
@@ -51,7 +51,7 @@
     "descripcion": "Tapiz decorativo hecho en telar por artesanos de Nariño.",
     "categoria": "Decoración para el Hogar",
     "stock": 6,
-    "imagen": "../../IMG/imgProductos/tapiz.jpg"
+    "imagen": "/IMG/imgProductos/tapiz.jpg"
   },
   {
     "id": 7,
@@ -60,7 +60,7 @@
     "descripcion": "Lámpara artesanal hecha con totumo tallado a mano.",
     "categoria": "Decoración para el Hogar",
     "stock": 9,
-    "imagen": "../../IMG/imgProductos/lampara.jpg"
+    "imagen": "/IMG/imgProductos/lampara.jpg"
   },
   {
     "id": 8,
@@ -69,7 +69,7 @@
     "descripcion": "Cuadro decorativo pintado sobre madera recuperada.",
     "categoria": "Decoración para el Hogar",
     "stock": 4,
-    "imagen": "../../IMG/imgProductos/cuadroMadera.jpg"
+    "imagen": "/IMG/imgProductos/cuadroMadera.jpg"
   },
   {
     "id": 9,
@@ -78,7 +78,7 @@
     "descripcion": "Sombrero tradicional hecho con caña flecha por artesanos Zenú.",
     "categoria": "Arte y Recuerdos",
     "stock": 8,
-    "imagen": "../../IMG/imgProductos/sombrero.jpg"
+    "imagen": "/IMG/imgProductos/sombrero.jpg"
   },
   {
     "id": 10,
@@ -87,7 +87,7 @@
     "descripcion": "Máscara artesanal pintada a mano con símbolos Embera.",
     "categoria": "Arte y Recuerdos",
     "stock": 4,
-    "imagen": "../../IMG/imgProductos/mascara.jpg"
+    "imagen": "/IMG/imgProductos/mascara.jpg"
   },
   {
     "id": 11,
@@ -96,7 +96,7 @@
     "descripcion": "Cuadro pintado a mano con motivos abstractos, ideal para decorar cualquier espacio",
     "categoria": "Arte y Recuerdos",
     "stock": 10,
-    "imagen": "../../IMG/imgProductos/cuadroAbstracto.jpg"
+    "imagen": "/IMG/imgProductos/cuadroAbstracto.jpg"
   },
   {
     "id": 12,
@@ -105,7 +105,7 @@
     "descripcion": "Cuenco elaborado con fibras y patrones tradicionales Zenú.",
     "categoria": "Arte y Recuerdos",
     "stock": 14,
-    "imagen": "../../IMG/imgProductos/cuenco.jpg"
+    "imagen": "/IMG/imgProductos/cuenco.jpg"
   },
   {
     "id": 13,
@@ -114,7 +114,7 @@
     "descripcion": "Tazón artesanal elaborado en cerámica negra de La Chamba.",
     "categoria": "Utensilios Funcionales",
     "stock": 20,
-    "imagen": "../../IMG/imgProductos/tazon.jpg"
+    "imagen": "/IMG/imgProductos/tazon.jpg"
   },
   {
     "id": 14,
@@ -123,7 +123,7 @@
     "descripcion": "Plato tallado a mano en madera de nogal.",
     "categoria": "Utensilios Funcionales",
     "stock": 18,
-    "imagen": "../../IMG/imgProductos/plato.jpg"
+    "imagen": "/IMG/imgProductos/plato.jpg"
   },
   {
     "id": 15,
@@ -132,7 +132,7 @@
     "descripcion": "Cuchara artesanal hecha con guadua colombiana.",
     "categoria": "Utensilios Funcionales",
     "stock": 30,
-    "imagen": "../../IMG/imgProductos/cuchara.jpg"
+    "imagen": "/IMG/imgProductos/cuchara.jpg"
   },
   {
     "id": 16,
@@ -141,6 +141,6 @@
     "descripcion": "Jarra artesanal hecha en Ráquira con diseños tradicionales.",
     "categoria": "Utensilios Funcionales",
     "stock": 11,
-    "imagen": "../../IMG/imgProductos/jarron.jpg"
+    "imagen": "/IMG/imgProductos/jarron.jpg"
   }
 ]

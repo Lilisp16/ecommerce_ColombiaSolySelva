@@ -8,175 +8,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/catalogo.css">
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/index.css">
-     <link rel="stylesheet" href="../../css/catalogo.css">
     
     
-   
-
+    
   
-<style>
-    /* PRODUCTOS DESTACADOS */
-         /* TITULOS */
-        .titulo-seccion {
-            font-size: 22px;
-            font-weight: bold;
-            margin: 0;
-        }
-
-        .subtitulo-seccion {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        /* PRODUCTOS NORMALES */
-        .fila-productos {
-            display: flex;
-            gap: 100px;
-            margin-bottom: 40px;
-        }
-
-        .tarjeta-producto {
-            width: 30%;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            background: #fff;
-        }
-
-        .imagen-producto {
-            width: 100%;
-            height: 130px;
-            background: #e5e5e5;
-            border-radius: 10px;
-        }
-
-        .descripcion-producto {
-            margin: 60px 0;
-        }
-
-        .precio-producto {
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        .boton-agregar {
-            width: 100%;
-            padding: 10px;
-            background: #ddd;
-            border: none;
-            border-radius: 8px;
-            margin-top: 10px;
-            font-size: 15px;
-            cursor: pointer;
-        }
-
-        .icono-carrito {
-            margin-left: 5px;
-        }
-
-        /* PROMOCIONES */
-        .fila-promos {
-            display: flex;
-            gap: 20px;
-        }
-
-        .tarjeta-promo {
-            display: flex;
-            justify-content: space-between;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 12px;
-            width: 48%;
-            position: relative;
-            background: #fff;
-        }
-
-        .info-promo {
-            width: 60%;
-        }
-
-        .imagen-promo {
-            width: 35%;
-            height: 120px;
-            background: #e5e5e5;
-            border-radius: 10px;
-        }
-
-        .texto-pequeno {
-            margin: 0;
-            font-size: 14px;
-        }
-
-        .texto-descuento {
-            margin: 0;
-            font-size: 28px;
-            font-weight: bold;
-            line-height: 1;
-        }
-
-        .texto-descuento span {
-            display: block;
-            font-size: 16px;
-            font-weight: normal;
-        }
-
-        .titulo-promo {
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .texto-validez {
-            margin: 10px 0;
-            font-size: 12px;
-            color: #333;
-        }
-
-        .boton-promo {
-            padding: 8px 12px;
-            border: none;
-            border-radius: 8px;
-            background: #d0d0d0;
-            cursor: pointer;
-        }
-
-        .estrella-favorito {
-            position: absolute;
-            right: 15px;
-            top: 10px;
-            font-size: 22px;
-            cursor: pointer;
-        }
-
-        .tarjeta-producto {
-            width: 300px;
-            /* Tamaño de la tarjeta */
-            background: white;
-            border-radius: 12px;
-            padding: 15px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        /* Contenedor de la imagen */
-        .imagen-producto img {
-            width: 100%;
-            /* Se ajusta al ancho de la tarjeta */
-            height: 180px;
-            /* Alto fijo */
-            object-fit: cover;
-            /* Recorta y ajusta bonito */
-            border-radius: 10px;
-        }
-
-
-</style>
-
-
 </head>
 <body>
 
@@ -227,12 +65,10 @@
                     </div>
                     <div class="icon text-center" id="abrirCarrito">
                         <i class="fas fa-shopping-cart position-relative icon-circle icon-cart">    
-                            <span 
-                                id="cartCount"
+                            <span id="cartCount"
                                 class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                             </span>
                         </i>                
-                            
                         <div class="icon-text"></div>
                     </div>
                 </div>
@@ -253,33 +89,94 @@
         Colombia Sol y Selva
     </h1>
     <p class="fs-4">Conectamos Colombia con el mundo, através de artesanías que cuentan historias</p>
-    <button class="btnHero">Descubre nuestros Productos</button>
+    <a href="../HTML/pages/catalogo.html">
+   <button class="btnHero">Descubre nuestros Productos</button>
+    </a>
     </section>
 </section>
 
 
 
-<!--CAROUSEL1 CATEGORIAS -USO -->
+
+
+
+
+<!-- CONTENEDOR DE ICONOS DE CATEGORIAS -->
+<div class="container-fluid py-4" style="background-color: #f5f0e6;"> 
+  <div class="row justify-content-center text-center gx-4 gy-3">
+
+    <!-- Moda y Accesorios -->
+    <div class="col-6 col-sm-3 col-md-2">
+      <div class="d-flex flex-column align-items-center">
+        <div class="bg-success text-white rounded-circle d-flex justify-content-center align-items-center mb-2" style="width:60px; height:60px;"> 
+          <i class="bi bi-handbag fs-3"></i>
+        </div>
+        <p class="mb-0 fw-bold">Moda y Accesorios</p>
+      </div>
+    </div>
+
+<!-- Utensilios y productos funcionales -->
+<div class="col-6 col-sm-3 col-md-2">
+  <div class="d-flex flex-column align-items-center">
+    <div class="rounded-circle d-flex justify-content-center align-items-center mb-2" style="width:60px; height:60px; background-color: #47210c; color: white;"> 
+      <i class="bi bi-basket2 fs-3"></i>
+    </div>
+    <p class="mb-0 fw-bold">Utensilios y productos funcionales</p>
+  </div>
+</div>
+
+
+
+    <!-- Decoración para el hogar -->
+    <div class="col-6 col-sm-3 col-md-2">
+      <div class="d-flex flex-column align-items-center">
+        <div class="bg-warning text-white rounded-circle d-flex justify-content-center align-items-center mb-2" style="width:60px; height:60px;"> 
+          <i class="bi bi-house fs-3"></i>
+        </div>
+        <p class="mb-0 fw-bold">Decoración para el hogar</p>
+      </div>
+    </div>
+
+    <!-- Arte y recuerdos -->
+    <div class="col-6 col-sm-3 col-md-2">
+      <div class="d-flex flex-column align-items-center">
+        <div class="bg-brown text-white rounded-circle d-flex justify-content-center align-items-center mb-2" style="width:60px; height:60px; background-color:#6b4c3b;">
+          <i class="bi bi-palette fs-3"></i>
+        </div>
+        <p class="mb-0 fw-bold">Arte y recuerdos</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+<!--CAROUSEL1 CATEGORIAS -->
 
 <section>
 
-  
-<div class="container">
+
+  <!-- CARRUSEL PRINCIPAL -->
   <div id="carouselCategorias" class="carousel slide" data-bs-ride="carousel">
 
     <!-- Indicadores -->
     <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselCategorias" data-bs-slide-to="0" class="active boton-verde"></button>
-      <button type="button" data-bs-target="#carouselCategorias" data-bs-slide-to="1" class="boton-verde"></button>
-      <button type="button" data-bs-target="#carouselCategorias" data-bs-slide-to="2" class="boton-verde"></button>
-      <button type="button" data-bs-target="#carouselCategorias" data-bs-slide-to="3" class="boton-verde"></button>
+      <button type="button" data-bs-target="#carouselCategorias" data-bs-slide-to="0" class="active" style="background-color: #3E2723;"></button>
+      <button type="button" data-bs-target="#carouselCategorias" data-bs-slide-to="1" style="background-color: #3E2723;"></button>
+      <button type="button" data-bs-target="#carouselCategorias" data-bs-slide-to="2" style="background-color: #3E2723;"></button>
+      <button type="button" data-bs-target="#carouselCategorias" data-bs-slide-to="3" style="background-color: #3E2723;"></button>
     </div>
 
     <!-- Slides -->
     <div class="carousel-inner">
 
       <div class="carousel-item active">
-        <img src="../IMG/1.png" class="w-50" alt="Categoria 1">
+        <img src="../IMG/11.png" class="d-block w-100" style="object-fit:  cover; "  alt="Categoria 1">
         <div class="carousel-caption d-none d-md-block">
           <a href="../HTML/pages/catalogo.html" class="btn boton-verde fw-bold px-4">
             Descubre nuestros productos
@@ -288,7 +185,7 @@
       </div>
 
       <div class="carousel-item">
-        <img src="../IMG/2.png" class="w-50" alt="Categoria 2">
+        <img src="../IMG/2.png" class="d-block w-100" style="object-fit: cover;" alt="Categoria 2">
         <div class="carousel-caption d-none d-md-block">
           <a href="../HTML/pages/catalogo.html" class="btn boton-verde fw-bold px-4">
             Descubre nuestros productos
@@ -297,7 +194,7 @@
       </div>
 
       <div class="carousel-item">
-        <img src="../IMG/3.png" class="w-50" alt="Categoria 3">
+        <img src="../IMG/33.png" class="d-block w-100" style="object-fit: cover;" alt="Categoria 3">
         <div class="carousel-caption d-none d-md-block">
           <a href="../HTML/pages/catalogo.html" class="btn boton-verde fw-bold px-4">
             Descubre nuestros productos
@@ -306,7 +203,7 @@
       </div>
 
       <div class="carousel-item">
-        <img src="../IMG/4.png" class="w-50" alt="Categoria 4">
+        <img src="../IMG/44.png" class="d-block w-100" style="object-fit: cover;" alt="Categoria 4">
         <div class="carousel-caption d-none d-md-block">
           <a href="../HTML/pages/catalogo.html" class="btn boton-verde fw-bold px-4">
             Descubre nuestros productos
@@ -318,14 +215,17 @@
 
     <!-- Controles -->
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselCategorias" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
+      <span class="carousel-control-prev-icon" style="background-color: #3E2723; border-radius: 50%;"></span>
+      <span class="visually-hidden">Anterior</span>
     </button>
     <button class="carousel-control-next" type="button" data-bs-target="#carouselCategorias" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
+      <span class="carousel-control-next-icon" style="background-color: #3E2723; border-radius: 50%;"></span>
+      <span class="visually-hidden">Siguiente</span>
     </button>
 
   </div>
-</div>
+
+
 
 
 
@@ -336,107 +236,129 @@
 
 <!--CAROUSEL2 PRODUCTOS -->
 
+<!-- Carrusel de Categorías con overlay -->
+<div id="carouselCategoriasOverlay" class="carousel slide py-5" data-bs-ride="carousel" style="background-color: #f8f5f0;">
+  <div class="container-fluid px-3">
+    <h4 class="tseccion mb-4 text-start px-3" >Nuestras Categorías</h4>
 
-<div id="carousel-productos" class="py-5">
-  <div class="container">
-     <h2 class="titulo-seccion fw-bold mb-4" style="text-align: left;">Categorias</h2>
+    <div class="carousel-inner">
 
-    <!-- CARRUSEL DE PRODUCTOS -->
-    <div id="carouselProductos" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="row justify-content-center gx-4 px-3">
 
-        <!-- Slide 1 -->
-        <div class="carousel-item active">
-          <div class="d-flex justify-content-center gap-3 flex-wrap">
-
-            <div class="card" style="width: 18rem;">
-              <img src="../IMG/imgProductos/pulceraWayu.jpg" class="card-img-top" alt="Pulsera Wayuu">
-              <div class="card-body">
-                <h5 class="card-title">Pulsera Wayuu</h5>
-                <p class="card-text text-muted">Moda y Accesorios</p>
-                <p class="card-text fw-bold fs-5">$35.000</p>
-                <button class="btn boton-verde w-100">Agregar 🛒</button>
+          <!-- Card 1 -->
+          <div class="col-12 col-sm-6 col-md-4 mb-3">
+            <div class="position-relative rounded-4 overflow-hidden shadow-sm">
+              <img src="../IMG/imgProductos/pulceraWayu.jpg" 
+                   class="d-block w-100" 
+                   alt="Pulsera Wayuu" 
+                   style="height: 300px; object-fit: cover;">
+              <div class="position-absolute bottom-0 w-100 text-center" 
+                   style="background-color: rgba(78,55,40,0.85); color:white; padding: 15px;">
+                <h5 class="mb-1 fw-bold">Moda y Accesorios</h5>
+                <a href="../HTML/pages/catalogo.html" class="btn btn-light fw-bold px-3" style="color:#4E3728;">Ver más</a>
               </div>
             </div>
-
-            <div class="card" style="width: 18rem;">
-              <img src="../IMG/imgProductos/tapiz.jpg" class="card-img-top" alt="Tapiz Tejido">
-              <div class="card-body">
-                <h5 class="card-title">Tapiz Tejido</h5>
-                <p class="card-text text-muted">Decoración para el Hogar</p>
-                <p class="card-text fw-bold fs-5">$98.000</p>
-                <button class="btn boton-verde w-100">Agregar 🛒</button>
-              </div>
-            </div>
-
-            <div class="card" style="width: 18rem;">
-              <img src="../IMG/imgProductos/mascara.jpg" class="card-img-top" alt="Máscara Indígena Embera">
-              <div class="card-body">
-                <h5 class="card-title">Máscara Indígena Embera</h5>
-                <p class="card-text text-muted">Arte y Recuerdos</p>
-                <p class="card-text fw-bold fs-5">$130.000</p>
-                <button class="btn boton-verde w-100">Agregar 🛒</button>
-              </div>
-            </div>
-
           </div>
-        </div>
 
-        <!-- Slide 2 -->
-        <div class="carousel-item">
-          <div class="d-flex justify-content-center gap-3 flex-wrap">
-
-            <div class="card" style="width: 18rem;">
-              <img src="../IMG/imgProductos/cuenco.jpg" class="card-img-top" alt="Cuenco Decorativo Zenú">
-              <div class="card-body">
-                <h5 class="card-title">Cuenco Decorativo Zenú</h5>
-                <p class="card-text text-muted">Arte y Recuerdos</p>
-                <p class="card-text fw-bold fs-5">$40.000</p>
-                <button class="btn boton-verde w-100">Agregar 🛒</button>
+          <!-- Card 2 -->
+          <div class="col-12 col-sm-6 col-md-4 mb-3">
+            <div class="position-relative rounded-4 overflow-hidden shadow-sm">
+              <img src="../IMG/imgProductos/tapiz.jpg" 
+                   class="d-block w-100" 
+                   alt="Tapiz Tejido" 
+                   style="height: 300px; object-fit: cover;">
+              <div class="position-absolute bottom-0 w-100 text-center" 
+                   style="background-color: rgba(164,124,82,0.85); color:white; padding: 15px;">
+                <h5 class="mb-1 fw-bold">Decoración para el Hogar</h5>
+                <a href="../HTML/pages/catalogo.html" class="btn btn-light fw-bold px-3" style="color:#6B4C3B;">Ver más</a>
               </div>
             </div>
-
-            <div class="card" style="width: 18rem;">
-              <img src="../IMG/imgProductos/plato.jpg" class="card-img-top" alt="Plato de Madera de Nogal">
-              <div class="card-body">
-                <h5 class="card-title">Plato de Madera de Nogal</h5>
-                <p class="card-text text-muted">Utensilios Funcionales</p>
-                <p class="card-text fw-bold fs-5">$55.000</p>
-                <button class="btn boton-verde w-100">Agregar 🛒</button>
-              </div>
-            </div>
-
-            <div class="card" style="width: 18rem;">
-              <img src="../IMG/imgProductos/jarron.jpg" class="card-img-top" alt="Jarra de Cerámica de Ráquira">
-              <div class="card-body">
-                <h5 class="card-title">Jarra de Cerámica</h5>
-                <p class="card-text text-muted">Utensilios Funcionales</p>
-                <p class="card-text fw-bold fs-5">$48.000</p>
-                <button class="btn boton-verde w-100">Agregar 🛒</button>
-              </div>
-            </div>
-
           </div>
-        </div>
 
+          <!-- Card 3 -->
+          <div class="col-12 col-sm-6 col-md-4 mb-3">
+            <div class="position-relative rounded-4 overflow-hidden shadow-sm">
+              <img src="../IMG/imgProductos/mascara.jpg" 
+                   class="d-block w-100" 
+                   alt="Máscara Embera" 
+                   style="height: 300px; object-fit: cover;">
+              <div class="position-absolute bottom-0 w-100 text-center" 
+                   style="background-color: rgba(140,107,74,0.85); color:white; padding: 15px;">
+                <h5 class="mb-1 fw-bold">Arte y Recuerdos</h5>
+                <a href="../HTML/pages/catalogo.html" class="btn btn-light fw-bold px-3" style="color:#4E3728;">Ver más</a>
+              </div>
+            </div>
+          </div>
+          
+        </div>
       </div>
 
-      <!-- Controles < > -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselProductos" data-bs-slide="prev">
-        <span aria-hidden="true">
-          <i class="bi bi-chevron-left fs-2" style="color: var(--color-texto);"></i>
-        </span>
-        <span class="visually-hidden">Anterior</span>
-      </button>
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div class="row justify-content-center gx-4 px-3">
 
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselProductos" data-bs-slide="next">
-        <span aria-hidden="true">
-          <i class="bi bi-chevron-right fs-2" style="color: var(--color-texto);"></i>
-        </span>
-        <span class="visually-hidden">Siguiente</span>
-      </button>
+          <!-- Card 4 -->
+          <div class="col-12 col-sm-6 col-md-4 mb-3">
+            <div class="position-relative rounded-4 overflow-hidden shadow-sm">
+              <img src="../IMG/imgProductos/cuenco.jpg" 
+                   class="d-block w-100" 
+                   alt="Cuenco Decorativo Zenú" 
+                   style="height: 300px; object-fit: cover;">
+              <div class="position-absolute bottom-0 w-100 text-center" 
+                   style="background-color: rgba(107,76,59,0.85); color:white; padding: 15px;">
+                <h5 class="mb-1 fw-bold">Utensilios Funcionales</h5>
+                <a href="../HTML/pages/catalogo.html" class="btn btn-light fw-bold px-3" style="color:#6B4C3B;">Ver más</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="col-12 col-sm-6 col-md-4 mb-3">
+            <div class="position-relative rounded-4 overflow-hidden shadow-sm">
+              <img src="../IMG/imgProductos/plato.jpg" 
+                   class="d-block w-100" 
+                   alt="Plato de Madera" 
+                   style="height: 300px; object-fit: cover;">
+              <div class="position-absolute bottom-0 w-100 text-center" 
+                   style="background-color: rgba(164,124,82,0.85); color:white; padding: 15px;">
+                <h5 class="mb-1 fw-bold">Utensilios Funcionales</h5>
+                <a href="../HTML/pages/catalogo.html" class="btn btn-light fw-bold px-3" style="color:#6B4C3B;">Ver más</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="col-12 col-sm-6 col-md-4 mb-3">
+            <div class="position-relative rounded-4 overflow-hidden shadow-sm">
+              <img src="../IMG/imgProductos/jarron.jpg" 
+                   class="d-block w-100" 
+                   alt="Jarra Cerámica" 
+                   style="height: 300px; object-fit: cover;">
+              <div class="position-absolute bottom-0 w-100 text-center" 
+                   style="background-color: rgba(140,107,74,0.85); color:white; padding: 15px;">
+                <h5 class="mb-1 fw-bold">Utensilios Funcionales</h5>
+                <a href="../HTML/pages/catalogo.html" style="color:#4E3728;">Ver más</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
 
     </div>
+
+    <!-- Controles -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselCategoriasOverlay" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon bg-dark rounded-circle p-3"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselCategoriasOverlay" data-bs-slide="next">
+      <span class="carousel-control-next-icon bg-dark rounded-circle p-3"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+
   </div>
 </div>
 
@@ -450,79 +372,10 @@
 
 
 
-<!--PRODUCTOS DESTACADOS AQUI PARA IMPLEMENTAR CON JS 
-<section id="destacados-section">
-  <h2 class="tituloSeccion">Destacados</h2>
-  <div id="destacados" class="row g-4"></div>
-</section>
--->
+<!--PRODUCTOS RECOMENDADOS AQUI CON JS -->
+<!-- ..... -->
 
 
-
-
-
-
-<!-- SECCIÓN DE DESTACADOS -->
-<section id="destacados-prueba" class="my-5">
-<div class="container"> 
-  <h2 class="titulo-seccion fw-bold mb-5" style="text-align: left;">Destacados</h2>
-  <div class="row g-5 justify-content-start">
-
-    <!-- Mochila Wayuu -->
-    <div class="col-md-3 my-4">
-      <div class="card text-center d-flex align-items-center tarjeta-hover" style="height: 435px;">
-        <h5 class="fw-semibold">Mochila Wayuu</h5>
-        <img src="../IMG/imgProductos/mochila.jpg" class="w-75" style="height: 150px;" alt="Mochila Wayuu">
-        <p class="text-muted small">Mochila tejida a mano por artesanas de La Guajira.</p>
-        <p class="text-secondary small"><strong>Categoría:</strong> Moda y Accesorios</p>
-        <p class="text-secondary small"><strong>Stock:</strong> 10 unds</p>
-        <p class="fw-bold">$120.000</p>
-        <button class="btn w-75 boton-verde">Agregar 🛒</button>
-      </div>
-    </div>
-
-    <!-- Figura de Madera Tallada -->
-    <div class="col-md-3 my-4">
-      <div class="card text-center d-flex align-items-center tarjeta-hover" style="height: 435px;">
-        <h5 class="fw-semibold">Figura de Madera Tallada</h5>
-        <img src="../IMG/imgProductos/figuraMadera.jpg" class="w-75" style="height: 150px;" alt="Figura de Madera Tallada">
-        <p class="text-muted small">Escultura artesanal elaborada en madera de guayacán.</p>
-        <p class="text-secondary small"><strong>Categoría:</strong> Decoración para el Hogar</p>
-        <p class="text-secondary small"><strong>Stock:</strong> 5 unds</p>
-        <p class="fw-bold">$85.000</p>
-        <button class="btn w-75 boton-verde">Agregar 🛒</button>
-      </div>
-    </div>
-
-    <!-- Sombrero Vueltiao -->
-    <div class="col-md-3 my-4">
-      <div class="card text-center d-flex align-items-center tarjeta-hover" style="height: 435px;">
-        <h5 class="fw-semibold">Sombrero Vueltiao</h5>
-        <img src="../IMG/imgProductos/sombrero.jpg" class="w-75" style="height: 150px;" alt="Sombrero Vueltiao">
-        <p class="text-muted small">Sombrero tradicional hecho con caña flecha por artesanos Zenú.</p>
-        <p class="text-secondary small"><strong>Categoría:</strong> Arte y Recuerdos</p>
-        <p class="text-secondary small"><strong>Stock:</strong> 8 unds</p>
-        <p class="fw-bold">$150.000</p>
-        <button class="btn w-75 boton-verde">Agregar 🛒</button>
-      </div>
-    </div>
-
-    <!-- Tazón de Cerámica Negra -->
-    <div class="col-md-3 my-4">
-      <div class="card text-center d-flex align-items-center tarjeta-hover" style="height: 435px;">
-        <h5 class="fw-semibold">Tazón de Cerámica Negra</h5>
-        <img src="../IMG/imgProductos/tazon.jpg" class="w-75" style="height: 150px;" alt="Tazón de Cerámica Negra">
-        <p class="text-muted small">Tazón artesanal elaborado en cerámica negra de La Chamba.</p>
-        <p class="text-secondary small"><strong>Categoría:</strong> Utensilios Funcionales</p>
-        <p class="text-secondary small"><strong>Stock:</strong> 20 unds</p>
-        <p class="fw-bold">$45.000</p>
-        <button class="btn w-75 boton-verde">Agregar 🛒</button>
-      </div>
-    </div>
-
-  </div>
-</div>
-</section>
 
 
 
@@ -531,8 +384,8 @@
 <section class="mb-4">
     <div class="container">
 
-     <h2 class="titulo-seccion">Ofertas Especiales</h2>
-    <p class="subtitulo-seccion">Diciembre</p>
+     <h4 class="titulo-seccion tseccion">Ofertas Especiales</h4>
+    <p class="subtitulo-seccion">Enero</p>
  
   <!-- Promociones -->
 <div class="fila-promos">
@@ -566,8 +419,8 @@
             <p class="titulo-promo">en moda y accesorios</p>
 
             <p class="texto-validez">
-                Válido desde el 13/11/2025<br>
-                hasta 13/12/2025
+                Válido desde el 1/01/2026<br>
+                hasta 30/01/2026
             </p>
 
             <button class="boton-promo">¡Compra Ahora!</button>
@@ -625,13 +478,6 @@
 
 </div>
 </section>
-
-
-
-
-
-
-
 
 
 
@@ -743,8 +589,8 @@ window.addEventListener("scroll", () => {
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
-<script type="module" src="../JS/modulos/destacados.js"></script>
-<script type="module" src="../JS/main.js"></script>
-<script src="../../JS/modulos/productos.js" type="module" defer></script>
+<script type="module" src="../JS/main.js" defer></script>
+<script src="../JS/modulos/productos.js" type="module" defer></script>
+ <script src="../JS/modulos/agregarCarrito.js" type="module" defer></script>
 </body>
 </html>

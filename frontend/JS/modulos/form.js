@@ -116,7 +116,7 @@ document.getElementById("formContacto").addEventListener("submit", async functio
         icon: "success",
         title: "¡Hemos recibido su mensaje!",
         text: "Nos pondremos en contacto muy pronto",
-        confirmButtonColor: "#A33B20"
+        confirmButtonColor: '#1B5E20'
       });
 
       formulario.reset();

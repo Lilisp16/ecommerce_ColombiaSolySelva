@@ -88,11 +88,11 @@ body{
 
 /* ESTILOS  CAROUSEL */
 
-.card-body {
-  width: 18rem;
+/*.card-body {
+  /*width: 18rem; 
   
   box-shadow: none;
-}
+}*/
 
 .card-img-top {
   height: 250px;
@@ -352,3 +352,24 @@ body{
     font-weight: 700;
     
 }
+
+
+.publicidad{
+    background-color: var( --color-blancoHueso);
+    
+}
+
+.imgPublic{
+    border-radius: 40px;
+    width: 1000px;
+}
+
+
+
+/* PARA CARRITO CONFIG*/
+
+.card-header,
+.card-footer{
+    background-color: #4E342E !important;
+}
+

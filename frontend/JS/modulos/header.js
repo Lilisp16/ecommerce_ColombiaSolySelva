@@ -37,7 +37,7 @@ const headerHTML =`
                         </button>
                     </form>
                     <div class="icon text-center">
-                        <a href="./registro.html">
+                        <a href="./login.html">
                             <i class="fas fa-user icon-circle icon-user"></i>
                         </a>
                     </div>

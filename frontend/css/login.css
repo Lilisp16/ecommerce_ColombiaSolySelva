@@ -5,18 +5,18 @@ body {
 }
 
 .page-login {
-    min-height: 100vh;
+    min-height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Georgia', serif;
+    padding: 40px 0;
 }
 
 
 .container {
     width: 50%;
     max-width: 700px;
-    height: 400px;
     display: flex;
     border-radius: 20px;
     overflow: hidden;

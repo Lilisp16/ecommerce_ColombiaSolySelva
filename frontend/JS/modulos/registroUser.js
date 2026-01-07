@@ -57,7 +57,8 @@ function registrarUsuario(){
             icon: 'success',          
             title: '¡Registro exitoso!',
             text: 'Usuario registrado correctamente.',
-            confirmButtonText: 'Aceptar'
+            confirmButtonText: 'Aceptar',
+            confirmButtonColor: '#1B5E20'
         }).then(() => {
             form.reset();                       // Limpiar formulario
             inputs.forEach(input => input.classList.remove("is-valid", "is-invalid"));
@@ -85,10 +86,3 @@ form.addEventListener("submit", function(event){
   
     registrarUsuario();
 });
-
-
-
-
-
-
-

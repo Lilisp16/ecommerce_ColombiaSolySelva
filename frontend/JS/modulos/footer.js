@@ -17,10 +17,10 @@ const footerHTML = `
       <div class="col-md-3 mb-3 mb-md-0">
         <h6 class="fw-bold">Productos</h6>
         <ul class="list-unstyled small ">
-          <li><a href="categoria-moda.html" class="colorLetra text-decoration-none link-hover">Moda y Accesorios</a></li>
-          <li><a href="categoria-decoracion.html" class="colorLetra text-decoration-none link-hover">Decoración para el hogar</a></li>
-          <li><a href="categoria-arte.html" class="colorLetra text-decoration-none link-hover">Arte y Recuerdos</a></li>
-          <li><a href="categoria-utensilios.html" class="colorLetra text-decoration-none link-hover">Utensilios y Productos Funcionales</a></li>
+          <li><a href="catalogo.html?categoria=Moda y Accesorios" class="colorLetra text-decoration-none link-hover">Moda y Accesorios</a></li>
+          <li><a href="catalogo.html?categoria=Decoración para el Hogar"class="colorLetra text-decoration-none link-hover">Decoración para el hogar</a></li>
+          <li><a href="catalogo.html?categoria=Arte y Recuerdos" class="colorLetra text-decoration-none link-hover">Arte y Recuerdos</a></li>
+          <li><a href="catalogo.html?categoria=Utensilios Funcionales" class="colorLetra text-decoration-none link-hover">Utensilios y Productos Funcionales</a></li>
         </ul>
       </div>
 
@@ -28,9 +28,10 @@ const footerHTML = `
       <div class="col-md-3 mb-3 mb-md-0">
         <h6 class="fw-bold">Acerca de</h6>
         <ul class="list-unstyled small">
-          <li><a href="pagina-equipo.html#equipo" class="colorLetra text-decoration-none link-hover">Equipo de Desarrollo</a></li>
-          <li><a href="historias-artesanos.html" class="colorLetra text-decoration-none link-hover">Historias de los Artesanos</a></li>
-          <li><a href="pagina-equipo.html#mision" class="colorLetra text-decoration-none link-hover">Misión, Visión y Valores</a></li>
+          <li><a href="nosotros.html#equipo" class="colorLetra text-decoration-none link-hover">Equipo de Desarrollo</a></li>
+          <li><a href="historias.html" class="colorLetra text-decoration-none link-hover">Historias de los Artesanos</a></li>
+          <li><a href="nosotros.html#misionVision" class="colorLetra text-decoration-none link-hover">Misión, Visión</a></li>
+          <li><a href="nosotros.html#valores" class="colorLetra text-decoration-none link-hover">Valores Corporativos</a></li>
         </ul>
       </div>
 
@@ -38,9 +39,10 @@ const footerHTML = `
       <div class="col-md-3 mb-3 mb-md-0">
         <h6 class="fw-bold">Soporte</h6>
         <ul class="list-unstyled small">
-          <li><a href="Terminos_Condiciones.html" class="colorLetra text-decoration-none link-hover">Términos y Condiciones de Garantías</a></li>
-          <li><a href="formularioContactenos.html" class="colorLetra text-decoration-none link-hover">Contacto</a></li>
-          <li><a href="preguntasFrecuentes.html" class="colorLetra text-decoration-none link-hover">Preguntas Frecuentes</a></li>
+          <li><a href="terminosGarantias.html" class="colorLetra text-decoration-none link-hover">Términos y Condiciones de Garantías</a></li> 
+          <li><a href="ttoDatosPersonales.html" class="colorLetra text-decoration-none link-hover">Política de Tratamiento de Datos Personales</a></li>
+          <li><a href="contacto.html" class="colorLetra text-decoration-none link-hover">Contacto</a></li>
+          <li><a href="contacto.html#preguntasFrecuentes" class="colorLetra text-decoration-none link-hover">Preguntas Frecuentes</a></li>
           <li><a href="vistaAdministrador.html" class="colorLetra text-decoration-none link-hover">Administrador</a></li>
           </ul>
       </div>

@@ -71,38 +71,44 @@
     </header>
     <main class="container catalogo">
         <div class="main-container">
-            <h2 class="titulo">Nuestros Productos</h2>
-            <p class="descripcionTitulo" style="text-align: center;">Descubre artesanías colombianas únicas hechas a mano por artesanos locales.</p>
+            <h1 class="titulo justify-content-center" style="text-align: center;" id="tituloCatalogo">Catálogo de Productos</h1>
+            <h5 class="descripcionTitulo" style="text-align: center;">Descubre artesanías colombianas únicas hechas a mano por artesanos locales.</h5>
 
             <section class="productos-header" style="margin-bottom: 20px;">
             
-
                 <!-- Barra de búsqueda -->
             <div class="container">
-                <div class="buscador" style="margin: 20px 0; text-align: end;">
-                    <input type="text" placeholder="Buscar productos..."
-                        style="flex:1; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
-                    <button style="padding: 10px 15px; border-radius: 8px; border: none; background:#6b705c; color:white;">
-                        Buscar
-                    </button>
+            </br>
+                <h5 class="descripcionTitulo" style="text-align: left;">Categorías</h5>
+                <div class="row">
+                    <div class="col-md-9">
+                        <div id="categorias" class="d-flex gap-2 flex-wrap"></div>
+                        <div id="filtroCategorias"></div>
+                    </div>
+                    <div class="col-md-3 mt-4">
+                        <div class="buscador" style="margin: 20px 0; text-align: end;">
+                            <input type="text" placeholder="Buscar productos..."
+                                style="flex:1; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+                            <button style="padding: 10px 15px; border-radius: 8px; border: none; background:#6b705c; color:white;">
+                                Buscar
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div id="categorias" class="d-flex gap-2 flex-wrap"></div>
-                    <div id="filtroCategorias"></div>
             </div>
 
-
             <!-- Sección Recomendados -->
-            <h2 class="tituloSeccion">Recomendados</h2>
+            <h2 class="tituloSeccion"></h2>
             <div id="recomendados" class="row g-4"></div>
 
 
             <!-- Sección Nuevos -->
-            <h2 class="tituloSeccion">Nuevos</h2>
+            <h2 class="tituloSeccion"></h2>
             <div id="nuevos" class="row g-4"></div>
 
 
             <!-- Últimos -->
-            <h2 class="tituloSeccion">Últimas unidades</h2>
+            <h2 class="tituloSeccion"></h2>
             <div id="ultimos" class="row g-4"></div>
 
         </div>

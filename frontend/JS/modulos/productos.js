@@ -4,6 +4,35 @@ import { agregarAlCarrito } from "./agregarCarrito.js";
 
 const URL_JSON = "../../JS/modulos/json.json";
 
+function obtenerCategoriaURL() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("categoria");
+}
+
+function renderizarCatalogo(productos) {
+    recomendadosBox.innerHTML = productos
+        .map(crearTarjetaCatalogo)
+        .join("");
+
+    nuevosBox.innerHTML = "";
+    ultimosBox.innerHTML = "";
+}
+
+function renderizarConFiltro(productos) {
+    const categoriaURL = obtenerCategoriaURL();
+
+    let productosFinales = productos;
+
+    // filtro por URL (footer)
+    if (categoriaURL) {
+        productosFinales = productos.filter(
+            p => p.categoria === categoriaURL
+        );
+    }
+
+    renderizarCatalogo(productosFinales);
+}
+
 // Contenedores del catálogo
 const recomendadosBox = document.getElementById("recomendados");
 const nuevosBox = document.getElementById("nuevos");
@@ -33,8 +62,8 @@ if (productosGuardados) {
     console.log(productosGuardados);
     
     const productos = JSON.parse(productosGuardados);
-    renderizarPagina(productos);
-    crearFiltroCategoria(productos, renderizarPagina);
+    renderizarConFiltro(productos);
+    crearFiltroCategoria(productos, renderizarConFiltro);
 } else {
     console.log("Cargando productos desde API/JSON...");
     
@@ -44,7 +73,7 @@ if (productosGuardados) {
             localStorage.setItem("productos", JSON.stringify(productos));
             console.log("Exito");
             
-            renderizarPagina(productos);
+            renderizarConFiltro(productos);
         })
         .catch(err => console.error("Error al cargar JSON:", err));
 }
@@ -72,4 +101,3 @@ document.addEventListener("click", (e) => {
         }
     }
 });
-

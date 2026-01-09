@@ -57,3 +57,54 @@
   transform: scale(1.4) translateY(-10px);
   z-index: 10;
 }
+
+#filtroCategorias {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.btnFiltro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    border: none;
+    padding: 30px 30px ;
+    background: transparent;
+    cursor: pointer;
+    transition: transform .2s, box-shadow .2s;
+    
+}
+
+.btnFiltro img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.btnFiltro span {
+    font-size: 15px;
+    font-weight: 600;
+    
+}
+
+.btnFiltro:hover {
+    transform: translateY(-3px);
+}
+
+.btnFiltro.activo img {
+    outline: 4px solid #D4AF37;
+}
+
+.btnFiltro.activo span {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1B5E20;
+    text-decoration: underline double;
+    text-decoration-color: #1B5E20;
+    text-decoration-thickness: 2  px;
+    
+}

@@ -32,6 +32,7 @@ body {
     font-family: var(--bs-font-sans-serif);
 }
 
+
 /* Sobrescribir el botón primario */
 .btn-primary {
     background-color: var(--color-primario);
@@ -108,6 +109,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
+      background-color: #4caf4fdb !important;
   nav {
       padding-bottom: 0.5rem;
     ul {
@@ -125,7 +127,8 @@ header {
             position: relative;
             transition: color 0.3s;
             font-weight: 500;
-            color: #3E2723;
+            color:  #FAF8F3;
+            font-family: var(--bs-font-sans-serif);
         }
 
             .nav-link.link-custom::after {
@@ -237,6 +240,7 @@ header {
     }
   }
   .sidebar {
+     font-family: var(--bs-font-sans-serif);
     position: fixed;
     right: -500px;
     top: 0;

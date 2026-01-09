@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -6,16 +7,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/catalogo.css">
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/index.css">
     
     
     
     
-  
 </head>
 <body>
 
@@ -86,8 +83,8 @@
 
         <!-- Carrito -->
         <div id="sidebar" class="sidebar card  bg-dark text-light vh-100 cardCarrito">
-            <div class="card-header d-flex gap-3 justify-content-between align-items-center" style="min-height: 120px;">
-                <h3>Carrito</h3>
+            <div class="card-header d-flex gap-3 justify-content-between align-items-center" style="background-color:#4E342E; color: #FAF8F3" >
+                <p class="fs-3 mb-0">Tu Carrito</p>
                 <button id="closeCarrito" class="btn btn-outline-light border-0 fs-4">🗙</button>
             </div>
             
@@ -95,22 +92,29 @@
                 <div id="cart-items"></div>
             </div>
             
-            <div class="card-footer d-flex flex-column gap-3 pt-4 rounded-top">
-                <h4 class="d-flex justify-content-between fs-5">
-                    <div>Total Items:  </div>
-                    <div id="totalItemCount">0</div>
+            <div class="card-footer d-flex justify-content-between align-items-center pt-2 rounded-top"
+                style="background-color:#4E342E; color:#FAF8F3;">
+               
+              <div class="flex-grow-1">
+                <h4 class="d-flex justify-content-between mb-1">
+                    <span>Total Items:</span>
+                    <span id="totalItemCount">0</span>
                 </h4>
-                <h4 class="d-flex justify-content-between fs-4 fw-bold">
-                    <div>Total: </div>
-                    <div>$ <span id="cart-total-check">0</span></div>
+
+                <h4 class="d-flex justify-content-between fw-bold mb-0">
+                    <span>Total Compra:</span>
+                    <span>$ <span id="cart-total-check">0</span></span>
                 </h4>
-                <button type="button" class="btn btn-lg btn-outline-light mx-auto gap-3 d-flex align-items-center" style="max-width: 150px;">
+            </div>
+              <div class="flex-shrink-0 ms-3">
+                <button type="button"  class="btn btn-outline-light d-flex align-items-center gap-2" style="max-width: 150px;">
                     Comprar
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-credit-card-2-back" viewBox="0 0 16 16">
                         <path d="M11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5z"></path>
                         <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm13 2v5H1V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1m-1 9H2a1 1 0 0 1-1-1v-1h14v1a1 1 0 0 1-1 1"></path>
                     </svg>
               </button>
+              </div>
             </div>
         </div>
 
@@ -122,7 +126,7 @@
 <!--HERO AQUI -->
 <section class="estilosHero">
     <section class="hero text-center text-white">
-    <h1 class=" tituloHero fs-1">
+    <h1 class="tituloHero">
         Colombia Sol y Selva
     </h1>
     <p class="fs-4">Conectamos Colombia con el mundo, através de artesanías que cuentan historias</p>
@@ -139,7 +143,7 @@
 
 
 <!-- CONTENEDOR DE ICONOS DE CATEGORIAS -->
-<div class="container-fluid py-4" style="background-color: #f5f0e6;"> 
+<div class="container-fluid py-4 iconosCategorias"> 
   <div class="row justify-content-center text-center gx-4 gy-3">
 
     <!-- Moda y Accesorios -->
@@ -158,7 +162,7 @@
     <div class="rounded-circle d-flex justify-content-center align-items-center mb-2" style="width:60px; height:60px; background-color: #47210c; color: white;"> 
       <i class="bi bi-basket2 fs-3"></i>
     </div>
-    <p class="mb-0 fw-bold">Utensilios y productos funcionales</p>
+    <p class="mb-0 fw-bold">Utensilios funcionales</p>
   </div>
 </div>
 
@@ -170,7 +174,7 @@
         <div class="bg-warning text-white rounded-circle d-flex justify-content-center align-items-center mb-2" style="width:60px; height:60px;"> 
           <i class="bi bi-house fs-3"></i>
         </div>
-        <p class="mb-0 fw-bold">Decoración para el hogar</p>
+        <p class="mb-0 fw-bold">Decoración Hogar</p>
       </div>
     </div>
 
@@ -193,12 +197,10 @@
 
 
 
-<!--CAROUSEL1 CATEGORIAS -->
-
+<!--CAROUSEL -->
 <section>
 
-
-  <!-- CARRUSEL PRINCIPAL -->
+  <!-- CARRUSEL1 PRINCIPAL -->
   <div id="carouselCategorias" class="carousel slide" data-bs-ride="carousel">
 
     <!-- Indicadores -->
@@ -269,8 +271,6 @@
 
 
 
-
-
 <!--CAROUSEL2 PRODUCTOS -->
 
 <!-- Carrusel de Categorías con overlay -->
@@ -287,7 +287,7 @@
           <!-- Card 1 -->
           <div class="col-12 col-sm-6 col-md-4 mb-3">
             <div class="position-relative rounded-4 overflow-hidden shadow-sm">
-              <img src="../IMG/imgProductos/pulceraWayu.jpg" 
+              <img src="../IMG/imgProductos/pulceraWayu.png" 
                    class="d-block w-100" 
                    alt="Pulsera Wayuu" 
                    style="height: 300px; object-fit: cover;">
@@ -317,7 +317,7 @@
           <!-- Card 3 -->
           <div class="col-12 col-sm-6 col-md-4 mb-3">
             <div class="position-relative rounded-4 overflow-hidden shadow-sm">
-              <img src="../IMG/imgProductos/mascara.jpg" 
+              <img src="../IMG/imgProductos/mascara.png" 
                    class="d-block w-100" 
                    alt="Máscara Embera" 
                    style="height: 300px; object-fit: cover;">
@@ -339,7 +339,7 @@
           <!-- Card 4 -->
           <div class="col-12 col-sm-6 col-md-4 mb-3">
             <div class="position-relative rounded-4 overflow-hidden shadow-sm">
-              <img src="../IMG/imgProductos/aretes.jpg" 
+              <img src="../IMG/imgProductos/aretes.png" 
                    class="d-block w-100" 
                    alt="Cuenco Decorativo Zenú" 
                    style="height: 300px; object-fit: cover;">
@@ -354,7 +354,7 @@
           <!-- Card 5 -->
           <div class="col-12 col-sm-6 col-md-4 mb-3">
             <div class="position-relative rounded-4 overflow-hidden shadow-sm">
-              <img src="../IMG/imgProductos/figuraMadera.jpg" 
+              <img src="../IMG/imgProductos/figuraMadera.png" 
                    class="d-block w-100" 
                    alt="Plato de Madera" 
                    style="height: 300px; object-fit: cover;">
@@ -369,7 +369,7 @@
           <!-- Card 6 -->
           <div class="col-12 col-sm-6 col-md-4 mb-3">
             <div class="position-relative rounded-4 overflow-hidden shadow-sm">
-              <img src="../IMG/imgProductos/jarron.jpg" 
+              <img src="../IMG/imgProductos/jarron.png" 
                    class="d-block w-100" 
                    alt="Jarra Cerámica" 
                    style="height: 300px; object-fit: cover;">
@@ -432,7 +432,7 @@
 
 
 <!---SECCION OFERTAS-->
-<section class="mb-4">
+<section class="mb-4 mt-4">
     <div class="container">
 
      <h4 class="titulo-seccion tseccion">Ofertas Especiales</h4>
@@ -488,7 +488,7 @@
                 align-items: center;
                 justify-content: center;
             ">
-            <img src="../IMG/imgProductos/aretes.jpg" alt=""style="width: 100%;height: 100%;object-fit: cover; object-position: center; display: block;">
+            <img src="../IMG/imgProductos/aretes.png" alt=""style="width: 100%;height: 100%;object-fit: cover; object-position: center; display: block;">
         </div>
     </div>
 
@@ -519,7 +519,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center; ">
-            <img src="../IMG/imgProductos/pulceraWayu.jpg" alt=""
+            <img src="../IMG/imgProductos/pulceraWayu.png" alt=""
                 style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;">
         </div>
     </div>
@@ -544,7 +544,7 @@
       <div class="col-md-3 d-flex flex-column align-items-start mb-3 mb-md-0">
         <div class="d-flex align-items-center mb-2">
           <img src="../IMG/logo.png" alt="Logo" class="me-2" style="height:50px;">
-          <span class="fs-2 fw-bold text-success" style="font-family: 'Caveat', cursive;">Colombia Sol y Selva</span>
+          <span class="fs-4 fw-bold text-success" style="font-family: 'Caveat', cursive;">Colombia Sol y Selva</span>
         </div>
         <p class="mb-0 small">Conectamos Colombia con el mundo, a través de artesanías que cuentan historias</p>
       </div>

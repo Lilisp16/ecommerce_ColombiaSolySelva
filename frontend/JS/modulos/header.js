@@ -1,5 +1,5 @@
 const headerHTML =`
-        <nav class="navbar navbar-expand-lg navbar-light bg-light pt-4 shadow-sm navbar-fixed">
+        <nav class="navbar navbar-expand-lg navbar-light pt-4 shadow-sm navbar-fixed">
             <div class="container-xxl d-flex justify-content-between align-items-center">
 
                 <!-- Mostrar solo movil -->

@@ -40,6 +40,9 @@ submitBtn.disabled = true;
 function registrarUsuario(){
     const usuario = {
         nombre: document.getElementById("nombre").value,
+        apellido: document.getElementById("apellido").value,
+        direccion: document.getElementById("direccion").value,
+        ciudad: document.getElementById("ciudad").value,
         telefono: document.getElementById("telefono").value,
         email: document.getElementById("email").value,
         password: document.getElementById("password").value,
@@ -82,7 +85,5 @@ form.addEventListener("submit", function(event){
         return;  
     }
 
-
-  
     registrarUsuario();
 });

@@ -27,40 +27,64 @@
                 <!-- Registro de usuario -->
                 <div class="contenedor-registro-User col-12 col-md-6">
                 <div class="registro-User">
-                    <h5 class="mb-4 text-center titulo-form">Registro de Usuario</h5>
+                    <h3 class="mb-4 text-center titulo-form">Registro de Usuario</h3>
                     
                     <form id="registroForm" class="needs-validation" novalidate>
 
-                    <div class="mb-3">
-                    <!--  <label for="nombre" class="form-label"></label>-->
-                        <input type="text" class="form-control" id="nombre" required placeholder="Nombre completo">
-                        <div class="invalid-feedback">Por favor ingresa tu nombre completo.</div>
+                    <h5 class="mb-4 text-left titulo-form">Información General</h5>
+                    <div class="row">
+                        <div class="col-6 mb-3">
+                        <!--  <label for="nombre" class="form-label"></label>-->
+                            <input type="text" class="form-control" id="nombre" required placeholder="Nombres">
+                            <div class="invalid-feedback">Por favor ingresa tu nombre.</div>
+                        </div>
+
+                        <div class="col-6 mb-3">
+                        <!--  <label for="apellido" class="form-label"></label>-->
+                            <input type="text" class="form-control" id="apellido" required placeholder="Apellidos">
+                            <div class="invalid-feedback">Por favor ingresa tus apellidos.</div>
+                        </div>
                     </div>
 
+                    <div class="row">
+                    <div class="col-8 mb-3">
+                        <!--  <label for="direccion" class="form-label"></label>-->
+                            <input type="text" class="form-control" id="direccion" required placeholder="Dirección">
+                            <div class="invalid-feedback">Ingresa tu dirección.</div>
+                        </div>
+
+                        <div class="col-4 mb-3">
+                        <!--  <label for="ciudad" class="form-label"></label>-->
+                            <input type="text" class="form-control" id="ciudad" required placeholder="Ciudad">
+                            <div class="invalid-feedback">Ingresa tu ciudad.</div>
+                        </div>
+                    </div>
                     <div class="mb-3">
                     <!--  <label for="telefono" class="form-label"></label>-->
                         <input type="tel" class="form-control" id="telefono" pattern="[0-9]{7,15}" required placeholder="Teléfono">
                         <div class="invalid-feedback">Ingresa un número de teléfono válido.</div>
                     </div>
+                    
 
-                    <div class="mb-3">
-                    <!--   <label for="email" class="form-label"></label>-->
-                        <input type="email" class="form-control" id="email" required placeholder="Email">
-                        <div class="invalid-feedback">Ingresa un email válido.</div>
+                    <h5 class="mb-4 text-left titulo-form">Datos de Inicio de Sesión</h5>
+                    <div class="row">
+                        <div class="col-8 mb-3">
+                        <!--   <label for="email" class="form-label"></label>-->
+                            <input type="email" class="form-control" id="email" required placeholder="Usuario: Email">
+                            <div class="invalid-feedback">Ingresa un email válido.</div>
+                        </div>
+
+                        <div class="col-4 mb-3">
+                            <!--   <label for="password" class="form-label">Contraseña</label>-->
+                            <input type="password" class="form-control" id="password" minlength="6" required required placeholder="Contraseña">
+                            <div class="invalid-feedback">La contraseña debe tener al menos 6 caracteres.</div>
+                        </div>
                     </div>
-
-                    <div class="mb-3">
-                        <!--   <label for="password" class="form-label">Contraseña</label>-->
-                        <input type="password" class="form-control" id="password" minlength="6" required required placeholder="Contraseña">
-                        <div class="invalid-feedback">La contraseña debe tener al menos 6 caracteres.</div>
-                    </div>
-
-                
-
+                </br>
                     <div class="mb-3 form-check">
                         <input class="form-check-input" type="checkbox" id="terminos" required>
                         <label class="form-check-label" for="terminos">
-                        Acepto <a class="a-User" href="../pages/ttoDatosPersonales.html" target="_blank"> términos y condiciones y autorizo el tratamiento de mis datos personales</a>
+                        Acepto las<a class="a-User" href="../pages/ttoDatosPersonales.html" target="_blank"> Políticas de Tratamiento de mis datos personales</a> y conozco los <a class="a-User" href="../pages/terminosGarantias.html" target="_blank">Términos y Condiciones de Garantías</a>
                         </label>
                         <div class="invalid-feedback">Debes aceptar los términos.</div>
                     </div>
@@ -69,7 +93,7 @@
                     </form>
 
                     <p class="muted text-center mt-4">
-                    ¿Ya tienes cuenta? <a href="login.html" class="fw-bold">Inicia Sesión</span>
+                    ¿Ya tienes cuenta? <a href="login.html" class="fw-bold" style="color: #1B5E20">Inicia Sesión</span>
                     </p>
 
                 </div>

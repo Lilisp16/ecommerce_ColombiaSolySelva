@@ -15,3 +15,4 @@ document.addEventListener("DOMContentLoaded", () => {
 export function formatearMiles(numero) {
   return numero.toLocaleString('es-CO'); 
 }
+

@@ -19,8 +19,8 @@ body{
 /* CONTENEDOR PRINCIPAL */
 .contenedor-principal-User {
  
-  max-width: 800px;
-  height: 503px;      
+  max-width: 1200px;
+  height: 800px;      
   margin: 40px auto;
   border-radius: 10px;
   overflow: hidden;
@@ -175,7 +175,7 @@ padding-top: 45px;
 @media (max-width: 768px) {
   .contenedor-principal-User {
     max-width: 95%;
-    max-height: none;
+    max-height: auto;
   }
 
   .registro-User {

@@ -112,6 +112,7 @@ export class Carrito {
         if (this.badge) {
             const totalUnidades = this.items.reduce((s, i) => s + i.cantidad, 0);
             this.badge.textContent = totalUnidades;
+            
         }
     }
 

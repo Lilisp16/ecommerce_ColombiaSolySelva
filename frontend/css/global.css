@@ -7,7 +7,8 @@
     --color-texto: #3E2723;    
     --color-cafe: #4E342E;  /* Marrón oscuro (Café) */
     --color-primario: #1B5E20;    /* Verde Bosque (Botones principales, Footer oscuro) */
-    --color-secundario: #4CAF50;  /* Verde Hoja (Detalles, hover) */
+    --color-secundario: #4CAF50;
+    --color-secundario-claro: #83c787;  /* Verde Hoja (Detalles, hover) */
     --color-blanco: #ffffff;
     --hover-dorado: #D4AF37; 
     --color-blancoHueso: #FAF8F3;      /*hover cuando el fondo es verde */
@@ -71,11 +72,13 @@ body {
 }
 
 .card {
-    border: 2px solid var(--color-texto);
     background-color: transparent; /* O var(--color-blanco) si prefieres tarjeta blanca */
     border-radius: var(--radio-borde);
     transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.03);
+    box-sizing: content-box;
+    .card-body{
+      background-color: #F5EBDC;
+    } 
   
   img {
     border-bottom: 1px solid var(--color-texto);
@@ -109,8 +112,10 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-      background-color: #4caf4fdb !important;
-  nav {
+  /*   background-color: #4caf4fdb !important;
+   */
+   background-color: var(--color-primario);
+    nav {
       padding-bottom: 0.5rem;
     ul {
         font-size: 18px;
@@ -130,15 +135,19 @@ header {
             color:  #FAF8F3;
             font-family: var(--bs-font-sans-serif);
         }
+        .nav-link.link-custom:hover {
+          color: var(--hover-dorado);
+        }
 
             .nav-link.link-custom::after {
             content: '';
             position: absolute;
             width: 0;
-            height: 5px;
+            height: 7px;
+            border-radius: 1em;
             left: 0;
             bottom: -10px;
-            background: linear-gradient(90deg, black,  #1B5E20,#4CAF50);
+            background: linear-gradient(90deg, var(--hover-dorado));
             transition: width 0.3s;
         }
 
@@ -158,8 +167,8 @@ header {
             } 
             .search-btn {
              /*   background-color: #F5EBDC;*/
-                border: 1px solid #3E2723;
-                color: #3E2723;
+                border: 1px solid var(--color-blanco);;
+                color: var(--color-blanco);
                 border-radius: 50%;
                 width: 40px;
                 height: 40px;
@@ -167,7 +176,7 @@ header {
                 justify-content: center;
                 align-items: center;
                 cursor: pointer;
-                transition: background 0.3s;
+                transition: background-color 0.3s;
             }
 
             .search-btn:hover {
@@ -200,13 +209,13 @@ header {
             }
 
             .icon-user { 
-            color: #3E2723; 
-            border-color: #3E2723; 
+            color: var(--color-blanco);; 
+            border-color: var(--color-blanco);; 
             }
 
             .icon-cart { 
-                color: #3E2723; 
-                border-color: #3E2723;  
+                color: var(--color-blanco);; 
+                border-color: var(--color-blanco);  
             }
 
             .icon-text { 
@@ -455,8 +464,15 @@ body {
     
 }
 
-.card-body{
-    background-color: #F5EBDC;
+
+.cartItem {
+  :hover {
+    cursor: pointer;
+    background-color: var(--color-secundario-claro)
+  }
+  .card-body {
+    border-radius: var(--radio-borde);
+  }
 }
 
 

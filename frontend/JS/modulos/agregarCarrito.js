@@ -15,15 +15,14 @@ export function actualizarBadgeCarrito() {
     const cantidad = carrito.reduce((total, item) => total + item.cantidad, 0);;
     const cartCount = document.getElementById("cartCount");
     const totalItems = document.getElementById("totalItemCount")
-    if (cartCount) cartCount.textContent = cantidad
-    if (totalItems) totalItems.textContent = cantidad
+    if (cartCount) cartCount.textContent = cantidad;
+    if (totalItems) totalItems.textContent =  cantidad > 1 ? `${cantidad}  Und's` : `${cantidad} Un.` 
 }
 
 export const mostrarCarrito = () => {
   const contenedor = document.getElementById("cart-items");
   contenedor.innerHTML = ""; // Limpiar antes de renderizar
 
-  /* nombree,precio,cantidad,imagen */
   carrito.forEach((item) => {
     contenedor.innerHTML += cartItemCarrito(item);
   });

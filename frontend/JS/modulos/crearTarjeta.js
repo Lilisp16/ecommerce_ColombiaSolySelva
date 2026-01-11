@@ -18,7 +18,7 @@ export const crearTarjeta = (producto) => {
 
 export const crearTarjetaCatalogo = (producto) => {
     return `
-    <div class="col-md-3 my-4">
+    <div class="col my-4">
         <div class="card py-4 text-center d-flex align-items-center justify-content-between" style="height: 520px;">
             <h5 class="py-3 fw-semibold">${producto.nombre}</h5>
             <div class="img-catalogo"><img src="${producto.imagen}" class="w-75" style="height: 150px;" alt="${producto.nombre}"></div>

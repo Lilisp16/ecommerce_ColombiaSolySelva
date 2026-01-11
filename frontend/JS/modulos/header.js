@@ -96,8 +96,13 @@ const headerHTML =`
         </div>
 `
 
+// como index tiene un html independiente, entonces en necesario hacer el if para que en esa página no lo busque
 export const mostrarHeader = () => {
     const header = document.querySelector(".header");
-    header.innerHTML = headerHTML;
-}
 
+    if (!header) {
+        return;
+    }
+
+    header.innerHTML = headerHTML;
+};

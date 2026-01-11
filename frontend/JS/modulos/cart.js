@@ -1,6 +1,5 @@
-import { cartItemCarrito } from "./cartItem.js";
+
 import { obtenerCantidadTotal } from "./agregarCarrito.js";
-import { carrito } from "./agregarCarrito.js";
 
 export class Carrito {
     constructor(abrirCarrito) {
@@ -11,7 +10,8 @@ export class Carrito {
     mostrarCantidadItems() {
         const cantidad = obtenerCantidadTotal();
         document.getElementById("cartCount").textContent = cantidad;
-        document.getElementById("totalItemCount").textContent = cantidad;
+        document.getElementById("totalItemCount").textContent = cantidad > 1 ? `${cantidad} U.` : `${cantidad} Unds.` ;
+        
     }
 
     inicializar() {
@@ -20,7 +20,6 @@ export class Carrito {
             
             const sidebarCarrito = document.getElementById("sidebar");
             const closeCarrito = document.getElementById("closeCarrito");
-            console.log(sidebarCarrito);
             
 
             sidebarCarrito.classList.add("open");

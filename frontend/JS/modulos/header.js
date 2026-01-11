@@ -56,7 +56,7 @@ const headerHTML =`
         </nav>
         <!-- Carrito -->
         <div id="sidebar" class="sidebar card  bg-dark text-light vh-100">
-            <div class="card-header d-flex gap-3 justify-content-between align-items-center" style="background-color:#4E342E; color: #FAF8F3" >
+            <div class="card-header d-flex gap-3 p-3 justify-content-between align-items-center" style="background-color:#4E342E; color: #FAF8F3" >
                 <p class="fs-3 mb-0">Tu Carrito</p>
                 <button id="closeCarrito" class="btn btn-outline-light border-0 fs-4">✖</button>
             </div>

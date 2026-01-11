@@ -19,30 +19,34 @@
 
             <section class="productos-header" style="margin-bottom: 20px;">
             
-                <!-- Barra de búsqueda -->
-            <div class="container">
-            </br>
-                <h5 class="descripcionTitulo" style="text-align: left;">Categorías</h5>
-                <div class="row">
-                    <div class="col-md-9">
-                        <div id="categorias" class="d-flex gap-2 flex-wrap"></div>
-                        <div id="filtroCategorias"></div>
-                    </div>
-                    <div class="col-md-3 mt-4">
-                        <div class="buscador" style="margin: 20px 0; text-align: end;">
-                            <input type="text" placeholder="Buscar productos..."
-                                style="flex:1; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
-                            <button style="padding: 10px 15px; border-radius: 8px; border: none; background:#6b705c; color:white;">
-                                Buscar
+            <!-- Categorias-->
+            <div class="container my-4">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 my-2 my-md-4 py-2 py-md-4">
+                    <h3 class="descripcionTitulo mb-0">Categorías</h3>
+                    
+                    <div class="col-12 col-md-4 col-lg-3">
+                        <div class="input-group shadow-sm">
+                            <input type="text" class="form-control" placeholder="Buscar productos..." 
+                                style="border-radius: 8px 0 0 8px; border: 1px solid #ccc;">
+                            <button class="btn" type="button" 
+                                    style="border-radius: 0 8px 8px 0; background:#6b705c; color:white;">
+                                <i class="fas fa-search"></i>
                             </button>
                         </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div id="categorias" class="d-flex gap-3 flex-wrap justify-content-center justify-content-md-between"></div>
+                        <div id="filtroCategorias" class="d-flex flex-wrap gap-2 justify-content-around"></div>
                     </div>
                 </div>
             </div>
 
             <!-- Sección Recomendados -->
             <h2 class="tituloSeccion"></h2>
-            <div id="recomendados" class="row g-4"></div>
+            <div id="recomendados" class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4"></div>
 
 
             <!-- Sección Nuevos -->

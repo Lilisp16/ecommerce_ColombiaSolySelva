@@ -2,8 +2,8 @@ import { formatearMiles } from "../../JS/main.js";
 export function cartItemCarrito (producto) {
     const nuevoProducto = `
     <div class="d-flex justify-content-center">
-                <div class="cartItem w-100 card rounded-4 mb-3" ">
-                    <div class="card-body  rounded-4 border border-dark p-3 text-dark">
+                <div class="card cartItem w-100 mb-3" ">
+                    <div class="card-body  p-3 text-dark">
                         <div class="d-flex align-items-center">
                         <div class="me-2 d-flex flex-column gap-4">
                             <i class="btn-eliminarItem bi bi-trash3" style="cursor: pointer" data-id="${producto.id}"></i>

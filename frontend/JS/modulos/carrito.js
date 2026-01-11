@@ -201,3 +201,4 @@ export default function initCarrito() {
     window.carrito = carrito;
     return carrito;
 }
+

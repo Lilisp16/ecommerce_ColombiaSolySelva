@@ -64,13 +64,8 @@ const headerHTML =`
             <div class="card-body overflow-y-auto">
                 <div id="cart-items"></div>
             </div>
-<<<<<<< HEAD
-            
-            <div class="card-footer d-flex justify-content-between align-items-center pt-4 pb-3 rounded-top"
-=======
 
             <div class="card-footer d-flex justify-content-between align-items-center pt-2 rounded-top"
->>>>>>> 44a1d8fefeadd4c1a15b91a62bf60f6060818a69
                 style="background-color:#4E342E; color:#FAF8F3;">
 
                  <div class="flex-grow-1">

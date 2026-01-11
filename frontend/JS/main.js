@@ -8,17 +8,19 @@ document.addEventListener("DOMContentLoaded", () => {
     headLinks();
     mostrarHeader();
     mostrarFooter();
-    controlarSesion();
+
     const carrito = new Carrito("abrirCarrito");
     carrito.inicializar();
 
     //permite que aparezca el nombre del usuario activo en el header y cambiar el ícono de cerrar sesión
     const nombreUsuarioDiv = document.getElementById("usuLogueado");
-    const data = localStorage.getItem("logueado");
     const icono = document.getElementById("iconoSesion");
     const contSesion = document.getElementById("controlSesion");
+    
+    if(!contSesion) return;
+    const data = localStorage.getItem("logueado");
 
-   if (data) {
+    if (data) {
         const usuario = JSON.parse(data);
 
         // Cambiar icono a cerrar sesión
@@ -33,11 +35,22 @@ document.addEventListener("DOMContentLoaded", () => {
             `;
         }
 
-        // Click → cerrar sesión
-        contSesion.addEventListener("click", () => {
-            localStorage.removeItem("logueado");
-            window.location.href = getPath("catalogo.html");
-        });
+        // Click para cerrar sesión
+      contSesion.addEventListener("click", (e) => {
+          e.preventDefault(); // 
+
+          localStorage.removeItem("logueado");
+
+          Swal.fire({
+              icon: 'success',
+              title: 'Sesión cerrada exitosamente',
+              text: 'Gracias por visitarnos. Esperamos verte pronto.',
+              confirmButtonText: 'Aceptar',
+              confirmButtonColor: '#1B5E20'
+          }).then(() => {
+              window.location.href = getPath("catalogo.html");
+          });
+      });
 
     } else {
         // Usuario NO logueado → ir a login

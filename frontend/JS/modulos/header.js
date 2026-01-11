@@ -38,7 +38,6 @@ const headerHTML =`
                     </form>
                     <div class="icon text-center" id="controlSesion" style="cursor: pointer" title="Iniciar sesión">
                             <i class="fas fa-user icon-circle icon-user" id="iconoSesion"></i>
-                        </a>
                         <div class="icon-text" id="usuLogueado" style="color: #F5EBDC"></div>
                     </div>
                     <div class="icon text-center" id="abrirCarrito" style="cursor: pointer">

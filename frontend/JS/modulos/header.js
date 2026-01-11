@@ -10,7 +10,7 @@ const headerHTML =`
                     </a>
 
                 <!-- Botón hamburguesa -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" 
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
                     aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -42,12 +42,12 @@ const headerHTML =`
                         </a>
                     </div>
                     <div class="icon text-center" id="abrirCarrito">
-                        <i class="fas fa-shopping-cart position-relative icon-circle icon-cart">    
-                            <span 
+                        <i class="fas fa-shopping-cart position-relative icon-circle icon-cart">
+                            <span
                                 id="cartCount"
                                 class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                             </span>
-                        </i>                
+                        </i>
                     </div>
                 </div>
             </div>
@@ -60,11 +60,11 @@ const headerHTML =`
                 <p class="fs-3 mb-0">Tu Carrito</p>
                 <button id="closeCarrito" class="btn btn-outline-light border-0 fs-4">✖</button>
             </div>
-            
+
             <div class="card-body overflow-y-auto">
                 <div id="cart-items"></div>
             </div>
-            
+
             <div class="card-footer d-flex justify-content-between align-items-center pt-2 rounded-top"
                 style="background-color:#4E342E; color:#FAF8F3;">
 
@@ -81,7 +81,7 @@ const headerHTML =`
                 </div>
 
                 <div class="flex-shrink-0 ms-3">
-                    <button type="button"
+                    <button type="button" id="finalizarCompra"
                         class="btn btn-outline-light d-flex align-items-center gap-2"
                         style="max-width: 150px;">
                         Comprar

@@ -23,7 +23,7 @@ function revisarFormulario() {
             todosValidos = false;
         }
     });
-    submitBtn.disabled = !todosValidos;  // no se actica hasta que los todos los input sean validos
+    submitBtn.disabled = !todosValidos;  // no se activa hasta que los todos los input sean validos
 }
 
 // Validación mientras el usuario escribe
@@ -63,7 +63,7 @@ function registrarUsuario(){
             confirmButtonText: 'Aceptar',
             confirmButtonColor: '#1B5E20'
         }).then(() => {
-            form.reset();                       // Limpiar formulario
+            form.reset();                       
             inputs.forEach(input => input.classList.remove("is-valid", "is-invalid"));
             submitBtn.disabled = true;          
         });

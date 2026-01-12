@@ -3,28 +3,40 @@
             font-weight: 700;
             margin-top: 30px;
         }
-
-        .producto-card {
-            background: #fff;
-            border-radius: 12px;
-            overflow: visible;
-            transition: transform .2s ease, box-shadow .2s ease;
+    .input-group {
+        /* 
+        btn filtrador */
+        .btn.filtrador {
+            border-radius: 0 8px 8px 0; background:#6b705c; color:white;
         }
-
-        .producto-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+        .form-control {
+            font-size: 16px;
+            font-weight: bolder;
+            border-radius: 8px 0 0 8px; border: 1px solid #ccc;
         }
-
-
-        .green-btn {
-            background-color: #398b3b;
+        .form-control:not(:placeholder-shown) {
+            background-color: var(--color-secundario-claro);
+        }
+        .form-control:not(:placeholder-shown) ~ .btn.filtrador {
+            background-color: var(--color-primario);
             color: white;
         }
-
-        .green-btn:hover {
-            background-color: #2f7131;
+    }
+    .input-group:focus-within {
+        .btn.filtrador {
+            background-color: var(--color-primario);
+            color: white;
         }
+        .form-control {
+            border: 1px solid var(--color-primario);
+            outline: 2px solid var(--color-secundario-claro);
+        }
+    }
+    .input-group:hover {
+        .form-control {
+            border: 1px solid var(--color-secundario-claro);
+        }
+    }
 }
 
 .img-catalogo {
@@ -68,13 +80,16 @@
 
 .btnFiltro {
     display: flex;
+    font-family: var(--bs-font-sans-serif);
+    font-size: 16px;
+    font-weight: bolder;
     flex-direction: column;
     align-items: center;
     gap: 6px;
-    width: 200px;
+    width: 160px;
     border: none;
     border-radius: 1em;
-    padding: 1.5em;
+    padding: .8em;
     background: transparent;
     cursor: pointer;
     transition: transform .2s, box-shadow .2s;
@@ -83,17 +98,10 @@
 
 
 .btnFiltro img {
-    width: 70px;
-    height: 70px;
+    width: 90px;
+    height: 90px;
     object-fit: cover;
     border-radius: 50%;
-}
-
-.btnFiltro span {
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    
 }
 
 .btnFiltro:hover {
@@ -113,6 +121,54 @@
     font-size: 20px;
     font-weight: 600;
     color: var(--color-fondo);
-    text-decoration-thickness: 2  px;
+    text-decoration-thickness: 2px;
     
+}
+.cardProducto.card {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    max-width: 430px;
+    aspect-ratio: 16 / 9;
+    .cardProductoImg {
+        transition: all .4s ease ;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+        img {
+            border: none;
+        }
+    }
+    .card-title {
+        max-height: 25px;
+        overflow: hidden;
+    }
+    .card-text {
+        height: 45px;
+        overflow: hidden;
+        margin-bottom: .5em;
+    }
+    .card-text:first-child {
+        height: 25px;
+    }
+    .btn.btn-primary {
+        background-color: var(--color-texto);
+    }
+    .btn.btn-primary:hover {
+        background-color: var(--color-primario) !important;
+    }
+}
+.cardProducto.card:hover {
+    .cardProductoImg {
+        background-color: var(--color-secundario-claro);
+        img {
+            transform: scale(1.15);
+            transition: all .4s ease ;
+        }
+    }
+    .card-body{
+        color: var(--color-texto);
+    }
 }

@@ -71,7 +71,6 @@ function registrarUsuario(){
 
     console.log(JSON.parse(localStorage.getItem("usuarios")));
 
-
 }
 
 //evento submit  - validacion final de todo el fomulario 

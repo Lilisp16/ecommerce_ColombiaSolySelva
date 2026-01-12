@@ -36,12 +36,11 @@ const headerHTML =`
                             <i class="fas fa-search"></i>
                         </button>
                     </form>
-                    <div class="icon text-center">
-                        <a href="./login.html">
-                            <i class="fas fa-user icon-circle icon-user"></i>
-                        </a>
+                    <div class="icon text-center" id="controlSesion" style="cursor: pointer" title="Iniciar sesión">
+                            <i class="fas fa-user icon-circle icon-user" id="iconoSesion"></i>
+                        <div class="icon-text" id="usuLogueado" style="color: #F5EBDC"></div>
                     </div>
-                    <div class="icon text-center" id="abrirCarrito">
+                    <div class="icon text-center" id="abrirCarrito" style="cursor: pointer">
                         <i class="fas fa-shopping-cart position-relative icon-circle icon-cart">
                             <span
                                 id="cartCount"
@@ -96,8 +95,13 @@ const headerHTML =`
         </div>
 `
 
+// como index tiene un html independiente, entonces en necesario hacer el if para que en esa página no lo busque
 export const mostrarHeader = () => {
     const header = document.querySelector(".header");
-    header.innerHTML = headerHTML;
-}
 
+    if (!header) {
+        return;
+    }
+
+    header.innerHTML = headerHTML;
+};

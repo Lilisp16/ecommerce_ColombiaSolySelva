@@ -15,39 +15,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //permite que aparezca el nombre del usuario activo en el header y cambiar el ícono de cerrar sesión
     const nombreUsuarioDiv = document.getElementById("usuLogueado");
-    const icono = document.getElementById("iconoSesion");
-    const contSesion = document.getElementById("controlSesion");
+    const logIn = document.getElementById("logIn");
+    const logOut = document.getElementById("logOut")  
     
-    if(!contSesion) return;
+    
     const data = localStorage.getItem("logueado");
-
-    if (data) {
+    if(!data){
+      logIn.addEventListener("click", () => {
+        window.location.href = getPath("login.html");
+      });
+    }else {
         const usuario = JSON.parse(data);
-
-        // Cambiar icono a cerrar sesión
-        icono.classList.replace("fa-user", "fa-right-from-bracket");
-        contSesion.title="Cerrar Sesión";
+        logOut.style.display= "inline-block";
 
         // Mostrar nombre
         if(nombreUsuarioDiv&&usuario){
           if(usuario.rol==="admin"){
+            logIn.addEventListener("click", () => {
+            window.location.href = getPath("vistaAdministrador.html");
+            })
             nombreUsuarioDiv.innerHTML = `
                 <span class="nombre">${usuario.nombre},</span>
                 <span class="bienvenido">Acceso Total</span>
-            `;          
+            `;  
           }else{
+            logIn.addEventListener("click", () => {
+            window.location.href = getPath("vistaUsuario.html");
+            })
             nombreUsuarioDiv.innerHTML = `
                 <span class="nombre">${usuario.nombre},</span>
-                <span class="bienvenido">Bienvenido</span>
+                <span class="bienvenido">Bienvenid@</span>
             `;
         }
       }
-        // Click para cerrar sesión
-      contSesion.addEventListener("click", (e) => {
+      }
+      
+      // Click para cerrar sesión
+
+      logOut.addEventListener("click", (e) => {
           e.preventDefault(); // 
 
+      if (data){
           localStorage.removeItem("logueado");
-
           Swal.fire({
               icon: 'success',
               title: 'Sesión cerrada exitosamente',
@@ -57,15 +66,14 @@ document.addEventListener("DOMContentLoaded", () => {
           }).then(() => {
               window.location.href = getPath("catalogo.html");
           });
-      });
-
-    } else {
+      } else {
         // Usuario NO logueado → ir a login
         contSesion.addEventListener("click", () => {
             window.location.href = getPath("login.html");
         });
     }
 });
+})
 
 export function formatearMiles(numero) {
   return numero.toLocaleString('es-CO'); 
@@ -87,13 +95,12 @@ export function getPath(pagina) {
 
 
 function controlarSesion(){
-  const contSesion = document.getElementById("controlSesion");
+  const logIn = document.getElementById("controlSesion");
 
-  if (!contSesion) {
-    console.warn("Controlarsesion no existe en esta pagina");
+  if (!logIn) {
     return;
   }
-  contSesion.addEventListener("click",(e)=>{
+  logIn.addEventListener("click",(e)=>{
     e.preventDefault();
 
     const usuActivo = JSON.parse(localStorage.getItem("logueado"));

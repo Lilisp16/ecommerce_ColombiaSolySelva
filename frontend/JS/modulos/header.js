@@ -36,10 +36,14 @@ const headerHTML =`
                             <i class="fas fa-search"></i>
                         </button>
                     </form>
-                    <div class="icon text-center" id="controlSesion" style="cursor: pointer" title="Iniciar sesión">
-                            <i class="fas fa-user icon-circle icon-user" id="iconoSesion"></i>
-                        <div class="icon-text" id="usuLogueado" style="color: #F5EBDC"></div>
+                    <div class="icon text-center controlSesion">
+                            <i class="fas fa-user icon-circle icon-user" id="logIn" style="cursor: pointer"></i>
+                            <div class="icon-text" id="usuLogueado" style="color: #F5EBDC"></div>
                     </div>
+                    <div class="icon text-center">
+                        <i class="fas fa-right-from-bracket icon-user" id="logOut" style="cursor: pointer; display:none" title="Cerrar Sesión"></i>
+                    </div>
+
                     <div class="icon text-center" id="abrirCarrito" style="cursor: pointer">
                         <i class="fas fa-shopping-cart position-relative icon-circle icon-cart">
                             <span

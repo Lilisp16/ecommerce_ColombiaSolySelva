@@ -51,11 +51,14 @@
                             <i class="fas fa-search"></i>
                         </button>
                     </form>
-                    <div class="icon text-center" id="controlSesion" style="cursor: pointer" title="Iniciar sesión">
-                            <i class="fas fa-user icon-circle icon-user" id="iconoSesion"></i>
+
+                    <div class="icon text-center controlSesion">
+                            <i class="fas fa-user icon-circle icon-user" id="logIn" style="cursor: pointer"></i>
                             <div class="icon-text" id="usuLogueado"></div>
                     </div>
-
+                    <div class="icon text-center">
+                        <i class="fas fa-right-from-bracket icon-user" id="logOut" style="cursor: pointer; display:none" title="Cerrar Sesión"></i>
+                    </div>
                     
                     <div class="icon text-center" id="abrirCarrito" style="cursor: pointer" title="Iniciar sesión">
                         <i class="fas fa-shopping-cart position-relative icon-circle icon-cart" id="iconoSesion">    
@@ -132,12 +135,23 @@
 
 
 
+<!-- publicidad TODO LO QUE TU ESPACIO NECESITA -->
+<div class="publicidad pb-4 mt-5">
+  <h4 class="titulo-seccion tseccion  pb-4  ms-5">
+    Todo lo que tus espacios necesitan
+  </h4>
 
+  <a href="../HTML/pages/catalogo.html">
+    <img src="../IMG/imgProductos/publicidad.png"
+         alt="decoración"
+         class="img-fluid d-block mx-auto imgPublic">
+  </a>
+</div>
 
 
 
 <!-- CONTENEDOR DE ICONOS DE CATEGORIAS -->
-<div class="container-fluid py-4 iconosCategorias"> 
+<div class="container-fluid py-4 iconosCategorias oculto"> 
   <div class="row justify-content-center text-center gx-4 gy-3">
 
     <!-- Moda y Accesorios -->
@@ -184,11 +198,6 @@
 
   </div>
 </div>
-
-
-
-
-
 
 
 <!--CAROUSEL -->
@@ -405,23 +414,6 @@
 
 <!--PRODUCTOS RECOMENDADOS AQUI CON JS -->
 <!-- ..... -->
-
-
-
-<!-- publicidad TODO LO QUE TU ESPACIO NECESITA -->
-<div class="publicidad pb-4">
-  <h4 class="titulo-seccion tseccion  pb-4  ms-5">
-    Todo lo que tus espacios necesitan
-  </h4>
-
-  <a href="../HTML/pages/catalogo.html">
-    <img src="../IMG/imgProductos/publicidad.png"
-         alt="decoración"
-         class="img-fluid d-block mx-auto imgPublic">
-  </a>
-</div>
-
-
 
 
 

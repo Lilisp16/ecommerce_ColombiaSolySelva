@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     headLinks();
     mostrarHeader();
     mostrarFooter();
+    crearUsuAdmin();
 
     const carrito = new Carrito("abrirCarrito");
     carrito.inicializar();
@@ -28,13 +29,19 @@ document.addEventListener("DOMContentLoaded", () => {
         contSesion.title="Cerrar Sesión";
 
         // Mostrar nombre
-        if (usuario.nombre && nombreUsuarioDiv) {
+        if(nombreUsuarioDiv&&usuario){
+          if(usuario.rol==="admin"){
+            nombreUsuarioDiv.innerHTML = `
+                <span class="nombre">${usuario.nombre},</span>
+                <span class="bienvenido">Acceso Total</span>
+            `;          
+          }else{
             nombreUsuarioDiv.innerHTML = `
                 <span class="nombre">${usuario.nombre},</span>
                 <span class="bienvenido">Bienvenido</span>
             `;
         }
-
+      }
         // Click para cerrar sesión
       contSesion.addEventListener("click", (e) => {
           e.preventDefault(); // 
@@ -97,4 +104,24 @@ function controlarSesion(){
       window.location.href = getPath("login.html")
     }
   })
+}
+
+//usuario administrador
+function crearUsuAdmin (){
+  const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+  const administrador = usuarios.some(u=>u.rol==="admin");
+
+  if(!administrador){
+    const admin={
+      nombre: "Administrador",
+      email:"admin@css.com",
+      password:"admincss",
+      rol:"admin"
+    }
+
+    usuarios.push(admin);
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+    console.log("Usuario administrador creado");
+  }
 }

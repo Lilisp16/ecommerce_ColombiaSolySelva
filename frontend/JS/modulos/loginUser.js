@@ -1,3 +1,5 @@
+import { getPath } from "../main.js";
+
 document.addEventListener("DOMContentLoaded", () => {
     
     //LOGIN
@@ -55,17 +57,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
             let recordarUsuarios =
                 JSON.parse(localStorage.getItem("recordarUsuario")) || [];
-            recordarUsuarios = recordarUsuarios.filter(u => u.email !== email);
+                recordarUsuarios = recordarUsuarios.filter(u => u.email !== email);
 
             if (recordar) {
                 recordarUsuarios.push({ email, password });
             }
 
-            localStorage.setItem(
-                "recordarUsuario",
-                JSON.stringify(recordarUsuarios)
-            );
+            localStorage.setItem("recordarUsuario", JSON.stringify(recordarUsuarios));
 
+            if(usu.rol ==="admin"){
+                window.location.href = getPath("vistaAdministrador.html");
+            } else{
             Swal.fire({
                 icon: "success",
                 title: "Acceso Exitoso",
@@ -75,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }).then(() => {
                 window.location.href = "vistaUsuario.html";
             });
-
+        }
         } else {
             Swal.fire({
                 icon: "error",

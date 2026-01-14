@@ -120,6 +120,8 @@
 
 
 
+
+
 <!--HERO AQUI -->
 <section class="estilosHero">
     <section class="hero text-center text-white">
@@ -132,6 +134,8 @@
     </a>
     </section>
 </section>
+
+
 
 
 
@@ -410,13 +414,6 @@
 
 
 
-
-
-<!--PRODUCTOS RECOMENDADOS AQUI CON JS -->
-<!-- ..... -->
-
-
-
 <!---SECCION OFERTAS-->
 <section class="mb-4 mt-4">
     <div class="container">
@@ -634,12 +631,14 @@ window.addEventListener("scroll", () => {
 
 
 
+
+
 <script type="module" defer>
-    import { Carrito } from "../JS/modulos/cart.js"; // ajusta la ruta según tu proyecto
+    import { Carrito } from "../JS/modulos/cart.js"; 
 
     document.addEventListener("DOMContentLoaded", () => {
         // Inicializar el carrito en el index
-        const carrito = new Carrito("abrirCarrito"); // id del botón carrito en tu header personalizado
+        const carrito = new Carrito("abrirCarrito"); 
         carrito.inicializar();
     });
 </script>

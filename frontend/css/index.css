@@ -79,7 +79,7 @@ body{
 /* Cuando hace scroll, se desacopla   REVISAR AQUÍ */
 .navbar.navbar-index.scrolled {
   position: fixed; 
-    background-color: #4caf4fdb !important;
+    background-color:  #1B5E20 !important;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   
 }
@@ -327,7 +327,7 @@ body{
         display: flex;
         flex-direction: column;
         flex-grow: 1; /* Ocupa todo el espacio restante */
-        justify-content: space-between; /* Distribuye el texto y botón */
+        justify-content: space-between; 
         }
 
 

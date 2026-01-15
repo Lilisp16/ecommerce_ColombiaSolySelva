@@ -44,20 +44,16 @@ a{
 }
 
 
-.contenedor-registro-User {
-  display: flex;
-  align-items: center; 
-  justify-content: center; 
-}
 
 
 
 
-.contenedor-principal-User .row > * {
+
+/*.contenedor-principal-User .row > * {
   padding-left: 0;
   padding-right: 0;
   
-}
+}*/
 
 .parrofo-User{
     font-size: 1rem !important; 
@@ -105,44 +101,47 @@ a{
 }
 
 .registro-User {
+
     display: flex;
     flex-direction: column;
-    align-items: center;   
+    justify-content: center; 
+    max-width: 600px;
     width: 100%;
     /*background-color: rgba(245, 235, 220, 0.39);*/
-    padding: 30px;
+    padding: 40px;
     border-radius: 0px 200px 0px 0px;
 
     background: rgba(245, 235, 220, 0.578); 
     backdrop-filter: blur(10px);          
     -webkit-backdrop-filter: blur(10px); 
 
-   
     box-shadow: 0 4px 30px rgba(0,0,0,0.1);
     border: 1px solid rgba(255,255,255,0.3);
-
-    /* Para texto más legible */
     color: var(--color-texto);
-
-
 }
 
 input,
 select {
-   align-items: center;
-    justify-content: center;
-    width: 80%;
-    max-width: 400px ;
+
+   /* max-width: 400px ;*/
     background-color: var(--color-blancoHueso) !important;
+}
+
+.registro-User .form-control {
+  width: 100% 
 }
 
 
 .titulo-form{
-padding-top: 45px;
+ text-align: center;
 
 }
 
 
+.registro-User .row {
+  max-width: 500px;
+  margin: 0 auto;
+}
 
 
 
@@ -168,6 +167,8 @@ padding-top: 45px;
 .boton-registrarse {
   background-color: var(--color-cafe) !important;
   color: #faf8f3ba!important;
+  display: block;
+    margin: 20px auto;
 }
 
 .boton-registrarse:hover{
@@ -182,6 +183,6 @@ padding-top: 45px;
   }
 
   .registro-User {
-    border-radius: 0px; /* bordes normales en móvil */
+    border-radius: 0px;
   }
 }

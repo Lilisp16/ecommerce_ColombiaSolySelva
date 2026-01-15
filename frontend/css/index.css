@@ -398,29 +398,40 @@ body{
 
 
 /* categorias telepronter */
-.telepronter {
-  overflow: hidden;
-  white-space: nowrap;
-  padding: 20px 0;
-  background: var(--color-fondo); 
+
+.telepron {
+display: flex;
+justify-content: center;  
+background-color: #FAF8F3;
+padding: 40px 0;
+
 }
 
-.telepronter a{
-    color: inherit;
-    text-decoration: none !important;
-    color: #333 !important;
+.telepronter {
+  width: 90%;
+  height: 140px;
+  padding: 4px 0;
+  background: rgba(169, 151, 148, 0.176); 
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  border-radius: 40px 8px 40px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.grupo {
+  display: inline-flex;
+  gap: 10px;
 }
 
 .textoanimado {
-  display: inline-flex;
-  gap: 10px;
-  animation: moverTexto 20s linear infinite;
+  display: flex;
+  width: max-content;
+  animation: moverTexto 10s linear infinite;
 }
 
-@keyframes moverTexto {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
 
 .btnFiltro {
     display: flex;
@@ -450,4 +461,15 @@ body{
     font-size: 20px;
     font-weight: 600;
     color: var(--color-fondo);
+}
+
+
+/* definimos la animacion */
+@keyframes moverTexto {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }

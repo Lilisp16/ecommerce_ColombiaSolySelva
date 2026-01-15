@@ -11,6 +11,8 @@
 </head>
 <body>
    <header class="header"></header>
+
+
     <main class="container catalogo">
         <div class=" contenedor-principal-User mt-5 mx-auto">
             <div class="row">
@@ -27,12 +29,11 @@
                 <!-- Registro de usuario -->
                 <div class="contenedor-registro-User col-12 col-md-6">
                 <div class="registro-User">
-                    <h3 class="mb-4 text-center titulo-form">Registro de Usuario</h3>
+                    <h4 class="mb-4 text-center titulo-form">Registro de Usuario</h4>
                     
                     <form id="registroForm" class="needs-validation" novalidate>
 
-                    <h5 class="mb-4 text-left titulo-form">Información General</h5>
-                    <div class="row">
+                    <div class="row g-4">
                         <div class="col-6 mb-3">
                         <!--  <label for="nombre" class="form-label"></label>-->
                             <input type="text" class="form-control" id="nombre" required placeholder="Nombres">
@@ -59,22 +60,22 @@
                             <div class="invalid-feedback">Ingresa tu ciudad.</div>
                         </div>
                     </div>
-                    <div class="mb-3">
-                    <!--  <label for="telefono" class="form-label"></label>-->
+                   
+
+                   <!-- <h5 class="mb-4 text-left titulo-form">Datos de Inicio de Sesión</h5>-->
+                    <div class="row">
+                         <div class="col-12 mb-3">
                         <input type="tel" class="form-control" id="telefono" pattern="[0-9]{7,15}" required placeholder="Teléfono">
                         <div class="invalid-feedback">Ingresa un número de teléfono válido.</div>
                     </div>
                     
-
-                    <h5 class="mb-4 text-left titulo-form">Datos de Inicio de Sesión</h5>
-                    <div class="row">
-                        <div class="col-8 mb-3">
+                        <div class="col-12 mb-3">
                         <!--   <label for="email" class="form-label"></label>-->
-                            <input type="email" class="form-control" id="email" required placeholder="Usuario: Email">
+                            <input type="email" class="form-control" id="email" required placeholder="Correo electrónico">
                             <div class="invalid-feedback">Ingresa un email válido.</div>
                         </div>
 
-                        <div class="col-4 mb-3">
+                        <div class="col-12 mb-3">
                             <!--   <label for="password" class="form-label">Contraseña</label>-->
                             <input type="password" class="form-control" id="password" minlength="6" required required placeholder="Contraseña">
                             <div class="invalid-feedback">La contraseña debe tener al menos 6 caracteres.</div>
@@ -102,6 +103,7 @@
             </div>
             </div>
     </main>
+    
     <footer class="footer-artesanal"></footer>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../../JS/main.js" type="module"></script>

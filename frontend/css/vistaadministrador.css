@@ -1,18 +1,20 @@
 /* === Sidebar colocado sin mover el header === */
+
+body{
+background-color: var(--color-fondo)!important;
+}
 .sidebar {
     position: fixed;
     left: 0;
-    
     width: 260px;
-    background-color: #F8F9FA; /* Verde selva */
     height: 100vh; 
     padding: 15px;
     transition: margin 0.3s ease;
-
     color: #FAF8F3; /* Blanco roto */
     overflow-y: auto;
     border-right: 3px solid #4CAF50; /* Verde hoja clara */
     z-index: 999;
+    background: #F5EBDC;
 }
 
 /* Items del sidebar */
@@ -25,7 +27,6 @@
     color: #FAF8F3; 
     border-radius: 8px;
     border: 1px solid #4CAF50; /* Verde hoja clara */
-    font-weight: 600;
     transition: 0.3s;
 }
 
@@ -36,13 +37,25 @@
 
 /* Ajustar contenido para que no quede debajo del sidebar */
 .page-content {
-    margin-left: 280px; /* deja espacio para el sidebar */
+    background-image: url('../IMG/amano.jpeg');
+    background-repeat: no-repeat;      
+    background-size: cover;          
+    background-position: center;       
+    margin-left: 280px; 
     padding: 10px;
-    background-color: #F5EBDC; /* Beige natural */
     transition: margin 0.3s ease;
 }
+
+.formularioP{
+  background-color:  #f5ebdc9d!important; /* blueberry con transparencia */
+  backdrop-filter: blur(8px); 
+  -webkit-backdrop-filter: blur(8px);
+  padding: 20px;
+  border-radius: 15px;
+}
+
 .page-content.collapsed {
-    margin-left: 20px; /* ocupa casi todo el ancho;*/
+    margin-left: 20px; 
   }
 .chart-box{
     border-radius: 10px;
@@ -66,7 +79,7 @@
     margin-left: -250px;
 }
 
-#sidebar-admin h2 {
+#sidebar-admin h4 {
     text-align: center;
     margin-bottom: 20px;
 }
@@ -83,16 +96,23 @@
     border-radius: 6px;
     cursor: pointer;
 }
-/* .btn{
-    background: #3E2723;
-    z-index: 2000;
-} */
+
 .btn:hover{
     background-color: #1b1614;
 }
 .toggle-btn {
-    position: fixed;   /* o absolute si lo prefieres */
+    position: fixed;   
     top: 20px;
     left: 20px;
     z-index: 2000;   /* mayor que el sidebar */
+}
+
+.agregados{
+    background-color: #3E2723 !important;
+    color: #FAF8F3!important;
+}
+
+.previsualizados{
+    background-color: #3E2723 !important;
+    color: #FAF8F3!important;
 }

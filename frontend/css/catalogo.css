@@ -129,6 +129,7 @@
     padding: 0;
     width: 100%;
     max-width: 430px;
+    border: 2px solid var(--color-texto);
     aspect-ratio: 16 / 9;
     .cardProductoImg {
         transition: all .4s ease ;
@@ -161,6 +162,7 @@
     }
 }
 .cardProducto.card:hover {
+    border: 2px solid var(--color-primario);
     .cardProductoImg {
         background-color: var(--color-secundario-claro);
         img {

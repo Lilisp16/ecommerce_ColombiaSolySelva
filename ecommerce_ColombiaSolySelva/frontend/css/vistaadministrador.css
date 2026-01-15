@@ -1,0 +1,98 @@
+/* === Sidebar colocado sin mover el header === */
+.sidebar {
+    position: fixed;
+    left: 0;
+    
+    width: 260px;
+    background-color: #F8F9FA; /* Verde selva */
+    height: 100vh; 
+    padding: 15px;
+    transition: margin 0.3s ease;
+
+    color: #FAF8F3; /* Blanco roto */
+    overflow-y: auto;
+    border-right: 3px solid #4CAF50; /* Verde hoja clara */
+    z-index: 999;
+}
+
+/* Items del sidebar */
+.sidebar a {
+    display: block;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    text-decoration: none;
+    background: #3E2723; /* Marrón oscuro */
+    color: #FAF8F3; 
+    border-radius: 8px;
+    border: 1px solid #4CAF50; /* Verde hoja clara */
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background: #4CAF50; /* Verde hoja clara */
+    color: white;
+}
+
+/* Ajustar contenido para que no quede debajo del sidebar */
+.page-content {
+    margin-left: 280px; /* deja espacio para el sidebar */
+    padding: 10px;
+    background-color: #F5EBDC; /* Beige natural */
+    transition: margin 0.3s ease;
+}
+.page-content.collapsed {
+    margin-left: 20px; /* ocupa casi todo el ancho;*/
+  }
+.chart-box{
+    border-radius: 10px;
+    padding: 20px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #F8F9FA;
+}
+
+.bi-list {
+    color: #F8F9FA;
+    border-color: #9e210b;
+} 
+
+/* Sidebar colapsado */
+#sidebar-admin.collapsed {
+    margin-left: -250px;
+}
+
+#sidebar-admin h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#sidebar-admin ul {
+    list-style: none;
+    padding: 0;
+}
+
+#sidebar-admin ul li {
+    padding: 12px;
+    margin: 10px 0;
+    background: #747171;
+    border-radius: 6px;
+    cursor: pointer;
+}
+/* .btn{
+    background: #3E2723;
+    z-index: 2000;
+} */
+.btn:hover{
+    background-color: #1b1614;
+}
+.toggle-btn {
+    position: fixed;   /* o absolute si lo prefieres */
+    top: 20px;
+    left: 20px;
+    z-index: 2000;   /* mayor que el sidebar */
+}

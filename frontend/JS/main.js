@@ -3,12 +3,14 @@ import { Carrito } from "./modulos/cart.js";
 import { mostrarFooter } from "./modulos/footer.js";
 import { mostrarHeader } from "./modulos/header.js";
 import { headLinks } from "./modulos/headLinks.js";
+import { buscadorHeaderProductos } from "./modulos/buscadorHeaderProductos.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     headLinks();
     mostrarHeader();
     mostrarFooter();
     crearUsuAdmin();
+    buscadorHeaderProductos();
 
     const carrito = new Carrito("abrirCarrito");
     carrito.inicializar();

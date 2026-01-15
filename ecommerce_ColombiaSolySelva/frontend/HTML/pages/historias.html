@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artesanos de Colombia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../../CSS/global.css" />
+    <link rel="stylesheet" href="../../css/historias.css">
+
+</head>
+
+<body>
+    <header class="header"></header>
+    <!-- HERO -->
+    <main>
+        <div class=" container overlay rounded-2" style="height: 400px;">
+            <h1 style="color: rgb(255, 255, 255); text-shadow: 2px 2px 4px #4E342E; ">Artesanos de Colombia</h1>
+            <p  class="fs-3" style="color: #D4AF37; text-shadow: 2px 2px 4px #4E342E;">Tejiendo historias con el corazón</p>
+        </div>
+
+
+        <!-- HISTORIA -->
+        <section class="story-section text-center">
+            <h2 class="mb-4 ">Nuestra Historia</h2>
+            <p class="h4">Desde generaciones, las comunidades artesanas de Colombia han construido un legado lleno de cultura,
+                tradición y dedicación.
+            </p>
+            <p class="h4">
+                Cada pieza creada representa cientos de años de conocimiento ancestral, técnicas
+                únicas y un profundo amor por la tierra.
+            </p>
+        </section>
+
+        <!-- CARRUSEL + CARD DINAMICA -->
+        <div class="container my-5">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-7">
+                    <div id="carouselArtesanos" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-index="0">
+                                <img src="../../IMG/Artesanos/Conchita.jpg"
+                                    class="d-block w-100" alt="Artesana 1">
+                            </div>
+                            <div class="carousel-item" data-index="1">
+                                <img src="../../IMG/Artesanos/Angel_Paternina.jpg"
+                                    class="d-block w-100" alt="Artesano 2">
+                            </div>
+                            <div class="carousel-item" data-index="2">
+                                <img src="../../IMG/Artesanos/IrisAguilar.jpg"
+                                    class="d-block w-100" alt="Artesana 3">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselArtesanos"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselArtesanos"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD DINAMICA -->
+                <div class="col-md-5">
+                    <div id="artisanCard" class="artisan-card">
+                        <h3 id="cardName">María Concepción Iguarán - 'Conchita'</h3>
+                        <p id="cardDesc">Uribia, La Guajira. Conchita Iguarán es reconocida por su amor al tejido Wayúu,
+                            ganadora en 2019 de la medalla a la Maestría Tradicional, transmite su cultura en cada uno
+                            de sus tejidos. Aprendió de su madre y de las mujeres de su natal Uribia, y actualmente es
+                            reconocida por la elaboración de mantas, chinchorros y mochilas, siendo promotora del
+                            Festival de la Cultura Wayúu. Su amor por el hilo y la cultura, la motivó a estudiar curos
+                            de diseño y manejo del color en el SENA, allí aprendió a combinar sus raíces indígenas con
+                            la modernidad. Su persistencia y constancia llevaron sus creaciones a Milán, el escenario de
+                            moda en Italia que resalta lo mejor de la moda mundial, llevando el chinchorro como
+                            referente nacional.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ARTESANOS -->
+        <section class="container text-center my-5">
+            <h2 class="mb-4">Los Artesanos</h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="artisan-card"><img src="../../IMG/Artesanos/Conchita-Perfil.jpg" class="rounded-circle mb-3"
+                            alt="Artesano">
+                        <h5>María Concepción</h5>
+                        <p>Tejedora experta en artesanías Wayuu.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="artisan-card"><img src="../../IMG/Artesanos/Iris-Aguilar-perfil.jpg" class="rounded-circle mb-3"
+                            alt="Artesano">
+                        <h5>Iris Aguilar</h5>
+                        <p>Escultor en madera de la región Andina.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="artisan-card"><img src="../../IMG/Artesanos/Angel_perfil.jpg" class="rounded-circle mb-3"
+                            alt="Artesano"> 
+                        <h5>Angel Paternina</h5>
+                        <p>Artesanias de Madera.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="artisan-card"><img src="https://i.pravatar.cc/150?img=7" class="rounded-circle mb-3"
+                            alt="Artesano">
+                        <h5>Jorge Medina</h5>
+                        <p>Experto en pintura tradicional.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer-artesanal">
+          
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            const artisans = [
+                { name: "María Concepción Iguarán - 'Conchita'", desc: "Uribia, La Guajira. Conchita Iguarán es reconocida por su amor al tejido Wayúu, ganadora en 2019 de la medalla a la Maestría Tradicional, transmite su cultura en cada uno de sus tejidos. Aprendió de su madre y de las mujeres de su natal Uribia, y actualmente es reconocida por la elaboración de mantas, chinchorros y mochilas, siendo promotora del Festival de la Cultura Wayúu. Su amor por el hilo y la cultura, la motivó a estudiar curos de diseño y manejo del color en el SENA, allí aprendió a combinar sus raíces indígenas con la modernidad. Su persistencia y constancia llevaron sus creaciones a Milán, el escenario de moda en Italia que resalta lo mejor de la moda mundial, llevando el chinchorro como referente nacional.", },
+                { name: "Angel Paternina", desc: "Puerto Colombia. Recorriendo Colombia y su riqueza cultural, podemos encontrar en cada rincón, artesanos como Angel Paternina, quien hace uso de la madera que proporciona el río en Puerto Colombia. Su amor por las aves nació cuando era niño y sus manos las inmortalizaron convirtiéndolas en arte, que nace de la madera de su propio pueblo para el mundo. Paso a paso muestra cómo la madera se transforma en escultura, en la que pinta recuerdos memorables para quienes apoyan su arte. Aunque no prima en él, la necesidad de usar la tecnología para llegar a todos, Colombia Sol y Selva, quiere ponerla a su disposición para visibilizar el arte que sus manos crean.", },
+                { name: "Iris Aguilar", desc: "Como algunos de los grandes artesanos, Iris reconoce la gran importancia de la enseñanza en este arte desde que era niña. Sobre el tema, ella manifestó en una entrevista realizada para la página de maestros artesanos: “Aunque me siento muy feliz por este reconocimiento, siempre pienso que la verdadera merecedora de la medalla es mi maestra, esa que está viva y que, con sus manos, todavía sigue tejiendo, mi mamá es la verdadera maestra de maestros”. Reconociendo la importancia de trasmitir estos conocimientos.", }
+            ];
+
+            const carousel = document.getElementById("carouselArtesanos");
+            carousel.addEventListener("slid.bs.carousel", function (e) {
+                const index = e.relatedTarget.getAttribute("data-index");
+                document.getElementById("cardName").textContent = artisans[index].name;
+                document.getElementById("cardDesc").textContent = artisans[index].desc;
+            });
+        </script>
+        <script type="module" src="../../JS/main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>

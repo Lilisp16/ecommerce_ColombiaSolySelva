@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../..//global.css">
+    <style>
+       
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    .contenedorPreguntas {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .tarjeta {
+      background: white;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #ddd;
+    }
+
+    .pregunta {
+      background: #007bff;
+      color: white;
+      padding: 15px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .pregunta:hover {
+      background: #0056b3;
+    }
+
+    .respuesta {
+      display: none;
+      padding: 15px;
+      background: #fafafa;
+      font-size: 15px;
+      color: #444;
+      border-top: 1px solid #ddd;
+    }
+    </style>
+</head>
+<body>
+    <h2>Preguntas Frecuentes</h2>
+
+  <div class="contenedorPreguntas">
+
+    <div class="tarjeta">
+      <div class="pregunta">¿Cómo puedo registrarme?</div>
+      <div class="respuesta">Puedes registrarte haciendo clic en el botón "Crear cuenta" en la parte superior derecha de la página.</div>
+    </div>
+
+    <div class="tarjeta">
+      <div class="pregunta">¿Cómo recupero mi contraseña?</div>
+      <div class="respuesta">Haz clic en "¿Olvidaste tu contraseña?" y sigue las instrucciones enviadas a tu correo.</div>
+    </div>
+
+    <div class="tarjeta">
+      <div class="pregunta">¿Cuáles métodos de pago aceptan?</div>
+      <div class="respuesta">Aceptamos tarjetas de crédito, débito y paypal</div>
+    </div>
+
+  </div>
+
+  <script>
+    // Lógica del acordeón FAQ
+    const preguntas = document.querySelectorAll(".pregunta");
+
+    preguntas.forEach(pregunta => {
+      pregunta.addEventListener("click", () => {
+        const respuesta = pregunta.nextElementSibling;
+        
+        // Abrir/cerrar
+        respuesta.style.display = 
+          respuesta.style.display === "block" ? "none" : "block";
+      });
+    });
+  </script>
+</body>
+</html>

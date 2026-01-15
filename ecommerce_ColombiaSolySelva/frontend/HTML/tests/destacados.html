@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-..."
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../css/global.css">
+
+    <style>
+        body {
+            padding: 20px 40px;
+            font-family: Arial, sans-serif;
+            background: #f8f8f8;
+        }
+
+        /* TITULOS */
+        .titulo-seccion {
+            font-size: 22px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .subtitulo-seccion {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* PRODUCTOS NORMALES */
+        .fila-productos {
+            display: flex;
+            gap: 100px;
+            margin-bottom: 40px;
+        }
+
+        .tarjeta-producto {
+            width: 30%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background: #fff;
+        }
+
+        .imagen-producto {
+            width: 100%;
+            height: 130px;
+            background: #e5e5e5;
+            border-radius: 10px;
+        }
+
+        .descripcion-producto {
+            margin: 60px 0;
+        }
+
+        .precio-producto {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .boton-agregar {
+            width: 100%;
+            padding: 10px;
+            background: #ddd;
+            border: none;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .icono-carrito {
+            margin-left: 5px;
+        }
+
+        /* PROMOCIONES */
+        .fila-promos {
+            display: flex;
+            gap: 20px;
+        }
+
+        .tarjeta-promo {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            width: 48%;
+            position: relative;
+            background: #fff;
+        }
+
+        .info-promo {
+            width: 60%;
+        }
+
+        .imagen-promo {
+            width: 35%;
+            height: 120px;
+            background: #e5e5e5;
+            border-radius: 10px;
+        }
+
+        .texto-pequeno {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .texto-descuento {
+            margin: 0;
+            font-size: 28px;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .texto-descuento span {
+            display: block;
+            font-size: 16px;
+            font-weight: normal;
+        }
+
+        .titulo-promo {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .texto-validez {
+            margin: 10px 0;
+            font-size: 12px;
+            color: #333;
+        }
+
+        .boton-promo {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 8px;
+            background: #d0d0d0;
+            cursor: pointer;
+        }
+
+        .estrella-favorito {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        .tarjeta-producto {
+            width: 300px;
+            /* Tamaño de la tarjeta */
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* Contenedor de la imagen */
+        .imagen-producto img {
+            width: 100%;
+            /* Se ajusta al ancho de la tarjeta */
+            height: 180px;
+            /* Alto fijo */
+            object-fit: cover;
+            /* Recorta y ajusta bonito */
+            border-radius: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h2 class="titulo-seccion">Productos destacados</h2>
+    <p class="subtitulo-seccion">Diciembre</p>
+
+    <!-- Productos normales -->
+    <div class="fila-productos">
+
+        <div class="tarjeta-producto">
+            <div class="imagen-producto">
+                <img src="../../IMG/ejemploArtesania.jpg" alt="producto">
+            </div>
+            <p class="descripcion-producto">Texto de ejemplo para describir el producto.</p>
+            <span class="precio-producto">$45.000</span>
+            <button class="boton-agregar">
+                Agregar <span class="icono-carrito">🛒</span>
+            </button>
+        </div>
+
+        <div class="tarjeta-producto">
+            <div class="imagen-producto"></div>
+            <p class="descripcion-producto">Texto de ejemplo para describir el producto.</p>
+            <span class="precio-producto">$40.000</span>
+            <button class="boton-agregar">
+                Agregar <span class="icono-carrito">🛒</span>
+            </button>
+        </div>
+
+        <div class="tarjeta-producto">
+            <div class="imagen-producto"></div>
+            <p class="descripcion-producto">Texto de ejemplo para describir el producto.</p>
+            <span class="precio-producto">$50.000</span>
+            <button class="boton-agregar">
+                Agregar <span class="icono-carrito">🛒</span>
+            </button>
+        </div>
+
+    </div>
+
+    <!-- Promociones -->
+    <div class="fila-promos">
+
+        <div class="tarjeta-promo">
+            <span class="estrella-favorito">☆</span>
+
+            <div class="info-promo">
+                <p class="texto-pequeno">Hasta</p>
+                <h3 class="texto-descuento">30% <span>de descuento</span></h3>
+                <p class="titulo-promo">en moda y accesorios</p>
+
+                <p class="texto-validez">
+                    Válido desde el 13/11/2025<br>
+                    hasta 13/12/2025
+                </p>
+
+                <button class="boton-promo">¡Compra Ahora!</button>
+            </div>
+
+            <div class="imagen-promo"></div>
+        </div>
+
+        <div class="tarjeta-promo">
+            <span class="estrella-favorito">☆</span>
+
+            <div class="info-promo">
+                <p class="texto-pequeno">Hasta</p>
+                <h3 class="texto-descuento">30% <span>de descuento</span></h3>
+                <p class="titulo-promo">en moda y accesorios</p>
+
+                <p class="texto-validez">
+                    Válido desde el 13/11/2025<br>
+                    hasta 13/12/2025
+                </p>
+
+                <button class="boton-promo">¡Compra Ahora!</button>
+            </div>
+
+            <div class="imagen-promo"></div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

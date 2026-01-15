@@ -1,5 +1,7 @@
 import { formatearMiles } from "../../JS/main.js";
+import { getPathImgs } from "../../JS/main.js";
 export function cartItemCarrito (producto) {
+    const rutaImagen = getPathImgs(producto.imagen)
     const nuevoProducto = `
     <div class="d-flex justify-content-center">
                 <div class="card cartItem w-100 mb-3" ">
@@ -10,7 +12,7 @@ export function cartItemCarrito (producto) {
                         </div>
                         <div class="me-3">
                             <div class="rounded-4" style="width: 80px; height: 80px; display: flex">
-                                <img src="${producto.imagen}" style="border: none; display:block; max-width: 100%; max-height:100%; object-fit-contain; border-radius: 16px">
+                                <img src="${rutaImagen}" style="border: none; display:block; max-width: 100%; max-height:100%; object-fit-contain; border-radius: 16px">
                             </div>
                         </div>
 

@@ -93,6 +93,17 @@ export function getPath(pagina) {
   return `pages/${pagina}`;
 }
 
+export function getPathImgs(rutaImg) {
+  const limpia = rutaImg.replace("../", "");
+  const path = window.location.pathname;
+
+  if (path.includes("/pages/")) {
+    return `../${limpia}`;
+  }
+
+  return limpia;
+}
+
 
 function controlarSesion(){
   const logIn = document.getElementById("controlSesion");

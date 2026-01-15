@@ -14,7 +14,7 @@
     --color-blancoHueso: #FAF8F3;      /*hover cuando el fondo es verde */
     
     /* Variables de Bootstrap redefinidas */
-    --bs-body-bg: var(--color-fondo);
+    --bs-body-bg: var(--color-fondo) !important;
     --bs-body-color: var(--color-texto);
     --bs-font-sans-serif: 'Poppins', sans-serif;
     --bs-primary: var(--color-primario);
@@ -28,7 +28,7 @@
     --radio-borde: 8px; /* Redondeado suave de las imágenes */
 }
 body {
-    background-color: var(--bs-body-bg) !important;
+    background-color: var(--bs-body-bg);
     color: var(--bs-body-color);
     font-family: var(--bs-font-sans-serif);
 }

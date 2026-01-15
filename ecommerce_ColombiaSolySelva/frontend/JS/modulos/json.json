@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "nombre": "Mochila Wayuu",
+    "precio": 120000,
+    "descripcion": "Mochila tejida a mano por artesanas de La Guajira.",
+    "categoria": "Moda y Accesorios",
+    "stock": 10,
+    "imagen": "../../IMG/imgProductos/mochila.png"
+  },
+  {
+    "id": 2,
+    "nombre": "Pulsera Wayuu Tejida",
+    "precio": 35000,
+    "descripcion": "Pulsera hecha a mano con diseños tradicionales Wayuu.",
+    "categoria": "Moda y Accesorios",
+    "stock": 15,
+    "imagen": "../../IMG/imgProductos/pulceraWayu.png"
+  },
+  {
+    "id": 3,
+    "nombre": "Aretes Sombrero Vueltiao",
+    "precio": 95000,
+    "descripcion": "Aretes elaborados con técnica ancestral de filigrana en Mompox.",
+    "categoria": "Moda y Accesorios",
+    "stock": 7,
+    "imagen": "../../IMG/imgProductos/aretes.png"
+  },
+  {
+    "id": 4,
+    "nombre": "Bolso de Fique Tejido",
+    "precio": 78000,
+    "descripcion": "Bolso artesanal hecho en fique por artesanos de Santander.",
+    "categoria": "Moda y Accesorios",
+    "stock": 12,
+    "imagen": "../../IMG/imgProductos/bolso.png"
+  },
+  {
+    "id": 5,
+    "nombre": "Figura de Madera Tallada",
+    "precio": 85000,
+    "descripcion": "Escultura artesanal elaborada en madera de guayacán.",
+    "categoria": "Decoración para el Hogar",
+    "stock": 5,
+    "imagen": "../../IMG/imgProductos/figuraMadera.png"
+  },
+  {
+    "id": 6,
+    "nombre": "Tapiz Tejido",
+    "precio": 98000,
+    "descripcion": "Tapiz decorativo hecho en telar por artesanos de Nariño.",
+    "categoria": "Decoración para el Hogar",
+    "stock": 6,
+    "imagen": "../../IMG/imgProductos/tapiz.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "Lámpara de Totumo Tallada",
+    "precio": 65000,
+    "descripcion": "Lámpara artesanal hecha con totumo tallado a mano.",
+    "categoria": "Decoración para el Hogar",
+    "stock": 9,
+    "imagen": "../../IMG/imgProductos/lampara.png"
+  },
+  {
+    "id": 8,
+    "nombre": "Cuadro Pintado en Madera",
+    "precio": 72000,
+    "descripcion": "Cuadro decorativo pintado sobre madera recuperada.",
+    "categoria": "Decoración para el Hogar",
+    "stock": 4,
+    "imagen": "../../IMG/imgProductos/cuadroMadera.png"
+  },
+  {
+    "id": 9,
+    "nombre": "Sombrero Vueltiao",
+    "precio": 150000,
+    "descripcion": "Sombrero tradicional hecho con caña flecha por artesanos Zenú.",
+    "categoria": "Arte y Recuerdos",
+    "stock": 8,
+    "imagen": "../../IMG/imgProductos/sombrero.png"
+  },
+  {
+    "id": 10,
+    "nombre": "Máscara Indígena Embera",
+    "precio": 130000,
+    "descripcion": "Máscara artesanal pintada a mano con símbolos Embera.",
+    "categoria": "Arte y Recuerdos",
+    "stock": 4,
+    "imagen": "../../IMG/imgProductos/mascara.png"
+  },
+  {
+    "id": 11,
+    "nombre": "Cuadro Abstracto Decorativo",
+    "precio": 60000,
+    "descripcion": "Cuadro pintado a mano con motivos abstractos, ideal para decorar cualquier espacio",
+    "categoria": "Arte y Recuerdos",
+    "stock": 10,
+    "imagen": "../../IMG/imgProductos/cuadroAbstracto.png"
+  },
+  {
+    "id": 12,
+    "nombre": "Cuenco Decorativo Zenú",
+    "precio": 40000,
+    "descripcion": "Cuenco elaborado con fibras y patrones tradicionales Zenú.",
+    "categoria": "Arte y Recuerdos",
+    "stock": 14,
+    "imagen": "../../IMG/imgProductos/cuenco.png"
+  },
+  {
+    "id": 13,
+    "nombre": "Tazón de Cerámica Negra",
+    "precio": 45000,
+    "descripcion": "Tazón artesanal elaborado en cerámica negra de La Chamba.",
+    "categoria": "Utensilios Funcionales",
+    "stock": 20,
+    "imagen": "../../IMG/imgProductos/tazon.png"
+  },
+  {
+    "id": 14,
+    "nombre": "Plato de Madera de Nogal",
+    "precio": 55000,
+    "descripcion": "Plato tallado a mano en madera de nogal.",
+    "categoria": "Utensilios Funcionales",
+    "stock": 18,
+    "imagen": "../../IMG/imgProductos/plato.png"
+  },
+  {
+    "id": 15,
+    "nombre": "Cuchara de Guadua",
+    "precio": 15000,
+    "descripcion": "Cuchara artesanal hecha con guadua colombiana.",
+    "categoria": "Utensilios Funcionales",
+    "stock": 30,
+    "imagen": "../../IMG/imgProductos/cuchara.png"
+  },
+  {
+    "id": 16,
+    "nombre": "Jarra de Cerámica de Ráquira",
+    "precio": 48000,
+    "descripcion": "Jarra artesanal hecha en Ráquira con diseños tradicionales.",
+    "categoria": "Utensilios Funcionales",
+    "stock": 11,
+    "imagen": "../../IMG/imgProductos/jarron.png"
+  }
+]

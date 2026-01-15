@@ -71,6 +71,13 @@ body {
     font-weight: bolder;
 }
 
+.btnAgregarCarrito.btn-primary {
+  background: var(--color-cafe);
+}
+.btnAgregarCarrito.btn-primary:hover {
+  background: var(--color-primario) !important;
+}
+
 .card {
     background-color: transparent; /* O var(--color-blanco) si prefieres tarjeta blanca */
     border-radius: var(--radio-borde);

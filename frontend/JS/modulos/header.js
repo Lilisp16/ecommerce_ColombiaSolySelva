@@ -31,7 +31,7 @@ const headerHTML =`
                 <div class="searchAccountSection d-flex gap-3 align-items-top">
                      <!-- Buscador -->
                     <form class="d-flex m-0 h-75 align-content-center" role="search">
-                        <input class="form-control inputBuscar" type="search" placeholder="Buscar..." aria-label="Buscar">
+                        <input class="form-control inputBuscar" autocomplete="off" id="buscarProductosHeader" type="search" placeholder="Buscar..." aria-label="Buscar">
                         <button class="btn search-btn" type="button">
                             <i class="fas fa-search"></i>
                         </button>

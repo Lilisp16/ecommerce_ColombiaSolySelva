@@ -1,0 +1,200 @@
+/* =======================
+   CONTENEDOR GENERAL
+======================= */
+.perfil-container {
+  display: flex;
+  width: 80%;
+  max-width: 1100px;
+  min-height: 70vh;
+
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #b8a99e;
+  box-shadow: none;
+}
+
+/* =======================
+   IMAGEN IZQUIERDA
+======================= */
+.perfil-imagen {
+  flex: 1;
+  background-image: url("../IMG/assets/imgLogin.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.perfil-imagen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.perfil-imagen .overlay {
+  position: relative;
+  color: #fff;
+  height: 100%;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.perfil-imagen h1 {
+  font-size: 3rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.perfil-imagen p {
+  font-size: 1rem;
+  max-width: 380px;
+}
+
+/* =======================
+   TARJETA PERFIL
+======================= */
+.perfil-card {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.perfil-info {
+  width: 100%;
+  padding: 60px 50px;
+}
+
+/* TÍTULO */
+.perfil-titulo {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+  color: #1B5E20;
+}
+
+/* =======================
+   GRID DE CAMPOS (2 COLS)
+======================= */
+.perfil-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 25px;
+  row-gap: 18px;
+}
+
+/* El título ocupa 2 columnas */
+.perfil-titulo {
+  grid-column: span 2;
+}
+
+/* =======================
+   CAMPOS
+======================= */
+.campo label {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+  color: #0c0c0c;
+  font-weight: 500;
+}
+
+.campo input {
+  width: 100%;
+  padding: 14px;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+/* =======================
+   BOTONES
+======================= */
+.acciones {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.acciones button {
+  padding: 12px 22px;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Editar */
+#editarInfo {
+  background-color: #1b5e20;
+  color: white;
+}
+
+#editarInfo:hover {
+  background-color: #144718;
+}
+
+/* Cerrar sesión */
+#cerrarSesion {
+  background-color: #9e1e1e;
+  color: white;
+}
+
+#cerrarSesion:hover {
+  background-color: #452d2d;
+}
+
+/* =======================
+   CENTRADO VERTICAL
+======================= */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.perfil-container {
+  flex-grow: 1;
+  align-self: center;
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+@media (max-width: 900px) {
+  .perfil-container {
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .perfil-info {
+    grid-template-columns: 1fr;
+  }
+
+  .perfil-titulo,
+  .acciones {
+    grid-column: span 1;
+  }
+}
+
+.campo input {
+  background-color: #fafafa;
+}
+
+.campo input:disabled {
+  background-color: #eee;
+}
+
+.campo input:not(:disabled) {
+  background-color: #fff;
+  border: 2px solid #1b5e20;
+}

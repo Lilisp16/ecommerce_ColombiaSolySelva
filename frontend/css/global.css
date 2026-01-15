@@ -28,7 +28,7 @@
     --radio-borde: 8px; /* Redondeado suave de las imágenes */
 }
 body {
-    background-color: var(--bs-body-bg);
+    background-color: var(--bs-body-bg) !important;
     color: var(--bs-body-color);
     font-family: var(--bs-font-sans-serif);
 }

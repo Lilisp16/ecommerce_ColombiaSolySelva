@@ -52,7 +52,7 @@ export const productosRecientes = (producto) => {
                     <div class="card-body  rounded-4 border border-clear p-3 text-dark">
                         <div class="d-flex align-items-center">
                         <div class="me-2 d-flex flex-column gap-4">
-                            <i class="bi bi-trash3"></i>
+                            <i class="bi bi-trash3*" id="eliminarprod"></i>
                         </div>
                         <div class="me-4">
                             <div class="border border-black bg-dark rounded-4" style="width: 80px; height: 80px;">
@@ -69,7 +69,7 @@ export const productosRecientes = (producto) => {
                             
                         </div>
                         <div class="d-flex flex-column align-items-end justify-content-between" style="height: 80px;">
-                            <i class="bi bi-heart-fill"></i>
+                            <i class="bi bi-heart-fillx"></i>
                         </div>
 
                         </div>
@@ -79,6 +79,7 @@ export const productosRecientes = (producto) => {
     `
     return nuevoProducto;
 } 
+
 
 export function cartItemCarritoVersion1 (producto) {
     const nuevoProducto = `

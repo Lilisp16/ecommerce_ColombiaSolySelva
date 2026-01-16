@@ -182,7 +182,24 @@ select {
     max-height: auto;
   }
 
-  .registro-User {
-    border-radius: 0px;
-  }
+  
+}
+
+
+.registro-User {
+    max-width: 600px;
+    width: 100%;
+    padding: 30px;
+}
+
+@media (max-width: 768px) {
+    .registro-User {
+        padding: 20px;
+    }
+    .overlay-text h2 {
+        font-size: 1.2rem;
+    }
+    .overlay-text p {
+        font-size: 0.9rem;
+    }
 }

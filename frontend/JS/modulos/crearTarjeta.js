@@ -10,7 +10,7 @@ export const crearTarjeta = (producto) => {
                 <p class="text-secondary small"><strong>Categoría:</strong> ${producto.categoria}</p>
                 <p class="text-secondary small"><strong>Stock:</strong> ${producto.stock}</p>
                 <p class="fw-bold">$${formatearMiles(Number(producto.precio))}</p>
-                <button class="btn btn-primary w-100">Agregar</button>
+                
             </div>
         </div>
     `;

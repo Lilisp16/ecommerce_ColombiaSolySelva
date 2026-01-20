@@ -470,6 +470,11 @@ header{
 
 
 
+#cartCount{
+    display: flex;
+    margin-right: 80px !important;
+}
+
 
 
 

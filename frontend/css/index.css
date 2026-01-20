@@ -6,8 +6,9 @@ body{
         position: relative;
 
       .hero {
+        color: #4e342ee0;
         background: 
-            linear-gradient(#f8f9fa, rgba(0, 0, 0, 0.37)),
+            linear-gradient(#fcf4e8ec, rgba(0, 0, 0, 0.37)),
             url('../IMG/ar-1.png') no-repeat center center;
         background-size: cover;
         height: 70vh;
@@ -16,7 +17,7 @@ body{
         justify-content: center;
         align-items: center;
         position: relative; 
-        z-index: 2;        
+        z-index: 2;    
     }
 
     .estilosHero .hero h1,
@@ -36,7 +37,7 @@ body{
 
     .btnHero {
     background-color: #a33a2084;
-    color: white;
+    color: #F5EBDC;
     border: 1px solid #4e342ea5;
     padding: 12px 26px;
     font-size: 1.1rem;
@@ -84,11 +85,43 @@ body{
   
 }
 
-.navbar.navbar-index.scrolled a{
-    color:   #4E342E !important;
-    color:var(--color-blancoHueso) !important;
-
+.navbar.navbar-index a {
+    color: #4E342E !important;
 } 
+
+.navbar.navbar-index .icon i {
+    color: #4E342E !important;
+    border-color: #4E342E !important;
+}
+
+
+.navbar.navbar-index .search-btn {
+    color: #4E342E !important;
+    border-color: #4E342E !important; /* borde del botón */
+    background-color: transparent !important;
+}
+
+
+/* Al hacer hover en links */
+.navbar.navbar-index a.nav-link.link-custom:hover,
+.navbar.navbar-index .icon i:hover,
+.navbar.navbar-index .search-btn:hover {
+    color: #D4AF37 !important; /* un café un poco más oscuro para hover */
+    border-color: #D4AF37 !important; /* borde del input o botón */
+}
+
+
+
+/* Scroll: blanco al hacer scroll */
+.navbar.navbar-index.scrolled a,
+.navbar.navbar-index.scrolled .icon i,
+.navbar.navbar-index.scrolled .search-btn,
+.navbar.navbar-index.scrolled .inputBuscar {
+    color:  #FAF8F3!important;
+    border-color:  #FAF8F3!important;
+}
+
+
 
 /* HASTA AQUI ESTILOS HERO */
 
@@ -385,6 +418,8 @@ body{
     color: #4E342E !important;   
 }
 
+
+
 /* para iconos categorias */
 
 .iconosCategorias{
@@ -429,7 +464,7 @@ padding: 40px 0;
 .textoanimado {
   display: flex;
   width: max-content;
-  animation: moverTexto 10s linear infinite;
+  animation: moverTexto 20s linear infinite;
 }
 
 

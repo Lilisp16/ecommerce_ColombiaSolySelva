@@ -65,7 +65,9 @@ function registrarUsuario(){
         }).then(() => {
             form.reset();                       
             inputs.forEach(input => input.classList.remove("is-valid", "is-invalid"));
-            submitBtn.disabled = true;          
+            submitBtn.disabled = true;        
+            
+            window.location.href = "login.html";
         });
 
 

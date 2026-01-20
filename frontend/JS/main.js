@@ -12,6 +12,29 @@ document.addEventListener("DOMContentLoaded", () => {
     crearUsuAdmin();
     buscadorHeaderProductos();
 
+    // Inicializar el menú hamburguesa cuando Bootstrap esté disponible
+    const initNavbarCollapse = () => {
+        const navCollapse = document.getElementById('mainNav');
+        if (navCollapse && window.bootstrap) {
+            new bootstrap.Collapse(navCollapse, { toggle: false });
+        }
+    };
+
+    // Esperar a que Bootstrap esté cargado (se carga dinámicamente via headLinks.js)
+    if (window.bootstrap) {
+        initNavbarCollapse();
+    } else {
+        // Verificar periódicamente hasta que Bootstrap esté disponible
+        const checkBootstrap = setInterval(() => {
+            if (window.bootstrap) {
+                clearInterval(checkBootstrap);
+                initNavbarCollapse();
+            }
+        }, 50);
+        // Timeout de seguridad después de 5 segundos
+        setTimeout(() => clearInterval(checkBootstrap), 5000);
+    }
+
     const carrito = new Carrito("abrirCarrito");
     carrito.inicializar();
 

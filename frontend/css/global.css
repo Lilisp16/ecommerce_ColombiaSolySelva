@@ -114,6 +114,17 @@ body {
     font-size: 0.9rem;
 }
 
+.header {
+    .navbar {
+        .navbar-toggler {
+            border: 2px solid var(--color-fondo) ;
+        }
+        .navbar-toggler-icon {
+            filter: invert(1) brightness(100%);
+        }
+    }
+}
+
 /* Colores, fuentes, header, footer*  genera que se vayan a usar en toda las seccione*/
 header {
     position: sticky;
@@ -255,6 +266,8 @@ header {
         }
     }
   }
+
+
   .sidebar {
      font-family: var(--bs-font-sans-serif);
     position: fixed;
@@ -271,6 +284,8 @@ header {
       right: 0;
   }
 }
+
+
 
 .form-control, .form-select {
     background-color: var(--color-blanco);

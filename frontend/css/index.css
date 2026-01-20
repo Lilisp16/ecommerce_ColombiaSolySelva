@@ -90,6 +90,47 @@ body{
 
 } 
 
+
+header{
+    nav.headerIndex  {
+        .navbar-toggler {
+            border: 2px solid var(--color-cafe);
+        }
+        .navbar-toggler:hover {
+            border: 2px solid var(--hover-dorado);
+        }
+        .navbar-collapse {
+            .searchAccountSection {
+                .icon-user, .search-btn, .icon-cart {
+                    
+                    color: var(--color-cafe);
+                    border: 2px solid var(--color-cafe);
+                }
+            }
+        }
+    }
+}   
+header{
+    nav.headerIndex.scrolled  {
+        .navbar-toggler {
+            border: 2px solid var(--color-fondo);
+        }
+        .navbar-toggler-icon {
+                filter: invert(1) brightness(100%);
+        }
+        .navbar-collapse {
+            .searchAccountSection {
+                .icon-user, .search-btn, .icon-cart {
+                    color: var(--color-fondo);
+                    border: 2px solid var(--color-fondo);
+                }
+            }
+        }
+    }
+}   
+
+
+
 /* HASTA AQUI ESTILOS HERO */
 
 

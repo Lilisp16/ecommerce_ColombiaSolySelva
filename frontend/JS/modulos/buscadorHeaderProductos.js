@@ -1,6 +1,5 @@
 import { formatearMiles, getPathImgs } from "../main.js";
 
-
 export const buscadorHeaderProductos = () => {
     const buscador = document.getElementById("buscarProductosHeader");
     

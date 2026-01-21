@@ -1,3 +1,6 @@
+import { getPath } from "../main.js";
+import { obtenerUsuarioActual, cerrarSesion } from "./auth.js";
+
 const headerHTML =`
         <nav class="navbar navbar-expand-lg navbar-light pt-4 shadow-sm navbar-fixed">
             <div class="container-xxl d-flex justify-content-between align-items-center">
@@ -40,8 +43,8 @@ const headerHTML =`
                             <i class="fas fa-user icon-circle icon-user" id="logIn" style="cursor: pointer"></i>
                             <div class="icon-text" id="usuLogueado" style="color: #F5EBDC"></div>
                     </div>
-                    <div class="icon text-center">
-                        <i class="fas fa-right-from-bracket icon-user" id="logOut" style="cursor: pointer; display:none" title="Cerrar Sesión"></i>
+                    <div class="icon text-center" id="botonCerrarSesion"style="cursor: pointer; display:none">
+                        <i class="fas fa-right-from-bracket icon-user" id="logOut" style="cursor: pointer" title="Cerrar Sesión"></i>
                     </div>
 
                     <div class="icon text-center" id="abrirCarrito" style="cursor: pointer">
@@ -100,12 +103,33 @@ const headerHTML =`
 `
 
 // como index tiene un html independiente, entonces en necesario hacer el if para que en esa página no lo busque
-export const mostrarHeader = () => {
-    const header = document.querySelector(".header");
+export const mostrarHeader = async () => {
+  const header = document.querySelector(".header");
+  if (!header) return;
 
-    if (!header) {
-        return;
-    }
+  header.innerHTML = headerHTML;
 
-    header.innerHTML = headerHTML;
+  const logIn = document.getElementById("logIn");
+  const logOut = document.getElementById("logOut");
+  const nombreUsuarioDiv = document.getElementById("usuLogueado");
+  const btnCerrarSesion = document.getElementById("botonCerrarSesion")
+
+  const usuario = await obtenerUsuarioActual();
+
+  if (!usuario) {
+    nombreUsuarioDiv.style.display = "none";
+    logOut.style.display = "none";
+    logIn.addEventListener("click", () => {
+      window.location.href = getPath("login.html");
+    });
+    return;
+  }
+
+  nombreUsuarioDiv.style.display = "inline-block"
+  nombreUsuarioDiv.innerHTML = 
+  `<div>${usuario.nombreCliente}</div>
+  <div>Bienvenid@</div>`
+  btnCerrarSesion.style.display = "inline-block";
+
+  btnCerrarSesion.addEventListener("click", cerrarSesion);
 };

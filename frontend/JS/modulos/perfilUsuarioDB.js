@@ -51,12 +51,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 function bloquearInputs() {
   inputsEditables.forEach(i => i.disabled = true);
-  inputCorreo.disabled = true; // 🔒 correo siempre bloqueado
+  inputCorreo.disabled = true; //  correo siempre bloqueado
 }
 
 function habilitarEdicion() {
   inputsEditables.forEach(i => i.disabled = false);
-  inputCorreo.disabled = true; // 🔒 nunca editable
+  inputCorreo.disabled = true; //  nunca editable
 }
 
 

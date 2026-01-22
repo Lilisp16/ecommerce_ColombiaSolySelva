@@ -52,7 +52,17 @@ document.addEventListener("DOMContentLoaded", () => {
         confirmButtonColor: "#1B5E20",
         background: "#F5EBDC"
     }).then(() => {
-      window.location.href = "vistaUsuario.html";
+
+
+
+       const redirect = sessionStorage.getItem("redirectAfterLogin");
+
+  if (redirect) {
+    sessionStorage.removeItem("redirectAfterLogin");
+    window.location.href = redirect;
+  } else {
+    window.location.href = "vistaUsuario.html";
+  }
     });
   });
 });

@@ -112,59 +112,18 @@ export const mostrarHeader = async () => {
   const logIn = document.getElementById("logIn");
   const logOut = document.getElementById("logOut");
   const nombreUsuarioDiv = document.getElementById("usuLogueado");
-  const btnCerrarSesion = document.getElementById("botonCerrarSesion")
+  const btnCerrarSesion = document.getElementById("botonCerrarSesion");
+  const btnFinalizarCompra = document.getElementById("finalizarCompra");
 
   const usuario = await obtenerUsuarioActual();
 
-  if (!usuario) {
-    nombreUsuarioDiv.style.display = "none";
-    logOut.style.display = "none";
-    logIn.addEventListener("click", () => {
-      window.location.href = getPath("login.html");
-    });
-    return;
-  }
-
-// Si hay usuario logueado
-nombreUsuarioDiv.style.display = "inline-block";
-nombreUsuarioDiv.innerHTML = `
-  <div>${usuario.nombreCliente}</div>
-  <div>Bienvenid@</div>
-`;
-btnCerrarSesion.style.display = "inline-block";
-
-// LogOut
-btnCerrarSesion.addEventListener("click", cerrarSesion);
-
-// Hacer que al clicar en el icono del usuario vaya al perfil
-logIn.addEventListener("click", () => {
-  window.location.href = getPath("vistaUsuario.html");
-});
 
 
-
-
-
-  nombreUsuarioDiv.style.display = "inline-block"
-  nombreUsuarioDiv.innerHTML = 
-  `<div>${usuario.nombreCliente}</div>
-  <div>Bienvenid@</div>`
-  btnCerrarSesion.style.display = "inline-block";
-
-  btnCerrarSesion.addEventListener("click", cerrarSesion);
-
-
-
-
- 
   // FINALIZAR COMPRA
- 
-  const btnFinalizarCompra = document.getElementById("finalizarCompra");
 
   if (btnFinalizarCompra) {
     btnFinalizarCompra.addEventListener("click", async () => {
 
-      // Validar carrito vacío
       const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
       if (carrito.length === 0) {
         Swal.fire({
@@ -177,14 +136,65 @@ logIn.addEventListener("click", () => {
         return;
       }
 
-      // Si hay usuario -> ir a pagos
+      // Si usuario logueado -> ir directo a pagos
       if (usuario) {
         window.location.href = getPath("vistaPagos.html");
-      } else {
-        // Si NO hay usuario -> login
-        localStorage.setItem("redirectAfterLogin", "vistaPagos.html");
-        window.location.href = getPath("login.html");
+        return;
       }
+
+      // Usuario no logueado -> mostrar modal
+      Swal.fire({
+        icon: "info",
+        title: "Debes iniciar sesión o registrarte",
+        showCancelButton: true,
+        confirmButtonText: "Iniciar sesión",
+        cancelButtonText: "Registrarse",
+        confirmButtonColor: "#1B5E20",
+        cancelButtonColor: "#1B5E20",
+        background: "#F5EBDC"
+      }).then((result) => {
+        // Guardar destino para después del login/registro
+        sessionStorage.setItem("redirectAfterLogin", getPath("vistaPagos.html"));
+
+
+
+        // Dependiendo de la acción del usuario en el modal de SweetAlert2:
+        // Si el usuario confirma (hace click en "Iniciar sesión"), se redirige a la página de login.
+        // Si el usuario cancela (hace click 
+        if (result.isConfirmed) {
+          window.location.href = getPath("login.html");
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+          window.location.href = getPath("registro.html");
+        }
+      });
+    });
+  }
+
+
+  // USUARIO LOGUEADO O NO
+  //Si hay usuario mostrar nombre, botón cerrar sesión, clic en icono va a perfil.
+//Si no hay usuario -> ocultar nombre y cerrar sesión, clic en icono va a login.
+
+  if (usuario) {
+    nombreUsuarioDiv.style.display = "inline-block";
+    nombreUsuarioDiv.innerHTML = `
+      <div>${usuario.nombreCliente}</div>
+      <div>Bienvenid@</div>
+    `;
+    btnCerrarSesion.style.display = "inline-block";
+
+    btnCerrarSesion.addEventListener("click", cerrarSesion);
+
+    logIn.addEventListener("click", () => {
+      window.location.href = getPath("vistaUsuario.html");
+    });
+
+  } else {
+    nombreUsuarioDiv.style.display = "none";
+    logOut.style.display = "none";
+
+    logIn.addEventListener("click", () => {
+      window.location.href = getPath("login.html");
     });
   }
 };

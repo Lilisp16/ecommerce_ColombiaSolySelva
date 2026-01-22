@@ -5,8 +5,17 @@ import { mostrarHeader } from "./modulos/header.js";
 import { headLinks } from "./modulos/headLinks.js";
 import { buscadorHeaderProductos } from "./modulos/buscadorHeaderProductos.js";
 import { mostrarLogin } from "./modulos/loginHeaderIndex.js";
+import { initRegistroUsuario } from "./modulos/registroUsuarioDB.js";
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
+
+// Inicializar registro SOLO si existe el formulario
+  if (document.getElementById("registroForm")) {
+    initRegistroUsuario();
+  }
+
     headLinks();
     mostrarHeader();
     mostrarFooter();

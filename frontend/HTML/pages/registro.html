@@ -77,8 +77,10 @@
 
                         <div class="col-12 mb-3">
                             <!--   <label for="password" class="form-label">Contraseña</label>-->
-                            <input type="password" class="form-control" id="password" minlength="6" required required placeholder="Contraseña">
-                            <div class="invalid-feedback">La contraseña debe tener al menos 6 caracteres.</div>
+                            <input type="password" class="form-control" id="password" minlength="8" required required placeholder="Contraseña">
+                            <div id="passwordRules" class="invalid-feedback">
+                            La contraseña debe cumplir con: mínimo 8 caracteres, 1 número, 1 mayúscula, 1 minúscula, sin espacios, sin '\¡¿"ºª·`´çñÑ'.
+                            </div>
                         </div>
                     </div>
                 </br>
@@ -107,8 +109,8 @@
     <footer class="footer-artesanal"></footer>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../../JS/main.js" type="module"></script>
-    <script src="../../JS/modulos/registroUser.js" type="module"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
- -->
+   <!-- <script src="../../JS/modulos/registroUsuarioDB.js" type="module"></script>-->
+   
+
 </body>
 </html>

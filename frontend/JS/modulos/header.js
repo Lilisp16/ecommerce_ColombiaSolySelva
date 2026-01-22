@@ -125,6 +125,26 @@ export const mostrarHeader = async () => {
     return;
   }
 
+// Si hay usuario logueado
+nombreUsuarioDiv.style.display = "inline-block";
+nombreUsuarioDiv.innerHTML = `
+  <div>${usuario.nombreCliente}</div>
+  <div>Bienvenid@</div>
+`;
+btnCerrarSesion.style.display = "inline-block";
+
+// LogOut
+btnCerrarSesion.addEventListener("click", cerrarSesion);
+
+// Hacer que al clicar en el icono del usuario vaya al perfil
+logIn.addEventListener("click", () => {
+  window.location.href = getPath("vistaUsuario.html");
+});
+
+
+
+
+
   nombreUsuarioDiv.style.display = "inline-block"
   nombreUsuarioDiv.innerHTML = 
   `<div>${usuario.nombreCliente}</div>
@@ -132,4 +152,43 @@ export const mostrarHeader = async () => {
   btnCerrarSesion.style.display = "inline-block";
 
   btnCerrarSesion.addEventListener("click", cerrarSesion);
+
+
+
+
+ 
+  // FINALIZAR COMPRA
+ 
+  const btnFinalizarCompra = document.getElementById("finalizarCompra");
+
+  if (btnFinalizarCompra) {
+    btnFinalizarCompra.addEventListener("click", async () => {
+
+      // Validar carrito vacío
+      const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+      if (carrito.length === 0) {
+        Swal.fire({
+          icon: "info",
+          title: "Carrito vacío",
+          text: "Agrega productos antes de continuar",
+          confirmButtonColor: "#1B5E20",
+          background: "#F5EBDC"
+        });
+        return;
+      }
+
+      // Si hay usuario -> ir a pagos
+      if (usuario) {
+        window.location.href = getPath("vistaPagos.html");
+      } else {
+        // Si NO hay usuario -> login
+        localStorage.setItem("redirectAfterLogin", "vistaPagos.html");
+        window.location.href = getPath("login.html");
+      }
+    });
+  }
 };
+
+
+
+

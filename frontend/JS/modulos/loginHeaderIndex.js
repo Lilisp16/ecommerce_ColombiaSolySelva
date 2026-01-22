@@ -18,12 +18,47 @@ export const mostrarLogin = async () => {
     return;
   }
 
-  nombreUsuarioDiv.style.display = "inline-block"
-  nombreUsuarioDiv.innerHTML = 
-  `<div>${usuario.nombreCliente}</div>
-  <div>Bienvenid@</div>`
+
+
+
+  // Usuario logueado
+  nombreUsuarioDiv.style.display = "inline-block";
+  nombreUsuarioDiv.innerHTML = `
+    <div>${usuario.nombreCliente}</div>
+    <div>Bienvenid@</div>
+  `;
   btnCerrarSesion.style.display = "inline-block";
 
+  // Cerrar sesión
   btnCerrarSesion.addEventListener("click", cerrarSesion);
+
+  
+// Click al icono ir al perfil - vista de usuario
+logIn.addEventListener("click", () => {
+  window.location.href = getPath("vistaUsuario.html");
+});
+
+
+
+
+
+  //COMPRAR 
+  const btnComprar = document.getElementById("finalizarCompra");
+
+  if (btnComprar) {
+    btnComprar.addEventListener("click", () => {
+
+      if (usuario) {
+        // Usuario logueado -> pagos
+        window.location.href = getPath("vistaPagos.html");
+      } else {
+        // Usuario NO logueado -> login
+        localStorage.setItem("redirectAfterLogin", "vistaPagos.html");
+        window.location.href = getPath("login.html");
+      }
+
+    });
+  }
+ 
 };
 

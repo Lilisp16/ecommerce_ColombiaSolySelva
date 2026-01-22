@@ -43,6 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
     nombreCliente: inputEmail.value.split("@")[0],
     correoCliente: inputEmail.value
     }));
+
+    
     Swal.fire({
         icon: "success",
         title: "Acceso Exitoso",
@@ -54,6 +56,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+
+
+
 
 
 

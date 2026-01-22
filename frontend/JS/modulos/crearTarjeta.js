@@ -1,13 +1,14 @@
-import { formatearMiles } from "../../JS/main.js";
+import { formatearMiles, getPathImgs } from "../../JS/main.js";
 
 export const crearTarjeta = (producto) => {
     const numeroRandom = Math.floor(Math.random() * 10) + 1;
-    
+    const rutaImagen = getPathImgs(producto.imagen);
+
     return `
         <div class="cardProducto card mb-5">
             <div class="row g-0">
                 <div class="cardProductoImg col-md-5">
-                    <img src="${producto.imagen}" class="img-fluid rounded-start" alt="${producto.nombre}">
+                    <img src="${rutaImagen}" class="img-fluid rounded-start" alt="${producto.nombre}">
                 </div>
                 <div class="col-md-7">
                 <div class="card-body">
@@ -34,12 +35,13 @@ export const crearTarjeta = (producto) => {
 
 export const crearTarjetaCatalogo = (producto) => {
     const numeroRandom = Math.floor(Math.random() * 10) + 1;
-    
+    const rutaImagen = getPathImgs(producto.imagen);
+
     return `
         <div class="cardProducto card mb-5 col">
             <div class="row g-0">
                 <div class="cardProductoImg col-md-5">
-                    <img src="${producto.imagen}" class="img-fluid rounded-start" alt="${producto.nombre}">
+                    <img src="${rutaImagen}" class="img-fluid rounded-start" alt="${producto.nombre}">
                 </div>
                 <div class="col-md-7">
                 <div class="card-body">
@@ -63,3 +65,4 @@ export const crearTarjetaCatalogo = (producto) => {
         </div>
     `;
 }
+

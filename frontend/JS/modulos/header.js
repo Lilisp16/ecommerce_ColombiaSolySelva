@@ -1,7 +1,7 @@
 import { getPath } from "../main.js";
 import { obtenerUsuarioActual, cerrarSesion } from "./auth.js";
 
-const headerHTML =`
+const headerHTML = `
         <nav class="navbar navbar-expand-lg navbar-light pt-4 shadow-sm navbar-fixed">
             <div class="container-xxl d-flex justify-content-between align-items-center">
 
@@ -104,99 +104,113 @@ const headerHTML =`
 
 // como index tiene un html independiente, entonces en necesario hacer el if para que en esa página no lo busque
 export const mostrarHeader = async () => {
-  const header = document.querySelector(".header");
-  if (!header) return;
+    const header = document.querySelector(".header");
+    if (!header) return;
 
-  header.innerHTML = headerHTML;
+    header.innerHTML = headerHTML;
 
-  const logIn = document.getElementById("logIn");
-  const logOut = document.getElementById("logOut");
-  const nombreUsuarioDiv = document.getElementById("usuLogueado");
-  const btnCerrarSesion = document.getElementById("botonCerrarSesion");
-  const btnFinalizarCompra = document.getElementById("finalizarCompra");
+    // Lógica para marcar el link activo
+    const path = window.location.pathname;
+    const currentPage = path.split("/").pop() || "index.html";
 
-  const usuario = await obtenerUsuarioActual();
+    header.querySelectorAll(".nav-link.link-custom").forEach(link => {
+        const href = link.getAttribute("href");
+        const linkPage = href.split("/").pop();
 
-
-
-  // FINALIZAR COMPRA
-
-  if (btnFinalizarCompra) {
-    btnFinalizarCompra.addEventListener("click", async () => {
-
-      const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-      if (carrito.length === 0) {
-        Swal.fire({
-          icon: "info",
-          title: "Carrito vacío",
-          text: "Agrega productos antes de continuar",
-          confirmButtonColor: "#1B5E20",
-          background: "#F5EBDC"
-        });
-        return;
-      }
-
-      // Si usuario logueado -> ir directo a pagos
-      if (usuario) {
-        window.location.href = getPath("vistaPagos.html");
-        return;
-      }
-
-      // Usuario no logueado -> mostrar modal
-      Swal.fire({
-        icon: "info",
-        title: "Debes iniciar sesión o registrarte",
-        showCancelButton: true,
-        confirmButtonText: "Iniciar sesión",
-        cancelButtonText: "Registrarse",
-        confirmButtonColor: "#1B5E20",
-        cancelButtonColor: "#1B5E20",
-        background: "#F5EBDC"
-      }).then((result) => {
-        // Guardar destino para después del login/registro
-        sessionStorage.setItem("redirectAfterLogin", getPath("vistaPagos.html"));
-
-
-
-        // Dependiendo de la acción del usuario en el modal de SweetAlert2:
-        // Si el usuario confirma (hace click en "Iniciar sesión"), se redirige a la página de login.
-        // Si el usuario cancela (hace click 
-        if (result.isConfirmed) {
-          window.location.href = getPath("login.html");
-        } else if (result.dismiss === Swal.DismissReason.cancel) {
-          window.location.href = getPath("registro.html");
+        if (currentPage === linkPage || (currentPage === "" && linkPage === "index.html")) {
+            link.classList.add("active");
         }
-      });
     });
-  }
 
 
-  // USUARIO LOGUEADO O NO
-  //Si hay usuario mostrar nombre, botón cerrar sesión, clic en icono va a perfil.
-//Si no hay usuario -> ocultar nombre y cerrar sesión, clic en icono va a login.
+    const logIn = document.getElementById("logIn");
+    const logOut = document.getElementById("logOut");
+    const nombreUsuarioDiv = document.getElementById("usuLogueado");
+    const btnCerrarSesion = document.getElementById("botonCerrarSesion");
+    const btnFinalizarCompra = document.getElementById("finalizarCompra");
 
-  if (usuario) {
-    nombreUsuarioDiv.style.display = "inline-block";
-    nombreUsuarioDiv.innerHTML = `
+    const usuario = await obtenerUsuarioActual();
+
+
+
+    // FINALIZAR COMPRA
+
+    if (btnFinalizarCompra) {
+        btnFinalizarCompra.addEventListener("click", async () => {
+
+            const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            if (carrito.length === 0) {
+                Swal.fire({
+                    icon: "info",
+                    title: "Carrito vacío",
+                    text: "Agrega productos antes de continuar",
+                    confirmButtonColor: "#1B5E20",
+                    background: "#F5EBDC"
+                });
+                return;
+            }
+
+            // Si usuario logueado -> ir directo a pagos
+            if (usuario) {
+                window.location.href = getPath("vistaPagos.html");
+                return;
+            }
+
+            // Usuario no logueado -> mostrar modal
+            Swal.fire({
+                icon: "info",
+                title: "Debes iniciar sesión o registrarte",
+                showCancelButton: true,
+                confirmButtonText: "Iniciar sesión",
+                cancelButtonText: "Registrarse",
+                confirmButtonColor: "#1B5E20",
+                cancelButtonColor: "#1B5E20",
+                background: "#F5EBDC"
+            }).then((result) => {
+                // Guardar destino para después del login/registro
+                sessionStorage.setItem("redirectAfterLogin", getPath("vistaPagos.html"));
+
+
+
+                // Dependiendo de la acción del usuario en el modal de SweetAlert2:
+                // Si el usuario confirma (hace click en "Iniciar sesión"), se redirige a la página de login.
+                // Si el usuario cancela (hace click 
+                if (result.isConfirmed) {
+                    window.location.href = getPath("login.html");
+                } else if (result.dismiss === Swal.DismissReason.cancel) {
+                    window.location.href = getPath("registro.html");
+                }
+            });
+        });
+    }
+
+
+    // USUARIO LOGUEADO O NO
+    //Si hay usuario mostrar nombre, botón cerrar sesión, clic en icono va a perfil.
+    //Si no hay usuario -> ocultar nombre y cerrar sesión, clic en icono va a login.
+
+    if (usuario) {
+        nombreUsuarioDiv.style.display = "inline-block";
+        nombreUsuarioDiv.innerHTML = `
       <div>${usuario.nombreCliente}</div>
       <div>Bienvenid@</div>
     `;
-    btnCerrarSesion.style.display = "inline-block";
+        btnCerrarSesion.style.display = "inline-block";
 
-    btnCerrarSesion.addEventListener("click", cerrarSesion);
+        btnCerrarSesion.addEventListener("click", cerrarSesion);
 
-    logIn.addEventListener("click", () => {
-      window.location.href = getPath("vistaUsuario.html");
-    });
+        logIn.addEventListener("click", () => {
+            window.location.href = getPath("vistaUsuario.html");
+        });
 
-  } else {
-    nombreUsuarioDiv.style.display = "none";
-    logOut.style.display = "none";
+    } else {
+        nombreUsuarioDiv.style.display = "none";
+        logOut.style.display = "none";
 
-    logIn.addEventListener("click", () => {
-      window.location.href = getPath("login.html");
-    });
-  }
+        logIn.addEventListener("click", () => {
+            window.location.href = getPath("login.html");
+        });
+    }
 };
 
 

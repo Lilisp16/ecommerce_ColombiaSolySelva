@@ -1,170 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../../CSS/global.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Pagos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../../CSS/global.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Pagos</title>
 </head>
+
 <body>
-    
-<header class="header"></header>
 
-
-    
+  <header class="header"></header>
 
 
 
 
-<main class="container my-5">
-
-  <h2 class="mb-4 text-success">
-    <i class="fa-solid fa-credit-card"></i> Finalizar compra
-  </h2>
-
-<div class="row g-4">
 
 
 
-<div class="col-md-7">
+  <main class="container my-5">
 
-  <!-- Datos del usuario -->
-  <div class="card mb-4">
-    <div class="card-header fw-bold">
-      <i class="fa-solid fa-user"></i> Datos de envío
-    </div>
+    <h2 class="mb-4 text-success">
+      <i class="fa-solid fa-credit-card"></i> Finalizar compra
+    </h2>
 
-    <div class="card-body">
-      <div class="row g-3">
-        <div class="col-md-6">
-          <label class="form-label">Nombre</label>
-          <input type="text" class="form-control" id="nombreCliente" disabled>
-        </div>
+    <div class="row g-4">
 
-        <div class="col-md-6">
-          <label class="form-label">Correo</label>
-          <input type="email" class="form-control" id="correoCliente" disabled>
-        </div>
 
-        <div class="col-md-8">
-          <label class="form-label">Dirección</label>
-          <input type="text" class="form-control" id="direccionCliente">
-        </div>
 
-        <div class="col-md-4">
-          <label class="form-label">Ciudad</label>
-          <input type="text" class="form-control" id="ciudadCliente">
-        </div>
+      <div class="col-md-7">
 
-        <div class="col-md-6">
-          <label class="form-label">Teléfono</label>
-          <input type="text" class="form-control" id="telefonoCliente1">
-        </div>
+        <!-- Datos del usuario -->
+        <div class="card mb-4">
+          <div class="card-header fw-bold">
+            <i class="fa-solid fa-user"></i> Datos de envío
+          </div>
 
-        <div class="col-md-6">
-          <label class="form-label">Otro Teléfono</label>
-          <input type="text" class="form-control" id="telefonoCliente2">
-        </div>
+          <div class="card-body">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombreCliente" disabled>
+              </div>
 
-      </div>
-    </div>
-  </div>
+              <div class="col-md-6">
+                <label class="form-label">Correo</label>
+                <input type="email" class="form-control" id="correoCliente" disabled>
+              </div>
 
-  <!-- Método de pago -->
-  <div class="card">
-    <div class="card-header fw-bold">
-      <i class="fa-solid fa-money-check"></i> Método de pago
-    </div>
+              <div class="col-md-8">
+                <label class="form-label">Dirección</label>
+                <input type="text" class="form-control" id="direccionCliente">
+              </div>
 
-    <div class="card-body">
-      <!-- Tarjeta -->
-      <div class="d-flex align-items-center mb-3">
-        <i class="fa-solid fa-credit-card fa-2x text-success me-3"></i>
-        <div>
-          <strong>Tarjeta</strong>
-          <div class="text-muted small">
-            Pago seguro con tu tarjeta de crédito o débito
+              <div class="col-md-4">
+                <label class="form-label">Ciudad</label>
+                <input type="text" class="form-control" id="ciudadCliente">
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Teléfono</label>
+                <input type="text" class="form-control" id="telefonoCliente1">
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Otro Teléfono</label>
+                <input type="text" class="form-control" id="telefonoCliente2">
+              </div>
+
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Contra entrega -->
-      <div class="d-flex align-items-center">
-        <i class="fa-solid fa-truck fa-2x text-success me-3"></i>
-        <div>
-          <strong>Contra entrega</strong>
-          <div class="text-muted small">
-            Paga cuando recibas tu pedido
+        <!-- Método de pago -->
+        <div class="card">
+          <div class="card-header fw-bold">
+            <i class="fa-solid fa-money-check"></i> Método de pago
+          </div>
+
+          <div class="card-body">
+            <!-- Tarjeta -->
+            <div class="form-check d-flex align-items-center mb-3">
+              <input class="form-check-input me-3" type="radio" name="metodoPago" id="pagoTarjeta" value="Tarjeta"
+                checked>
+              <label class="form-check-label d-flex align-items-center" for="pagoTarjeta">
+                <i class="fa-solid fa-credit-card fa-2x text-success me-3"></i>
+                <div>
+                  <strong>Tarjeta</strong>
+                  <div class="text-muted small">
+                    Pago seguro con tu tarjeta de crédito o débito
+                  </div>
+                </div>
+              </label>
+            </div>
+
+            <!-- Contra entrega -->
+            <div class="form-check d-flex align-items-center">
+              <input class="form-check-input me-3" type="radio" name="metodoPago" id="pagoContraEntrega"
+                value="Contra entrega">
+              <label class="form-check-label d-flex align-items-center" for="pagoContraEntrega">
+                <i class="fa-solid fa-truck fa-2x text-success me-3"></i>
+                <div>
+                  <strong>Contra entrega</strong>
+                  <div class="text-muted small">
+                    Paga cuando recibas tu pedido
+                  </div>
+                </div>
+              </label>
+            </div>
+
           </div>
         </div>
+
+      </div>
+
+      <div class="col-md-5">
+
+        <!-- Resumen de compra -->
+        <div class="card">
+          <div class="card-header fw-bold">
+            <i class="fa-solid fa-cart-shopping"></i> Resumen de compra
+          </div>
+
+          <div class="card-body">
+
+            <ul class="list-group mb-3" id="listaProductos">
+              <!-- productos del carrito -->
+            </ul>
+
+            <hr>
+
+            <div class="d-flex justify-content-between">
+              <span>Subtotal</span>
+              <strong id="subtotalPago">$0</strong>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <span>Envío</span>
+              <strong>$5.000</strong>
+            </div>
+
+            <div class="d-flex justify-content-between fs-5 mt-2 text-success">
+              <span>Total</span>
+              <strong id="totalPago">$0</strong>
+            </div>
+
+            <button class="btn btn-success w-100 mt-4 py-2 fw-bold" id="btnConfirmarPago">
+              Confirmar pago
+            </button>
+
+          </div>
+        </div>
+
       </div>
 
     </div>
-  </div>
 
-</div>
-
-
-   
-  
-<div class="col-md-5">
-
-<!-- Resumen de compra -->
-<div class="card">
-    <div class="card-header fw-bold">
-    <i class="fa-solid fa-cart-shopping"></i> Resumen de compra
-    </div>
-
-    <div class="card-body">
-
-    <ul class="list-group mb-3" id="listaProductos">
-        <!-- productos del carrito -->
-        <li class="list-group-item d-flex justify-content-between">
-        <span>Producto ejemplo x1</span>
-        <strong>$25.000</strong>
-        </li>
-    </ul>
-
-    <hr>
-
-    <div class="d-flex justify-content-between">
-        <span>Subtotal</span>
-        <strong id="subtotalPago">$0</strong>
-    </div>
-
-    <div class="d-flex justify-content-between">
-        <span>Envío</span>
-        <strong>$5.000</strong>
-    </div>
-
-    <div class="d-flex justify-content-between fs-5 mt-2">
-        <span>Total</span>
-        <strong id="totalPago">$0</strong>
-    </div>
-
-    <button class="btn btn-success w-100 mt-4" id="btnConfirmarPago">
-        Confirmar pago
-    </button>
-
-    </div>
-</div>
-
-</div>
-
-</div>
+  </main>
 
 
-
-
-</main>
-
-
- <footer class="footer-artesanal"></footer>
-    <script type="module" src="../../JS/main.js"></script>
+  <footer class="footer-artesanal"></footer>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="module" src="../../JS/main.js"></script>
+  <script type="module" src="../../JS/modulos/vistaPagos.js"></script>
 </body>
+
 </html>

@@ -18,13 +18,13 @@ if (productosGuardados) {
     crearFiltroCategoria(productos, renderizarConFiltro);
 } else {
     console.log("Cargando productos desde API/JSON...");
-    
+
     fetch(URL_JSON)
         .then(res => res.json())
         .then(productos => {
             localStorage.setItem("productos", JSON.stringify(productos));
             console.log("Exito");
-            
+
             renderizarConFiltro(productos);
         })
         .catch(err => console.error("Error al cargar JSON:", err));
@@ -33,7 +33,7 @@ if (productosGuardados) {
 function filtrarPorPalabras(listaProductos, textoBusqueda) {
     // 1. Limpiamos el texto: minúsculas y quitamos espacios extra
     const busqueda = textoBusqueda.toLowerCase().trim();
-    
+
     // Si no hay nada escrito, devolvemos todo
     if (busqueda === "") return listaProductos;
 
@@ -52,12 +52,12 @@ function filtrarPorPalabras(listaProductos, textoBusqueda) {
 filtradorProductos.addEventListener("input", (e) => {
     const p = localStorage.getItem("productos");
     const productos = JSON.parse(p);
-    
+
     const textoBusqueda = e.target.value;
     const productosFiltrados = filtrarPorPalabras(productos, textoBusqueda);
     renderizarConFiltro(productosFiltrados);
     crearFiltroCategoria(productosFiltrados, renderizarConFiltro);
-    
+
 });
 
 function obtenerCategoriaURL() {
@@ -92,7 +92,7 @@ function renderizarConFiltro(productos) {
 
 function renderizarPagina(productos) {
     console.log(productos.length);
-    
+
     // Tarjetas → Recomendados
     recomendadosBox.innerHTML = productos.slice(-4)
         .map(crearTarjetaCatalogo).join("");
@@ -113,10 +113,10 @@ document.addEventListener("click", (e) => {
 
         let productosLocalStorage = JSON.parse(localStorage.getItem("productos")) || [];
         productosLocalStorage = productosLocalStorage.map(p => ({
-        ...p,
-        id: Number(p.id),
-        precio: Number(p.precio),
-        stock: Number(p.stock)
+            ...p,
+            id: Number(p.id),
+            precio: Number(p.precio),
+            stock: Number(p.stock)
         }));
         console.log("PRODUCTOS NORMALIZADOS:", productosLocalStorage);
 

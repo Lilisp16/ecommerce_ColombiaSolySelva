@@ -1,92 +1,90 @@
 export const initRegistroUsuario = () => {
   const form = document.getElementById("registroForm");
-  if (!form) return; // Evita errores si no estamos en la página de registro
+  if (!form) return;
 
   const inputs = form.querySelectorAll("input");
   const submitBtn = form.querySelector("button[type='submit']");
 
-  //  Regex para validar contraseña
-  // Mín. 8 caracteres, 1 número, 1 mayúscula, 1 minúscula, sin espacios, sin '\¡¿"ºª·`´çñÑ'
+  // Regex definitions
   const passwordRegex = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?!.*\s)(?!.*[\\¡¿"ºª·`´çñÑ]).{8,}$/;
+  const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,30}$/;
+  const phoneRegex = /^[0-9]{7,15}$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  // Validar campo individual
   function validarCampo(input) {
-    if (!input.checkValidity()) {
-      input.classList.add("is-invalid");
-      input.classList.remove("is-valid");
-      return false;
+    let isValid = true;
+    const value = input.value.trim();
+
+    if (input.id === "nombre" || input.id === "apellido") {
+      isValid = nameRegex.test(value);
+    } else if (input.id === "telefono") {
+      isValid = phoneRegex.test(value);
+    } else if (input.id === "email") {
+      isValid = emailRegex.test(value);
+    } else if (input.id === "password") {
+      isValid = passwordRegex.test(value);
+    } else if (input.id === "terminos") {
+      isValid = input.checked;
     } else {
+      isValid = input.checkValidity();
+    }
+
+    if (isValid) {
       input.classList.add("is-valid");
       input.classList.remove("is-invalid");
-      return true;
+    } else {
+      input.classList.add("is-invalid");
+      input.classList.remove("is-valid");
     }
+    return isValid;
   }
 
-  // Revisar todo el formulario
   function revisarFormulario() {
     let todosValidos = true;
     inputs.forEach(input => {
-      if (!validarCampo(input)) {
+      // Solo validamos visualmente si el usuario ya interactuó o el campo no está vacío
+      if (input.value !== "" || input.classList.contains("was-validated")) {
+        if (!validarCampo(input)) {
+          todosValidos = false;
+        }
+      } else {
         todosValidos = false;
       }
     });
-
-    // Validación especial de contraseña
-    const passwordInput = document.getElementById("password");
-    if (!passwordRegex.test(passwordInput.value.trim())) {
-      passwordInput.classList.add("is-invalid");
-      passwordInput.classList.remove("is-valid");
-      todosValidos = false;
-    } else {
-      passwordInput.classList.remove("is-invalid");
-      passwordInput.classList.add("is-valid");
-    }
-
     submitBtn.disabled = !todosValidos;
   }
 
-  // Eventos de validación en tiempo real
   inputs.forEach(input => {
-    input.addEventListener("input", revisarFormulario);
-    input.addEventListener("blur", revisarFormulario);
+    input.addEventListener("input", () => {
+      revisarFormulario();
+    });
+    input.addEventListener("blur", () => {
+      validarCampo(input);
+      revisarFormulario();
+    });
   });
 
-  // Botón inicia deshabilitado
   submitBtn.disabled = true;
 
-  // Envío del formulario
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
+    form.classList.add("was-validated");
 
-    if (submitBtn.disabled) {
-      form.classList.add("was-validated");
-      return;
-    }
+    let formValido = true;
+    inputs.forEach(input => {
+      if (!validarCampo(input)) formValido = false;
+    });
 
-    const passwordInput = document.getElementById("password");
-    const password = passwordInput.value.trim();
-
-    // Validación final de contraseña
-    if (!passwordRegex.test(password)) {
+    if (!formValido) {
       Swal.fire({
-        icon: "error",
-        title: "Contraseña inválida",
-        html: `La contraseña debe cumplir con:<br>
-               - Mínimo 8 caracteres<br>
-               - Al menos 1 número<br>
-               - Al menos 1 mayúscula<br>
-               - Al menos 1 minúscula<br>
-               - Sin espacios<br>
-               - Sin usar \ ¡ ¿ " º ª · \` ´ ç ñ Ñ`,
-        confirmButtonColor: "#1B5E20",
-        background: "#F5EBDC"
+        icon: "warning",
+        title: "Campos incompletos",
+        text: "Por favor, revisa que todos los campos cumplan con el formato requerido.",
+        confirmButtonColor: "#1B5E20"
       });
-      passwordInput.classList.add("is-invalid");
-      passwordInput.classList.remove("is-valid");
       return;
     }
 
-    // Crear objeto cliente
     const cliente = {
       nombreCliente: document.getElementById("nombre").value.trim(),
       apellidoCliente: document.getElementById("apellido").value.trim(),
@@ -94,7 +92,7 @@ export const initRegistroUsuario = () => {
       ciudadCliente: document.getElementById("ciudad").value.trim(),
       telCliente: parseInt(document.getElementById("telefono").value),
       correoCliente: document.getElementById("email").value.trim(),
-      contrasenaCliente: password
+      contrasenaCliente: document.getElementById("password").value.trim()
     };
 
     try {
@@ -106,7 +104,6 @@ export const initRegistroUsuario = () => {
 
       if (!res.ok) {
         const errorText = await res.text();
-
         if (errorText.includes("existe")) {
           Swal.fire({
             icon: "error",
@@ -116,11 +113,9 @@ export const initRegistroUsuario = () => {
           });
           return;
         }
-
         throw new Error(errorText);
       }
 
-      // Registro exitoso
       Swal.fire({
         icon: "success",
         title: "¡Registro exitoso!",
@@ -129,9 +124,7 @@ export const initRegistroUsuario = () => {
         confirmButtonColor: "#1B5E20"
       }).then(() => {
         form.reset();
-        inputs.forEach(input =>
-          input.classList.remove("is-valid", "is-invalid")
-        );
+        inputs.forEach(input => input.classList.remove("is-valid", "is-invalid"));
         submitBtn.disabled = true;
         window.location.href = "login.html";
       });
@@ -147,3 +140,4 @@ export const initRegistroUsuario = () => {
     }
   });
 };
+

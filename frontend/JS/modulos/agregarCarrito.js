@@ -6,18 +6,18 @@ import { formatearMiles } from "../../JS/main.js";
 
 
 export let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-console.log("Info del carrito: "+carrito);
+console.log("Info del carrito: " + carrito);
 
-function guardarCarrito(){
-   localStorage.setItem("carrito",JSON.stringify(carrito));
+function guardarCarrito() {
+  localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
 export function actualizarBadgeCarrito() {
-    const cantidad = carrito.reduce((total, item) => total + item.cantidad, 0);;
-    const cartCount = document.getElementById("cartCount");
-    const totalItems = document.getElementById("totalItemCount")
-    if (cartCount) cartCount.textContent = cantidad;
-    if (totalItems) totalItems.textContent =  cantidad > 1 ? `${cantidad}  Und's` : `${cantidad} Un.` 
+  const cantidad = carrito.reduce((total, item) => total + item.cantidad, 0);;
+  const cartCount = document.getElementById("cartCount");
+  const totalItems = document.getElementById("totalItemCount")
+  if (cartCount) cartCount.textContent = cantidad;
+  if (totalItems) totalItems.textContent = cantidad > 1 ? `${cantidad}  Und's` : `${cantidad} Un.`
 }
 
 export const mostrarCarrito = () => {
@@ -28,7 +28,7 @@ export const mostrarCarrito = () => {
     contenedor.innerHTML += cartItemCarrito(item);
   });
 
-   contenedor.querySelectorAll(".btn-incrementar").forEach(btn => {
+  contenedor.querySelectorAll(".btn-incrementar").forEach(btn => {
     btn.addEventListener("click", () => {
       const id = parseInt(btn.dataset.id);
       const producto = carrito.find(p => p.id === id);
@@ -41,17 +41,17 @@ export const mostrarCarrito = () => {
     });
   });
 
-    contenedor.querySelectorAll(".btn-decrementar").forEach(btn => {
+  contenedor.querySelectorAll(".btn-decrementar").forEach(btn => {
     btn.addEventListener("click", () => {
       const id = parseInt(btn.dataset.id);
       const producto = carrito.find(p => p.id === id);
       if (producto) {
-        if(producto.cantidad>1){
+        if (producto.cantidad > 1) {
           producto.cantidad--
-        }else{
+        } else {
           eliminarDelCarrito(id);
         }
-        
+
         guardarCarrito();
         actualizarBadgeCarrito();
         mostrarCarrito(); // volver a renderizar
@@ -60,59 +60,59 @@ export const mostrarCarrito = () => {
   });
 
   const totalCarrito = document.getElementById("cart-total-check");
-  if(totalCarrito){
-    totalCarrito.textContent=formatearMiles(valorTotalCarrito());
+  if (totalCarrito) {
+    totalCarrito.textContent = formatearMiles(valorTotalCarrito());
   }
 
   contenedor.querySelectorAll(".btn-eliminarItem").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const id = parseInt(btn.dataset.id);
-    eliminarDelCarrito(id);
-    mostrarCarrito(); // volver a renderizar
+    btn.addEventListener("click", () => {
+      const id = parseInt(btn.dataset.id);
+      eliminarDelCarrito(id);
+      mostrarCarrito(); // volver a renderizar
+    });
   });
-});
 
 };
 
 let productosLocalStorage = JSON.parse(localStorage.getItem("productos")) || [];
 console.log("PRODUCTOS DEL LOCALSTORAGE:", productosLocalStorage);
 productosLocalStorage = productosLocalStorage.map(p => ({
-    ...p,
-    id: Number(p.id),
-    precio: Number(p.precio),
-    stock: Number(p.stock)
+  ...p,
+  id: Number(p.id),
+  precio: Number(p.precio),
+  stock: Number(p.stock)
 }));
 
 console.log("PRODUCTOS NORMALIZADOS:", productosLocalStorage);
 
 export const agregarAlCarrito = (producto) => {
-    console.log("Producto recibido:", producto);
-    console.log("Carrito antes:", carrito);
+  console.log("Producto recibido:", producto);
+  console.log("Carrito antes:", carrito);
 
-    const existe = carrito.find(item => item.id === producto.id);
+  const existe = carrito.find(item => item.id === producto.id);
 
-    if (existe) {
-        existe.cantidad++;
-    } else {
-        carrito.push({ ...producto, cantidad: 1 });
-    }
+  if (existe) {
+    existe.cantidad++;
+  } else {
+    carrito.push({ ...producto, cantidad: 1 });
+  }
 
-    guardarCarrito();
-    actualizarBadgeCarrito();
-    mostrarCarrito()
- 
+  guardarCarrito();
+  actualizarBadgeCarrito();
+  mostrarCarrito()
 
-    Swal.fire({
-        title: "Producto agregado",
-        text: `${producto.nombre} fue agregado al carrito`,
-        icon: "success",
-        timer: 2500,
-        showConfirmButton: true,
-    });
-    console.log("Carrito después:", carrito);
+
+  Swal.fire({
+    title: "Producto agregado",
+    text: `${producto.nombre} fue agregado al carrito`,
+    icon: "success",
+    timer: 2500,
+    showConfirmButton: true,
+  });
+  console.log("Carrito después:", carrito);
 };
 
-export function eliminarDelCarrito(id){
+export function eliminarDelCarrito(id) {
   carrito = carrito.filter((item) => item.id !== id);
   localStorage.setItem("carrito", JSON.stringify(carrito));
   guardarCarrito();
@@ -128,23 +128,23 @@ export const obtenerCantidadTotal = () => {
 };
 
 window.addEventListener("load", () => {
-    mostrarCarrito();
-    actualizarBadgeCarrito();
+  mostrarCarrito();
+  actualizarBadgeCarrito();
 });
-    
+
 export const valorTotalCarrito = () => {
-  const total = carrito.reduce((total,item)=>{
-    return total+(Number(item.precio)* Number(item.cantidad));
-  },0);
+  const total = carrito.reduce((total, item) => {
+    return total + (Number(item.precio) * Number(item.cantidad));
+  }, 0);
   return total;
 };
 
-function crearPedidoDesdeCarrito(){
+function crearPedidoDesdeCarrito() {
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   if (carrito.length === 0) return null;
 
   const pedido = {
-    id: "COLSS"+Date.now(),
+    id: "COLSS" + Date.now(),
     fecha: new Date().toDateString(),
     cliente: localStorage.getItem("logueado"),
     items: carrito,
@@ -155,11 +155,11 @@ function crearPedidoDesdeCarrito(){
   const pedidos = JSON.parse(localStorage.getItem("pedidos")) || [];
   pedidos.push(pedido);
 
-  localStorage.setItem("pedidos",JSON.stringify(pedidos));
+  localStorage.setItem("pedidos", JSON.stringify(pedidos));
 
   localStorage.removeItem("carrito")
 
-  return(pedido)
+  return (pedido)
 
 }
 
@@ -170,7 +170,7 @@ document.addEventListener("click", (e) => {
   const btn = e.target.closest("#finalizarCompra");
   if (!btn) return;
 
-  const usuActivo = localStorage.getItem("logueado");
+  const usuActivo = localStorage.getItem("logueado"); // Guardamos el correo o token
 
   if (!usuActivo) {
     Swal.fire({
@@ -190,38 +190,21 @@ document.addEventListener("click", (e) => {
       }
     });
   } else {
-      const pedido = crearPedidoDesdeCarrito();
-      if(!pedido){
-        Swal.fire({
+    if (carrito.length === 0) {
+      Swal.fire({
         title: "No hay productos en tu carrito",
         text: "Tu carrito está vacío, por favor agrega productos para procesar tu compra",
         showConfirmButton: true,
-        showCancelButton: false,
         confirmButtonText: "Volver al Catalogo",
         confirmButtonColor: "#1B5E20"
-        }).then((result) => {
-          if (result.isConfirmed) {
+      }).then((result) => {
+        if (result.isConfirmed) {
           window.location.href = getPath("catalogo.html");
-          }
-        })
-      } else {
-        Swal.fire({
-        title: "Gracias por tu compra",
-        icon: "success",
-        text: `Estamos procesando tu pedido No. ${pedido.id}, puedes hacer seguimiento a tu compra ingresando a tu perfil.`,
-        showConfirmButton: true,
-        showCancelButton: true,
-        confirmButtonText: "Consultar pedidos",
-        cancelButtonText: "Volver al Catalogo",
-        confirmButtonColor: "#1B5E20",
-        cancelButtonColor: "#1B5E20"
-    }).then((result) => {
-      if (result.isConfirmed) {
-        window.location.href = getPath("vistaUsuario.html");
-      } else if (result.dismiss === Swal.DismissReason.cancel) {
-        window.location.href = getPath("catalogo.html");
-      }
-    });
-  }
+        }
+      });
+    } else {
+      // Redirigir a la vista de pagos
+      window.location.href = getPath("vistaPagos.html");
+    }
   }
 });

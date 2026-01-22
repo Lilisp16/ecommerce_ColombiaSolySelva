@@ -9,8 +9,22 @@ export const mostrarLogin = async () => {
 
   const usuario = await obtenerUsuarioActual();
 
+  // Lógica para marcar el link activo
+  const path = window.location.pathname;
+  const currentPage = path.split("/").pop() || "index.html";
+
+  document.querySelectorAll(".nav-link.link-custom").forEach(link => {
+    const href = link.getAttribute("href");
+    const linkPage = href.split("/").pop();
+
+    if (currentPage === linkPage || (currentPage === "" && linkPage === "index.html")) {
+      link.classList.add("active");
+    }
+  });
+
+
   if (!usuario) {
-    nombreUsuarioDiv.style.display = "none";    
+    nombreUsuarioDiv.style.display = "none";
     logOut.style.display = "none";
     logIn.addEventListener("click", () => {
       window.location.href = getPath("login.html");
@@ -32,33 +46,10 @@ export const mostrarLogin = async () => {
   // Cerrar sesión
   btnCerrarSesion.addEventListener("click", cerrarSesion);
 
-  
-// Click al icono ir al perfil - vista de usuario
-logIn.addEventListener("click", () => {
-  window.location.href = getPath("vistaUsuario.html");
-});
-
-
-
-
-
-  //COMPRAR 
-  const btnComprar = document.getElementById("finalizarCompra");
-
-  if (btnComprar) {
-    btnComprar.addEventListener("click", () => {
-
-      if (usuario) {
-        // Usuario logueado -> pagos
-        window.location.href = getPath("vistaPagos.html");
-      } else {
-        // Usuario NO logueado -> login
-        localStorage.setItem("redirectAfterLogin", "vistaPagos.html");
-        window.location.href = getPath("login.html");
-      }
-
-    });
-  }
- 
+  // Click al icono ir al perfil - vista de usuario
+  logIn.addEventListener("click", () => {
+    window.location.href = getPath("vistaUsuario.html");
+  });
 };
+
 

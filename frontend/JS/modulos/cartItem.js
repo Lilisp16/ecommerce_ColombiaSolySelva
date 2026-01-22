@@ -1,6 +1,6 @@
 import { formatearMiles } from "../../JS/main.js";
 import { getPathImgs } from "../../JS/main.js";
-export function cartItemCarrito (producto) {
+export function cartItemCarrito(producto) {
     const rutaImagen = getPathImgs(producto.imagen)
     const nuevoProducto = `
     <div class="d-flex justify-content-center">
@@ -43,9 +43,10 @@ export function cartItemCarrito (producto) {
               </div>
     `
     return nuevoProducto;
-} 
+}
 
 export const productosRecientes = (producto) => {
+    const rutaImagen = getPathImgs(producto.imagen);
     const nuevoProducto = `
     <div class="container">
                 <div class="cartItem w-100 card rounded-4 mb-3"">
@@ -56,7 +57,7 @@ export const productosRecientes = (producto) => {
                         </div>
                         <div class="me-4">
                             <div class="border border-black bg-dark rounded-4" style="width: 80px; height: 80px;">
-                                <img src="${producto.imagen}" class="w-100 h-100 object-fit-cover rounded-4">
+                                <img src="${rutaImagen}" class="w-100 h-100 object-fit-cover rounded-4">
                             </div>
                         </div>
 
@@ -78,10 +79,11 @@ export const productosRecientes = (producto) => {
               </div>
     `
     return nuevoProducto;
-} 
+}
 
 
-export function cartItemCarritoVersion1 (producto) {
+export function cartItemCarritoVersion1(producto) {
+    const rutaImagen = getPathImgs(producto.imagen);
     const nuevoProducto = `
     <div class="d-flex justify-content-center">
                 <div class="cartItem w-100 card rounded-4 mb-3">
@@ -96,7 +98,7 @@ export function cartItemCarritoVersion1 (producto) {
                         </div>
                         <div class="me-3">
                             <div class="border border-black bg-dark rounded-4" style="width: 80px; height: 80px;">
-                                <img src="${producto.imagen}" class="img-fluid h-100 object-fit-cover">
+                                <img src="${rutaImagen}" class="img-fluid h-100 object-fit-cover">
                             </div>
                         </div>
 
@@ -126,4 +128,4 @@ export function cartItemCarritoVersion1 (producto) {
               </div>
     `
     return nuevoProducto;
-} 
+}

@@ -45,41 +45,12 @@ export function cartItemCarrito(producto) {
     return nuevoProducto;
 }
 
+import { crearTarjetaAgregadosRecientemente } from "./crearTarjeta.js";
+
 export const productosRecientes = (producto) => {
-    const rutaImagen = getPathImgs(producto.imagen);
-    const nuevoProducto = `
-    <div class="container">
-                <div class="cartItem w-100 card rounded-4 mb-3"">
-                    <div class="card-body  rounded-4 border border-clear p-3 text-dark">
-                        <div class="d-flex align-items-center">
-                        <div class="me-2 d-flex flex-column gap-4">
-                            <i class="bi bi-trash3*" id="eliminarprod"></i>
-                        </div>
-                        <div class="me-4">
-                            <div class="border border-black bg-dark rounded-4" style="width: 80px; height: 80px;">
-                                <img src="${rutaImagen}" class="w-100 h-100 object-fit-cover rounded-4">
-                            </div>
-                        </div>
-
-                        <div class="flex-grow-1">
-                            <h6 class="card-title mb-0 fw-bold text-truncate text-nowrap d-block" style="max-width: 150px;">
-                                ${producto.nombre}
-                            </h6>
-                            <h6 class="text-secondary fw-bold">Valor Unitario: $ ${formatearMiles(producto.precio)} </h6>
-                            <h6 class="text-secondary fw-bold">En stock: ${producto.stock} unds</h6>
-                            
-                        </div>
-                        <div class="d-flex flex-column align-items-end justify-content-between" style="height: 80px;">
-                            <i class="bi bi-heart-fillx"></i>
-                        </div>
-
-                        </div>
-                    </div>
-                </div>
-              </div>
-    `
-    return nuevoProducto;
+    return crearTarjetaAgregadosRecientemente(producto);
 }
+
 
 
 export function cartItemCarritoVersion1(producto) {

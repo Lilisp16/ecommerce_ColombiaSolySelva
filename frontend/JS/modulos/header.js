@@ -133,56 +133,8 @@ export const mostrarHeader = async () => {
 
 
 
-    // FINALIZAR COMPRA
+    // El botón finalizarCompra (#finalizarCompra) ahora se maneja globalmente en agregarCarrito.js
 
-    if (btnFinalizarCompra) {
-        btnFinalizarCompra.addEventListener("click", async () => {
-
-            const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-            if (carrito.length === 0) {
-                Swal.fire({
-                    icon: "info",
-                    title: "Carrito vacío",
-                    text: "Agrega productos antes de continuar",
-                    confirmButtonColor: "#1B5E20",
-                    background: "#F5EBDC"
-                });
-                return;
-            }
-
-            // Si usuario logueado -> ir directo a pagos
-            if (usuario) {
-                window.location.href = getPath("vistaPagos.html");
-                return;
-            }
-
-            // Usuario no logueado -> mostrar modal
-            Swal.fire({
-                icon: "info",
-                title: "Debes iniciar sesión o registrarte",
-                showCancelButton: true,
-                confirmButtonText: "Iniciar sesión",
-                cancelButtonText: "Registrarse",
-                confirmButtonColor: "#1B5E20",
-                cancelButtonColor: "#1B5E20",
-                background: "#F5EBDC"
-            }).then((result) => {
-                // Guardar destino para después del login/registro
-                sessionStorage.setItem("redirectAfterLogin", getPath("vistaPagos.html"));
-
-
-
-                // Dependiendo de la acción del usuario en el modal de SweetAlert2:
-                // Si el usuario confirma (hace click en "Iniciar sesión"), se redirige a la página de login.
-                // Si el usuario cancela (hace click 
-                if (result.isConfirmed) {
-                    window.location.href = getPath("login.html");
-                } else if (result.dismiss === Swal.DismissReason.cancel) {
-                    window.location.href = getPath("registro.html");
-                }
-            });
-        });
-    }
 
 
     // USUARIO LOGUEADO O NO

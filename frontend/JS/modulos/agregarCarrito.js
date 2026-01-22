@@ -1,4 +1,7 @@
 import { getPath } from "../../JS/main.js";
+import { obtenerUsuarioActual } from "./auth.js";
+import { UI } from "../utils/alerts.js";
+
 
 const URL_JSON = "../../JS/modulos/json.json";
 import { cartItemCarrito } from "../../JS/modulos/cartItem.js";
@@ -102,13 +105,7 @@ export const agregarAlCarrito = (producto) => {
   mostrarCarrito()
 
 
-  Swal.fire({
-    title: "Producto agregado",
-    text: `${producto.nombre} fue agregado al carrito`,
-    icon: "success",
-    timer: 2500,
-    showConfirmButton: true,
-  });
+  UI.toast(`${producto.nombre} fue agregado al carrito`);
   console.log("Carrito después:", carrito);
 };
 
@@ -165,46 +162,56 @@ function crearPedidoDesdeCarrito() {
 
 
 
+
 //Acciones del botón Comprar del carrito
-document.addEventListener("click", (e) => {
+
+document.addEventListener("click", async (e) => {
   const btn = e.target.closest("#finalizarCompra");
   if (!btn) return;
 
-  const usuActivo = localStorage.getItem("logueado"); // Guardamos el correo o token
+  const currentCart = JSON.parse(localStorage.getItem("carrito")) || [];
+  if (currentCart.length === 0) {
+    Swal.fire({
+      icon: "info",
+      title: "Carrito vacío",
+      text: "Agrega productos antes de continuar",
+      confirmButtonColor: "#1B5E20",
+      background: "#ffffff"
+    });
+    return;
+  }
 
-  if (!usuActivo) {
+  const usuario = await obtenerUsuarioActual();
+
+  if (!usuario) {
     Swal.fire({
       title: "Iniciar Sesión",
       text: "Para procesar tu compra es necesario iniciar sesión, por favor ingresa o regístrate. Una vez registrado, regresa al carrito para finalizar tu compra",
-      showConfirmButton: true,
       showCancelButton: true,
-      confirmButtonText: "Registrarse",
-      cancelButtonText: "Iniciar Sesión",
+      confirmButtonText: "Iniciar Sesión",
+      cancelButtonText: "Registrarse",
       confirmButtonColor: "#1B5E20",
-      cancelButtonColor: "#1B5E20"
+      cancelButtonColor: "#1B5E20",
+      background: "#ffffff",
+      customClass: {
+        title: 'text-dark fw-bold fs-2',
+        htmlContainer: 'text-secondary p-3',
+        confirmButton: 'px-4 py-2 rounded-2',
+        cancelButton: 'px-4 py-2 rounded-2'
+      }
     }).then((result) => {
+      // Guardar destino: Siempre a vistaPagos.html
+      sessionStorage.setItem("redirectAfterLogin", "vistaPagos.html");
+
       if (result.isConfirmed) {
-        window.location.href = getPath("registro.html");
-      } else if (result.dismiss === Swal.DismissReason.cancel) {
         window.location.href = getPath("login.html");
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        window.location.href = getPath("registro.html");
       }
     });
   } else {
-    if (carrito.length === 0) {
-      Swal.fire({
-        title: "No hay productos en tu carrito",
-        text: "Tu carrito está vacío, por favor agrega productos para procesar tu compra",
-        showConfirmButton: true,
-        confirmButtonText: "Volver al Catalogo",
-        confirmButtonColor: "#1B5E20"
-      }).then((result) => {
-        if (result.isConfirmed) {
-          window.location.href = getPath("catalogo.html");
-        }
-      });
-    } else {
-      // Redirigir a la vista de pagos
-      window.location.href = getPath("vistaPagos.html");
-    }
+    // Usuario logueado -> ir directo a pagos
+    window.location.href = getPath("vistaPagos.html");
   }
 });
+

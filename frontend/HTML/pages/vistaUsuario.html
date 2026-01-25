@@ -2,21 +2,23 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>Login | Colombia Sol y Selva</title>
+    <title>Tu Perfil | Colombia Sol y Selva</title>
     <link rel="stylesheet" href="../../css/perfil.css" />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"/>
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+      rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous" referrerpolicy="no-referrer"/>
+      <!-- Font Awesome CDN -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
+      integrity="sha512-y6bf2t72KFFpH+4y1LbdhNwqK9Qy1C6M2bGf3yrIhFz8N3Gk1l2Ehh6/w7bXvP9R0/uvTJmYj4uJZ0z8uM0fGQ==" 
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="../../css/global.css" />
+
+
+    
   </head>
 
 
@@ -24,64 +26,145 @@
     <header class="header"></header>
 
 
-<section class="perfil-container">
+  <main class="perfil-container">
+   <div class="imagenIz">
 
-  <!-- LADO IZQUIERDO (IMAGEN) -->
-  <div class="perfil-imagen">
-    <div class="overlay">
-      <h1>Bienvenido<br />a Colombia<br />Sol y Selva</h1>
-      <p>
-        Somos un eCommerce de venta de artesanías colombianas 100% hechas a mano.
-      </p>
+    <!-- Panel izquierdo -->
+    <div class="perfil-imagen panelIzquierdo text-center">
+
+      <!-- Foto de perfil -->
+    <div class="profile-pic" data-bs-toggle="tooltip" aria-label="Foto de perfil" data-bs-original-title="Foto de perfil">
+        <img id="profilePic">
+      </div>
+      <h4 id="perfilTitulo"></h4>
+      <p class="text-secondary fs-5 mb-4">Mi perfil</p>
+
+      <!-- Dropdown editar foto -->
+      <div class="dropdown mb-4 subirFoto">
+        <button class="btn btn-light dropdown-toggle w-100 " type="button" data-bs-toggle="dropdown">
+          Editar foto
+        </button>
+        <ul class="dropdown-menu w-100">
+          <li><button class="dropdown-item" id="cambiarFoto">Cambiar foto</button></li>
+          <li><button class="dropdown-item" id="eliminarFoto">Eliminar foto</button></li>
+        </ul>
+      </div>
+
+      <!-- Menú de navegación -->
+       <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+
+  <button class="enlacesPerfil nav-link active mb-2" id="v-pills-datos-tab" data-bs-toggle="pill" data-bs-target="#v-pills-datos" type="button" role="tab">
+     <i class="fas fa-cog fs-5 me-2"></i> Cuenta
+  </button>
+
+  <button class="enlacesPerfil nav-link mb-2" id="v-pills-password-tab" data-bs-toggle="pill" data-bs-target="#v-pills-password" type="button" role="tab">
+    <i class="fas fa-key fs-5 me-2"></i> Cambiar contraseña
+  </button>
+
+  <a href="catalogo.html" class="enlacesPerfil nav-link mb-2">
+    <i class="fas fa-history fs-5 me-2"></i> Mi historial de pedidos
+  </a>
+
+  <a href="catalogo.html" class="enlacesPerfil nav-link">
+     <i class="fas fa-shopping-bag fs-5 me-2"></i>Catálogo
+  </a>
+
+</div>
+
+      
+
+
     </div>
+
   </div>
 
-  <!-- LADO DERECHO (PERFIL) -->
-  <div class="perfil-card">
+    <!-- Panel derecho -->
+    <div class="perfil-card panelDerecho">
 
-  <div class="perfil-info">
+      <div class="perfil-info tab-content">
 
-    <h2 class="perfil-titulo">Mi Perfil</h2>
+        <!-- Sección Cuenta -->
+        <div class="tab-pane fade show active formularioP" id="v-pills-datos" role="tabpanel">
+          <h6 class="perfil-titulo mb-3">Información personal</h6>
+          <div class="campo mb-3">
+            <label class="fs-6">Nombres</label>
+            <input type="text" id="perfilNombre" class="form-control" disabled>
+          </div>
+          <div class="campo mb-3">
+            <label class="fs-6">Apellidos</label>
+            <input type="text" id="perfilApellido" class="form-control" disabled>
+          </div>
+          <div class="campo mb-3">
+            <label class="fs-6">Dirección</label>
+            <input type="text" id="perfilDireccion" class="form-control" disabled>
+          </div>
+          <div class="campo mb-3">
+            <label class="fs-6">Ciudad</label>
+            <input type="text" id="perfilCiudad" class="form-control" disabled>
+          </div>
+          <div class="campo mb-3">
+            <label class="fs-6">Teléfono</label>
+            <input type="text" id="perfilTelefono" class="form-control" disabled>
+          </div>
+          <div class="campo mb-3">
+            <label class="fs-6">Correo</label>
+            <input type="email" id="perfilEmail" class="form-control" disabled>
+          </div>
+          <div class="acciones mb-3">
+            <button id="editarInfo" class="btn btn-warning me-2">Editar información</button>
+            <button id="cerrarSesion" class="btn btn-danger">Cerrar sesión</button>
+          </div>
+        </div>
 
-    <div class="campo">
-      <label>Nombres</label>
-      <input type="text" id="perfilNombre" disabled>
+        <!-- Sección Cambiar contraseña -->
+        <div class="tab-pane fade formularioP" id="v-pills-password" role="tabpanel">
+          <h6 class="perfil-titulo mb-3">Cambiar contraseña</h6>
+
+          <div class="campo mb-3">
+            <label class="fs-6">Contraseña actual</label>
+            <div class="position-relative">
+            <input type="password" name="actual" class="form-control pe-5">
+            <i class="fas fa-eye toggle-password" 
+              style="position:absolute; right:10px; top:50%; transform:translateY(-50%); cursor:pointer;"></i>
+            </div>
+          </div>
+
+      <div class="campo mb-3">
+        <label class="fs-6">Nueva contraseña</label>
+        <div class="position-relative">
+            <input type="password" name="nueva" class="form-control pe-5">
+          
+            <i class="fas fa-eye toggle-password"
+              style="position:absolute; right:10px; top:50%; transform:translateY(-50%); cursor:pointer; z-index: 2;"></i>
+        </div>
+     
+        <div id="passwordRules" class="invalid-feedback mt-1">
+            La contraseña debe cumplir con: mínimo 8 caracteres, 1 número, 1 mayúscula, 1 minúscula, sin espacios, sin '\¡¿"ºª·`´çñÑ'.
+        </div>
+   </div>
+
+
+
+          <div class="campo mb-3">
+            <label class="fs-6">Confirmar nueva contraseña</label>
+            <div class="position-relative">
+            <input type="password" name="confirmar" class="form-control pe-5">
+            <i class="fas fa-eye toggle-password" 
+              style="position:absolute; right:10px; top:50%; transform:translateY(-50%); cursor:pointer;"></i>
+            </div>
+        </div>
+
+          <div class="acciones mb-3">
+            <button id="editarContrasena" class="btn btn-warning me-2">Actualizar contraseña</button>
+          </div>
+        </div>
+
+      </div>
     </div>
 
-      <div class="campo">
-        <label>Apellidos</label>
-        <input type="text" id="perfilApellido" disabled>
-      </div>
+  </main>
 
-      <div class="campo">
-        <label>Dirección</label>
-        <input type="text" id="perfilDireccion" disabled>
-      </div>
 
-      <div class="campo">
-        <label>Ciudad</label>
-        <input type="text" id="perfilCiudad" disabled>
-      </div>
-
-      <div class="campo">
-        <label>Teléfono</label>
-        <input type="text" id="perfilTelefono" disabled>
-      </div>
-
-      <div class="campo">
-        <label>Correo</label>
-        <input type="email" id="perfilEmail" disabled>
-      </div>
-
-      <div class="acciones">
-        <button id="editarInfo">Editar información</button>
-        <button id="cerrarSesion">Cerrar sesión</button>
-      </div>
-
-    </div>
-  </div>
-
-</section>
 
 <footer class="footer-artesanal"></footer>
 
@@ -89,5 +172,13 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../../JS/main.js" type="module"></script>
     <script src="../../JS/modulos/perfilUsuarioDB.js" type="module"></script>    
+
+    <script>
+  // Inicializar tooltip - foto de perfil
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+  })
+</script>
   </body>
 </html>

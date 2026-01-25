@@ -1,121 +1,133 @@
-/* =======================
+/* 
    CONTENEDOR GENERAL
-======================= */
+ */
 .perfil-container {
   display: flex;
   width: 80%;
   max-width: 1100px;
   min-height: 70vh;
-
-  margin: auto;
-  margin-top: 40px;
-  margin-bottom: 40px;
-
+  margin: 40px auto;
   border-radius: 20px;
   overflow: hidden;
   background-color: #b8a99e;
   box-shadow: none;
+  
 }
 
-/* =======================
-   IMAGEN IZQUIERDA
-======================= */
-.perfil-imagen {
+/* 
+   PANEL IZQUIERDO*/
+.panelIzquierdo {
   flex: 1;
-  background-image: url("../IMG/assets/imgLogin.jpg");
+  background-color: #b8a99e;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+
+
+/* Imagen de fondo del panel izquierdo */
+.imagenIz{
+  flex: 1;
+  /*background-image: url("../IMG/assets/imgLogin.jpg");*/
   background-size: cover;
   background-position: center;
-  position: relative;
+  position: relative; /* necesario para overlay */
+  padding: 0; 
+  border-radius: 0px 0px 0px 20px;
 }
 
-.perfil-imagen::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-}
-
-.perfil-imagen .overlay {
-  position: relative;
-  color: #fff;
-  height: 100%;
-  padding: 60px 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.perfil-imagen h1 {
-  font-size: 3rem;
-  line-height: 1.1;
-  margin-bottom: 20px;
-}
-
-.perfil-imagen p {
-  font-size: 1rem;
-  max-width: 380px;
-}
-
-/* =======================
-   TARJETA PERFIL
-======================= */
-.perfil-card {
-  flex: 1;
+.profile-pic,
+#profilePic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;       /* recorta bien la foto */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.perfil-info {
-  width: 100%;
-  padding: 60px 50px;
+
+
+.panelIzquierdo .profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #D4AF37;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem auto;
+  cursor: pointer;
 }
 
-/* TÍTULO */
+
+.panelIzquierdo .profile-pic i {
+  font-size: 4rem;
+  color: #fff;
+}
+
+
+
+.panelIzquierdo .profile-pic:hover {
+  opacity: 0.8;
+}
+
+.panelIzquierdo .nav-link.active {
+  font-weight: bold;
+  color: #D4AF37;
+}
+
+   /*PANEL DERECHO*/
+
+.panelDerecho {
+  flex: 2;
+  background-color: #b8a99e;
+  padding: 40px;
+}
+
+.perfil-info {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px 25px;
+}
+
 .perfil-titulo {
+  grid-column: span 2;
   text-align: center;
   font-size: 2.4rem;
   margin-bottom: 40px;
   color: #1B5E20;
 }
 
-/* =======================
-   GRID DE CAMPOS (2 COLS)
-======================= */
-.perfil-info {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 25px;
-  row-gap: 18px;
-}
-
-/* El título ocupa 2 columnas */
-.perfil-titulo {
-  grid-column: span 2;
-}
-
-/* =======================
-   CAMPOS
-======================= */
+/* Campos */
 .campo label {
   display: block;
-  font-size: 0.85rem;
   margin-bottom: 6px;
-  color: #0c0c0c;
-  font-weight: 500;
 }
 
 .campo input {
   width: 100%;
-  padding: 14px;
+  padding: 10px;
   font-size: 15px;
   border-radius: 10px;
   border: 1px solid #ccc;
+  background-color: #FAF8F3;
 }
 
-/* =======================
-   BOTONES
-======================= */
+.campo input:disabled {
+  background-color: #FAF8F3;
+}
+
+.campo input:not(:disabled) {
+  background-color: #FAF8F3;
+  border: 1px solid #ccc;
+}
+
+/* Botones */
 .acciones {
   grid-column: span 2;
   display: flex;
@@ -124,18 +136,16 @@
   margin-top: 25px;
 }
 
-.acciones button {
-  padding: 12px 22px;
-  border-radius: 8px;
-  border: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  cursor: pointer;
-}
-
-/* Editar */
 #editarInfo {
   background-color: #1b5e20;
+  border-color: #1b5e20 ;
+  color: white;
+}
+
+
+#editarContrasena{
+  background-color: #1b5e20;
+  border-color: #1b5e20 ;
   color: white;
 }
 
@@ -143,7 +153,6 @@
   background-color: #144718;
 }
 
-/* Cerrar sesión */
 #cerrarSesion {
   background-color: #9e1e1e;
   color: white;
@@ -153,48 +162,72 @@
   background-color: #452d2d;
 }
 
-/* =======================
-   CENTRADO VERTICAL
-======================= */
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+
+
+
+   /*ESTILO PARA ENLACES DEL PERFIL*/
+
+.enlacesPerfil {
+  background: none !important;       
+  border: none !important;         
+  box-shadow: none !important;       
+  text-decoration: none !important;  
+  color: #3E2723 !important;        
+  font-weight: 500;                 
+  padding: 0.5rem 0;                 /* espacio vertical */
+  text-align: left;                  /* alinear a la izquierda */
+  cursor: pointer;                   /* cursor de mano */
 }
 
-.perfil-container {
-  flex-grow: 1;
-  align-self: center;
+/* Hover: cambia un poco de color al pasar el mouse */
+.enlacesPerfil:hover {
+  color: #5D4037 !important;         /* tono más claro al pasar mouse */
+  background: none !important;
+  text-decoration: none !important;
 }
 
-/* =======================
-   RESPONSIVE
-======================= */
+/* Estado activo */
+.enlacesPerfil.active {
+  color: #3E2723 !important;       
+  font-weight: 600;                  
+  border-left: 3px solid #3E2723;    
+  background: none !important;
+  text-decoration: none !important;
+}
+
+
+.subirFoto button{
+  background-color: #F5EBDC;
+  border-color:  #F5EBDC;
+}
+
+
+/* Oculta los iconos de validación de Bootstrap para todos los inputs de contraseña */
+input.is-valid,
+input.is-invalid {
+  background-image: none !important;
+  padding-right: 2.5rem; 
+}
+
+@media (max-width: 900px) {
+  #profilePic,
+  .profile-pic img {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+
 @media (max-width: 900px) {
   .perfil-container {
     flex-direction: column;
     width: 95%;
   }
-
   .perfil-info {
     grid-template-columns: 1fr;
   }
-
   .perfil-titulo,
   .acciones {
     grid-column: span 1;
   }
-}
-
-.campo input {
-  background-color: #fafafa;
-}
-
-.campo input:disabled {
-  background-color: #eee;
-}
-
-.campo input:not(:disabled) {
-  background-color: #fff;
-  border: 2px solid #1b5e20;
 }

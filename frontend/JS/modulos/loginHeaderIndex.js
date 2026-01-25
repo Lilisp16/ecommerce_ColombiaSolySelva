@@ -50,6 +50,21 @@ export const mostrarLogin = async () => {
   logIn.addEventListener("click", () => {
     window.location.href = getPath("vistaUsuario.html");
   });
+
+
+
+   // Mostrar foto de perfil si existe en header general
+        if (usuario.imagenCliente) {
+            profileHeaderPic.src = `http://localhost:8080/IMG/imgPerfiles/${usuario.imagenCliente}?t=${new Date().getTime()}`;
+            profileHeaderPic.style.display = "inline-block";
+
+            // Ocultar icono genérico
+            logIn.style.display = "none";
+
+            profileHeaderPic.addEventListener("click", () => {
+                window.location.href = getPath("vistaUsuario.html");
+            });
+        }
 };
 
 

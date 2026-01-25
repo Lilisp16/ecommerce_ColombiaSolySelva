@@ -5,11 +5,40 @@ export const initRegistroUsuario = () => {
   const inputs = form.querySelectorAll("input");
   const submitBtn = form.querySelector("button[type='submit']");
 
-  // Regex definitions
+  // Regex
   const passwordRegex = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?!.*\s)(?!.*[\\¡¿"ºª·`´çñÑ]).{8,}$/;
   const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,30}$/;
   const phoneRegex = /^[0-9]{7,15}$/;
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+
+// Listener  para password
+
+const passwordInput = document.getElementById("password");
+const passwordRules = document.getElementById("passwordRules");
+
+passwordInput.addEventListener("input", () => {
+    const value = passwordInput.value.trim();
+
+    if (!value) {
+        passwordInput.classList.remove("is-valid", "is-invalid");
+        passwordRules.style.display = "none";
+        return;
+    }
+
+    if (passwordRegex.test(value)) {
+        passwordInput.classList.add("is-valid");
+        passwordInput.classList.remove("is-invalid");
+        passwordRules.style.display = "none";
+    } else {
+        passwordInput.classList.add("is-invalid");
+        passwordInput.classList.remove("is-valid");
+        passwordRules.style.display = "block";
+    }
+});
+
+
 
   function validarCampo(input) {
     let isValid = true;
@@ -22,7 +51,7 @@ export const initRegistroUsuario = () => {
     } else if (input.id === "email") {
       isValid = emailRegex.test(value);
     } else if (input.id === "password") {
-      isValid = passwordRegex.test(value);
+      isValid = passwordInput.classList.contains("is-valid");
     } else if (input.id === "terminos") {
       isValid = input.checked;
     } else {
@@ -38,6 +67,9 @@ export const initRegistroUsuario = () => {
     }
     return isValid;
   }
+
+
+
 
   function revisarFormulario() {
     let todosValidos = true;
@@ -141,3 +173,22 @@ export const initRegistroUsuario = () => {
   });
 };
 
+ // Mostrar / ocultar contraseña
+    document.querySelectorAll('.toggle-password').forEach(icono => {
+        icono.addEventListener('click', () => {
+            const input = icono.previousElementSibling;
+            if (input.type === 'password') {
+                input.type = 'text';
+                icono.classList.remove('fa-eye');
+                icono.classList.add('fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icono.classList.remove('fa-eye-slash');
+                icono.classList.add('fa-eye');
+            }
+        });
+    });
+
+
+
+    

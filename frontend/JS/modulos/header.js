@@ -41,6 +41,7 @@ const headerHTML = `
                     </form>
                     <div class="icon text-center controlSesion">
                             <i class="fas fa-user icon-circle icon-user" id="logIn" style="cursor: pointer"></i>
+                             <img id="profileHeaderPic" src="" alt="Foto de perfil" style="display:none; width: 40px; height:40px; border-radius:50%; cursor:pointer;">
                             <div class="icon-text" id="usuLogueado" style="color: #F5EBDC"></div>
                     </div>
                     <div class="icon text-center" id="botonCerrarSesion"style="cursor: pointer; display:none">
@@ -136,7 +137,6 @@ export const mostrarHeader = async () => {
     // El botón finalizarCompra (#finalizarCompra) ahora se maneja globalmente en agregarCarrito.js
 
 
-
     // USUARIO LOGUEADO O NO
     //Si hay usuario mostrar nombre, botón cerrar sesión, clic en icono va a perfil.
     //Si no hay usuario -> ocultar nombre y cerrar sesión, clic en icono va a login.
@@ -151,9 +151,26 @@ export const mostrarHeader = async () => {
 
         btnCerrarSesion.addEventListener("click", cerrarSesion);
 
+
+        //redigir al perfil al hacer click
         logIn.addEventListener("click", () => {
             window.location.href = getPath("vistaUsuario.html");
         });
+
+
+
+        // Mostrar foto de perfil si existe en header general
+        if (usuario.imagenCliente) {
+            profileHeaderPic.src = `http://localhost:8080/IMG/imgPerfiles/${usuario.imagenCliente}?t=${new Date().getTime()}`;
+            profileHeaderPic.style.display = "inline-block";
+
+            // Ocultar icono genérico
+            logIn.style.display = "none";
+
+            profileHeaderPic.addEventListener("click", () => {
+                window.location.href = getPath("vistaUsuario.html");
+            });
+        }
 
     } else {
         nombreUsuarioDiv.style.display = "none";
@@ -164,6 +181,8 @@ export const mostrarHeader = async () => {
         });
     }
 };
+
+
 
 
 

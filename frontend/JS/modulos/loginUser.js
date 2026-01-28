@@ -56,13 +56,16 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     } catch (error) {
-      console.error(error);
-      Swal.fire({
-        icon: "error",
-        title: "Error de conexión",
-        text: "No se pudo conectar con el servidor",
-        confirmButtonColor: "#1B5E20"
-      });
-    }
+  console.error(error);
+  Swal.fire({
+    icon: "warning",
+    iconColor: "#D4AF37",
+    title: "¡Uy! Algo no salió bien 😕",
+    text: "En este momento no podemos iniciar sesión. Estamos trabajando para solucionarlo. Por favor, intenta de nuevo en unos minutos.",
+    background:"#F5EBDC",
+    color:"#4E342E",
+    confirmButtonColor: "#D4AF37"
+  });
+}
   });
 });

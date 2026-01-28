@@ -2,130 +2,108 @@ import { crearTarjetaCatalogo } from "./crearTarjeta.js";
 import { crearFiltroCategoria } from "./filtroCategorias.js";
 import { agregarAlCarrito } from "./agregarCarrito.js";
 
+// ---------------- CONFIG ----------------
+const API_URL = "http://localhost:8080/producto"; // Ajusta según tu backend
 
-// Contenedores del catálogo
-const URL_JSON = "../../JS/modulos/json.json";
+// ---------------- ELEMENTOS ----------------
 const recomendadosBox = document.getElementById("recomendados");
 const nuevosBox = document.getElementById("nuevos");
 const ultimosBox = document.getElementById("ultimos");
 const filtradorProductos = document.getElementById("filtradorProductos");
-const productosGuardados = localStorage.getItem("productos");
 
+// ---------------- CARGAR PRODUCTOS ----------------
+async function obtenerProductosBackend() {
+    try {
+        const response = await fetch(API_URL);
+        if (!response.ok) throw new Error("Error al obtener productos del backend");
 
-if (productosGuardados) {
-    const productos = JSON.parse(productosGuardados);
-    renderizarConFiltro(productos);
-    crearFiltroCategoria(productos, renderizarConFiltro);
-} else {
-    console.log("Cargando productos desde API/JSON...");
+        let productos = await response.json();
 
-    fetch(URL_JSON)
-        .then(res => res.json())
-        .then(productos => {
-            localStorage.setItem("productos", JSON.stringify(productos));
-            console.log("Exito");
+        // Mapear los campos del backend a los que usa el front
+        productos = productos.map(p => ({
+            id: p.idProducto,
+            nombre: p.nombreProducto,
+            descripcion: p.descripcionProducto,
+            categoria: p.categoriaProducto,
+            precio: p.precioProducto,
+            stock: p.stockProducto,
+            imagen: p.imagenProducto
+        }));
 
-            renderizarConFiltro(productos);
-        })
-        .catch(err => console.error("Error al cargar JSON:", err));
+        // Guardar en localStorage por si se necesita
+        localStorage.setItem("productos", JSON.stringify(productos));
+
+        renderizarConFiltro(productos);
+        crearFiltroCategoria(productos, renderizarConFiltro);
+
+        return productos;
+    } catch (error) {
+        console.error("Error cargando productos:", error);
+        return [];
+    }
 }
 
-function filtrarPorPalabras(listaProductos, textoBusqueda) {
-    // 1. Limpiamos el texto: minúsculas y quitamos espacios extra
-    const busqueda = textoBusqueda.toLowerCase().trim();
+// Ejecutar al cargar la página
+document.addEventListener("DOMContentLoaded", () => {
+    obtenerProductosBackend();
+});
 
-    // Si no hay nada escrito, devolvemos todo
+// ---------------- FILTRADO POR TEXTO ----------------
+function filtrarPorPalabras(listaProductos, textoBusqueda) {
+    const busqueda = textoBusqueda.toLowerCase().trim();
     if (busqueda === "") return listaProductos;
 
-    // 2. Dividimos la búsqueda en palabras individuales
     const palabrasBuscadas = busqueda.split(" ");
 
     return listaProductos.filter(producto => {
-        const nombreProducto = producto.nombre.toLowerCase();
-
-        // 3. Verificamos si AL MENOS UNA de las palabras buscadas está en el nombre
-        // Si quieres que coincidan TODAS, cambia .some por .every
-        return palabrasBuscadas.some(palabra => nombreProducto.includes(palabra));
+        return palabrasBuscadas.some(palabra => producto.nombre.toLowerCase().includes(palabra));
     });
 }
 
 filtradorProductos.addEventListener("input", (e) => {
-    const p = localStorage.getItem("productos");
-    const productos = JSON.parse(p);
-
+    const productos = JSON.parse(localStorage.getItem("productos")) || [];
     const textoBusqueda = e.target.value;
     const productosFiltrados = filtrarPorPalabras(productos, textoBusqueda);
     renderizarConFiltro(productosFiltrados);
     crearFiltroCategoria(productosFiltrados, renderizarConFiltro);
-
 });
 
+// ---------------- FILTRADO POR CATEGORÍA URL ----------------
 function obtenerCategoriaURL() {
     const params = new URLSearchParams(window.location.search);
     return params.get("categoria");
 }
 
+// ---------------- RENDERIZADO ----------------
 function renderizarCatalogo(productos) {
-    recomendadosBox.innerHTML = productos
-        .map(crearTarjetaCatalogo)
-        .join("");
-
+    recomendadosBox.innerHTML = productos.map(crearTarjetaCatalogo).join("");
     nuevosBox.innerHTML = "";
     ultimosBox.innerHTML = "";
 }
 
 function renderizarConFiltro(productos) {
     const categoriaURL = obtenerCategoriaURL();
-
     let productosFinales = productos;
 
-    // filtro por URL (footer)
     if (categoriaURL) {
-        productosFinales = productos.filter(
-            p => p.categoria === categoriaURL
-        );
+        productosFinales = productos.filter(p => p.categoria === categoriaURL);
     }
 
     renderizarCatalogo(productosFinales);
 }
 
-
-function renderizarPagina(productos) {
-    console.log(productos.length);
-
-    // Tarjetas → Recomendados
-    recomendadosBox.innerHTML = productos.slice(-4)
-        .map(crearTarjetaCatalogo).join("");
-
-    // Tarjetas → Nuevos
-    nuevosBox.innerHTML = productos.slice(-8, -4)
-        .map(crearTarjetaCatalogo).join("");
-
-    // Tarjetas → Últimas unidades
-    ultimosBox.innerHTML = productos.slice(-12, -8)
-        .map(crearTarjetaCatalogo).join("");
-}
-
+// ---------------- CLIC EN AGREGAR AL CARRITO ----------------
 document.addEventListener("click", (e) => {
     if (e.target.classList.contains("btnAgregarCarrito")) {
-
         const id = Number(e.target.dataset.id);
+        const productos = JSON.parse(localStorage.getItem("productos")) || [];
 
-        let productosLocalStorage = JSON.parse(localStorage.getItem("productos")) || [];
-        productosLocalStorage = productosLocalStorage.map(p => ({
-            ...p,
-            id: Number(p.id),
-            precio: Number(p.precio),
-            stock: Number(p.stock)
-        }));
-        console.log("PRODUCTOS NORMALIZADOS:", productosLocalStorage);
-
-        const producto = productosLocalStorage.find(p => p.id === id);
+        const producto = productos.find(p => p.id === id);
 
         if (producto) {
             agregarAlCarrito(producto);
         } else {
-            console.error("Producto no encontrado en localStorage:", id);
+            console.error("Producto no encontrado:", id);
         }
     }
 });

@@ -96,7 +96,19 @@ export function getPathImgs(rutaImg) {
 }
 
 
+export function getPathImgsBack(ruta) {
+    if (!ruta) {
+        return "http://localhost:8080/IMG/imgProductos/default.png";
+    }
 
+    // Ya es URL completa
+    if (ruta.startsWith("http")) {
+        return ruta;
+    }
+
+    // Spring Boot
+    return `http://localhost:8080${ruta}`;
+}
 
 
 

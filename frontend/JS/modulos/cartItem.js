@@ -1,7 +1,7 @@
 import { formatearMiles } from "../../JS/main.js";
-import { getPathImgs } from "../../JS/main.js";
+import { getPathImgsBack } from "../../JS/main.js";
 export function cartItemCarrito(producto) {
-    const rutaImagen = getPathImgs(producto.imagen)
+    const rutaImagen = getPathImgsBack(producto.imagen)
     const nuevoProducto = `
     <div class="d-flex justify-content-center">
                 <div class="card cartItem w-100 mb-3" ">
@@ -54,7 +54,7 @@ export const productosRecientes = (producto) => {
 
 
 export function cartItemCarritoVersion1(producto) {
-    const rutaImagen = getPathImgs(producto.imagen);
+    const rutaImagen = getPathImgsBack(producto.imagen);
     const nuevoProducto = `
     <div class="d-flex justify-content-center">
                 <div class="cartItem w-100 card rounded-4 mb-3">

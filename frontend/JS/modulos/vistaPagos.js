@@ -2,7 +2,6 @@ import { obtenerUsuarioActual } from "./auth.js";
 import { carrito, valorTotalCarrito } from "./agregarCarrito.js";
 import { formatearMiles } from "../main.js";
 
-
 const listaProductos = document.getElementById("listaProductos");
 const subtotalPago = document.getElementById("subtotalPago");
 const totalPago = document.getElementById("totalPago");
@@ -30,12 +29,9 @@ export const initVistaPagos = async () => {
     document.getElementById("ciudadCliente").value = usuario.ciudadCliente;
     document.getElementById("telefonoCliente1").value = usuario.telCliente;
 
-    // Renderizar resumen de compra
     renderResumen();
 
-    btnConfirmar.addEventListener("click", () => {
-        confirmarCompra(usuario);
-    });
+    btnConfirmar.addEventListener("click", () => confirmarCompra(usuario));
 };
 
 function renderResumen() {
@@ -46,18 +42,17 @@ function renderResumen() {
         const li = document.createElement("li");
         li.className = "list-group-item d-flex justify-content-between align-items-center";
         li.innerHTML = `
-      <div>
-        <span>${item.nombre}</span>
-        <small class="text-muted d-block">Cantidad: ${item.cantidad}</small>
-      </div>
-      <strong>$${formatearMiles(item.precio * item.cantidad)}</strong>
-    `;
+            <div>
+                <span>${item.nombre}</span>
+                <small class="text-muted d-block">Cantidad: ${item.cantidad}</small>
+            </div>
+            <strong>$${formatearMiles(item.precio * item.cantidad)}</strong>
+        `;
         listaProductos.appendChild(li);
     });
 
     const subtotal = valorTotalCarrito();
-    const envio = 5000;
-    const total = subtotal + envio;
+    const total = subtotal; // si no hay envío en tu backend, solo total = subtotal
 
     subtotalPago.textContent = `$${formatearMiles(subtotal)}`;
     totalPago.textContent = `$${formatearMiles(total)}`;
@@ -76,31 +71,68 @@ async function confirmarCompra(usuario) {
         return;
     }
 
-    const pedido = {
-        id: "COLSS" + Date.now(),
-        fecha: new Date().toLocaleDateString(),
-        idCliente: usuario.idCliente,
-        cliente: usuario.nombreCliente + " " + usuario.apellidoCliente,
-        items: carrito,
-        total: valorTotalCarrito() + 5000,
+    if (!carrito || carrito.length === 0) {
+        Swal.fire({
+            icon: "error",
+            title: "Carrito vacío",
+            text: "No hay productos para procesar.",
+            confirmButtonColor: "#1B5E20"
+        });
+        return;
+    }
+
+    const carritoDTO = carrito.map(item => ({
+        productoId: item.id,
+        cantidad: item.cantidad
+    }));
+
+    console.log(valorTotalCarrito());
+    const checkoutRequest = {
+        direccion: document.getElementById("direccionCliente").value,
+        ciudad: document.getElementById("ciudadCliente").value,
         metodoPago: metodoPago,
-        direccionEnvio: document.getElementById("direccionCliente").value,
-        ciudadEnvio: document.getElementById("ciudadCliente").value
+        carrito: carritoDTO,
+        valorPedido: Number(valorTotalCarrito() )
     };
+    console.log("Checkout request:", checkoutRequest);
+    try {
+        const token = localStorage.getItem("jwt");
+        const response = await fetch("http://localhost:8080/pedidos/crear", {
+            method: "POST",
+            headers: { 
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify(checkoutRequest)
+        });
 
-    // Aquí se llamaría al backend para guardar el pedido si existiera el endpoint
-    // Por ahora simularemos el éxito y limpiaremos el carrito
+        if (!response.ok) throw new Error("Error al guardar el pedido en el servidor.");
 
-    Swal.fire({
-        title: "¡Muchas gracias por tu compra!",
-        icon: "success",
-        text: `Tu pedido #${pedido.id} ha sido registrado con éxito. Medio de pago: ${metodoPago}`,
-        confirmButtonText: "Ir a mis pedidos",
-        confirmButtonColor: "#1B5E20"
-    }).then(() => {
+        const pedidoCreado = await response.json();
+
+        // ✅ Solo después de confirmar que se guardó, borramos carrito
         localStorage.removeItem("carrito");
-        window.location.href = "vistaUsuario.html";
-    });
+        carrito.length = 0;
+
+        Swal.fire({
+            title: "¡Muchas gracias por tu compra!",
+            icon: "success",
+            text: `Tu pedido ha sido registrado con éxito. Medio de pago: ${metodoPago}`,
+            confirmButtonText: "Ir a mis pedidos",
+            confirmButtonColor: "#1B5E20"
+        }).then(() => {
+            window.location.href = "vistaUsuario.html";
+        });
+
+    } catch (error) {
+        console.error(error);
+        Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: error.message,
+            confirmButtonColor: "#1B5E20"
+        });
+    }
 }
 
 // Inicializar si estamos en la página de pagos

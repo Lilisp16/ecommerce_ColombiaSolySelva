@@ -15,6 +15,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Pagos</title>
+
+
+  
 </head>
 
 <body>
@@ -40,12 +43,12 @@
       <div class="col-md-7">
 
         <!-- Datos del usuario -->
-        <div class="card mb-4">
+        <div class="card mb-4 card1" style="background-color: #4E342E; color:#FAF8F3;">
           <div class="card-header fw-bold">
             <i class="fa-solid fa-user"></i> Datos de envío
           </div>
 
-          <div class="card-body">
+          <div class="card-body"  style="background-color: #f5ebdc9e;">
             <div class="row g-3">
               <div class="col-md-6">
                 <label class="form-label">Nombre</label>
@@ -82,16 +85,16 @@
         </div>
 
         <!-- Método de pago -->
-        <div class="card">
+        <div class="card" >
           <div class="card-header fw-bold">
             <i class="fa-solid fa-money-check"></i> Método de pago
           </div>
 
-          <div class="card-body">
+          <div class="card-body" >
             <!-- Tarjeta -->
             <div class="form-check d-flex align-items-center mb-3">
-              <input class="form-check-input me-3" type="radio" name="metodoPago" id="pagoTarjeta" value="Tarjeta"
-                checked>
+              <input class="form-check-input me-3" type="radio" name="metodoPago" id="pagoTarjeta" value="Tarjeta" 
+                checked> 
               <label class="form-check-label d-flex align-items-center" for="pagoTarjeta">
                 <i class="fa-solid fa-credit-card fa-2x text-success me-3"></i>
                 <div>
@@ -105,8 +108,8 @@
 
             <!-- Contra entrega -->
             <div class="form-check d-flex align-items-center">
-              <input class="form-check-input me-3" type="radio" name="metodoPago" id="pagoContraEntrega"
-                value="Contra entrega">
+                 <input class="form-check-input me-3" type="radio" name="metodoPago" id="pagoContraEntrega"
+                value="Contra entrega"> 
               <label class="form-check-label d-flex align-items-center" for="pagoContraEntrega">
                 <i class="fa-solid fa-truck fa-2x text-success me-3"></i>
                 <div>
@@ -123,15 +126,15 @@
 
       </div>
 
-      <div class="col-md-5">
+      <div class="col-md-5" >
 
         <!-- Resumen de compra -->
-        <div class="card">
+        <div class="card"  style="background-color: #83c787; color:#4E342E;">
           <div class="card-header fw-bold">
             <i class="fa-solid fa-cart-shopping"></i> Resumen de compra
           </div>
 
-          <div class="card-body">
+          <div class="card-body fs-5" style="background-color: #f5ebdcea;" >
 
             <ul class="list-group mb-3" id="listaProductos">
               <!-- productos del carrito -->

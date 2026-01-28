@@ -42,6 +42,7 @@
 
     <!-- BOTÓN PARA COLAPSAR -->
     <button
+      type="button"
       class="btn position-fixed m-3"
       onclick="toggleSidebar()"
     >
@@ -57,10 +58,10 @@
                 <div >
                     <h4 class="mb-3 text-center">Creacion de Productos</h4>
                     <div id="contenedorCreacionProducto">
-                        <form class="row g-3 needs-validation d-flex justify-content-center" novalidate id="creacionProducto">
+                          <form id="creacionProducto" class="row g-3 needs-validation d-flex justify-content-center" novalidate onsubmit="event.preventDefault(); return false;">
                     <div class="col-md-4">
-                        <label for="validationCustom01" class="form-label">Id</label>
-                        <input type="number" class="form-control" id="id" placeholder="Id" required>
+                        <label for="validationCustom01" class="form-label">Referencia</label>
+                        <input type="number" class="form-control" id="id" placeholder="Referencia" required>
                     </div>
                     <div class="col-md-6">
                         <label for="validationCustom02" class="form-label">Nombre</label>
@@ -100,11 +101,18 @@
                         <label for="validationCustom05" class="form-label">Información Adicional</label>
                         <input type="text" class="form-control" id="infoAdicional" placeholder="Agregue información detallada del producto">
                         <img id="preview" src="" alt="Vista previa" class=" d-none img-fluid rounded mt-2 d-flex mx-auto" style="max-width:200px; max-height: 200px;">
-                    <div class="col-12">
-                        <button class="btn btn-success btnCrear d-flex mx-auto mt-4" type="submit">Previsualizar</button>
-                    </div>
+
+                        <div class="col-12 d-flex justify-content-center gap-3 mt-4">
+                          <button type="button" class="btn btn-secondary" id="btnPrevisualizar">
+                            Previsualizar
+                          </button>
+
+                          <button type="button" class="btn btn-success d-none" id="btnGuardar">
+                            Guardar producto
+                          </button>
+                        </div>
+                      </div>
                     </form>
-                    </div>
                 </div>
             </div>
           </div>
@@ -118,7 +126,7 @@
             </div>
             <div class="card p-3 agregados">
               <h4 class="text-center mb-3">Agregados Recientemente</h4>
-              <div id="contenedorAgregadosRecientemente" class="py-3 border-4 overflow-y-scroll">
+              <div id="contenedorAgregadosRecientemente" class="py-3 border-4 overflow-y-scroll" style="max-height: 300px;">
               </div>
             </div>
         </div>
@@ -140,7 +148,6 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../../JS/modulos/localStorage.js" type="module"></script>
-    <script src="../../JS/modulos/productos.js" type="module"></script>
     <script type="module" src="../../JS/modulos/creacionProducto.js"></script>
     <script src="../../JS/modulos/crearTarjeta.js" type="module"></script>
     

@@ -1,122 +1,121 @@
 import { crearTarjetaPrevisualizacion } from "./crearTarjeta.js";
 import { productosRecientes } from "./cartItem.js";
-
-// ---------------- CONFIG ----------------
+window.addEventListener("beforeunload", () => {
+  console.log("🚨 RECARGA DETECTADA");
+});
 const API_URL = "http://localhost:8080/producto/crear-producto";
 
 // ---------------- ELEMENTOS ----------------
-const form = document.getElementById("creacionProducto");
 
-const inputNombre = form.querySelector("#nombre");
-const inputDescripcion = form.querySelector("#descripcion");
-const inputCategoria = form.querySelector("#categoria");
-const inputImagen = form.querySelector("#imagen");
-const inputStock = form.querySelector("#stock");
-const inputPrecio = form.querySelector("#precio");
-const inputInfo = form.querySelector("#infoAdicional");
 
-const imagenPreview = form.querySelector("#preview");
-const btnSubmit = form.querySelector("button[type='submit']");
+const inputNombre = document.getElementById("nombre");
+const inputDescripcion = document.getElementById("descripcion");
+const inputCategoria = document.getElementById("categoria");
+const inputImagen = document.getElementById("imagen");
+const inputStock = document.getElementById("stock");
+const inputPrecio = document.getElementById("precio");
+const inputInfo = document.getElementById("infoAdicional");
+
+const imagenPreview = document.getElementById("preview");
+const btnPrevisualizar = document.getElementById("btnPrevisualizar");
+const btnGuardar = document.getElementById("btnGuardar");
 
 const contenedorPrevisualizacion = document.getElementById("containerNuevoProducto");
 const contenedorRecientes = document.getElementById("contenedorAgregadosRecientemente");
 
-// ---------------- PREVISUALIZACIÓN ----------------
-function previsualizarProducto(producto) {
-    if (!contenedorPrevisualizacion) return;
-    contenedorPrevisualizacion.innerHTML = crearTarjetaPrevisualizacion(producto);
-}
+// ---------------- ESTADO ----------------
+let productoPrevisualizado = null;
+let formDataProducto = null;
 
-// ---------------- ENVIAR AL BACKEND ----------------
+// ---------------- BACK ----------------
 async function enviarProductoBackend(formData) {
     const response = await fetch(API_URL, {
         method: "POST",
         body: formData
     });
 
-    if (!response.ok) {
-        const error = await response.text();
-        throw new Error(error);
-    }
-
+    if (!response.ok) throw new Error("Error al guardar");
     return response.json();
 }
 
-// ---------------- EVENTO SUBMIT ----------------
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-
+// ---------------- PREVISUALIZAR ----------------
+btnPrevisualizar.addEventListener("click", () => {
     const file = inputImagen.files[0];
-
     if (!file) {
-        Swal.fire("Imagen requerida", "Debes seleccionar una imagen", "warning");
+        Swal.fire("Imagen requerida", "Selecciona una imagen", "warning");
         return;
     }
 
     const reader = new FileReader();
-
-    reader.onload = async (event) => {
-
-        // BASE64 SOLO PARA PREVISUALIZACIÓN
-        const imagenBase64 = event.target.result;
-
-        // PREVIEW
-        const productoPreview = {
+    reader.onload = e => {
+        productoPrevisualizado = {
             nombre: inputNombre.value,
             descripcion: inputDescripcion.value,
             categoria: inputCategoria.value,
-            imagen: imagenBase64,
+            imagen: e.target.result,
             stock: inputStock.value,
             precio: inputPrecio.value,
             infoAdicional: inputInfo.value
         };
 
-        imagenPreview.src = imagenBase64;
-        previsualizarProducto(productoPreview);
+        // 👇 SOLO SE RENDERIZA AQUÍ
+        contenedorPrevisualizacion.innerHTML =
+            crearTarjetaPrevisualizacion(productoPrevisualizado);
 
-        // FORM DATA REAL PARA BACKEND
-        const formData = new FormData();
-        formData.append("nombre", inputNombre.value);
-        formData.append("descripcion", inputDescripcion.value);
-        formData.append("categoria", inputCategoria.value);
-        formData.append("precio", inputPrecio.value);
-        formData.append("stock", inputStock.value);
-        formData.append("imagen", file);
-try {
-    const guardado = await enviarProductoBackend(formData);
+        imagenPreview.src = productoPrevisualizado.imagen;
+        imagenPreview.classList.remove("d-none");
 
-    // 🔁 Normalizamos el objeto del backend al formato del frontend
-    const productoNormalizado = {
-        id: guardado.idProducto,
-        nombre: guardado.nombreProducto,
-        precio: guardado.precioProducto,
-        descripcion: guardado.descripcionProducto,
-        categoria: guardado.categoriaProducto,
-        stock: guardado.stockProducto,
-        imagen: guardado.imagenProducto
-    };
+        formDataProducto = new FormData();
+        formDataProducto.append("nombre", inputNombre.value);
+        formDataProducto.append("descripcion", inputDescripcion.value);
+        formDataProducto.append("categoria", inputCategoria.value);
+        formDataProducto.append("precio", inputPrecio.value);
+        formDataProducto.append("stock", inputStock.value);
+        formDataProducto.append("imagen", file);
 
-    Swal.fire({
-        title: "Producto guardado",
-        text: "Producto registrado correctamente",
-        icon: "success"
-    });
-
-    // Mostrar producto recién creado
-    if (contenedorRecientes) {
-        contenedorRecientes.insertAdjacentHTML(
-            "afterbegin",
-            productosRecientes(productoNormalizado)
-        );
-    }
-
-    form.reset();
-    imagenPreview.src = "";
-        } catch (error) {
-            console.error(error);
-            Swal.fire("Error", "No se pudo guardar el producto", "error");
-        }
+        btnGuardar.classList.remove("d-none");
     };
 
     reader.readAsDataURL(file);
+});
+
+// ---------------- GUARDAR ----------------
+btnGuardar.addEventListener("click", async (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    
+    if (!formDataProducto) return;
+
+    try {
+        const guardado = await enviarProductoBackend(formDataProducto);
+
+        Swal.fire("Guardado", "Producto registrado correctamente", "success");
+
+        // ✅ agregar a recientes
+        contenedorRecientes.insertAdjacentHTML(
+            "afterbegin",
+            productosRecientes({
+                nombre: guardado.nombreProducto,
+                precio: guardado.precioProducto,
+                stock: guardado.stockProducto,
+                imagen: guardado.imagenProducto
+            })
+        );
+
+        // ✅ LIMPIAMOS SOLO TEXTOS
+        inputNombre.value = "";
+        inputDescripcion.value = "";
+        inputCategoria.selectedIndex = 0;
+        inputStock.value = "";
+        inputPrecio.value = "";
+        inputInfo.value = "";
+
+        btnGuardar.classList.add("d-none");
+        formDataProducto = null;
+
+    } catch (error) {
+        console.error(error);
+        Swal.fire("Error", "No se pudo guardar el producto", "error");
+    }
 });
